@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
 
 namespace Firehose.Web.Infrastructure
 {
@@ -8,7 +9,7 @@ namespace Firehose.Web.Infrastructure
         {
             var hashedEmailAddress = emailAddress.Trim().ToLowerInvariant().ToMd5Hash().ToLowerInvariant();
             const int size = 200;
-            var defaultImage = HttpUtility.UrlEncode("https://firehose.labs.readify.net/Content/Readify.png");
+            var defaultImage = HttpUtility.UrlEncode(ConfigurationManager.AppSettings["DefaultGravatarImage"]);
             return string.Format("http://www.gravatar.com/avatar/{0}.jpg?s={1}&d={2}", hashedEmailAddress, size, defaultImage);
         }
     }
