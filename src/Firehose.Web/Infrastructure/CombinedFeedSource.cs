@@ -1,9 +1,10 @@
-﻿using System;
+﻿using BlogMonster.Configuration;
+using BlogMonster.Infrastructure.SyndicationFeedSources;
+using System;
+using System.Configuration;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Threading;
-using BlogMonster.Configuration;
-using BlogMonster.Infrastructure.SyndicationFeedSources;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
 
 namespace Firehose.Web.Infrastructure
@@ -33,14 +34,14 @@ namespace Firehose.Web.Infrastructure
                 .ToArray();
 
             return BlogMonsterBuilder.FromOtherFeedSources(feedSources.First(), feedSources.Skip(1).ToArray())
-                                     .WithRssSettings(new RssFeedSettings("https://firehose.labs.readify.net",
-                                                                          "Readify Firehose",
-                                                                          "An aggregated feed of a bunch of random Readifarians",
-                                                                          new SyndicationPerson("info@readify.net", "An Argument of Readifarians", "http://www.readify.net/"),
-                                                                          "https://firehose.labs.readify.net/Content/Readify.png",
-                                                                          "en-AU",
+                                     .WithRssSettings(new RssFeedSettings(ConfigurationManager.AppSettings["BaseUrl"],
+                                                                          ConfigurationManager.AppSettings["RssFeedTitle"],
+                                                                          ConfigurationManager.AppSettings["RssFeedDescription"],
+                                                                          new SyndicationPerson(ConfigurationManager.AppSettings["SyndicationPersonEmail"], ConfigurationManager.AppSettings["SyndicationPersonName"], ConfigurationManager.AppSettings["BaseUrl"]),
+                                                                          ConfigurationManager.AppSettings["RssFeedImageUrl"],
+                                                                          "en-US",
                                                                           "The copyright for each post is retained by its author.",
-                                                                          new Uri("https://firehose.labs.readify.net")))
+                                                                          new Uri(ConfigurationManager.AppSettings["BaseUrl"])))
                                      .Grr();
         }
 
@@ -51,7 +52,7 @@ namespace Firehose.Web.Infrastructure
                 var iFilterMyBlogPosts = readifarian as IFilterMyBlogPosts;
 
                 var filter = iFilterMyBlogPosts != null
-                    ? (Func<SyndicationItem, bool>) iFilterMyBlogPosts.Filter
+                    ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
                     : (si => true);
 
                 var feedSource = BlogMonsterBuilder

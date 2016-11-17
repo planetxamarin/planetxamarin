@@ -125,10 +125,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.readify.css" />
     <Content Include="Content\bootstrap.readify.min.css" />
+    <Content Include="Content\Logo.png" />
     <Content Include="Content\readify-box-mask.svg" />
     <Content Include="Content\readify-device.png" />
-    <Content Include="Content\Readify.png" />
-    <Content Include="Content\readifylogo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -150,6 +149,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\AndrewBowen.cs" />
     <Compile Include="Authors\DomRaniszewski.cs" />
+    <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\MickaelDerriey.cs" />
     <Compile Include="Authors\RahulRai.cs" />
     <Compile Include="Authors\YaserMehraban.cs" />
