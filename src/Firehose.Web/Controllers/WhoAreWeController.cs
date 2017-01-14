@@ -8,17 +8,17 @@ namespace Firehose.Web.Controllers
 {
     public class WhoAreWeController : Controller
     {
-        private readonly IAmAReadifarian[] _readifarians;
+        private readonly IAmACommunityMember[] _members;
 
-        public WhoAreWeController(IEnumerable<IAmAReadifarian> readifarians)
+        public WhoAreWeController(IEnumerable<IAmACommunityMember> members)
         {
             var random = new Random();
-            _readifarians = readifarians.OrderBy(r => random.Next()).ToArray();
+            _members = members.OrderBy(r => random.Next()).ToArray();
         }
 
         public ActionResult Readifarians()
         {
-            var viewModel = _readifarians;
+            var viewModel = _members;
             return View(viewModel);
         }
     }

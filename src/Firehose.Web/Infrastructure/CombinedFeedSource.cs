@@ -11,41 +11,41 @@ namespace Firehose.Web.Infrastructure
 {
     public class CombinedFeedSource
     {
-        private readonly IAmAReadifarian[] _readifarians;
+        private readonly IAmABlogger[] _bloggers;
         private readonly Lazy<ISyndicationFeedSource> _combinedFeedSource;
 
-        public CombinedFeedSource(IAmAReadifarian[] readifarians)
+        public CombinedFeedSource(IAmABlogger[] bloggers)
         {
-            _readifarians = readifarians;
+            _bloggers = bloggers;
             _combinedFeedSource = new Lazy<ISyndicationFeedSource>(LoadFeeds, LazyThreadSafetyMode.PublicationOnly);
         }
 
-        public SyndicationFeed Feed
-        {
-            get { return _combinedFeedSource.Value.Feed; }
-        }
+        public SyndicationFeed Feed => _combinedFeedSource.Value.Feed;
 
         private ISyndicationFeedSource LoadFeeds()
         {
-            var feedSources = (from readifarian in _readifarians.AsParallel()
-                               from uri in readifarian.FeedUris
-                               select TryLoadFeed(readifarian, uri))
+            var feedSources = (from blogger in _bloggers.AsParallel()
+                               from uri in blogger.FeedUris
+                               select TryLoadFeed(blogger, uri))
                 .NotNull()
                 .ToArray();
 
             return BlogMonsterBuilder.FromOtherFeedSources(feedSources.First(), feedSources.Skip(1).ToArray())
-                                     .WithRssSettings(new RssFeedSettings(ConfigurationManager.AppSettings["BaseUrl"],
-                                                                          ConfigurationManager.AppSettings["RssFeedTitle"],
-                                                                          ConfigurationManager.AppSettings["RssFeedDescription"],
-                                                                          new SyndicationPerson(ConfigurationManager.AppSettings["SyndicationPersonEmail"], ConfigurationManager.AppSettings["SyndicationPersonName"], ConfigurationManager.AppSettings["BaseUrl"]),
-                                                                          ConfigurationManager.AppSettings["RssFeedImageUrl"],
-                                                                          "en-US",
-                                                                          "The copyright for each post is retained by its author.",
-                                                                          new Uri(ConfigurationManager.AppSettings["BaseUrl"])))
-                                     .Grr();
+                .WithRssSettings(
+                    new RssFeedSettings(ConfigurationManager.AppSettings["BaseUrl"],
+                        ConfigurationManager.AppSettings["RssFeedTitle"],
+                        ConfigurationManager.AppSettings["RssFeedDescription"],
+                        new SyndicationPerson(ConfigurationManager.AppSettings["SyndicationPersonEmail"], 
+                        ConfigurationManager.AppSettings["SyndicationPersonName"], 
+                        ConfigurationManager.AppSettings["BaseUrl"]),
+                        ConfigurationManager.AppSettings["RssFeedImageUrl"],
+                        "en-US",
+                        "The copyright for each post is retained by its author.",
+                        new Uri(ConfigurationManager.AppSettings["BaseUrl"])))
+                .Grr();
         }
 
-        private static ISyndicationFeedSource TryLoadFeed(IAmAReadifarian readifarian, Uri uri)
+        private static ISyndicationFeedSource TryLoadFeed(IAmABlogger readifarian, Uri uri)
         {
             try
             {

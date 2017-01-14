@@ -10,7 +10,7 @@ namespace Firehose.Web.AutofacModules
             base.Load(builder);
 
             builder.RegisterAssemblyTypes(ThisAssembly)
-                   .Where(t => t.IsAssignableTo<IAmAReadifarian>())
+                   .Where(t => t.IsAssignableTo<IAmACommunityMember>())
                    .AsImplementedInterfaces()
                    .SingleInstance();
 
