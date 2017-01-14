@@ -1,11 +1,11 @@
-﻿@model Firehose.Web.Infrastructure.IAmAReadifarian[]
+﻿@model Firehose.Web.Infrastructure.IAmACommunityMember[]
 
 <p>
     Order is random. Refresh to shuffle.
 </p>
-@foreach (var readifarian in Model)
+@foreach (var member in Model)
 {
-    Html.RenderPartial("BusinessCard", readifarian);
+    Html.RenderPartial("BusinessCard", member);
 }
 
 @section scripts{

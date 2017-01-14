@@ -46,3 +46,6 @@
 }
 
 .businessCard .contactDetail { margin-right: 1em; }
+
+.syndicationItemContent { clear: both; }
+.syndicationItemFooter { clear: both; }
