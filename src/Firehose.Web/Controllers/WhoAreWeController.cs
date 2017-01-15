@@ -16,7 +16,7 @@ namespace Firehose.Web.Controllers
             _members = members.OrderBy(r => random.Next()).ToArray();
         }
 
-        public ActionResult Readifarians()
+        public ActionResult Members()
         {
             var viewModel = _members;
             return View(viewModel);

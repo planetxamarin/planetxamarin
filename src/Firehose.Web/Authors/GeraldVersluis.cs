@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Firehose.Web.Authors
 {
-    public class GeraldVersluis : IAmACommunityMember
+    public class GeraldVersluis : IAmAMicrosoftMVP
     {
         public string FirstName => "Gerald";
 
@@ -24,5 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "jfversluis";
+
+        public DateTime FirstAwarded => new DateTime(2016, 10, 1);
     }
 }

@@ -15,9 +15,12 @@
 
     <div class="syndicationItem">
         <h1 class="syndicationItemTitle"><a href="@link" target="_blank">@Html.Raw(item.Title.Text)</a></h1>
-        <img class="syndicationItemPhoto" src="@authorEmail.GravatarImage()" />
-        <h2 class="syndicationItemByLine">@authorName <a href="mailto:@authorEmail">@authorEmail</a></h2>
-        <h2 class="syndicationItemDate">@item.PublishDate.ToString()</h2>
+        <h2 class="syndicationItemDate">@item.PublishDate.ToString("dd MMMM yyyy")</h2>
+        <img class="syndicationItemPhoto" src="@authorEmail.GravatarImage()" alt="@authorName avatar" />
+        <h2 class="syndicationItemByLine">@authorName</h2>
+        <a href="mailto:@authorEmail">@authorEmail</a>
+        <br style="clear: both"/>
+        <hr/>
         <div class="syndicationItemContent">
             @Html.Raw(html)
         </div>

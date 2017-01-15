@@ -5,8 +5,26 @@
     <span class="mugShot" style="background-image: url('@Model.EmailAddress.GravatarImage()');"></span>
     <p>
         <strong>@Model.FirstName @Model.LastName</strong><br />
-        <span title="Readify | @Model.Title">@Model.Title</span><br/>
-        @Model.StateOrRegion
+        <span title="Readify | @Model.Title">@Model.Title</span><br />
+        @Model.StateOrRegion<br />
+        @if (Model is IAmAXamarinMVP)
+        {
+            var mvpModel = (IAmAXamarinMVP)Model;
+            string output;
+
+            if (Model is IAmAMicrosoftMVP)
+            {
+                output = "Microsoft ";
+            }
+            else
+            {
+                output = "Xamarin ";
+            }
+
+            output += "MVP since: " + mvpModel.FirstAwarded.ToString("MMMM yyyy");
+
+            <text>@output</text>
+        }
     </p>
     <p>
     </p>
@@ -14,13 +32,12 @@
         <a href="https://twitter.com/@Model.TwitterHandle" class="twitter-follow-button" data-show-count="false">Follow @@@Model.TwitterHandle</a>
     </p>
     <p>
-        <a class="contactDetail" href="https://twitter.com/@Model.TwitterHandle">Twitter</a><br/>
+        <a class="contactDetail" href="https://twitter.com/@Model.TwitterHandle">Twitter</a><br />
         @foreach (var uri in Model.FeedUris)
         {
             <a class="contactDetail" href="@uri.ToString()" title="@uri.ToString()">RSS</a>
         }
-        <br/>
+        <br />
         <a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a>
-
     </p>
 </div>

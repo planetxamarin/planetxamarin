@@ -125,7 +125,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.readify.css" />
     <Content Include="Content\bootstrap.readify.min.css" />
-    <Content Include="Content\Logo.png" />
     <Content Include="Content\readify-box-mask.svg" />
     <Content Include="Content\readify-device.png" />
     <Content Include="Content\Site.css" />
@@ -157,10 +156,10 @@
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\GravatarHashingExtensions.cs" />
-    <Compile Include="Infrastructure\IAmAReadifarian.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\IAmABlogger.cs" />
     <Compile Include="Infrastructure\IFilterMyBlogPosts.cs" />
     <Compile Include="Infrastructure\Md5HashingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,7 +171,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Feed\Read.cshtml" />
-    <Content Include="Views\WhoAreWe\Readifarians.cshtml" />
+    <Content Include="Views\WhoAreWe\Members.cshtml" />
     <Content Include="Views\WhoAreWe\BusinessCard.cshtml" />
     <Content Include="Content\bootstrap.readify.less" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
