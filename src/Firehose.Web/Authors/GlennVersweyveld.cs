@@ -20,7 +20,7 @@ namespace Firehose.Web.Authors
 
 		DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2014, 1, 1);
 
-		public string GravatarHash => "";
+		public string GravatarHash => "d3ac2144120f923f23c49ee4ce4437ab";
 
 		public bool Filter(SyndicationItem item)
 		{
