@@ -17,6 +17,7 @@ namespace Firehose.Web.Infrastructure
         string Title { get; }
         Uri WebSite { get; }
         string TwitterHandle { get; }
+        string GravatarHash { get; }
     }
 
     public interface IWorkAtXamarin : IAmACommunityMember

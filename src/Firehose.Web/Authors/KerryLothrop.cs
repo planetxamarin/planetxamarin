@@ -18,5 +18,6 @@ namespace Firehose.Web.Authors
 
         DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2016, 4, 1);
         DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 5, 27);
+        public string GravatarHash => "";
     }
 }

@@ -1,8 +1,8 @@
 ﻿@using Firehose.Web.Infrastructure
-@model Firehose.Web.Infrastructure.IAmACommunityMember
+@model IAmACommunityMember
 
 <div class="businessCard">
-    <span class="mugShot" style="background-image: url('@Model.EmailAddress.GravatarImage()');"></span>
+    <span class="mugShot" style="background-image: url('@Model.GravatarImage()');"></span>
     <p>
         <strong>@Model.FirstName @Model.LastName</strong><br />
         <span title="Readify | @Model.Title">@Model.Title</span><br />
