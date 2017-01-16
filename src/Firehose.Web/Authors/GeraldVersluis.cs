@@ -12,7 +12,7 @@ namespace Firehose.Web.Authors
 
         public string StateOrRegion => "Holland";
 
-        public string EmailAddress => "gerald@verslu.is";
+        public string EmailAddress => "";
 
         public string Title => "Xamarin Developer | Microsoft MVP";
 
@@ -26,5 +26,7 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "jfversluis";
 
         public DateTime FirstAwarded => new DateTime(2016, 10, 1);
+
+        public string GravatarHash => "f9d4d4211d7956ce3e07e83df0889731";
     }
 }
