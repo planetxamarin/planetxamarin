@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
@@ -35,7 +36,7 @@ namespace Firehose.Web.Controllers
 
             var items = _combinedFeedSource.Feed.Items
                                            .OrderByDescending(item => item.PublishDate)
-                                           .Take((int) numPosts)
+                                           .Take((int)numPosts)
                                            .ToArray();
 
             var shorterFeed = originalFeed.Clone(false);

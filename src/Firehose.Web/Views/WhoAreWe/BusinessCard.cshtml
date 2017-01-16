@@ -1,27 +1,29 @@
 ﻿@using Firehose.Web.Infrastructure
-@model Firehose.Web.Infrastructure.IAmACommunityMember
+@model IAmACommunityMember
 
 <div class="businessCard">
-    <span class="mugShot" style="background-image: url('@Model.EmailAddress.GravatarImage()');"></span>
+    <span class="mugShot" style="background-image: url('@Model.GravatarImage()');"></span>
     <p>
         <strong>@Model.FirstName @Model.LastName</strong><br />
         <span title="Readify | @Model.Title">@Model.Title</span><br />
         @Model.StateOrRegion<br />
-        @if (Model is IAmAXamarinMVP)
+        @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
         {
-            var mvpModel = (IAmAXamarinMVP)Model;
-            string output;
-
-            if (Model is IAmAMicrosoftMVP)
+            string output = string.Empty;
+            var xamarinMvpModel = Model as IAmAXamarinMVP;
+            if (xamarinMvpModel != null)
             {
-                output = "Microsoft ";
+                output += " Xamarin MVP since: " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                if (Model is IAmAMicrosoftMVP)
+                {
+                    output += " and";
+                }
             }
-            else
+            var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+            if (microsoftMvpModel != null)
             {
-                output = "Xamarin ";
+                output += " Microsoft MVP since: " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
             }
-
-            output += "MVP since: " + mvpModel.FirstAwarded.ToString("MMMM yyyy");
 
             <text>@output</text>
         }

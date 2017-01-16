@@ -17,6 +17,7 @@ namespace Firehose.Web.Infrastructure
         string Title { get; }
         Uri WebSite { get; }
         string TwitterHandle { get; }
+        string GravatarHash { get; }
     }
 
     public interface IWorkAtXamarin : IAmACommunityMember
@@ -29,7 +30,8 @@ namespace Firehose.Web.Infrastructure
         DateTime FirstAwarded { get; }
     }
 
-    public interface IAmAMicrosoftMVP : IAmAXamarinMVP
+    public interface IAmAMicrosoftMVP : IAmACommunityMember
     {
+        DateTime FirstAwarded { get; }
     }
 }
