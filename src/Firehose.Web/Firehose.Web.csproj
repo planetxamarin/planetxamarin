@@ -152,6 +152,7 @@
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KerryLothrop.cs" />
+    <Compile Include="Authors\RobinManuelThiel.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Authors\AntonioFeregrino.cs" />
     <Compile Include="Authors\GregShackles.cs" />
     <Compile Include="Authors\ChrisWilliams.cs" />
+    <Compile Include="Authors\GeertVanDerCruijsen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
