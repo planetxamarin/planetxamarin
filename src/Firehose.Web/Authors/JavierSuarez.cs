@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class TomaszCielecki : IAmAMicrosoftMVP
+    public class TomaszCielecki : IAmAMicrosoftMVP, IFilterMyBlogPosts
     {
         public IEnumerable<Uri> FeedUris
         {
@@ -19,5 +19,11 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("http://javiersuarezruiz.wordpress.com");
         public string TwitterHandle => "jsuarezruiz";
         public DateTime FirstAwarded => new DateTime(2014, 07, 01);
+		
+		
+		public bool Filter(SyndicationItem item)
+		{
+			return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+		}
     }
 }
