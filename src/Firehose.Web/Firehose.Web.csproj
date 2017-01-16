@@ -148,6 +148,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\GeoffreyHuntley.cs" />
+    <Compile Include="Authors\KerryLothrop.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />

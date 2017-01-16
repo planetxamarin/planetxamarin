@@ -7,21 +7,23 @@
         <strong>@Model.FirstName @Model.LastName</strong><br />
         <span title="Readify | @Model.Title">@Model.Title</span><br />
         @Model.StateOrRegion<br />
-        @if (Model is IAmAXamarinMVP)
+        @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
         {
-            var mvpModel = (IAmAXamarinMVP)Model;
             string output;
-
-            if (Model is IAmAMicrosoftMVP)
+            var xvmpModel = Model as IAmAXamarinMVP;
+            if (xvmpModel != null)
             {
-                output = "Microsoft ";
+                output += " Xamarin MVP since: " + xvmpModel.FirstAwarded.ToString("MMMM yyyy");
+                if (Model is IAmAMicrosoftMVP)
+                {
+                    output += " and";
+                }
             }
-            else
+            var mmvpModel = Model as IAmAMicrosoftMVP;
+            if (mmvpModel != null)
             {
-                output = "Xamarin ";
+                output += " Microsoft MVP since: " + mmvpModel.FirstAwarded.ToString("MMMM yyyy");
             }
-
-            output += "MVP since: " + mvpModel.FirstAwarded.ToString("MMMM yyyy");
 
             <text>@output</text>
         }
