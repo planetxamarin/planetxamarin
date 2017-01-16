@@ -1,0 +1,9 @@
+version: 1.0.{build}
+image: Visual Studio 2015  
+cache:
+- src\packages -> **\packages.config
+artifacts:
+- path: '**/bin/*'
+test: off
+build_script:
+- ps: ./build.ps1
