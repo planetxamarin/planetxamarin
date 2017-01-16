@@ -45,7 +45,10 @@ public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
 {
     // ... Author properties from the above class, removed for brevity
 
-    // TODO Add some filter logic
+    public bool Filter(SyndicationItem item)
+    {
+        // TODO Add some filter logic based on the SyndicationItem
+    }
 }
 ```
 
