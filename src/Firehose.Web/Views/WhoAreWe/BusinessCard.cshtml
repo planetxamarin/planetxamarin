@@ -9,20 +9,20 @@
         @Model.StateOrRegion<br />
         @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
         {
-            var output = string.Empty;
-            var xmvpModel = Model as IAmAXamarinMVP;
-            if (xmvpModel != null)
+            string output = string.Empty;
+            var xamarinMvpModel = Model as IAmAXamarinMVP;
+            if (xamarinMvpModel != null)
             {
-                output += " Xamarin MVP since: " + xmvpModel.FirstAwarded.ToString("MMMM yyyy");
+                output += " Xamarin MVP since: " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
                 if (Model is IAmAMicrosoftMVP)
                 {
                     output += " and";
                 }
             }
-            var mmvpModel = Model as IAmAMicrosoftMVP;
-            if (mmvpModel != null)
+            var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+            if (microsoftMvpModel != null)
             {
-                output += " Microsoft MVP since: " + mmvpModel.FirstAwarded.ToString("MMMM yyyy");
+                output += " Microsoft MVP since: " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
             }
 
             <text>@output</text>
