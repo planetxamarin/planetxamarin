@@ -1,61 +1,63 @@
 # Welcome [![Build status](https://ci.appveyor.com/api/projects/status/xtmmldw1i60q2yv5?svg=true)](https://ci.appveyor.com/project/ghuntley/planetxamarin)
 
-Hi! Welcome to Readify!
+Hi! Welcome to PlanetXamarin.com!
 
-We're serious about demonstrating trust in our people and giving them both opportunities to grow and platforms to showcase their work. This is both of those.
+If you write about Xamarin, you belong here. You're welcome to add your blog and have it aggregated as part of our feed as long as the content you are syndicating does not violate the community [code of conduct](https://github.com/ghuntley/planetxamarin/blob/master/CODE_OF_CONDUCT.md).
 
-# What is The Firehose?
+# Add yourself as an author
 
-The Firehose is our blog aggregation platform. If you're a Readifarian, you belong here. You're welcome to add your blog and have it aggregated as part of our feed.
+To add yourself as an author you can fork this project, add yourself to the [authors folder](https://github.com/ghuntley/planetxamarin/tree/master/src/Firehose.Web/Authors) as a class, implementing the `IAmACommunityMember` interface.
 
-# Do I have to join it?
+The result should look something like this:
 
-Absolutely not.
+``` csharp
+public class BruceWayne : IAmACommunityMember
+{
+    public string FirstName => "Bruce";
+    public string LastName => "Wayne";
+    public string Title => "The Dark Knight";
+    public string StateOrRegion => "Gotham";
+    public string EmailAddress => "rescueme@batman.com";
+    public string TwitterHandle => "batman";
 
-It's completely, entirely and utterly optional. It's a way to get your voice heard by a larger audience (at least, that's what we're hoping to make it) but you're by no means obliged to add your blog(s) to be aggregated.
+    public Uri WebSite => new Uri("https://iamthebatman.com/");
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://iamthebatman.com/rss"); } }
+}
+```
 
-# We trust you
+A few things: 
+- Name the class after your first and lastname with CamelCase
+- The `FirstName` and `LastName` property should resemble that same name
+- `Title` property can be whatever you like. Most likely something like: 'Senior Developer @ Wayne Enterprises' or 'Xamarin Developer & Microsoft MVP'
+- `StateOrRegion` will be your geographical location, i.e.: Holland, New York, etc.
+- `EmailAddress` and `TwitterHandle` should be pretty clear, `TwitterHandle` without the leading @
+- The `Website` property can be your global website or whatever you want people to look at
+- And finally with `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin. 
 
-So please don't abuse that.
+If you also do some blogging about other stuff, no worries! You're fine! Just have a look at the next section on how to filter out your Xamarin specific posts.
 
-We're giving you this opportunity to speak in our name. It's not legally binding and we have all the right disclaimers in place, but nonetheless, we're trusting you to not be a twit, get yourself into trouble or bring our (your) name into disrepute.
+# Just Xamarin please
 
-# Do I still own my content?
+As you would suspect from 'PlanetXamarin', we would like to have our content about.. Xamarin. To ensure that we only get relevant content you can also implement the `IFilterMyBlogPosts` interface on your author class.
 
-Absolutely. We have no designs on your IP beyond what's written into your employment contract. What you blog, tweet, Facebook, Instagram etc. is yours alone.
+``` csharp
+public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
+{
+    // ... Author properties from the above class, removed for brevity
 
-We'll promote your stuff for you inasmuch as we provide a platform. That's it :)
+    // TODO Add some filter logic
+}
+```
 
-# Getting started
+# A small step for an author...
 
-## How do I get my blog aggregated?
+A big step for mankind! Last thing that remains is submit a Pull Request to us and whenever it gets merged: hooray! You're an author now!
 
-Clone the Firehose repository on GitHub and add a class that looks something like this in the Authors namespace:  
+Enjoy all of our great content! 
 
-    namespace Firehose.Web.Authors
-    {
-        public class AndrewHarcourt : IAmAReadifarian
-        {
-            // TODO: Fill in all your details
-        }
-    }
+Of course you are more than welcome to submit other features and bugfixes as well.
 
-Commit and push your changes.
-
-Make sure that your RSS generator is setting an author tag for each post so that your name still appears correctly
-once it's aggregated!
-
-## What if I want to only syndicate some of my posts?
-
-    namespace Firehose.Web.Authors
-    {
-        public class AndrewHarcourt : IAmAReadifarian, IFilterMyBlogPosts
-        {
-            // TODO: Fill in all your details
-            // TODO implement the Filter method any way you like :)
-        }
-    }
-
-# Don't I have to ask someone before I do this?
-
-Nope. You've been asked because you're a Readifarian. We trust you. **You belong here.**
+# Acknowledgements
+* Thanks to Readify for open sourcing their employee blog aggregation platform which we forked to create PlanetXamarin. Looking for your next challenege? [Readify is hiring](https://join.readify.net/?source=StaffReferral&campaign=geoffrey.huntley
+) and offers relocation services for developers from abroad.
+* Thanks to [our awesome contributors]("https://github.com/ghuntley/planetxamarin/graphs/contributors") and our [community of authors](https://github.com/ghuntley/planetxamarin/tree/master/src/Firehose.Web/Authors) who make this all possible.
