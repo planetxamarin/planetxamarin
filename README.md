@@ -1,4 +1,4 @@
-# Welcome
+# Welcome [![Build status](https://ci.appveyor.com/api/projects/status/xtmmldw1i60q2yv5?svg=true)](https://ci.appveyor.com/project/ghuntley/planetxamarin)
 
 Hi! Welcome to Readify!
 
