@@ -1,12 +1,12 @@
-# Welcome [![Build status](https://ci.appveyor.com/api/projects/status/xtmmldw1i60q2yv5?svg=true)](https://ci.appveyor.com/project/ghuntley/planetxamarin)
+# Welcome [![Build status](https://ci.appveyor.com/api/projects/status/lpkmo9pftmku26ck?svg=true)](https://ci.appveyor.com/project/ghuntley/planetxamarin)
 
 Hi! Welcome to PlanetXamarin.com!
 
-If you write about Xamarin, you belong here. You're welcome to add your blog and have it aggregated as part of our feed as long as the content you are syndicating does not violate the community [code of conduct](https://github.com/ghuntley/planetxamarin/blob/master/CODE_OF_CONDUCT.md).
+If you write about Xamarin, you belong here. You're welcome to add your blog and have it aggregated as part of our feed as long as the content you are sharing does not violate the community [code of conduct](https://github.com/planetxamarin/planetxamarin/blob/master/CODE_OF_CONDUCT.md).
 
 # Add yourself as an author
 
-To add yourself as an author you can fork this project, add yourself to the [authors folder](https://github.com/ghuntley/planetxamarin/tree/master/src/Firehose.Web/Authors) as a class, implementing the `IAmACommunityMember` interface.
+To add yourself as an author you can fork this project, add yourself to the [authors folder](https://github.com/planetxamarin/planetxamarin/tree/master/src/Firehose.Web/Authors) as a class, implementing the `IAmACommunityMember` interface.
 
 The result should look something like this:
 
@@ -61,6 +61,5 @@ Enjoy all of our great content!
 Of course you are more than welcome to submit other features and bugfixes as well.
 
 # Acknowledgements
-* Thanks to Readify for open sourcing their employee blog aggregation platform which we forked to create PlanetXamarin. Looking for your next challenege? [Readify is hiring](https://join.readify.net/?source=StaffReferral&campaign=geoffrey.huntley
-) and offers relocation services for developers from abroad.
-* Thanks to [our awesome contributors](https://github.com/ghuntley/planetxamarin/graphs/contributors) and our [community of authors](https://github.com/ghuntley/planetxamarin/tree/master/src/Firehose.Web/Authors) who make this all possible.
+* Thanks to Readify for open sourcing their employee blog aggregation platform which we forked to create PlanetXamarin. Looking for your next challenge? [Readify is hiring](https://join.readify.net/?source=StaffReferral&campaign=geoffrey.huntley) and offers relocation services for developers from abroad.
+* Thanks to [our awesome contributors](https://github.com/planetxamarin/planetxamarin/graphs/contributors) and our [community of authors](https://github.com/planetxamarin/planetxamarin/tree/master/src/Firehose.Web/Authors) who make this all possible.
