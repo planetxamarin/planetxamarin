@@ -12,23 +12,25 @@
     <link rel="alternate" type="application/rss+xml" title="PlanetXamarin" href="https://planetxamarin.com@((Url.UrlFor<FeedController>(c => c.Rss(50))))" />
     @RenderSection("head", false)
 </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="@Url.Content("~")">PlanetXamarin</a>
-                </div>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Content("~")">
+                    <div class="navbar-brand-title">PlanetXamarin</div>
+                </a>
             </div>
         </div>
-        <div class="container body-content">
-            <div class="container">
-                @RenderBody()
-            </div>
-            <hr />
-            <footer>
-                <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/ghuntley/planetxamarin">pull-request to our repository</a> on GitHub.</p>
-            </footer>
+    </div>
+    <div class="container body-content">
+        <div class="container">
+            @RenderBody()
         </div>
-        @RenderSection("scripts", false)
-    </body>
+        <hr />
+        <footer>
+            <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/ghuntley/planetxamarin">pull-request to our repository</a> on GitHub.</p>
+        </footer>
+    </div>
+    @RenderSection("scripts", false)
+</body>
 </html>
