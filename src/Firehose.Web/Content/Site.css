@@ -63,6 +63,7 @@ a:hover {
 
 .syndicationItemFooter {
     clear: both;
+    padding-bottom: 40px;
 }
 
 .syndicationItemPhoto {
