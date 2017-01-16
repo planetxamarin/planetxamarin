@@ -19,6 +19,7 @@ public class BruceWayne : IAmACommunityMember
     public string StateOrRegion => "Gotham";
     public string EmailAddress => "rescueme@batman.com";
     public string TwitterHandle => "batman";
+    public string GravatarHash => "42abc1337def";
 
     public Uri WebSite => new Uri("https://iamthebatman.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://iamthebatman.com/rss"); } }
@@ -33,6 +34,29 @@ A few things:
 - `EmailAddress` and `TwitterHandle` should be pretty clear, `TwitterHandle` without the leading @
 - The `Website` property can be your global website or whatever you want people to look at
 - And finally with `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin. 
+- If you do not want your e-mailaddress publicly available but you _do_ want to show your Gravatar go to https://en.gravatar.com/site/check/ and get your hash! If you don't fill the hash, you will be viewed as a silhouette.
+- When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces and let us know when you were first awarded, see below for a small sample.
+
+``` csharp
+public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
+    {
+        public string FirstName => "Awesome";
+        public string LastName => "Sauce";
+        public string Title => "Unicorn tamer";
+        public string StateOrRegion => "127.0.0.1";
+        public string EmailAddress => string.Empty;
+        public string TwitterHandle => "theboss";
+
+        public Uri WebSite => new Uri("http://www.awesomesite.com");
+        public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.awesomesite.com/feed/"); } }
+
+        DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2016, 4, 1);
+        DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 5, 27);
+        public string GravatarHash => "";
+    }
+```
+
+This way you can have both dates implemented, if you have just one, implement just the one interface.
 
 If you also do some blogging about other stuff, no worries! You're fine! Just have a look at the next section on how to filter out your Xamarin specific posts.
 
@@ -47,7 +71,15 @@ public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
 
     public bool Filter(SyndicationItem item)
     {
-        // TODO Add some filter logic based on the SyndicationItem
+        // Here you filter out the given item by the criteria you want, i.e.
+        // this filters out posts that do not have Xamarin in the title
+        return item.Title.Text.ToLowerInvariant().Contains("xamarin");
+        
+        // This filters out only the posts that have the "xamarin" category
+        return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+        
+        // Of course you can make the checks as complicated as you want and combine some stuff
+        return item.Title.Text.ToLowerInvariant().Contains("xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
     }
 }
 ```
