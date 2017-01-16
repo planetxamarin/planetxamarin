@@ -163,6 +163,7 @@
     <Compile Include="Infrastructure\IFilterMyBlogPosts.cs" />
     <Compile Include="Infrastructure\Md5HashingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Authors\JimBennett.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
