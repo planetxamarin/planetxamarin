@@ -16,6 +16,7 @@ namespace Firehose.Web.Authors
       public Uri WebSite => new Uri("https://jimbobbennett.io/");
       public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.jimbobbennett.io/rss"); } }
 
-      public DateTime FirstAwarded => new DateTime(2016, 1, 1);
+      DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 1, 1);
+      DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2017, 1, 1);
    }
 }
