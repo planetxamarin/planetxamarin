@@ -9,3 +9,4 @@
 
 User-agent: *
 Disallow: /feed
+Disallow: /logs
