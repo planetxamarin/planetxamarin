@@ -21,113 +21,86 @@ hr {
   border-top: 1px solid #bdc3c7;
   margin: 40px 0;
 }
-/*
-    
-    body {
-    padding-bottom: 20px;
-    padding-top: 50px;
-}
-
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 .businessCard {
-    border: 1px solid #ccc;
-    box-shadow: 10px 10px 10px #ccc;
-    box-sizing: border-box;
-    display: inline-block;
-    float: left;
-    height: 240px;
-    margin: 15px;
-    padding: 1em;
-    width: 420px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 10px 10px 10px #ccc;
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  height: 240px;
+  margin: 15px;
+  padding: 1em;
+  width: 420px;
 }
-
-    .businessCard p {
-        margin: 0;
-        margin-bottom: 1em;
-    }
-
-    .businessCard .mugShot {
-        float: right;
-        height: 100px;
-        overflow: hidden;
-        width: 100px;
-    }
-
-    .businessCard .mugShot {
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-
-    .businessCard .twitter-follow-button {
-        clear: both;
-        float: right;
-        margin-top: 5px;
-    }
-
-    .businessCard .contactDetail {
-        margin-right: 1em;
-    }
-
-.syndicationItemContent {
-    clear: both;
+.businessCard p {
+  margin: 0;
+  margin-bottom: 1em;
 }
-
-.syndicationItemFooter {
-    clear: both;
-    padding-bottom: 40px;
+.businessCard .mugShot {
+  float: right;
+  height: 100px;
+  overflow: hidden;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-
-.syndicationItemPhoto {
-    float: left;
-    max-height: 100px;
-    margin-right: 10px;
+.businessCard .twitter-follow-button {
+  clear: both;
+  float: right;
+  margin-top: 5px;
 }
-
-.syndicationItemDate {
-    font-size: 1.2em;
-    font-weight: bold;
+.businessCard .contactDetail {
+  margin-right: 1em;
 }
-
-h1.syndicationItemTitle {
-    margin-bottom: 0;
+.profileCard {
+  padding: 20px;
+  position: relative;
 }
-
-h2.syndicationItemDate {
-    margin-top: 0;
+.profileCard .profileCardWrapper {
+  background-color: #fff;
+  padding: 20px;
+  padding-top: 50px;
+  min-height: 90px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
 }
-
-h2.syndicationItemByLine {
-    margin-bottom: 0;
+.profileCard .mugShotBorder {
+  background-color: #3498db;
+  color: #fff;
+  height: 60px;
+  padding-left: 140px;
+  padding-top: 10px;
+  clear: both;
 }
-
-.navbar {
-    min-height: 74px;
+.profileCard .profileCardLocation {
+  font-size: 14px;
+  margin-top: -40px;
+  margin-left: 120px;
 }
-
-@media screen and (min-width: 480px) {
-    .navbar-nav {
-        float: right;
-    }
+.profileCard .profileCardSocial {
+  float: right;
+  font-size: 20px;
+  line-height: 50px;
+  vertical-align: middle;
+  margin-top: -25px;
+  margin-right: 20px;
 }
-
-.navbar-inverse .navbar-nav li a {
-    color: white;
-    font-size: 1.5em;
-    vertical-align: middle;
+.profileCard .profileCardSocial a {
+  color: #fff;
 }
-
-    .navbar-inverse .navbar-nav li a:hover {
-        color: #6b1570;
-    }
-
-.navbar-inverse .navbar-toggle {
-    border-color: white;
+.profileCard .mugShot {
+  position: absolute;
+  left: 20px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 20px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
-
-    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-        background-color: #6b1570;
-    }*/

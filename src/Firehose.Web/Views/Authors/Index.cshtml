@@ -1,11 +1,12 @@
 ﻿@model Firehose.Web.Infrastructure.IAmACommunityMember[]
 
-<p>
+<div class="alert alert-info" role="alert">
     Order is random. Refresh to shuffle.
-</p>
+</div>
+
 @foreach (var member in Model)
 {
-    Html.RenderPartial("BusinessCard", member);
+    Html.RenderPartial("ProfileCard", member);
 }
 
 @section scripts{
