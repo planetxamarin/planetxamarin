@@ -8,20 +8,21 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
-    public class FeedController : Controller
+    public class PreviewController : Controller
     {
         private readonly CombinedFeedSource _combinedFeedSource;
 
-        public FeedController(CombinedFeedSource combinedFeedSource)
+        public PreviewController(CombinedFeedSource combinedFeedSource)
         {
             _combinedFeedSource = combinedFeedSource;
         }
 
-        [Route("feed")]
-        public RssFeedResult Index(int? numPosts = 50)
+
+        [Route("preview")]
+        public ViewResult Index(int? numPosts = 50)
         {
             var feed = GetFeed(numPosts);
-            return new RssFeedResult(feed);
+            return View(feed);
         }
 
         private SyndicationFeed GetFeed(int? numPosts)

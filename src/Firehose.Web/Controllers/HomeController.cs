@@ -4,7 +4,8 @@ namespace Firehose.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        [Route("")]
+        public ViewResult Index()
         {
             return View();
         }
