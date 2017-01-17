@@ -6,7 +6,7 @@ namespace Firehose.Web.Authors
 {
     public class KerryLothrop : IAmAMicrosoftMVP, IAmAXamarinMVP
     {
-        public string FirstName => "Kerry";
+        public string FirstName => "Kerry W.";
         public string LastName => "Lothrop";
         public string Title => "Principal Consultant at Zühlke";
         public string StateOrRegion => "Frankfurt, Germany";
@@ -18,6 +18,6 @@ namespace Firehose.Web.Authors
 
         DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2016, 4, 1);
         DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 5, 27);
-        public string GravatarHash => "";
+        public string GravatarHash => "250241b2800a1de895a75ce039bcfef4";
     }
 }
