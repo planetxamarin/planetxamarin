@@ -3,12 +3,7 @@ using System.Collections.Generic;
 
 namespace Firehose.Web.Infrastructure
 {
-    public interface IAmABlogger
-    {
-        IEnumerable<Uri> FeedUris { get; }
-    }
-
-    public interface IAmACommunityMember : IAmABlogger
+    public interface IAmACommunityMember
     {
         string FirstName { get; }
         string LastName { get; }
@@ -18,6 +13,7 @@ namespace Firehose.Web.Infrastructure
         Uri WebSite { get; }
         string TwitterHandle { get; }
         string GravatarHash { get; }
+        IEnumerable<Uri> FeedUris { get; }
     }
 
     public interface IWorkAtXamarinOrMicrosoft : IAmACommunityMember
