@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Firehose.Web.Authors
 {
-	public class MergeConflict : IAmACommunityMember
+    public class MergeConflict : IAmACommunityMember
     {
         public string FirstName => "Merge";
 
