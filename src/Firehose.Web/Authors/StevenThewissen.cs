@@ -22,7 +22,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://www.dvolve.org/feed/"); }
+            get { yield return new Uri("http://www.dvolve.org/feed/"); }
         }
 
         public string TwitterHandle => "devnl";
