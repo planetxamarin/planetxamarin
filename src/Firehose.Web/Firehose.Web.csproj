@@ -177,6 +177,11 @@
     <Compile Include="Authors\GregShackles.cs" />
     <Compile Include="Authors\ChrisWilliams.cs" />
     <Compile Include="Authors\GeertVanDerCruijsen.cs" />
+    <Compile Include="Authors\JamesMontemagno.cs" />
+    <Compile Include="Authors\MergeConflict.cs" />
+    <Compile Include="Authors\GoneMobile.cs" />
+    <Compile Include="Authors\TheXamarinShow.cs" />
+    <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
     <Compile Include="Authors\JohnMiller.cs" />
   </ItemGroup>
