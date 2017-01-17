@@ -1,3 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
+
 public class RobGibbens : IWorkAtXamarinOrMicrosoft
 {
     public string FirstName => "Rob";
