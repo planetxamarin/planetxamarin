@@ -15,22 +15,28 @@
 
     <div class="syndicationItem">
         <h1 class="syndicationItemTitle"><a href="@link" target="_blank">@Html.Raw(item.Title.Text)</a></h1>
-        <h2 class="syndicationItemDate">@item.PublishDate.ToString("dd MMMM yyyy")</h2>
-        @*<img class="syndicationItemPhoto" src="@authorEmail.GravatarImage()" alt="@authorName avatar" />*@
-        <h2 class="syndicationItemByLine">@authorName</h2>
-        @if (!string.IsNullOrWhiteSpace(@authorEmail))
-        {
-            <a href="mailto:@authorEmail">@authorEmail</a>
-        }
-        <br style="clear: both" />
-        <hr />
+        <h2 class="syndicationItemDate">
+            @item.PublishDate.ToString("dd MMMM yyyy")
+            @if (!string.IsNullOrWhiteSpace(authorName))
+            {
+                <text>|</text>
+                if (!string.IsNullOrWhiteSpace(authorEmail))
+                {
+                   <a href="mailto:@authorEmail">@authorName</a>
+                }
+                else
+                {
+                    @authorName
+                }
+            }
+        </h2>
+
         <div class="syndicationItemContent">
             @Html.Raw(html)
         </div>
         <div class="syndicationItemFooter">
-            <hr />
-            <p>View the original of this post at <a href="@link">@link</a></p>
-            <hr />
+            <a href="@link" class="btn btn-primary">View original post</a>
         </div>
     </div>
+    <hr />
 }
