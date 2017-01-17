@@ -4,12 +4,12 @@
 <!doctype html>
 <html>
 <head>
-    <title>PlanetXamarin</title>
+    <title>Planet Xamarin: Community Blog Feed</title>
     <meta name="viewport" content="width=640, user-scalable=no" />
     <link rel="stylesheet" href="/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="/Content/bootstrap.readify.min.css" />
+    <link rel="stylesheet" href="/Content/bootstrap.planetxamarin.css" />
     <link rel="stylesheet" href="/Content/Site.css" />
-    <link rel="alternate" type="application/rss+xml" title="PlanetXamarin" href="https://planetxamarin.com@((Url.UrlFor<FeedController>(c => c.Rss(50))))" />
+    <link rel="alternate" type="application/rss+xml" title="Planet Xamarin" href="https://www.planetxamarin.com@((Url.UrlFor<FeedController>(c => c.Rss(50))))" />
     @RenderSection("head", false)
 </head>
 <body>
@@ -28,9 +28,22 @@
         </div>
         <hr />
         <footer>
-            <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/ghuntley/planetxamarin">pull-request to our repository</a> on GitHub.</p>
+            <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/planetxamarin/planetxamarin">pull-request to our repository</a> on GitHub. Planet Xamairn is not affiliated with Xamarin Inc. or Microsoft and is a open-source project maintained <a href="https://twitter.com/GeoffreyHuntley/status/795812681680756736">by the community for the community</a>.</p>
         </footer>
     </div>
     @RenderSection("scripts", false)
+    
+    <script type="text/javascript">
+var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(101018153);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+    </script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101018153ns.gif" /></p></noscript>
 </body>
 </html>
