@@ -6,10 +6,10 @@
 <html>
 <head>
     <title>Planet Xamarin: Community Blog Feed</title>
-    <meta name="viewport" content="width=640, user-scalable=no" />
-    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="/Content/bootstrap.planetxamarin.css" />
-    <link rel="stylesheet" href="/Content/Site.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap/css/bootstrap.planetxamarin.min.css" />
+    <link rel="stylesheet" href="~/Content/css/site.css" />
     <link rel="alternate" type="application/rss+xml" title="Planet Xamarin" href="https://www.planetxamarin.com@((Url.UrlFor<FeedController>(c => c.Index(null))))" />
     @RenderSection("head", false)
 </head>
@@ -26,7 +26,7 @@
                     <div class="navbar-brand-title">PlanetXamarin</div>
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse navbar-right collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
@@ -45,8 +45,9 @@
             <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/planetxamarin/planetxamarin">pull-request to our repository</a> on GitHub. Planet Xamairn is not affiliated with Xamarin Inc. or Microsoft and is a open-source project maintained <a href="https://twitter.com/GeoffreyHuntley/status/795812681680756736">by the community for the community</a>.</p>
         </footer>
     </div>
-    <script src="~/Scripts/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="~/Content/plugins/jquery/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     @RenderSection("scripts", false)
 
     <script type="text/javascript">

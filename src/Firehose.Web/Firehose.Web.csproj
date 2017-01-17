@@ -129,39 +129,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.planetxamarin.css" />
-    <Content Include="Content\bootstrap.planetxamarin.min.css" />
-    <Content Include="Content\planetxamarin-box-mask.svg" />
-    <Content Include="Content\planetxamarin-device.png" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.min.css" />
+    <Content Include="Content\img\planetxamarin-box-mask.svg" />
+    <Content Include="Content\img\planetxamarin-device.png" />
+    <Content Include="Content\css\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="robots.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.min.js" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <None Include="Content\plugins\jquery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.min.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -225,9 +225,9 @@
     <Content Include="Views\Feed\Read.cshtml" />
     <Content Include="Views\Authors\Index.cshtml" />
     <Content Include="Views\Authors\BusinessCard.cshtml" />
-    <Content Include="Content\bootstrap.planetxamarin.less" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.less" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.min.map" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.min.map" />
     <Content Include="Views\Preview\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -238,7 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\js\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

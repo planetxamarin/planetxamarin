@@ -1,9 +1,9 @@
-﻿body {
+﻿/*
+    
+    body {
     padding-bottom: 20px;
     padding-top: 50px;
 }
-
-/* Set padding to keep content from hitting the edges */
 
 .body-content {
     padding-left: 15px;
@@ -107,4 +107,4 @@ h2.syndicationItemByLine {
 
     .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
         background-color: #6b1570;
-    }
+    }*/

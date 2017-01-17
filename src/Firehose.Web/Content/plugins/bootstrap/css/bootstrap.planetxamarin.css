@@ -1,14 +1,68 @@
-﻿@navy: #141b33; /* This is a special digital tint in our official swatch */
-@white: #fff;
-@red: #ed1c24;
-@orange: #f7941d;
-
-@xamarin-blue:#3498db;
-@xamarin-green:#77d065;
-@xamarin-purple:#b455b6;
-@xamarin-darkblue:#2c3e50;                 
-
+﻿/* This is a special digital tint in our official swatch */
 body {
+  background-color: #ebf0f1;
+  font-family: "WeblySleek UI", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  padding-top: 74px;
+}
+.navbar-inverse {
+  background-color: #2c3e50;
+  border: none;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-header {
+  border-bottom: 1px solid #233140;
+}
+.navbar-inverse .navbar-header .navbar-brand {
+  background: url(../../../img/planetxamarin-device.png) no-repeat 30px 50%;
+  background-size: 60px 60px;
+  padding: 0 0 0 100px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 74px;
+  height: 74px;
+}
+.navbar-inverse .navbar-nav ul,
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+  font-size: 20px;
+  line-height: 74px;
+  height: 74px;
+  padding-top: 0;
+}
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+  background: none;
+}
+.navbar-inverse .navbar-toggle {
+  border: none;
+  line-height: 74px;
+  height: 74px;
+  margin: 0;
+  padding: 0 40px 0 0;
+  vertical-align: middle;
+}
+.navbar-inverse .navbar-collapse.collapse ul {
+  margin: 0 -15px;
+}
+.navbar-inverse .navbar-collapse.collapse ul li {
+  background-color: #2c3e50;
+  border-bottom: 1px solid #233140;
+  padding: 0 20px;
+}
+.navbar-inverse .navbar-collapse.collapse ul li.active {
+  background-color: #3a526a;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: #2c3e50;
+}
+/*body {
     font-family: 'Open Sans',Arial,Helvetica,sans-serif;
 }
 
@@ -19,28 +73,6 @@ body {
 
 .page-header {
     margin-top: 20px;
-}
-
-.navbar-inverse {
-    background-color: @xamarin-purple;
-    .navbar-header {
-        height: 74px;
-        position: relative;
-        .navbar-brand {
-            background: url(../Content/planetxamarin-device.png) no-repeat 30px 50%;
-            background-size: 60px 60px;
-            padding-left: 100px;
-            color: @white;
-            font-size: 24px;
-            font-weight: 100;
-            position: absolute;
-            top: 50%;
-            transform: translate(0, -50%);
-        }
-    }
-    .navbar-nav>li>a {
-        color: #aaa;
-    }
 }
 
 .btn {
@@ -218,4 +250,4 @@ a {
     &-info { .contextual-panel(@xamarin-blue); }
     &-warning { .contextual-panel(@orange); }
     &-danger { .contextual-panel(@red); }
-}
+}*/
