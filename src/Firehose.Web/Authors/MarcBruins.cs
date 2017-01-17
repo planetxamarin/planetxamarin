@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
 	public class MarcBruins : IAmACommunityMember, IFilterMyBlogPosts
 	{
@@ -23,8 +23,8 @@ namespace Firehose.Web
 			get { yield return new Uri("http://www.marcbruins.nl/feed/"); }
 		}
 
-		public bool Filter(SyndicationItem item) =>
+        public bool Filter(SyndicationItem item) =>
 			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
 			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
-	}
+    }
 }
