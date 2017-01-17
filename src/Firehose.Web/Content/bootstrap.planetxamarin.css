@@ -17,7 +17,7 @@ body {
   position: relative;
 }
 .navbar-inverse .navbar-header .navbar-brand {
-  background: url(readify-device.png) no-repeat 30px 50%;
+  background: url(planetxamarin-device.png) no-repeat 30px 50%;
   background-size: 60px 60px;
   padding-left: 100px;
   color: #fff;
@@ -167,7 +167,7 @@ body {
   display: block;
   height: 100%;
   width: 40px;
-  background: url(readify-box-mask.svg) no-repeat top right;
+  background: url(planetxamarin-box-mask.svg) no-repeat top right;
   z-index: 25;
 }
 .jumbotron:first-child {
