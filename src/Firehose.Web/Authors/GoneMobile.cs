@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Firehose.Web.Authors
 {
-	public class GoneMobile : IAmACommunityMember
+    public class GoneMobile : IAmACommunityMember
     {
         public string FirstName => "Gone";
 
