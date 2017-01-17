@@ -218,6 +218,7 @@
     <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
+    <Compile Include="Authors\GiusepeCasagrande.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
