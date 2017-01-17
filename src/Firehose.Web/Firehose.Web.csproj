@@ -165,6 +165,7 @@
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\GeoffreyHuntley.cs" />
+    <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\WeeklyXamarin.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
     <Compile Include="Authors\KerryLothrop.cs" />
