@@ -73,7 +73,6 @@ h1.syndicationItemTitle {
     margin-bottom: 0;
 }
 
-
 h2.syndicationItemDate {
     margin-top: 0;
 }
@@ -86,3 +85,26 @@ h2.syndicationItemByLine {
     min-height: 74px;
 }
 
+@media screen and (min-width: 480px) {
+    .navbar-nav {
+        float: right;
+    }
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: white;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+    .navbar-inverse .navbar-nav li a:hover {
+        color: #6b1570;
+    }
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+
+    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+        background-color: #6b1570;
+    }
