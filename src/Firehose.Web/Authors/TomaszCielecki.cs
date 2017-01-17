@@ -18,6 +18,7 @@ namespace Firehose.Web.Authors
         public string Title => "Software Engineer";
         public Uri WebSite => new Uri("http://blog.ostebaronen.dk");
         public string TwitterHandle => "Cheesebaron";
+        public string GithubHandle => string.Empty;
         public DateTime FirstAwarded => new DateTime(2015, 1, 1);
         public string GravatarHash => "84dd5af4b090f251344f5df8cc85f251";
     }

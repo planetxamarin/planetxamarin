@@ -20,6 +20,7 @@ namespace Firehose.Web.Authors
         public string Title => "Software Developer";
         public Uri WebSite => new Uri("http://javiersuarezruiz.wordpress.com");
         public string TwitterHandle => "jsuarezruiz";
+        public string GithubHandle => string.Empty;
         public DateTime FirstAwarded => new DateTime(2014, 07, 01);
         public string GravatarHash => "";
 

@@ -12,6 +12,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Auckland, New Zealand";
         public string EmailAddress => "jim@jimbobbennett.io";
         public string TwitterHandle => "jimbobbennett";
+        public string GithubHandle => string.Empty;
 
         public Uri WebSite => new Uri("https://jimbobbennett.io/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.jimbobbennett.io/rss"); } }

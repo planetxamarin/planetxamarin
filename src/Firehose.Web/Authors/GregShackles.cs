@@ -13,6 +13,7 @@ namespace Firehose.Web
 		public string Title => "Principal Engineer at Olo";
 		public string EmailAddress => "greg@gregshackles.com";
 		public string TwitterHandle => "gshackles";
+        public string GithubHandle => string.Empty;
 		public string GravatarHash => "6d7b45031bf22823060849d494343a8c";
 		public string StateOrRegion => "New York, NY";
 		public Uri WebSite => new Uri("http://gregshackles.com");

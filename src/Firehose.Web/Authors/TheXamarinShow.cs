@@ -24,6 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "thexamarinshow";
+        public string GithubHandle => string.Empty;
 
         public string GravatarHash => "5db2c9a87693f1fd71f18df1e049b975";
     }

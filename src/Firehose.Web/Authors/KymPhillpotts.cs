@@ -12,6 +12,7 @@ public class KymPhillpotts : IWorkAtXamarinOrMicrosoft
     public string StateOrRegion => "Melbourne, Australia";
     public string EmailAddress => "kphillpotts@gmail.com";
     public string TwitterHandle => "kphillpotts";
+    public string GithubHandle => string.Empty;
     public string GravatarHash => "";
     public DateTime Started => new DateTime(2004, 01, 06);
 

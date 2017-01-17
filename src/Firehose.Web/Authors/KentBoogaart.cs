@@ -24,6 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "kent_boogaart";
+        public string GithubHandle => string.Empty;
 
         public DateTime FirstAwarded => new DateTime(2009, 04, 01);
         public string GravatarHash => "";

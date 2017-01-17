@@ -14,6 +14,7 @@ namespace Firehose.Web.Authors
 		public string StateOrRegion => "Antwerp, Belgium";
 		public string EmailAddress => "Glenn.Versweyveld@gmail.com";
 		public string TwitterHandle => "depechie";
+        public string GithubHandle => string.Empty;
 
 		public Uri WebSite => new Uri("http://depblog.weblogs.us");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://depblog.weblogs.us/feed/"); } }

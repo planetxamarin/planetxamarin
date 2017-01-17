@@ -18,6 +18,7 @@ namespace Firehose.Web.Authors
         public string Title => "Xamarin consultant";
         public Uri WebSite => new Uri("https://medium.com/@martijn00");
         public string TwitterHandle => "mhvdijk";
+        public string GithubHandle => "martijn00";
         public DateTime FirstAwarded => new DateTime(2016, 1, 1);
         public string GravatarHash => "22155f520ab611cf04f76762556ca3f5";
     }

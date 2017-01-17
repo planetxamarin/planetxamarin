@@ -14,6 +14,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Munich, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "stuebe2k14";
+        public string GithubHandle => string.Empty;
 
         public Uri WebSite => new Uri("http://smstuebe.de/");
 
