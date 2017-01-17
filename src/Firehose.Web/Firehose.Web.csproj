@@ -185,6 +185,7 @@
     <Compile Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
+    <Compile Include="Authors\RyanDavis.cs" />
     <Compile Include="Authors\WeeklyXamarin.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
     <Compile Include="Authors\KerryLothrop.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
+    <Compile Include="Authors\GiusepeCasagrande.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
