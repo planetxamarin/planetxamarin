@@ -129,6 +129,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\img\icons\android-icon-144x144.png" />
+    <Content Include="Content\img\icons\android-icon-192x192.png" />
+    <Content Include="Content\img\icons\android-icon-36x36.png" />
+    <Content Include="Content\img\icons\android-icon-48x48.png" />
+    <Content Include="Content\img\icons\android-icon-72x72.png" />
+    <Content Include="Content\img\icons\android-icon-96x96.png" />
+    <Content Include="Content\img\icons\apple-icon-114x114.png" />
+    <Content Include="Content\img\icons\apple-icon-120x120.png" />
+    <Content Include="Content\img\icons\apple-icon-144x144.png" />
+    <Content Include="Content\img\icons\apple-icon-152x152.png" />
+    <Content Include="Content\img\icons\apple-icon-180x180.png" />
+    <Content Include="Content\img\icons\apple-icon-57x57.png" />
+    <Content Include="Content\img\icons\apple-icon-60x60.png" />
+    <Content Include="Content\img\icons\apple-icon-72x72.png" />
+    <Content Include="Content\img\icons\apple-icon-76x76.png" />
+    <Content Include="Content\img\icons\apple-icon-precomposed.png" />
+    <Content Include="Content\img\icons\apple-icon.png" />
+    <Content Include="Content\img\icons\browserconfig.xml" />
+    <Content Include="Content\img\icons\favicon-16x16.png" />
+    <Content Include="Content\img\icons\favicon-32x32.png" />
+    <Content Include="Content\img\icons\favicon-96x96.png" />
+    <Content Include="Content\img\icons\favicon.ico" />
+    <Content Include="Content\img\icons\ms-icon-144x144.png" />
+    <Content Include="Content\img\icons\ms-icon-150x150.png" />
+    <Content Include="Content\img\icons\ms-icon-310x310.png" />
+    <Content Include="Content\img\icons\ms-icon-70x70.png" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
@@ -138,12 +167,7 @@
     <Content Include="Content\img\planetxamarin-box-mask.svg" />
     <Content Include="Content\img\planetxamarin-device.png" />
     <Content Include="Content\css\site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css.map" />
@@ -157,6 +181,8 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\css\site.less" />
+    <Content Include="Content\img\icons\manifest.json" />
     <None Include="Content\plugins\jquery\jquery-3.1.1.intellisense.js" />
     <Content Include="Content\plugins\jquery\jquery-3.1.1.js" />
     <Content Include="Content\plugins\jquery\jquery-3.1.1.min.js" />
