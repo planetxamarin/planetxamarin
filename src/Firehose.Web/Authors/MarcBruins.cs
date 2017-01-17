@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 		public string GravatarHash => "3795d2031be87499f76f6336ec5a3a45";
 
 		public string StateOrRegion => "Groningen, Netherlands";
-		public Uri WebSite => new Uri("http://marcbruins.nl");
+		public Uri WebSite => new Uri("http://www.marcbruins.nl");
 
 		public IEnumerable<Uri> FeedUris
 		{
