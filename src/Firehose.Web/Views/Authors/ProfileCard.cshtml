@@ -1,45 +1,37 @@
 ﻿@using Firehose.Web.Infrastructure
 @model IAmACommunityMember
 
-<div class="col-md-6 profileCard">
+<div class="col-md-3 profileCard">
     <img class="mugShot" src="@Model.GravatarImage()" alt="@Model.FirstName @Model.LastName" />
     <div class="mugShotBorder">
-        <strong>@Model.FirstName @Model.LastName</strong><br />
-        <span title="Planet Xamarin | @Model.Title">@Model.Title</span>
-
-        <div class="profileCardSocial">
-            <a href="https://twitter.com/@Model.TwitterHandle"><i class="fa fa-twitter"></i></a>
-            @foreach (var uri in Model.FeedUris)
-            {
-                <a class="contactDetail" href="@uri.ToString()" title="@uri.ToString()"><i class="fa fa-rss"></i></a>
-            }
-            <a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()"><i class="fa fa-globe"></i></a>
-        </div>
     </div>
-    <div class="profileCardWrapper">        
-        <div class="profileCardLocation">
-            <i class="fa fa-map-marker"></i> @Model.StateOrRegion
+    <div class="profileCardWrapper">
 
-            @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
+        <p class="name">@Model.FirstName @Model.LastName</p>
+        <p class="twitter"><a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a></p>
+
+        @Model.FirstName @Model.LastName is a @Model.Title
+
+        @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
+        {
+            string output = string.Empty;
+            var xamarinMvpModel = Model as IAmAXamarinMVP;
+            if (xamarinMvpModel != null)
             {
-                string output = string.Empty;
-                var xamarinMvpModel = Model as IAmAXamarinMVP;
-                if (xamarinMvpModel != null)
-                {
-                    output += "<br/> Xamarin MVP since: " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
-                    //if (Model is IAmAMicrosoftMVP)
-                    //{
-                    //    output += " and";
-                    //}
-                }
-                var microsoftMvpModel = Model as IAmAMicrosoftMVP;
-                if (microsoftMvpModel != null)
-                {
-                    output += "<br/><i class=\"fa fa-windows\"></i> Microsoft MVP since: " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
-                }
+                output += "and has been a Xamarin MVP since " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
+            }
+            var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+            if (microsoftMvpModel != null)
+            {
+                output += " and has been a Microsoft MVP since " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
+            }
+
+            output += ".";
 
                 <text>@Html.Raw(output)</text>
-            }
-        </div>
+        }
+
+        <p class="location"><i class="fa fa-map-marker"></i> @Model.StateOrRegion</p>
+        <p class="website"><a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a></p>
     </div>
 </div>
