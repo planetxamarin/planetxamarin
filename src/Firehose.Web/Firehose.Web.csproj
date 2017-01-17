@@ -156,6 +156,7 @@
     <Compile Include="Authors\RobinManuelThiel.cs" />
     <Compile Include="Authors\RobGibbens.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
+	<Compile Include="Authors\JonDouglas.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\WhoAreWeController.cs" />
