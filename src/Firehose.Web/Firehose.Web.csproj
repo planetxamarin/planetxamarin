@@ -151,13 +151,14 @@
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\GeoffreyHuntley.cs" />
+    <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\WeeklyXamarin.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
     <Compile Include="Authors\KerryLothrop.cs" />
     <Compile Include="Authors\RobinManuelThiel.cs" />
     <Compile Include="Authors\RobGibbens.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
-	<Compile Include="Authors\JonDouglas.cs" />
+    <Compile Include="Authors\JonDouglas.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\WhoAreWeController.cs" />
