@@ -1,4 +1,4 @@
-public class RobGibbens : IAmACommunityMember
+public class RobGibbens : IWorkAtXamarinOrMicrosoft
 {
     public string FirstName => "Rob";
     public string LastName => "Gibbens";
