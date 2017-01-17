@@ -17,12 +17,12 @@ public class BruceWayne : IAmACommunityMember
     public string LastName => "Wayne";
     public string Title => "The Dark Knight";
     public string StateOrRegion => "Gotham";
-    public string EmailAddress => "rescueme@batman.com";
+    public string EmailAddress => "rescueme@planetxamarin.com";
     public string TwitterHandle => "batman";
     public string GravatarHash => "42abc1337def";
 
-    public Uri WebSite => new Uri("https://iamthebatman.com/");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://iamthebatman.com/rss"); } }
+    public Uri WebSite => new Uri("https://planetxamarin.com/");
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
 }
 ```
 
