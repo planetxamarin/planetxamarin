@@ -20,7 +20,7 @@ namespace Firehose.Web.Infrastructure
         string GravatarHash { get; }
     }
 
-    public interface IWorkAtXamarin : IAmACommunityMember
+    public interface IWorkAtXamarinOrMicrosoft : IAmACommunityMember
     {
         DateTime Started { get; }
     }

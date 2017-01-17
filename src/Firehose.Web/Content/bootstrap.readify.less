@@ -1,11 +1,12 @@
 ﻿@navy: #141b33; /* This is a special digital tint in our official swatch */
 @white: #fff;
-@light-green: #ccff00;
-@cyan: #00aeef;
-@purple: #9b47c2;
-@green: #00a651;
 @red: #ed1c24;
 @orange: #f7941d;
+
+@xamarin-blue:#3498db;
+@xamarin-green:#77d065;
+@xamarin-purple:#b455b6;
+@xamarin-darkblue:#2c3e50;                 
 
 body {
     font-family: 'Open Sans',Arial,Helvetica,sans-serif;
@@ -13,6 +14,7 @@ body {
 
 .body-content {
     padding-top: 20px;
+    margin-top: 20px;
 }
 
 .page-header {
@@ -20,14 +22,21 @@ body {
 }
 
 .navbar-inverse {
-    background-color: @navy;
-    .navbar-brand {
-        background: url(../Content/readify-device.png) no-repeat 30px 0%;
-        background-size: 50px 50px;
-        padding-left: 100px;
-        color: @white;
-        font-size: 24px;
-        font-weight: 100;
+    background-color: @xamarin-purple;
+    .navbar-header {
+        height: 74px;
+        position: relative;
+        .navbar-brand {
+            background: url(../Content/readify-device.png) no-repeat 30px 50%;
+            background-size: 60px 60px;
+            padding-left: 100px;
+            color: @white;
+            font-size: 24px;
+            font-weight: 100;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
     }
     .navbar-nav>li>a {
         color: #aaa;
@@ -45,15 +54,15 @@ body {
         border: solid 1px @color;
     }
 }
-.btn-primary { .context-button(@purple); }
-.btn-success { .context-button(@green); }
-.btn-info    { .context-button(@cyan); }
+.btn-primary { .context-button(@xamarin-darkblue); }
+.btn-success { .context-button(@xamarin-green); }
+.btn-info    { .context-button(@xamarin-blue); }
 .btn-warning { .context-button(@orange); }
 .btn-danger  { .context-button(@red); }
 .btn-link {
-    color: @cyan;
+    color: @xamarin-blue;
     &:hover, &:focus {
-        color: @cyan;
+        color: @xamarin-blue;
         text-decoration: underline;
     }
 }
@@ -61,7 +70,7 @@ body {
 .form-control {
     border-radius: 0;
     &:focus {
-        border-color: @cyan;
+        border-color: @xamarin-blue;
     }
 }
 .input-group-addon {
@@ -87,7 +96,7 @@ body {
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px @color;
     }
 }
-.has-success { .validation-scenario(@green); }
+.has-success { .validation-scenario(@xamarin-green); }
 .has-warning { .validation-scenario(@orange); }
 .has-error   { .validation-scenario(@red); }
 
@@ -111,17 +120,17 @@ body {
 }
 
 a {
-    color: @cyan;
+    color: @xamarin-blue;
     &:hover, &:focus {
-        color: @cyan;
+        color: @xamarin-purple;
     }
 }
 
 .table {
     &>thead, &>tbody, &>tfoot {
         &>tr, &>tr>td, &>tr>th {
-            &.success { background-color: tint(@green, 90%); }
-            &.info    { background-color: tint(@cyan, 90%); }
+            &.success { background-color: tint(@xamarin-green, 90%); }
+            &.info    { background-color: tint(@xamarin-blue, 90%); }
             &.warning { background-color: tint(@orange, 90%); }
             &.danger  { background-color: tint(@red, 90%); }
         }
@@ -133,9 +142,9 @@ a {
 }
 
 .bg {
-    &-primary { background-color: @purple; }
-    &-success { background-color: tint(@green, 90%); }
-    &-info    { background-color: tint(@cyan, 90%); }
+    &-primary { background-color: @xamarin-purple; }
+    &-success { background-color: tint(@xamarin-green, 90%); }
+    &-info    { background-color: tint(@xamarin-blue, 90%); }
     &-warning { background-color: tint(@orange, 90%); }
     &-danger  { background-color: tint(@red, 90%); }
 }
@@ -149,8 +158,8 @@ a {
 }
 .alert {
     border-radius: 0;
-    &-success { .contextual-alert(@green); }
-    &-info    { .contextual-alert(@cyan); }
+    &-success { .contextual-alert(@xamarin-green); }
+    &-info    { .contextual-alert(@xamarin-blue); }
     &-warning { .contextual-alert(@orange); }
     &-danger  { .contextual-alert(@red); }
 }
@@ -159,9 +168,9 @@ a {
     border-radius: 0;
 }
 .progress-bar {
-    background-color: @purple;
-    &-success { background-color: @green; }
-    &-info    { background-color: @cyan; }
+    background-color: @xamarin-purple;
+    &-success { background-color: @xamarin-green; }
+    &-info    { background-color: @xamarin-blue; }
     &-warning { background-color: @orange; }
     &-danger  { background-color: @red; }
 }
@@ -180,8 +189,8 @@ a {
 }
 .list-group-item {
     &:first-child, &:last-child { border-radius: 0; }
-    &-success { .contextual-list-group-item(@green); }
-    &-info    { .contextual-list-group-item(@cyan); }
+    &-success { .contextual-list-group-item(@xamarin-green); }
+    &-info    { .contextual-list-group-item(@xamarin-blue); }
     &-warning { .contextual-list-group-item(@orange); }
     &-danger  { .contextual-list-group-item(@red); }
 }
@@ -199,14 +208,14 @@ a {
 }
 .panel {
     &-primary {
-        border-color: @purple;
+        border-color: @xamarin-purple;
         & > .panel-heading {
-            background-color: @purple;
-            border-color: @purple;
+            background-color: @xamarin-purple;
+            border-color: @xamarin-purple;
         }
     }
-    &-success { .contextual-panel(@green); }
-    &-info { .contextual-panel(@cyan); }
+    &-success { .contextual-panel(@xamarin-green); }
+    &-info { .contextual-panel(@xamarin-blue); }
     &-warning { .contextual-panel(@orange); }
     &-danger { .contextual-panel(@red); }
 }

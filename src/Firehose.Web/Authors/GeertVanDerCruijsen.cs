@@ -14,6 +14,7 @@ namespace Firehose.Web
 		public string EmailAddress => "";
 		public string TwitterHandle => "geertvdc";
 		public string GravatarHash => "ec02820495ff6d50e58dd027aa2b0ae3";
+
 		public string StateOrRegion => "Uden, Netherlands";
 		public Uri WebSite => new Uri("https://mobilefirstcloudfirst.net");
 
