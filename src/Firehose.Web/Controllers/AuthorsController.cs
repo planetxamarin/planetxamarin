@@ -6,17 +6,18 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
-    public class WhoAreWeController : Controller
+    public class AuthorsController : Controller
     {
         private readonly IAmACommunityMember[] _members;
 
-        public WhoAreWeController(IEnumerable<IAmACommunityMember> members)
+        public AuthorsController(IEnumerable<IAmACommunityMember> members)
         {
             var random = new Random();
             _members = members.OrderBy(r => random.Next()).ToArray();
         }
 
-        public ActionResult Members()
+        [Route("authors")]
+        public ViewResult Index()
         {
             var viewModel = _members;
             return View(viewModel);
