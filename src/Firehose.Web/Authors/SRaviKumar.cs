@@ -1,4 +1,4 @@
-public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
+public class SRaviKumar : IAmACommunityMember, IFilterMyBlogPosts
 {
     public string FirstName => "S Ravi";
     public string LastName => "Kumar";
