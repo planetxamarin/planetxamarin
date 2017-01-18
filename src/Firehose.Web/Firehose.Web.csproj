@@ -288,6 +288,7 @@
     <Compile Include="Authors\ChrisHamons.cs" />
     <Compile Include="Authors\GiusepeCasagrande.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
+    <Compile Include="Authors\NunoHorta.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
   </ItemGroup>
   <ItemGroup>
