@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Jim";
         public string LastName => "Bennett";
-        public string Title => "Mobile developer at EROAD";
+        public string Title => "published author and software engineer at EROAD";
         public string StateOrRegion => "Auckland, New Zealand";
         public string EmailAddress => "jim@jimbobbennett.io";
         public string TwitterHandle => "jimbobbennett";
