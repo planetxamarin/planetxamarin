@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
-using BlogMonster.Web;
 using Firehose.Web.Infrastructure;
+using Firehose.Web.ViewModels;
 
 namespace Firehose.Web.Controllers
 {
@@ -17,12 +16,15 @@ namespace Firehose.Web.Controllers
             _combinedFeedSource = combinedFeedSource;
         }
 
-
         [Route("preview")]
         public ViewResult Index(int? numPosts = 50)
         {
             var feed = GetFeed(numPosts);
-            return View(feed);
+            return View(new PreviewViewModel
+            {
+                Feed = feed,
+                Bloggers = _combinedFeedSource.Bloggers
+            });
         }
 
         private SyndicationFeed GetFeed(int? numPosts)
