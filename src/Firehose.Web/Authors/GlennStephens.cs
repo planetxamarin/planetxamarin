@@ -14,7 +14,7 @@ namespace Firehose.Web
 
 		public string EmailAddress => "";
 
-		public string Title => "Senior Trainer @ Xamarin University";
+		public string Title => "senior trainer at Xamarin University";
 
 		public Uri WebSite => new Uri("http://www.glennstephens.com.au/tag/xamarin/");
 
