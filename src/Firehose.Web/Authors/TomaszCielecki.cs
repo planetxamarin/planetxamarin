@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Cielecki";
         public string StateOrRegion => "Copenhagen, Denmark";
         public string EmailAddress => "tomasz@ostebaronen.dk";
-        public string ShortBioOrTagLine => "software engineer";
+        public string ShortBioOrTagLine => "loves long walks on the beach, yelling at the screen. More importantly write code.";
         public Uri WebSite => new Uri("http://blog.ostebaronen.dk");
         public string TwitterHandle => "Cheesebaron";
         public DateTime FirstAwarded => new DateTime(2015, 1, 1);
