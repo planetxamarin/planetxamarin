@@ -316,6 +316,9 @@
     <Content Include="Content\plugins\jquery\jquery-3.1.1.min.map" />
     <Content Include="Views\Preview\Index.cshtml" />
     <Content Include="Views\Authors\ProfileCard.cshtml" />
+    <Content Include="Views\Authors\Map.cshtml" />
+    <Content Include="Views\Shared\_ContainerLayout.cshtml" />
+    <Content Include="Views\Authors\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

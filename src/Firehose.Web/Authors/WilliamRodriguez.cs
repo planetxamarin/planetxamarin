@@ -17,6 +17,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "ping@williamsrz.com.br";
         public string GravatarHash => "c8f3160f0a24c13821d14b8848d62cea";
+        public GeoPosition Position => GeoPosition.Empty;
         public Uri WebSite => new Uri("http://www.williamsrz.com.br");
 
         public IEnumerable<Uri> FeedUris

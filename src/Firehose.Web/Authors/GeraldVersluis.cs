@@ -6,7 +6,6 @@ namespace Firehose.Web.Authors
 {
     public class GeraldVersluis : IAmAMicrosoftMVP
     {
-        public DateTime FirstAwarded => new DateTime(2016, 10, 1);
         public string FirstName => "Gerald";
 
         public string LastName => "Versluis";
@@ -28,5 +27,6 @@ namespace Firehose.Web.Authors
 
         public string GravatarHash => "f9d4d4211d7956ce3e07e83df0889731";
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }

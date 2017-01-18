@@ -23,5 +23,6 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "Cheesebaron";
         public string GitHubHandle => string.Empty;
         public string GravatarHash => "f780d57997526876b0625e517c1e0884";
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }

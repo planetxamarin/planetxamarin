@@ -22,6 +22,7 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "einRobby";
         public Uri WebSite => new Uri("http://pumpingco.de/");
 
+
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("http://pumpingco.de/feed/"); }
@@ -30,5 +31,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "1b8fabaa8d66250a7049bdb9ecf44397";
 
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => new GeoPosition(48.177622, 11.5912643);
     }
 }

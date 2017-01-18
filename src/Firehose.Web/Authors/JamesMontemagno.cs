@@ -6,7 +6,6 @@ namespace Firehose.Web.Authors
 {
     public class JamesMontemagno : IWorkAtXamarinOrMicrosoft
     {
-        public DateTime Started => new DateTime(2013, 10, 11);
         public string FirstName => "James";
 
         public string LastName => "Montemagno";
@@ -28,6 +27,8 @@ namespace Firehose.Web.Authors
 
 
         public string GravatarHash => "5df4d86308e585c879c19e5f909d8bfe";
+
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }
