@@ -296,7 +296,11 @@
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\NunoHorta.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
+
     <Compile Include="Authors\StefanDeVogelaere.cs" />
+
+    <Compile Include="ViewModels\PreviewViewModel.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
