@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => "Weekly Developer Show for Xamarin Developers";
+        public string ShortBioOrTagLine => "is a Weekly Developer Show for Xamarin Developers";
 
         public Uri WebSite => new Uri("http://xamarinshow.com");
 
