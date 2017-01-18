@@ -14,7 +14,7 @@ namespace Firehose.Web
 
 		public string EmailAddress => "";
 
-		public string Title => "Senior Support Engineer";
+		public string ShortBioOrTagLine => "Senior Support Engineer";
 
 		public Uri WebSite => new Uri("http://jmillerdev.net");
 

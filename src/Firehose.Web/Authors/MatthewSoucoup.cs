@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
 		public string LastName => "Soucoup";
 		public string StateOrRegion => "Madison, WI";
 		public string EmailAddress => "msoucoup@codemilltech.com";
-		public string Title => "Principal";
+		public string ShortBioOrTagLine => "Principal";
 		public Uri WebSite => new Uri("https://codemilltech.com");
 		public string TwitterHandle => "codemillmatt";
 		public DateTime FirstAwarded => new DateTime(2016, 1, 1);

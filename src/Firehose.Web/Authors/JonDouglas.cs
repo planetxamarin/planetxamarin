@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Jon";
         public string LastName => "Douglas";
-        public string Title => "Senior Support Engineer";
+        public string ShortBioOrTagLine => "Senior Support Engineer";
         public string StateOrRegion => "Utah";
         public string EmailAddress => "";
         public string TwitterHandle => "_jondouglas";

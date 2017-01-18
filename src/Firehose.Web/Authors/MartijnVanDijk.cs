@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Van Dijk";
         public string StateOrRegion => "Amsterdam, Netherlands";
         public string EmailAddress => "mhvdijk@gmail.com";
-        public string Title => "Xamarin consultant";
+        public string ShortBioOrTagLine => "Xamarin consultant";
         public Uri WebSite => new Uri("https://medium.com/@martijn00");
         public string TwitterHandle => "mhvdijk";
         public DateTime FirstAwarded => new DateTime(2016, 1, 1);

@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
 	{
 		public string FirstName => "Glenn";
 		public string LastName => "Versweyveld";
-		public string Title => "Xamarin developer at Bank J. Van Breda & Co";
+		public string ShortBioOrTagLine => "Xamarin developer at Bank J. Van Breda & Co";
 		public string StateOrRegion => "Antwerp, Belgium";
 		public string EmailAddress => "Glenn.Versweyveld@gmail.com";
 		public string TwitterHandle => "depechie";

@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "hello@xamarin.com";
 
-        public string Title => "Official Blog";
+        public string ShortBioOrTagLine => "Official Blog";
 
         public Uri WebSite => new Uri("http://blog.xamarin.com");
 

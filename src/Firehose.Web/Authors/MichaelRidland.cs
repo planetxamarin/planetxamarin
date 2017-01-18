@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "michael@xam-consulting.com";
 
-        public string Title => "director of an Xamarin consultancy";
+        public string ShortBioOrTagLine => "director of an Xamarin consultancy";
 
         public Uri WebSite => new Uri("http://www.michaelridland.com");
 

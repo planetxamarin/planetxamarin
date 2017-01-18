@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Dan";
         public string LastName => "Rigby";
-        public string Title => "Xamarin Technical Solutions Professional";
+        public string ShortBioOrTagLine => "Xamarin Technical Solutions Professional";
         public DateTime Started => new DateTime(2015, 12, 1);
         public string StateOrRegion => "North Carolina";
         public string EmailAddress => "dan.rigby@xamarin.com";
