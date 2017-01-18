@@ -15,7 +15,7 @@
     <AssemblyName>Firehose.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort/>
+    <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -203,6 +203,7 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
+    <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
     <Compile Include="Authors\WeeklyXamarin.cs" />
@@ -220,6 +222,7 @@
     <Compile Include="Authors\RobGibbens.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
+    <Compile Include="Authors\WilliamRodriguez.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
