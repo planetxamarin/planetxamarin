@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Geoffrey";
         public string LastName => "Huntley";
-        public string Title => "Likes both promite and vegemite.";
+        public string Title => "aussie who likes both promite and vegemite";
         public string StateOrRegion => "Sydney, Australia";
         public string EmailAddress => "ghuntley@ghuntley.com";
         public string TwitterHandle => "geoffreyhuntley";
