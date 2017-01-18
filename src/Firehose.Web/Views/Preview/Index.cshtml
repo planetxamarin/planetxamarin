@@ -1,5 +1,5 @@
 ﻿@using BlogMonster.Extensions
-@using Firehose.Web.Infrastructure
+@using Humanizer
 @using ThirdDrawer.Extensions.ClassExtensionMethods
 @model System.ServiceModel.Syndication.SyndicationFeed
 
@@ -16,13 +16,13 @@
     <div class="syndicationItem">
         <h1 class="syndicationItemTitle"><a href="@link" target="_blank">@Html.Raw(item.Title.Text)</a></h1>
         <h2 class="syndicationItemDate">
-            @item.PublishDate.ToString("dd MMMM yyyy")
+            @item.PublishDate.Humanize()
             @if (!string.IsNullOrWhiteSpace(authorName))
             {
                 <text>|</text>
                 if (!string.IsNullOrWhiteSpace(authorEmail))
                 {
-                   <a href="mailto:@authorEmail">@authorName</a>
+                    <a href="mailto:@authorEmail">@authorName</a>
                 }
                 else
                 {
