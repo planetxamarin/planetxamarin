@@ -140,6 +140,32 @@
     <Content Include="Content\planetxamarin-box-mask.svg" />
     <Content Include="Content\planetxamarin-device.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="FavIcon\android-icon-144x144.png" />
+    <Content Include="FavIcon\android-icon-192x192.png" />
+    <Content Include="FavIcon\android-icon-36x36.png" />
+    <Content Include="FavIcon\android-icon-48x48.png" />
+    <Content Include="FavIcon\android-icon-72x72.png" />
+    <Content Include="FavIcon\android-icon-96x96.png" />
+    <Content Include="FavIcon\apple-icon-114x114.png" />
+    <Content Include="FavIcon\apple-icon-120x120.png" />
+    <Content Include="FavIcon\apple-icon-144x144.png" />
+    <Content Include="FavIcon\apple-icon-152x152.png" />
+    <Content Include="FavIcon\apple-icon-180x180.png" />
+    <Content Include="FavIcon\apple-icon-57x57.png" />
+    <Content Include="FavIcon\apple-icon-60x60.png" />
+    <Content Include="FavIcon\apple-icon-72x72.png" />
+    <Content Include="FavIcon\apple-icon-76x76.png" />
+    <Content Include="FavIcon\apple-icon-precomposed.png" />
+    <Content Include="FavIcon\apple-icon.png" />
+    <Content Include="FavIcon\browserconfig.xml" />
+    <Content Include="FavIcon\favicon-16x16.png" />
+    <Content Include="FavIcon\favicon-32x32.png" />
+    <Content Include="FavIcon\favicon-96x96.png" />
+    <Content Include="FavIcon\favicon.ico" />
+    <Content Include="FavIcon\ms-icon-144x144.png" />
+    <Content Include="FavIcon\ms-icon-150x150.png" />
+    <Content Include="FavIcon\ms-icon-310x310.png" />
+    <Content Include="FavIcon\ms-icon-70x70.png" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -160,6 +186,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="FavIcon\manifest.json" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
