@@ -97,14 +97,28 @@ h2.syndicationItemByLine {
     vertical-align: middle;
 }
 
-    .navbar-inverse .navbar-nav li a:hover {
-        color: #6b1570;
-    }
+.navbar-inverse .navbar-nav li a:hover {
+    color: #6b1570;
+}
 
 .navbar-inverse .navbar-toggle {
     border-color: white;
 }
 
-    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-        background-color: #6b1570;
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #6b1570;
+}
+
+@media screen and (min-width: 480px) {
+    #rssText  {
+        display: none;
     }
+
+    #facebookText  {
+        display: none;
+    }
+
+    #twitterText  {
+        display: none;
+    }
+}
