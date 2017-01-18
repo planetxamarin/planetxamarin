@@ -19,5 +19,6 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "marcofolio";
         public Uri WebSite => new Uri("http://www.marcofolio.net/");
         public string GravatarHash => "";
+        public string GitHubHandle => string.Empty;
     }
 }

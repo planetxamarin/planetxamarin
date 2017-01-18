@@ -6,6 +6,7 @@ namespace Firehose.Web.Authors
 {
     public class GeoffreyHuntley : IAmAMicrosoftMVP
     {
+        public DateTime FirstAwarded => new DateTime(2017, 1, 1);
         public string FirstName => "Geoffrey";
         public string LastName => "Huntley";
         public string ShortBioOrTagLine => "software engineer who likes both promite and vegemite";
@@ -14,10 +15,13 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "geoffreyhuntley";
 
         public Uri WebSite => new Uri("https://ghuntley.com/");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://ghuntley.com/atom.xml"); } }
 
-        public DateTime FirstAwarded => new DateTime(2017, 1, 1);
+        public IEnumerable<Uri> FeedUris
+        {
+            get { yield return new Uri("https://ghuntley.com/atom.xml"); }
+        }
 
         public string GravatarHash => "";
+        public string GitHubHandle => string.Empty;
     }
 }

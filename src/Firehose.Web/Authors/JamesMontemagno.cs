@@ -1,11 +1,12 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class JamesMontemagno : IWorkAtXamarinOrMicrosoft
+    public class JamesMontemagno : IWorkAtXamarinOrMicrosoft
     {
+        public DateTime Started => new DateTime(2013, 10, 11);
         public string FirstName => "James";
 
         public string LastName => "Montemagno";
@@ -14,7 +15,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => "Principal Program Manager";
+        public string ShortBioOrTagLine => string.Empty;
 
         public Uri WebSite => new Uri("http://motzcod.es");
 
@@ -27,8 +28,6 @@ namespace Firehose.Web.Authors
 
 
         public string GravatarHash => "5df4d86308e585c879c19e5f909d8bfe";
-
-		public DateTime Started => new DateTime(2013, 10, 11); 
-			
-	}
+        public string GitHubHandle => string.Empty;
+    }
 }

@@ -10,7 +10,7 @@ namespace Firehose.Web
     {
         public string FirstName => "Chris";
         public string LastName => "Williams";
-        public string ShortBioOrTagLine => "Xamarin Developer";
+        public string ShortBioOrTagLine => string.Empty;
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "crswlls";
         public string GravatarHash => "21e379df7ba9c57f167188e2fcb7dd75";
@@ -21,6 +21,8 @@ namespace Firehose.Web
         {
             get { yield return new Uri("http://crswlls.wordpress.com/rss/"); }
         }
+
+        public string GitHubHandle => string.Empty;
 
         public bool Filter(SyndicationItem item) =>
             item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
