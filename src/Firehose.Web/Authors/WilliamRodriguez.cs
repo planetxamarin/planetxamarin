@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "William";
         public string LastName => "Rodriguez";
-        public string Title => "C# mobile developer, community enthusiast, Microsoft & Xamarin MVP.";
+        public string Title => "C# mobile developer and community enthusiast";
         public string StateOrRegion => "Curitiba, Brasil";
         public string TwitterHandle => "williamsrodz";
         public string EmailAddress => "ping@williamsrz.com.br";

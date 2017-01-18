@@ -5,29 +5,31 @@
 <html>
 <head>
     <title>Planet Xamarin: Community Blog Feed</title>
-    <meta name="viewport" content="width=640, user-scalable=no" />
-    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="/Content/font-awesome.min.css">
-    <link rel="stylesheet" href="/Content/bootstrap.planetxamarin.css" />
-    <link rel="stylesheet" href="/Content/Site.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap/css/bootstrap.planetxamarin.min.css" />
+    <link rel="stylesheet" href="~/Content/css/site.css" />
+    <link rel="stylesheet" href="~/Content/plugins/animate.css" />
     <link rel="alternate" type="application/rss+xml" title="Planet Xamarin" href="https://www.planetxamarin.com@((Url.UrlFor<FeedController>(c => c.Index(null))))" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/FavIcon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/FavIcon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/FavIcon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/FavIcon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/FavIcon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/FavIcon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/FavIcon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/FavIcon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/FavIcon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/FavIcon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/FavIcon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/FavIcon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/FavIcon/favicon-16x16.png">
-    <link rel="manifest" href="/FavIcon/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="~/content/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/content/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/content/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/content/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/content/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/content/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/content/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/content/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/content/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/content/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/content/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/content/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/content/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="~/content/img/icons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/FavIcon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="~/content/img/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="~/Content/plugins/fontawesome/css/font-awesome.min.css">
     @RenderSection("head", false)
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -53,7 +55,7 @@
                     <div class="navbar-brand-title">Planet Xamarin</div>
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse navbar-right collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
@@ -74,8 +76,9 @@
             <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/planetxamarin/planetxamarin">pull-request to our repository</a> on GitHub. Planet Xamarin is not affiliated with Xamarin Inc. or Microsoft and is a open-source project maintained <a href="https://twitter.com/GeoffreyHuntley/status/795812681680756736">by the community for the community</a>.</p>
         </footer>
     </div>
-    <script src="~/Scripts/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="~/Content/plugins/jquery/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     @RenderSection("scripts", false)
 
     <script type="text/javascript">

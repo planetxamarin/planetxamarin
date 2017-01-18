@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Suarez";
         public string StateOrRegion => "Seville, Spain";
         public string EmailAddress => "javiersuarezruiz@hotmail.com";
-        public string Title => "Software Developer";
+        public string Title => "software engineer";
         public Uri WebSite => new Uri("http://javiersuarezruiz.wordpress.com");
         public string TwitterHandle => "jsuarezruiz";
         public DateTime FirstAwarded => new DateTime(2014, 07, 01);

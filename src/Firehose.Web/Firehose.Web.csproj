@@ -129,74 +129,104 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.planetxamarin.css" />
-    <Content Include="Content\bootstrap.planetxamarin.min.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\planetxamarin-box-mask.svg" />
-    <Content Include="Content\planetxamarin-device.png" />
-    <Content Include="Content\Site.css" />
-    <Content Include="FavIcon\android-icon-144x144.png" />
-    <Content Include="FavIcon\android-icon-192x192.png" />
-    <Content Include="FavIcon\android-icon-36x36.png" />
-    <Content Include="FavIcon\android-icon-48x48.png" />
-    <Content Include="FavIcon\android-icon-72x72.png" />
-    <Content Include="FavIcon\android-icon-96x96.png" />
-    <Content Include="FavIcon\apple-icon-114x114.png" />
-    <Content Include="FavIcon\apple-icon-120x120.png" />
-    <Content Include="FavIcon\apple-icon-144x144.png" />
-    <Content Include="FavIcon\apple-icon-152x152.png" />
-    <Content Include="FavIcon\apple-icon-180x180.png" />
-    <Content Include="FavIcon\apple-icon-57x57.png" />
-    <Content Include="FavIcon\apple-icon-60x60.png" />
-    <Content Include="FavIcon\apple-icon-72x72.png" />
-    <Content Include="FavIcon\apple-icon-76x76.png" />
-    <Content Include="FavIcon\apple-icon-precomposed.png" />
-    <Content Include="FavIcon\apple-icon.png" />
-    <Content Include="FavIcon\browserconfig.xml" />
-    <Content Include="FavIcon\favicon-16x16.png" />
-    <Content Include="FavIcon\favicon-32x32.png" />
-    <Content Include="FavIcon\favicon-96x96.png" />
-    <Content Include="FavIcon\favicon.ico" />
-    <Content Include="FavIcon\ms-icon-144x144.png" />
-    <Content Include="FavIcon\ms-icon-150x150.png" />
-    <Content Include="FavIcon\ms-icon-310x310.png" />
-    <Content Include="FavIcon\ms-icon-70x70.png" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\css\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\img\card-background.png" />
+    <Content Include="Content\img\icons\android-icon-144x144.png" />
+    <Content Include="Content\img\icons\android-icon-192x192.png" />
+    <Content Include="Content\img\icons\android-icon-36x36.png" />
+    <Content Include="Content\img\icons\android-icon-48x48.png" />
+    <Content Include="Content\img\icons\android-icon-72x72.png" />
+    <Content Include="Content\img\icons\android-icon-96x96.png" />
+    <Content Include="Content\img\icons\apple-icon-114x114.png" />
+    <Content Include="Content\img\icons\apple-icon-120x120.png" />
+    <Content Include="Content\img\icons\apple-icon-144x144.png" />
+    <Content Include="Content\img\icons\apple-icon-152x152.png" />
+    <Content Include="Content\img\icons\apple-icon-180x180.png" />
+    <Content Include="Content\img\icons\apple-icon-57x57.png" />
+    <Content Include="Content\img\icons\apple-icon-60x60.png" />
+    <Content Include="Content\img\icons\apple-icon-72x72.png" />
+    <Content Include="Content\img\icons\apple-icon-76x76.png" />
+    <Content Include="Content\img\icons\apple-icon-precomposed.png" />
+    <Content Include="Content\img\icons\apple-icon.png" />
+    <Content Include="Content\img\icons\browserconfig.xml" />
+    <Content Include="Content\img\icons\favicon-16x16.png" />
+    <Content Include="Content\img\icons\favicon-32x32.png" />
+    <Content Include="Content\img\icons\favicon-96x96.png" />
+    <Content Include="Content\img\icons\favicon.ico" />
+    <Content Include="Content\img\icons\ms-icon-144x144.png" />
+    <Content Include="Content\img\icons\ms-icon-150x150.png" />
+    <Content Include="Content\img\icons\ms-icon-310x310.png" />
+    <Content Include="Content\img\icons\ms-icon-70x70.png" />
+    <Content Include="Content\plugins\animate.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.min.css" />
+    <Content Include="Content\img\planetxamarin-box-mask.svg" />
+    <Content Include="Content\img\planetxamarin-device.png" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\plugins\fontawesome\css\font-awesome.css" />
+    <Content Include="Content\plugins\fontawesome\css\font-awesome.min.css" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="robots.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.min.js" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="FavIcon\manifest.json" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Content\css\site.less" />
+    <Content Include="Content\img\icons\manifest.json" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\plugins\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\plugins\fontawesome\less\animated.less" />
+    <Content Include="Content\plugins\fontawesome\less\bordered-pulled.less" />
+    <Content Include="Content\plugins\fontawesome\less\core.less" />
+    <Content Include="Content\plugins\fontawesome\less\fixed-width.less" />
+    <Content Include="Content\plugins\fontawesome\less\font-awesome.less" />
+    <Content Include="Content\plugins\fontawesome\less\icons.less" />
+    <Content Include="Content\plugins\fontawesome\less\larger.less" />
+    <Content Include="Content\plugins\fontawesome\less\list.less" />
+    <Content Include="Content\plugins\fontawesome\less\mixins.less" />
+    <Content Include="Content\plugins\fontawesome\less\path.less" />
+    <Content Include="Content\plugins\fontawesome\less\rotated-flipped.less" />
+    <Content Include="Content\plugins\fontawesome\less\screen-reader.less" />
+    <Content Include="Content\plugins\fontawesome\less\stacked.less" />
+    <Content Include="Content\plugins\fontawesome\less\variables.less" />
+    <Content Include="Content\plugins\fontawesome\scss\font-awesome.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_animated.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_core.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_fixed-width.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_icons.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_larger.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_list.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_mixins.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_path.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_screen-reader.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_stacked.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_variables.scss" />
+    <Content Include="Content\css\variables.less" />
+    <None Include="Content\plugins\jquery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.min.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +289,7 @@
     <Compile Include="Authors\GiusepeCasagrande.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\NunoHorta.cs" />
+    <Compile Include="Authors\MatthewSoucoup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -269,10 +300,11 @@
     <Content Include="Views\Feed\Read.cshtml" />
     <Content Include="Views\Authors\Index.cshtml" />
     <Content Include="Views\Authors\BusinessCard.cshtml" />
-    <Content Include="Content\bootstrap.planetxamarin.less" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.less" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.min.map" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.min.map" />
     <Content Include="Views\Preview\Index.cshtml" />
+    <Content Include="Views\Authors\ProfileCard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -282,7 +314,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
