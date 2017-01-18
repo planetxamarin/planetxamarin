@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
 		public string FirstName => "Chris";
 		public string LastName => "Hamons";
-		public string Title => "Xamarin.Mac Lead";
+		public string ShortBioOrTagLine => "Xamarin.Mac Lead";
 		public DateTime Started => new DateTime (2014, 1, 1);
 
 		public string StateOrRegion => "Austin, Texas";

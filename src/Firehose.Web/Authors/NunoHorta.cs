@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
 		public string EmailAddress => "nunobhorta@gmail.com";
 
-		public string Title => "Xamarin Developer";
+		public string ShortBioOrTagLine => "Xamarin Developer";
 
 		public Uri WebSite => new Uri("https://nunobhorta.com");
 

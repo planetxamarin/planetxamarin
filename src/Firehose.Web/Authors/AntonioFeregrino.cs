@@ -10,7 +10,7 @@
 		public string FirstName => "Antonio";
 		public string LastName => "Feregrino";
 		public string StateOrRegion => "Mexico City, Mexico";
-		public string Title => "That C# guy";
+		public string ShortBioOrTagLine => "That C# guy";
 		public string TwitterHandle => "io_exception";
 		public Uri WebSite => new Uri("http://thatcsharpguy.com/tag/Xamarin/");
 		public string GravatarHash => "";

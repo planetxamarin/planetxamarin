@@ -2,38 +2,62 @@
 @model IAmACommunityMember
 
 <div class="col-md-4 profileCard">
-    <img class="mugShot" src="@Model.GravatarImage()" alt="@Model.FirstName @Model.LastName" />
+    <img class="mugShot" src="@Model.GravatarImage()" alt="@Model.FirstName @Model.LastName"/>
     <div class="mugShotBorder">
     </div>
     <div class="profileCardWrapper">
 
         <p class="name">@Model.FirstName @Model.LastName</p>
-        <p class="twitter"><a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a></p>
+        <p class="twitter">
+            <a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a>
+        </p>
 
         <p class="description">
-            @Model.FirstName @Model.LastName is a @Model.Title
-
-            @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
+            @if (Model is IWorkAtXamarinOrMicrosoft)
             {
-                string output = string.Empty;
-                var xamarinMvpModel = Model as IAmAXamarinMVP;
-                if (xamarinMvpModel != null)
+                <text>@Model.FirstName @Model.LastName @Model.ShortBioOrTagLine at Microsoft</text>
+            }
+            else
+            {
+                if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
                 {
-                    output += "and has been a Xamarin MVP since " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                    <text>@Model.FirstName @Model.LastName is</text>
+
+                    var output = string.Empty;
+                    var xamarinMvpModel = Model as IAmAXamarinMVP;
+                    if (xamarinMvpModel != null)
+                    {
+                        output += "an Xamarin";
+                    }
+                    if (Model is IAmAXamarinMVP && Model is IAmAMicrosoftMVP)
+                    {
+                        output += " and Microsoft";
+                    }
+                    else
+                    {
+                        var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+                        if (microsoftMvpModel != null)
+                        {
+                            output += "an Microsoft";
+                        }
+                    }
+
+                    output += " MVP ";
+                    <text>@Html.Raw(output)</text>
+
+                    <text>who @Model.ShortBioOrTagLine</text>
                 }
-                var microsoftMvpModel = Model as IAmAMicrosoftMVP;
-                if (microsoftMvpModel != null)
+                else
                 {
-                    output += " and has been a Microsoft MVP since " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                    <text>@Model.FirstName @Model.LastName @Model.ShortBioOrTagLine</text>
                 }
-
-                output += ".";
-
-                <text>@Html.Raw(output)</text>
             }
         </p>
 
-        <p class="location"><i class="fa fa-map-marker"></i> @Model.StateOrRegion</p>
-        <p class="website"><a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a></p>
+        <p class="location">
+            <i class="fa fa-map-marker"></i> @Model.StateOrRegion</p>
+        <p class="website">
+            <a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a>
+        </p>
     </div>
 </div>

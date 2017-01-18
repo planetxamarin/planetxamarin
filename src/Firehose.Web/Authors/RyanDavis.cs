@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Davis";
         public string StateOrRegion => "Brisbane, Australia";
         public string EmailAddress => "ryandavis.au@gmail.com";
-        public string Title => "IM, Analytics and Mobile Development 🎉";
+        public string ShortBioOrTagLine => "IM, Analytics and Mobile Development 🎉";
         public Uri WebSite => new Uri("http://ryandavis.io");
         public string TwitterHandle => "rdavis_au";
         public DateTime FirstAwarded => new DateTime(2015, 1, 1);

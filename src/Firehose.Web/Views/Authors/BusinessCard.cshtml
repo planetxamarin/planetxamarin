@@ -5,7 +5,7 @@
     <span class="mugShot" style="background-image: url('@Model.GravatarImage()');"></span>
     <p>
         <strong>@Model.FirstName @Model.LastName</strong><br />
-        <span title="Planet Xamarin | @Model.Title">@Model.Title</span><br />
+        <span title="Planet Xamarin | @Model.ShortBioOrTagLine">@Model.ShortBioOrTagLine</span><br />
         @Model.StateOrRegion<br />
         @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
         {

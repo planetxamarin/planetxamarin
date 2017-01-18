@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "mergeconflictfm@gmail.com";
 
-        public string Title => "Podcast";
+        public string ShortBioOrTagLine => "Podcast";
 
         public Uri WebSite => new Uri("http://mergeconflict.fm");
 

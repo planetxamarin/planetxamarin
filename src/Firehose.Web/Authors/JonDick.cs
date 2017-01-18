@@ -10,7 +10,7 @@ namespace Firehose.Web
 	{
 		public string FirstName => "Jon";
 		public string LastName => "Dick";
-		public string Title => "Senior Software Engineer at Microsoft / Xamarin";
+		public string ShortBioOrTagLine => "Senior Software Engineer at Microsoft / Xamarin";
 		public string EmailAddress => "jondick@gmail.com";
 		public string TwitterHandle => "redth";
 		public string GravatarHash => "ad73e52d7e4d89e904e7c4cfd91fc2b9";

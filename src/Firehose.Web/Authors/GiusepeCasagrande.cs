@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Giusepe";
         public string LastName => "Casagrande";
-        public string Title => "Xamarin Developer";
+        public string ShortBioOrTagLine => "Xamarin Developer";
         public string StateOrRegion => "Rs, Brazil";
         public string EmailAddress => "giusepe@gmail.com";
         public string TwitterHandle => "giusepe";
