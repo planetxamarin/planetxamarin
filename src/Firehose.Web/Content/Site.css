@@ -1,0 +1,124 @@
+﻿body {
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.businessCard {
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 10px #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 240px;
+    margin: 15px;
+    padding: 1em;
+    width: 420px;
+}
+
+    .businessCard p {
+        margin: 0;
+        margin-bottom: 1em;
+    }
+
+    .businessCard .mugShot {
+        float: right;
+        height: 100px;
+        overflow: hidden;
+        width: 100px;
+    }
+
+    .businessCard .mugShot {
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .businessCard .twitter-follow-button {
+        clear: both;
+        float: right;
+        margin-top: 5px;
+    }
+
+    .businessCard .contactDetail {
+        margin-right: 1em;
+    }
+
+.syndicationItemContent {
+    clear: both;
+}
+
+.syndicationItemFooter {
+    clear: both;
+    padding-bottom: 40px;
+}
+
+.syndicationItemPhoto {
+    float: left;
+    max-height: 100px;
+    margin-right: 10px;
+}
+
+.syndicationItemDate {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h1.syndicationItemTitle {
+    margin-bottom: 0;
+}
+
+h2.syndicationItemDate {
+    margin-top: 0;
+}
+
+h2.syndicationItemByLine {
+    margin-bottom: 0;
+}
+
+.navbar {
+    min-height: 74px;
+}
+
+@media screen and (min-width: 480px) {
+    .navbar-nav {
+        float: right;
+    }
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: white;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+    color: #6b1570;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #6b1570;
+}
+
+@media screen and (min-width: 480px) {
+    #rssText  {
+        display: none;
+    }
+
+    #facebookText  {
+        display: none;
+    }
+
+    #twitterText  {
+        display: none;
+    }
+}

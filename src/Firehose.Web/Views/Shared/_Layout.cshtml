@@ -1,7 +1,6 @@
 ﻿@using System.Web.Mvc.Html
 @using Firehose.Web.Controllers
 @using MvcNavigationHelpers
-
 <!doctype html>
 <html>
 <head>
@@ -32,6 +31,16 @@
 
     <link rel="stylesheet" href="~/Content/plugins/fontawesome/css/font-awesome.min.css">
     @RenderSection("head", false)
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90554801-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -43,7 +52,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="@Url.Content("~")">
-                    <div class="navbar-brand-title">PlanetXamarin</div>
+                    <div class="navbar-brand-title">Planet Xamarin</div>
                 </a>
             </div>
             <div class="navbar-collapse navbar-right collapse">
@@ -51,7 +60,9 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
                     <li>@Html.ActionLink("Preview", "Index", "Preview")</li>
-                    <li>@Html.ActionLink("Feed", "Index", "Feed")</li>
+                    <li><a href="@Url.Action("Index", "Feed")"><i class="fa fa-rss" aria-hidden="true"></i> <span id="rssText">RSS Feed</span></a></li>
+                    <li><a href="https://www.facebook.com/planetxamarin/"><i class="fa fa-facebook" aria-hidden="true"></i> <span id="facebookText">Facebook</span></a></li>
+                    <li><a href="https://twitter.com/PlanetXamarin"><i class="fa fa-twitter" aria-hidden="true"></i> <span id="twitterText">Twitter</span></a></li>
                 </ul>
             </div>
         </div>
@@ -62,7 +73,7 @@
         </div>
         <hr />
         <footer>
-            <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/planetxamarin/planetxamarin">pull-request to our repository</a> on GitHub. Planet Xamairn is not affiliated with Xamarin Inc. or Microsoft and is a open-source project maintained <a href="https://twitter.com/GeoffreyHuntley/status/795812681680756736">by the community for the community</a>.</p>
+            <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/planetxamarin/planetxamarin">pull-request to our repository</a> on GitHub. Planet Xamarin is not affiliated with Xamarin Inc. or Microsoft and is a open-source project maintained <a href="https://twitter.com/GeoffreyHuntley/status/795812681680756736">by the community for the community</a>.</p>
         </footer>
     </div>
 
