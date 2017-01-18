@@ -16,7 +16,7 @@ If you write about Xamarin, you belong here. You're welcome to add your blog and
 
 ### How to add
 
-To add yourself as an author you can fork this project, add yourself to the [authors folder](https://github.com/planetxamarin/planetxamarin/tree/master/src/Firehose.Web/Authors) as a class, implementing the `IAmACommunityMember` interface.
+To add yourself as an author you can fork this project, add yourself to the [authors folder](https://github.com/planetxamarin/planetxamarin/tree/master/src/Firehose.Web/Authors) as a class, implementing the `IAmACommunityMember` interface. If you are doing this via the GitHub editor, don't forget to _add the class to the .csproj_.
 
 The result should look something like this:
 
