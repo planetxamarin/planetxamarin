@@ -1,7 +1,7 @@
 ﻿@using Firehose.Web.Infrastructure
 @model IAmACommunityMember
 
-<div class="col-md-3 profileCard">
+<div class="col-md-4 profileCard animated pulse">
     <img class="mugShot" src="@Model.GravatarImage()" alt="@Model.FirstName @Model.LastName" />
     <div class="mugShotBorder">
     </div>
@@ -10,26 +10,28 @@
         <p class="name">@Model.FirstName @Model.LastName</p>
         <p class="twitter"><a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a></p>
 
-        @Model.FirstName @Model.LastName is a @Model.Title
+        <p class="description">
+            @Model.FirstName @Model.LastName is a @Model.Title
 
-        @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
-        {
-            string output = string.Empty;
-            var xamarinMvpModel = Model as IAmAXamarinMVP;
-            if (xamarinMvpModel != null)
+            @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
             {
-                output += "and has been a Xamarin MVP since " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
-            }
-            var microsoftMvpModel = Model as IAmAMicrosoftMVP;
-            if (microsoftMvpModel != null)
-            {
-                output += " and has been a Microsoft MVP since " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
-            }
+                string output = string.Empty;
+                var xamarinMvpModel = Model as IAmAXamarinMVP;
+                if (xamarinMvpModel != null)
+                {
+                    output += "and has been a Xamarin MVP since " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                }
+                var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+                if (microsoftMvpModel != null)
+                {
+                    output += " and has been a Microsoft MVP since " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                }
 
-            output += ".";
+                output += ".";
 
                 <text>@Html.Raw(output)</text>
-        }
+            }
+        </p>
 
         <p class="location"><i class="fa fa-map-marker"></i> @Model.StateOrRegion</p>
         <p class="website"><a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a></p>

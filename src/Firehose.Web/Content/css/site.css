@@ -1,4 +1,7 @@
-﻿.syndicationItem .syndicationItemTitle a {
+﻿/* This is a special digital tint in our official swatch */
+/* Alter the colors below */
+/* These are the values for the Xamarin look */
+.syndicationItem .syndicationItemTitle a {
   color: #000;
   font-weight: 100;
   text-decoration: none;
@@ -16,10 +19,6 @@
 }
 .syndicationItem .syndicationItemContent p {
   margin: 20px 0;
-}
-hr {
-  border-top: 1px solid #bdc3c7;
-  margin: 40px 0;
 }
 .body-content {
   padding-left: 15px;
@@ -62,18 +61,21 @@ hr {
   position: relative;
 }
 .profileCard .profileCardWrapper {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   padding: 20px;
   padding-top: 50px;
-  min-height: 300px;
   word-wrap: break-word;
   text-overflow: ellipsis;
   text-align: center;
 }
 .profileCard .profileCardWrapper .name {
   margin: 10px 0 0 0;
-  color: #2c3e50;
+  color: #b455b6;
   font-size: 22px;
+}
+.profileCard .profileCardWrapper .description {
+  min-height: 80px;
 }
 .profileCard .profileCardWrapper .twitter a {
   color: #7d8c8d;
@@ -81,6 +83,8 @@ hr {
 }
 .profileCard .profileCardWrapper .website a {
   font-size: 13px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
 }
 .profileCard .profileCardWrapper .location {
   color: #7d8c8d;
@@ -88,7 +92,8 @@ hr {
   margin: 20px 0 0 0;
 }
 .profileCard .mugShotBorder {
-  background-color: #3498db;
+  background-image: url('../img/card-background.png');
+  background-size: 140%;
   color: #fff;
   height: 60px;
   padding-top: 10px;

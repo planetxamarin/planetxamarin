@@ -1,12 +1,14 @@
-﻿.syndicationItem {
+﻿@import "variables.less";
+
+.syndicationItem {
     .syndicationItemTitle a {
-        color: #000;
+        color: @black;
         font-weight: 100;
         text-decoration: none;
     }
 
     h2.syndicationItemDate {
-        color: #7d8c8d;
+        color: @lighttext;
         font-size: 18px;
         margin: 0px;
     }
@@ -24,18 +26,13 @@
     }
 }
 
-hr {
-    border-top: 1px solid #bdc3c7;
-    margin: 40px 0;
-}
-
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
 .businessCard {
-    background-color: #fff;
+    background-color: @white;
     border: 1px solid #ccc;
     box-shadow: 10px 10px 10px #ccc;
     box-sizing: border-box;
@@ -78,45 +75,53 @@ hr {
     position: relative;
 
     .profileCardWrapper {
-        background-color: #fff;
+        box-shadow: 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12), 0 3px 5px -1px rgba(0,0,0,.2);
+        background-color: @white;
         padding: 20px;
         padding-top: 50px;
-        min-height: 300px;
         word-wrap: break-word;
         text-overflow: ellipsis;
         text-align: center;
 
-        .name{
+        .name {
             margin: 10px 0 0 0;
-            color: #2c3e50;
+            color: @primary;
             font-size: 22px;
         }
 
+        .description {
+            min-height: 80px;
+        }
+
         .twitter a {
-            color: #7d8c8d;
+            color: @lighttext;
             font-size: 13px;
         }
 
         .website a {
             font-size: 13px;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
         }
 
-        .location {            
-            color: #7d8c8d;
+        .location {
+            color: @lighttext;
             font-size: 13px;
             margin: 20px 0 0 0;
         }
     }
 
     .mugShotBorder {
-        background-color: #3498db;
-        color: #fff;
+        background-image: url('../img/card-background.png');
+        
+        background-size: 140%;
+        color: @white;
         height: 60px;
         padding-top: 10px;
-        clear:both;
+        clear: both;
     }
 
-    .profileCardLocation{
+    .profileCardLocation {
         font-size: 14px;
         margin-top: -40px;
         margin-left: 120px;
@@ -127,11 +132,11 @@ hr {
         font-size: 20px;
         line-height: 50px;
         vertical-align: middle;
-        margin-top:-25px;
+        margin-top: -25px;
         margin-right: 20px;
 
-        a{
-            color: #fff;
+        a {
+            color: @white;
         }
     }
 
@@ -139,7 +144,7 @@ hr {
         position: absolute;
         left: 50%;
         border-radius: 50%;
-        border: 3px solid #fff;
+        border: 3px solid @white;
         width: 100px;
         height: 100px;
         margin-top: 10px;
