@@ -1,13 +1,13 @@
 ﻿@using System.Web.Mvc.Html
 @using Firehose.Web.Controllers
 @using MvcNavigationHelpers
-
 <!doctype html>
 <html>
 <head>
     <title>Planet Xamarin: Community Blog Feed</title>
     <meta name="viewport" content="width=640, user-scalable=no" />
     <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/font-awesome.min.css">
     <link rel="stylesheet" href="/Content/bootstrap.planetxamarin.css" />
     <link rel="stylesheet" href="/Content/Site.css" />
     <link rel="alternate" type="application/rss+xml" title="Planet Xamarin" href="https://www.planetxamarin.com@((Url.UrlFor<FeedController>(c => c.Index(null))))" />
@@ -41,7 +41,9 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
                     <li>@Html.ActionLink("Preview", "Index", "Preview")</li>
-                    <li>@Html.ActionLink("Feed", "Index", "Feed")</li>
+                    <li><a href="@Url.Action("Index", "Feed")"><i class="fa fa-rss" aria-hidden="true"></i> <span id="rssText">RSS Feed</span></a></li>
+                    <li><a href="https://www.facebook.com/planetxamarin/"><i class="fa fa-facebook" aria-hidden="true"></i> <span id="facebookText">Facebook</span></a></li>
+                    <li><a href="https://twitter.com/PlanetXamarin"><i class="fa fa-twitter" aria-hidden="true"></i> <span id="twitterText">Twitter</span></a></li>
                 </ul>
             </div>
         </div>
