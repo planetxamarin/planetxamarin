@@ -1,0 +1,39 @@
+﻿@using Firehose.Web.Infrastructure
+@model IAmACommunityMember
+
+<div class="col-md-4 profileCard">
+    <img class="mugShot" src="@Model.GravatarImage()" alt="@Model.FirstName @Model.LastName" />
+    <div class="mugShotBorder">
+    </div>
+    <div class="profileCardWrapper">
+
+        <p class="name">@Model.FirstName @Model.LastName</p>
+        <p class="twitter"><a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a></p>
+
+        <p class="description">
+            @Model.FirstName @Model.LastName is a @Model.Title
+
+            @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
+            {
+                string output = string.Empty;
+                var xamarinMvpModel = Model as IAmAXamarinMVP;
+                if (xamarinMvpModel != null)
+                {
+                    output += "and has been a Xamarin MVP since " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                }
+                var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+                if (microsoftMvpModel != null)
+                {
+                    output += " and has been a Microsoft MVP since " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                }
+
+                output += ".";
+
+                <text>@Html.Raw(output)</text>
+            }
+        </p>
+
+        <p class="location"><i class="fa fa-map-marker"></i> @Model.StateOrRegion</p>
+        <p class="website"><a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a></p>
+    </div>
+</div>
