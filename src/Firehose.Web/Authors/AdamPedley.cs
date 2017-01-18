@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "adam.pedley@gmail.com";
 
-        public string Title => "Xamarin Developer | Microsoft MVP";
+        public string Title => "software engineer";
 
         public Uri WebSite => new Uri("https://xamarinhelp.com/");
 
