@@ -13,6 +13,7 @@ namespace Firehose.Web
         public string Title => "Xamarin Developer";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "crswlls";
+        public string GithubHandle => string.Empty;
         public string GravatarHash => "21e379df7ba9c57f167188e2fcb7dd75";
         public string StateOrRegion => "Bristol, UK";
         public Uri WebSite => new Uri("http://crswlls.wordpress.com");

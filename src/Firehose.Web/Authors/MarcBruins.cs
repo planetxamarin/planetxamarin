@@ -13,6 +13,7 @@ namespace Firehose.Web.Authors
 		public string Title => "Xamarin Consultant";
 		public string EmailAddress => "marc@marcbruins.nl";
 		public string TwitterHandle => "MarcBruins";
+        public string GithubHandle => string.Empty;
 		public string GravatarHash => "3795d2031be87499f76f6336ec5a3a45";
 
 		public string StateOrRegion => "Groningen, Netherlands";

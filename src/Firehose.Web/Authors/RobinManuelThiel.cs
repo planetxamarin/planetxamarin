@@ -15,6 +15,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Munich, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "einRobby";
+        public string GithubHandle => string.Empty;
         public Uri WebSite => new Uri("http://pumpingco.de/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://pumpingco.de/feed/"); } }
         public string GravatarHash => "1b8fabaa8d66250a7049bdb9ecf44397";

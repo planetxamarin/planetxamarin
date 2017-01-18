@@ -24,7 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "gonemobilecast";
-
+        public string GithubHandle => string.Empty;
 
         public string GravatarHash => "cb611c5ecd9a53b2af53a9d50d83c3c5";
     }

@@ -13,6 +13,7 @@ namespace Firehose.Web
 		public string Title => "Lead consultant Mobile & Cloud @ Xpirit";
 		public string EmailAddress => "";
 		public string TwitterHandle => "geertvdc";
+        public string GithubHandle => string.Empty;
 		public string GravatarHash => "ec02820495ff6d50e58dd027aa2b0ae3";
 
 		public string StateOrRegion => "Uden, Netherlands";

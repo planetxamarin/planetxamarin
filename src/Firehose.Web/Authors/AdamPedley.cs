@@ -25,6 +25,8 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "adpedley";
 
+        public string GithubHandle => string.Empty;
+
         public DateTime FirstAwarded => new DateTime(2016, 10, 1);
 
         public string GravatarHash => "";

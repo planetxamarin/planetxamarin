@@ -12,6 +12,7 @@ public class RobGibbens : IWorkAtXamarinOrMicrosoft
     public string StateOrRegion => "Farmington, Michigan";
     public string EmailAddress => "RobGibbens@arteksoftware.com";
     public string TwitterHandle => "RobGibbens";
+    public string GithubHandle => string.Empty;
     public string GravatarHash => "";
     public DateTime Started => new DateTime(2004, 01, 06);
 

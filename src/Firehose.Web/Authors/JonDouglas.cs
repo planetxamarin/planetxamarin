@@ -14,6 +14,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Utah";
         public string EmailAddress => "";
         public string TwitterHandle => "_jondouglas";
+        public string GithubHandle => string.Empty;
 
         public Uri WebSite => new Uri("http://www.jon-douglas.com/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.jon-douglas.com/atom.xml"); } }

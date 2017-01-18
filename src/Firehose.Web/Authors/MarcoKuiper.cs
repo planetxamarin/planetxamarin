@@ -17,6 +17,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "The Netherlands";
         public string Title => "Code monkey";
         public string TwitterHandle => "marcofolio";
+        public string GithubHandle => string.Empty;
         public Uri WebSite => new Uri("http://www.marcofolio.net/");
         public string GravatarHash => "";
     }

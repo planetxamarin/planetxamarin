@@ -13,6 +13,7 @@ namespace Firehose.Web
 		public string Title => "Senior Software Engineer at Microsoft / Xamarin";
 		public string EmailAddress => "jondick@gmail.com";
 		public string TwitterHandle => "redth";
+        public string GithubHandle => string.Empty;
 		public string GravatarHash => "ad73e52d7e4d89e904e7c4cfd91fc2b9";
 		public string StateOrRegion => "Ontario, Canada";
 		public Uri WebSite => new Uri("http://redth.codes");

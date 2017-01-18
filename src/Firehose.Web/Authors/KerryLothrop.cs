@@ -12,6 +12,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Frankfurt, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "kwlothrop";
+        public string GithubHandle => string.Empty;
 
         public Uri WebSite => new Uri("http://kerry.lothrop.de/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://kerry.lothrop.de/de/feed/"); } }

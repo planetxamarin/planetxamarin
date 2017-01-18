@@ -24,6 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "jfversluis";
+        public string GithubHandle => string.Empty;
 
         public DateTime FirstAwarded => new DateTime(2016, 10, 1);
 

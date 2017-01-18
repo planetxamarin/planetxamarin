@@ -24,6 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "mergeconflictfm";
+        public string GithubHandle => string.Empty;
 
         public string GravatarHash => "24527eb9b29a8adbfc4155db4044dd3c";
     }

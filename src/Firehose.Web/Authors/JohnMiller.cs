@@ -24,6 +24,7 @@ namespace Firehose.Web
 		}
 
 		public string TwitterHandle => "jmillerdev";
+        public string GithubHandle => string.Empty;
 
 		public DateTime Started => new DateTime(2014, 2, 1);
 

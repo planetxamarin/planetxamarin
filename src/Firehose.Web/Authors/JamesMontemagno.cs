@@ -24,7 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "jamesmontemagno";
-
+        public string GithubHandle => string.Empty;
 
         public string GravatarHash => "5df4d86308e585c879c19e5f909d8bfe";
 

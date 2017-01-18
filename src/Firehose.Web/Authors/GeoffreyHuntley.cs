@@ -12,6 +12,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Sydney, Australia";
         public string EmailAddress => "ghuntley@ghuntley.com";
         public string TwitterHandle => "geoffreyhuntley";
+        public string GithubHandle => string.Empty;
 
         public Uri WebSite => new Uri("https://ghuntley.com/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://ghuntley.com/atom.xml"); } }
