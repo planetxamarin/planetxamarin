@@ -11,25 +11,37 @@
         <p class="twitter"><a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a></p>
 
         <p class="description">
-            @Model.FirstName @Model.LastName is @Model.ShortBioOrTagLine
-
             @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
             {
+                <text>@Model.FirstName @Model.LastName is</text>
+
                 string output = string.Empty;
                 var xamarinMvpModel = Model as IAmAXamarinMVP;
                 if (xamarinMvpModel != null)
                 {
-                    output += "and has been a Xamarin MVP since " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                    output += "an Xamarin";
                 }
-                var microsoftMvpModel = Model as IAmAMicrosoftMVP;
-                if (microsoftMvpModel != null)
+                if (Model is IAmAXamarinMVP && Model is IAmAMicrosoftMVP)
                 {
-                    output += " and has been a Microsoft MVP since " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                    output += " and Microsoft";
+                }
+                else
+                {
+                    var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+                    if (microsoftMvpModel != null)
+                    {
+                        output += "an Microsoft";
+                    }
                 }
 
-                output += ".";
-
+                output += " MVP ";
                 <text>@Html.Raw(output)</text>
+
+                <text>who @Model.ShortBioOrTagLine</text>
+            }
+            else
+            {
+                <text>@Model.FirstName @Model.LastName is @Model.ShortBioOrTagLine</text>
             }
         </p>
 
