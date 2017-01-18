@@ -9,7 +9,7 @@ namespace Firehose.Web.Infrastructure
         string LastName { get; }
         string StateOrRegion { get; }
         string EmailAddress { get; }
-        string Title { get; }
+        string ShortBioOrTagLine { get; }
         Uri WebSite { get; }
         string TwitterHandle { get; }
         string GravatarHash { get; }

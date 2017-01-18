@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string Title => "Principal Program Manager";
+        public string ShortBioOrTagLine => "Principal Program Manager";
 
         public Uri WebSite => new Uri("http://motzcod.es");
 

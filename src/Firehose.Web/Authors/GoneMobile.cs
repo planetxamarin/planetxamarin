@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "gonemobilecast@gmail.com";
 
-        public string Title => "Podcast";
+        public string ShortBioOrTagLine => "Podcast";
 
         public Uri WebSite => new Uri("http://gonemobile.io");
 

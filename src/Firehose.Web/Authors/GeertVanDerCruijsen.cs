@@ -10,7 +10,7 @@ namespace Firehose.Web
 	{
 		public string FirstName => "Geert";
 		public string LastName => "van der Cruijsen";
-		public string Title => "Lead consultant Mobile & Cloud @ Xpirit";
+		public string ShortBioOrTagLine => "Lead consultant Mobile & Cloud @ Xpirit";
 		public string EmailAddress => "";
 		public string TwitterHandle => "geertvdc";
 		public string GravatarHash => "ec02820495ff6d50e58dd027aa2b0ae3";

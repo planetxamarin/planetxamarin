@@ -10,9 +10,9 @@ namespace Firehose.Web
     {
         public string FirstName => "Tom";
         public string LastName => "Soderling";
-        public string Title => "Sr. Mobile Developer @ Mobile Composer";
         public string StateOrRegion => "MPLS";
         public string EmailAddress => "";
+        public string ShortBioOrTagLine => string.Empty;
         public string TwitterHandle => "tomsoderlng";
         public string GravatarHash => "dd103f377899fc63b0b88c5bb62b15bd";
 

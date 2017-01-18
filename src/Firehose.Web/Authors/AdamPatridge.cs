@@ -13,7 +13,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Cheyenne, WY";
         public string TwitterHandle => "patridgedev";
         public string EmailAddress => "";
-        public string Title => "Content Developer 2";
+        public string ShortBioOrTagLine => "Content Developer 2";
         public string GravatarHash => "29f7fb03af5c354d6098f0300114056b";
         public DateTime Started => new DateTime(2016, 05, 23); 
         public Uri WebSite => new Uri("http://www.patridgedev.com/");

@@ -25,7 +25,7 @@ public class BruceWayne : IAmACommunityMember
 {
     public string FirstName => "Bruce";
     public string LastName => "Wayne";
-    public string Title => "The Dark Knight";
+    public string ShortBioOrTagLine => "potentially batman";
     public string StateOrRegion => "Gotham";
     public string EmailAddress => "rescueme@planetxamarin.com";
     public string TwitterHandle => "batman";
@@ -39,7 +39,7 @@ public class BruceWayne : IAmACommunityMember
 A few things: 
 - Name the class after your first and lastname with CamelCase
 - The `FirstName` and `LastName` property should resemble that same name
-- `Title` property can be whatever you like. Most likely something like: 'Senior Developer @ Wayne Enterprises' or 'Xamarin Developer & Microsoft MVP'
+- `ShortBioOrTagLine` property can be whatever you like. If you can't think of anything choose: 'software engineer' or 'software engineer at Microsoft'
 - `StateOrRegion` will be your geographical location, i.e.: Holland, New York, etc.
 - `EmailAddress` and `TwitterHandle` should be pretty clear, `TwitterHandle` without the leading @
 - The `Website` property can be your global website or whatever you want people to look at
@@ -52,7 +52,7 @@ public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
     {
         public string FirstName => "Awesome";
         public string LastName => "Sauce";
-        public string Title => "Unicorn tamer";
+        public string ShortBioOrTagLine => "unicorn tamer";
         public string StateOrRegion => "127.0.0.1";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "theboss";
@@ -97,6 +97,11 @@ public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
 # A small step for an author...
 
 A big step for mankind! Last thing that remains is submit a Pull Request to us and whenever it gets merged: hooray! You're an author now!
+
+Don't forget to incorporate the Featured on Planet Xamarin badge on your blog and link back to us!
+
+
+![Featured on Planet Xamarin Badge](https://www.planetxamarin.com/Content/img/planetxamarin-featured-badge.png)
 
 Enjoy all of our great content! 
 
