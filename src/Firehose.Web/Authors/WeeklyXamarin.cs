@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "inbox@weeklyxamarin.com";
 
-        public string Title => "Newsletter";
+        public string Title => "newsletter that contains a weekly hand-picked round up of the best development links. Curated by Geoffrey Huntley";
 
         public Uri WebSite => new Uri("https://www.weeklyxamarin.com");
 
