@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web
@@ -17,6 +15,12 @@ namespace Firehose.Web
         public string GravatarHash => "dd103f377899fc63b0b88c5bb62b15bd";
 
         public Uri WebSite => new Uri("https://mobilecomposer.github.io");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://mobilecomposer.github.io/feed.xml"); } }
+
+        public IEnumerable<Uri> FeedUris
+        {
+            get { yield return new Uri("https://mobilecomposer.github.io/feed.xml"); }
+        }
+
+        public string GitHubHandle => string.Empty;
     }
 }

@@ -10,14 +10,20 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Giusepe";
         public string LastName => "Casagrande";
-        public string ShortBioOrTagLine => "Xamarin Developer";
+        public string ShortBioOrTagLine => string.Empty;
         public string StateOrRegion => "Rs, Brazil";
         public string EmailAddress => "giusepe@gmail.com";
         public string TwitterHandle => "giusepe";
         public string GravatarHash => "";
 
         public Uri WebSite => new Uri("http://giusepe.com/");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://giusepe.com/rss"); } }
+
+        public IEnumerable<Uri> FeedUris
+        {
+            get { yield return new Uri("http://giusepe.com/rss"); }
+        }
+
+        public string GitHubHandle => string.Empty;
 
         public bool Filter(SyndicationItem item)
         {

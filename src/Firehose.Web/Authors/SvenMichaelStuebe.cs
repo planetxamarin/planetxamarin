@@ -22,7 +22,7 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("http://smstuebe.de/feed.xml"); }
         }
 
-        DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2017, 1, 1);
+        public string GitHubHandle => string.Empty;
         public string GravatarHash => "08b73d0a58fc120a8cc8dc561d83b3d6";
 
         public bool Filter(SyndicationItem item)
