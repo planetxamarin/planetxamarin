@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -27,5 +27,6 @@ namespace Firehose.Web.Authors
 
 
         public string GravatarHash => "cb611c5ecd9a53b2af53a9d50d83c3c5";
+        public string GitHubHandle => string.Empty;
     }
 }

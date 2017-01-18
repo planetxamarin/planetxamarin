@@ -1,37 +1,39 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ServiceModel.Syndication;
 using System.Linq;
+using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class NunoHorta : IAmACommunityMember
-	{
-		public string FirstName => "Nuno";
+    public class NunoHorta : IAmACommunityMember
+    {
+        public string FirstName => "Nuno";
 
-		public string LastName => "Horta";
+        public string LastName => "Horta";
 
-		public string StateOrRegion => "London, United Kindgom";
+        public string StateOrRegion => "London, United Kindgom";
 
-		public string EmailAddress => "nunobhorta@gmail.com";
+        public string EmailAddress => "nunobhorta@gmail.com";
 
-		public string ShortBioOrTagLine => "Xamarin Developer";
+        public string ShortBioOrTagLine => string.Empty;
 
-		public Uri WebSite => new Uri("https://nunobhorta.com");
+        public Uri WebSite => new Uri("https://nunobhorta.com");
 
-		public IEnumerable<Uri> FeedUris
-		{
-			get { yield return new Uri("https://www.nunobhorta.com/feed/"); }
-		}
+        public IEnumerable<Uri> FeedUris
+        {
+            get { yield return new Uri("https://www.nunobhorta.com/feed/"); }
+        }
 
-		public string TwitterHandle => "nunobhorta";
+        public string TwitterHandle => "nunobhorta";
 
-		public string GravatarHash => "";
+        public string GravatarHash => "";
 
-		public bool Filter(SyndicationItem item)
-		{
-			return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
-		}
-	}
+        public string GitHubHandle => string.Empty;
+
+        public bool Filter(SyndicationItem item)
+        {
+            return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+        }
+    }
 }

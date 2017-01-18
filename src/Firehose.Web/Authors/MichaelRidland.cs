@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -25,8 +25,7 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "rid00z";
 
-        public DateTime FirstAwarded => new DateTime(2015, 4, 1);
-
         public string GravatarHash => "";
+        public string GitHubHandle => string.Empty;
     }
 }

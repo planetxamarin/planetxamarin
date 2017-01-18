@@ -1,8 +1,8 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => "Xamarin Developer";
+        public string ShortBioOrTagLine => string.Empty;
 
         public Uri WebSite => new Uri("http://www.dvolve.org/");
 
@@ -28,6 +28,8 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "devnl";
 
         public string GravatarHash => "9f698e6f515cb54dbda305034b6823fc";
+
+        public string GitHubHandle => string.Empty;
 
         public bool Filter(SyndicationItem item)
         {

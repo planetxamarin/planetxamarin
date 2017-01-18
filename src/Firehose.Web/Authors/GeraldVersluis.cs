@@ -1,11 +1,12 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
     public class GeraldVersluis : IAmAMicrosoftMVP
     {
+        public DateTime FirstAwarded => new DateTime(2016, 10, 1);
         public string FirstName => "Gerald";
 
         public string LastName => "Versluis";
@@ -14,7 +15,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => "software engineer";
+        public string ShortBioOrTagLine => string.Empty;
 
         public Uri WebSite => new Uri("https://blog.verslu.is/");
 
@@ -25,8 +26,7 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "jfversluis";
 
-        public DateTime FirstAwarded => new DateTime(2016, 10, 1);
-
         public string GravatarHash => "f9d4d4211d7956ce3e07e83df0889731";
+        public string GitHubHandle => string.Empty;
     }
 }

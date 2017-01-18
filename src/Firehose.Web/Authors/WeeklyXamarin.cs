@@ -1,6 +1,6 @@
-using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -14,7 +14,10 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "inbox@weeklyxamarin.com";
 
-        public string ShortBioOrTagLine => "weekly newsletter that contains a hand-picked round-up of the best mobile development links and resources. Curated by Geoffrey Huntley. Free.";
+        public string ShortBioOrTagLine
+            =>
+                "weekly newsletter that contains a hand-picked round-up of the best mobile development links and resources. Curated by Geoffrey Huntley. Free."
+        ;
 
         public Uri WebSite => new Uri("https://www.weeklyxamarin.com");
 
@@ -25,6 +28,7 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "weeklyxamarin";
 
+        public string GitHubHandle => string.Empty;
 
         public string GravatarHash => "";
     }
