@@ -8,6 +8,12 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
+    public class PreviewViewModel
+    {
+        public SyndicationFeed Feed { get; set; }
+        public IAmACommunityMember[] Bloggers { get; set; }
+    }
+
     public class PreviewController : Controller
     {
         private readonly CombinedFeedSource _combinedFeedSource;
@@ -17,12 +23,15 @@ namespace Firehose.Web.Controllers
             _combinedFeedSource = combinedFeedSource;
         }
 
-
         [Route("preview")]
         public ViewResult Index(int? numPosts = 50)
         {
             var feed = GetFeed(numPosts);
-            return View(feed);
+            return View(new PreviewViewModel
+            {
+                Feed = feed,
+                Bloggers = _combinedFeedSource.Bloggers
+            });
         }
 
         private SyndicationFeed GetFeed(int? numPosts)

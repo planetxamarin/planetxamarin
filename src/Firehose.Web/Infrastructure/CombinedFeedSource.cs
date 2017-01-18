@@ -22,6 +22,7 @@ namespace Firehose.Web.Infrastructure
         }
 
         public SyndicationFeed Feed => _combinedFeedSource.Value.Feed;
+        public IAmACommunityMember[] Bloggers => _bloggers;
 
         private ISyndicationFeedSource LoadFeeds()
         {
