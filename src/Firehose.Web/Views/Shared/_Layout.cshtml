@@ -73,8 +73,27 @@
     <script src="~/Content/plugins/jquery/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     @RenderSection("scripts", false)
+    
+    <script>
+        $('.live-search-box').on('keyup', function () {
 
-    <script type="text/javascript">
+            var searchTerm = $(this).val().toLowerCase();
+            searchTerm = searchTerm.replace(/\s+/g, '');
+
+            $('.profileCard').each(function () {
+
+                if ($(this).filter('[id *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+
+            });
+
+        });
+    </script>
+
+<script type="text/javascript">
         var clicky_site_ids = clicky_site_ids || [];
         clicky_site_ids.push(101018153);
         (function () {
