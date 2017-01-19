@@ -14,7 +14,7 @@ namespace Firehose.Web
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => "senior trainer at Xamarin University";
+        public string ShortBioOrTagLine => Ssenior Trainer at Xamarin University";
 
         public Uri WebSite => new Uri("http://www.glennstephens.com.au/tag/xamarin/");
 
@@ -28,6 +28,6 @@ namespace Firehose.Web
         public string GravatarHash => "ffc4ec4a7133be87d2587325ac7b1d00";
 
         public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(-26.6500000, 153.0666670);
     }
 }

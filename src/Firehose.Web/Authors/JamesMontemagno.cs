@@ -29,6 +29,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "5df4d86308e585c879c19e5f909d8bfe";
         public string GitHubHandle => "jamesmontemagno";
 
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(47.6062100, -122.3320710);
     }
 }

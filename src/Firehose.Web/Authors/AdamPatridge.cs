@@ -27,6 +27,6 @@ namespace Firehose.Web.Authors
         public bool Filter(SyndicationItem item) =>
             item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
             item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(41.1399810, -104.8202460);
     }
 }

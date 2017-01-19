@@ -21,7 +21,7 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("http://javiersuarezruiz.wordpress.com");
         public string TwitterHandle => "jsuarezruiz";
         public string GravatarHash => "";
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(37.3890920, -5.9844590);
 
         public string GitHubHandle => string.Empty;
 

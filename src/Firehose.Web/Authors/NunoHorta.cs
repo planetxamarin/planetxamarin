@@ -30,7 +30,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "";
 
         public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(51.5073510, -0.1277580);
 
         public bool Filter(SyndicationItem item)
         {
