@@ -299,6 +299,7 @@
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
+    <Compile Include="Authors\BerayBentesen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
