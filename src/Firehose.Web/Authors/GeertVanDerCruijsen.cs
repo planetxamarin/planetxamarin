@@ -20,11 +20,11 @@ namespace Firehose.Web
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://mobilefirstcloudfirst.net/feed//"); }
+            get { yield return new Uri("http://mobilefirstcloudfirst.net/feed"); }
         }
 
         public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(51.6631070, 5.6239230);
 
         public bool Filter(SyndicationItem item) =>
             item.Title.Text.ToLowerInvariant().Contains("xamarin") ||

@@ -30,6 +30,6 @@ namespace Firehose.Web.Authors
             return item.Title.Text.ToLowerInvariant().Contains("xamarin")
                    || item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
         }
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(-30.0346320, -51.2176990);
     }
 }

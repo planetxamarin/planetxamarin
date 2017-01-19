@@ -20,6 +20,6 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("http://www.marcofolio.net/");
         public string GravatarHash => "";
         public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(52.1326330, 5.2912660);
     }
 }

@@ -24,7 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "gonemobilecast";
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(51.2537750, -85.3232140);
         public string GravatarHash => "cb611c5ecd9a53b2af53a9d50d83c3c5";
         public string GitHubHandle => string.Empty;
     }

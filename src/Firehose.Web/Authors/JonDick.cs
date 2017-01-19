@@ -20,7 +20,7 @@ namespace Firehose.Web
             get { yield return new Uri("http://redth.codes/feed/"); }
         }
 
-        public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public string GitHubHandle => "redth";
+        public GeoPosition Position => new GeoPosition(51.2537750, -85.3232140);
     }
 }

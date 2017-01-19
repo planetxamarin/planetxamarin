@@ -20,5 +20,5 @@ public class KymPhillpotts : IWorkAtXamarinOrMicrosoft
     }
 
     public string GitHubHandle => string.Empty;
-    public GeoPosition Position => GeoPosition.Empty;
+    public GeoPosition Position => new GeoPosition(-37.8136280, 144.9630580);
 }

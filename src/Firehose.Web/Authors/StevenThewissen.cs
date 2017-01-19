@@ -28,7 +28,7 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "devnl";
 
         public string GravatarHash => "9f698e6f515cb54dbda305034b6823fc";
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(52.1326330, 5.2912660);
 
         public string GitHubHandle => string.Empty;
 
