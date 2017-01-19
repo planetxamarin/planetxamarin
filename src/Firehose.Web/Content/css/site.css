@@ -141,3 +141,9 @@
 .featuredbadge {
   max-width: 200px;
 }
+/* No scrolling for collapsed menu */
+.navbar-collapse.in {
+  overflow: hidden;
+  max-height: none !important;
+  height: auto !important;
+}
