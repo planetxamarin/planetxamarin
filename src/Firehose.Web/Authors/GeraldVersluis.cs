@@ -10,11 +10,11 @@ namespace Firehose.Web.Authors
 
         public string LastName => "Versluis";
 
-        public string StateOrRegion => "Holland";
+        public string StateOrRegion => "The Netherlands";
 
-        public string EmailAddress => "";
+        public string EmailAddress => "gerald@verslu.is";
 
-        public string ShortBioOrTagLine => string.Empty;
+        public string ShortBioOrTagLine => "builds awesome Xamarin apps, speaks, blogs, trains, writes and has this weird thing for unicorns";
 
         public Uri WebSite => new Uri("https://blog.verslu.is/");
 
@@ -26,7 +26,7 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "jfversluis";
 
         public string GravatarHash => "f9d4d4211d7956ce3e07e83df0889731";
-        public string GitHubHandle => string.Empty;
-        public GeoPosition Position => new GeoPosition(52.1326330, 5.2912660);
+        public string GitHubHandle => "jfversluis";
+        public GeoPosition Position => new GeoPosition(50.9983300, 5.8694400);
     }
 }
