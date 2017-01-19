@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Geoffrey";
         public string LastName => "Huntley";
-        public string ShortBioOrTagLine => "software engineer who likes both promite and vegemite";
+        public string ShortBioOrTagLine => "has been involved in the Xamarin community since the early ​monotouch/monodroid days";
         public string StateOrRegion => "Sydney, Australia";
         public string EmailAddress => "ghuntley@ghuntley.com";
         public string TwitterHandle => "geoffreyhuntley";
@@ -21,7 +21,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GravatarHash => "";
-        public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public string GitHubHandle => "ghuntley";
+        public GeoPosition Position => new GeoPosition(-33.8726629, 151.2044161);
     }
 }

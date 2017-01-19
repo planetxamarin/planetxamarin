@@ -30,12 +30,19 @@
         {
             var id = Html.Raw(Json.Encode(member.GetType().Name));
             var name = Html.Raw(Json.Encode(member.FirstName + " " + member.LastName));
-            var gravatar = Html.Raw(Json.Encode(member.GravatarHash));
+
+            IHtmlString gravatar = Html.Raw(Json.Encode(member.EmailAddress.Trim().ToLowerInvariant().ToMd5Hash().ToLowerInvariant()));
+
+            if (!string.IsNullOrWhiteSpace(member.GravatarHash))
+            {
+                gravatar = Html.Raw(Json.Encode(member.GravatarHash));
+            }
+
             @:var marker = getMarker(@id, @Json.Encode(@member.Position.Lat), @Json.Encode(member.Position.Lng), @name, @gravatar);
-            @:markers.push(marker);
-        }
+                            @:markers.push(marker);
+                        }
         return markers;
-    } 
+    }
 
     function getMarker(id, lat, lng, name, gravatarHash) {
         var size = markerRadius * 2;
