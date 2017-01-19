@@ -15,6 +15,7 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "srkrathore@gmail.com";
         public string TwitterHandle => "srkrathore";
         public string GravatarHash => "";
+        public GeoPosition Position => GeoPosition.Empty;
 
         public Uri WebSite => new Uri("http://err2solution.com/");
 

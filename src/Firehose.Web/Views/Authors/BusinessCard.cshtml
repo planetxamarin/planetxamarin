@@ -13,7 +13,7 @@
             var xamarinMvpModel = Model as IAmAXamarinMVP;
             if (xamarinMvpModel != null)
             {
-                output += " Xamarin MVP since: " + xamarinMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                output += " Xamarin MVP";
                 if (Model is IAmAMicrosoftMVP)
                 {
                     output += " and";
@@ -22,7 +22,7 @@
             var microsoftMvpModel = Model as IAmAMicrosoftMVP;
             if (microsoftMvpModel != null)
             {
-                output += " Microsoft MVP since: " + microsoftMvpModel.FirstAwarded.ToString("MMMM yyyy");
+                output += " Microsoft MVP";
             }
 
             <text>@output</text>

@@ -3,6 +3,11 @@
 @using Humanizer
 @using ThirdDrawer.Extensions.ClassExtensionMethods
 @model Firehose.Web.ViewModels.PreviewViewModel
+
+@{
+    Layout = "~/Views/Shared/_ContainerLayout.cshtml";
+}
+
 @foreach (var item in Model.Feed.Items)
 {
     var creator = item.ElementExtensions.FirstOrDefault(x => x.OuterName == "creator" && x.OuterNamespace == "http://purl.org/dc/elements/1.1/");

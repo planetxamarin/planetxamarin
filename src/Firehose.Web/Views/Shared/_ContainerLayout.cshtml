@@ -1,11 +1,10 @@
-﻿@using Firehose.Web.Infrastructure
-@model Firehose.Web.Infrastructure.IAmACommunityMember[]
-
-@{ Html.RenderPartial("Map", Model.Where(m => m.Position != GeoPosition.Empty).ToArray()); }
+﻿@{
+    Layout = "_Layout.cshtml";
+}
 
 <div class="container body-content">
     <div class="container">
-        @{ Html.RenderPartial("List", Model); }
+        @RenderBody()
     </div>
     <hr />
     <footer>

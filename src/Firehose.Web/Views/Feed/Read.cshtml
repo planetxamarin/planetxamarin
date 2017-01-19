@@ -3,6 +3,10 @@
 @using ThirdDrawer.Extensions.ClassExtensionMethods
 @model System.ServiceModel.Syndication.SyndicationFeed
 
+@{
+    Layout = "~/Views/Shared/_ContainerLayout.cshtml";
+}
+
 @foreach (var item in Model.Items)
 {
     var author = item.Authors.FirstOrDefault();
