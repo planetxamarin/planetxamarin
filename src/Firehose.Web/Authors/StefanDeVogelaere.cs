@@ -12,7 +12,7 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => string.Empty;
 
         public string LastName => "de Vogelaere";
-        public string ShortBioOrTagLine => "Certified Xamarin developer and team lead at 3factr.";
+        public string ShortBioOrTagLine => "";
         public string StateOrRegion => "Wommelgem, Belgium";
         public string EmailAddress => "stefan.de.vogelaere@gmail.com";
         public string TwitterHandle => "stefandevo";

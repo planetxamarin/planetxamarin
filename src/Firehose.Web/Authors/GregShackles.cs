@@ -10,7 +10,7 @@ namespace Firehose.Web
     {
         public string FirstName => "Greg";
         public string LastName => "Shackles";
-        public string ShortBioOrTagLine => "Principal Engineer at Olo";
+        public string ShortBioOrTagLine => "knows a thing (or two) about mobile testing";
         public string EmailAddress => "greg@gregshackles.com";
         public string TwitterHandle => "gshackles";
         public string GravatarHash => "6d7b45031bf22823060849d494343a8c";

@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Davis";
         public string StateOrRegion => "Brisbane, Australia";
         public string EmailAddress => "ryandavis.au@gmail.com";
-        public string ShortBioOrTagLine => "🎉";
+        public string ShortBioOrTagLine => "knows how to 🎉";
         public Uri WebSite => new Uri("http://ryandavis.io");
         public string TwitterHandle => "rdavis_au";
         public string GitHubHandle => string.Empty;

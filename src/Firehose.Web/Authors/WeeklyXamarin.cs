@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine
             =>
-                "weekly newsletter that contains a hand-picked round-up of the best mobile development links and resources. Curated by Geoffrey Huntley. Free."
+                "is a weekly newsletter that contains a hand-picked round-up of the best mobile development links and resources. Curated by Geoffrey Huntley. Free."
         ;
 
         public Uri WebSite => new Uri("https://www.weeklyxamarin.com");
