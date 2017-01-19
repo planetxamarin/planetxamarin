@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Kerry W.";
         public string LastName => "Lothrop";
-        public string ShortBioOrTagLine => "Principal Consultant at Zühlke";
+        public string ShortBioOrTagLine => "";
         public string StateOrRegion => "Frankfurt, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "kwlothrop";
