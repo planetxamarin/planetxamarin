@@ -12,7 +12,7 @@ public class RobGibbens : IWorkAtXamarinOrMicrosoft
     public string TwitterHandle => "RobGibbens";
     public string GravatarHash => "";
     public string GitHubHandle => string.Empty;
-    public GeoPosition Position => GeoPosition.Empty;
+    public GeoPosition Position => new GeoPosition(42.4644800, -83.3763220);
 
     public Uri WebSite => new Uri("http://arteksoftware.com/");
 

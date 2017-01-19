@@ -24,7 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(53.2193840, 6.5665020);
 
         public bool Filter(SyndicationItem item) =>
             item.Title.Text.ToLowerInvariant().Contains("xamarin") ||

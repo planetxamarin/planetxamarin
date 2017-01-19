@@ -22,8 +22,8 @@ namespace Firehose.Web
             get { yield return new Uri("http://gregshackles.com/rss/"); }
         }
 
-        public string GitHubHandle => string.Empty;
-        public GeoPosition Position => GeoPosition.Empty;
+        public string GitHubHandle => "gshackles";
+        public GeoPosition Position => new GeoPosition(40.7127840, -74.0059410);
 
         public bool Filter(SyndicationItem item) =>
             item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
