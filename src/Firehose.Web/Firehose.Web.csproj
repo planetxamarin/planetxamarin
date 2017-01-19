@@ -263,6 +263,7 @@
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\CombinedFeedSource.cs" />
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -296,11 +297,8 @@
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\NunoHorta.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
-
     <Compile Include="Authors\StefanDeVogelaere.cs" />
-
     <Compile Include="ViewModels\PreviewViewModel.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

@@ -2,6 +2,8 @@
 @using Firehose.Web.Infrastructure
 @using Humanizer
 @using ThirdDrawer.Extensions.ClassExtensionMethods
+@using Firehose.Web.Extensions
+
 @model Firehose.Web.ViewModels.PreviewViewModel
 
 @{
@@ -40,7 +42,7 @@
                 }
             </h2>
             <div class="syndicationItemContent">
-                @Html.Raw(html)
+                @Html.Raw(html.Sanitize())
             </div>
             <div class="syndicationItemFooter">
                 <a href="@link" class="btn btn-primary">View original post</a>
