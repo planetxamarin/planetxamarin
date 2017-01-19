@@ -21,5 +21,6 @@ namespace Firehose.Web
         }
 
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }

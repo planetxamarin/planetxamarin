@@ -28,5 +28,6 @@ namespace Firehose.Web
         public string GravatarHash => "ffc4ec4a7133be87d2587325ac7b1d00";
 
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }

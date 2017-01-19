@@ -6,8 +6,6 @@ namespace Firehose.Web.Authors
 {
     public class MatthewSoucoup : IAmAMicrosoftMVP, IAmAXamarinMVP
     {
-        public DateTime FirstAwarded => new DateTime(2016, 1, 1);
-
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("https://codemilltech.com/feed/"); }
@@ -23,5 +21,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "df69069a0bffd2dae5a8700a1bef7bfd";
 
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }

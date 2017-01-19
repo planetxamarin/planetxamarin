@@ -20,5 +20,6 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "mhvdijk";
         public string GravatarHash => "22155f520ab611cf04f76762556ca3f5";
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }
