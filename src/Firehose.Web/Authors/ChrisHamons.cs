@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Chris";
         public string LastName => "Hamons";
-        public string ShortBioOrTagLine => "Xamarin.Mac Lead";
+        public string ShortBioOrTagLine => "is the lead engineer for Xamarin.Mac";
 
         public string StateOrRegion => "Austin, Texas";
         public string EmailAddress => "chris.hamons@xamarin.com";

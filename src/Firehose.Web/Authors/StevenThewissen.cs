@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => " is a Xamarin Developer with a knack for Photoshop and a passion for soccer and cycling. Is also in love with his Xbox One.";
+        public string ShortBioOrTagLine => " is a Xamarin Developer with a knack for Photoshop and a passion for soccer and cycling. He is also in love with his Xbox One";
 
         public Uri WebSite => new Uri("http://www.dvolve.org/");
 
