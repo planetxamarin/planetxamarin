@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => string.Empty;
+        public string ShortBioOrTagLine => " is a Xamarin Developer with a knack for Photoshop and a passion for soccer and cycling. Is also in love with his Xbox One.";
 
         public Uri WebSite => new Uri("http://www.dvolve.org/");
 
@@ -28,9 +28,10 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "devnl";
 
         public string GravatarHash => "9f698e6f515cb54dbda305034b6823fc";
-        public GeoPosition Position => new GeoPosition(52.1326330, 5.2912660);
 
-        public string GitHubHandle => string.Empty;
+        public GeoPosition Position => new GeoPosition(50.889039, 5.853717);
+
+        public string GitHubHandle => "dvolvenl";
 
         public bool Filter(SyndicationItem item)
         {
