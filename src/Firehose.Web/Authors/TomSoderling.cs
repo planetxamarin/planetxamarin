@@ -13,6 +13,7 @@ namespace Firehose.Web
         public string ShortBioOrTagLine => string.Empty;
         public string TwitterHandle => "tomsoderlng";
         public string GravatarHash => "dd103f377899fc63b0b88c5bb62b15bd";
+        public GeoPosition Position => GeoPosition.Empty;
 
         public Uri WebSite => new Uri("https://mobilecomposer.github.io");
 

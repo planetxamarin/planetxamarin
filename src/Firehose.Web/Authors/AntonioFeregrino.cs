@@ -20,5 +20,6 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("http://thatcsharpguy.com/tag/Xamarin/");
         public string GravatarHash => "";
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
     }
 }

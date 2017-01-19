@@ -30,6 +30,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "";
 
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
 
         public bool Filter(SyndicationItem item)
         {

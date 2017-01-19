@@ -25,6 +25,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GravatarHash => "d3ac2144120f923f23c49ee4ce4437ab";
+        public GeoPosition Position => GeoPosition.Empty;
 
         public bool Filter(SyndicationItem item)
         {

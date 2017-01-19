@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "gonemobilecast@gmail.com";
 
-        public string ShortBioOrTagLine => "Podcast";
+        public string ShortBioOrTagLine => "is a development podcast focused on mobile development hosted by Jon Dick and Greg Shackles.";
 
         public Uri WebSite => new Uri("http://gonemobile.io");
 
@@ -24,8 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "gonemobilecast";
-
-
+        public GeoPosition Position => GeoPosition.Empty;
         public string GravatarHash => "cb611c5ecd9a53b2af53a9d50d83c3c5";
         public string GitHubHandle => string.Empty;
     }

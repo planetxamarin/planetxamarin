@@ -23,6 +23,7 @@ namespace Firehose.Web
         }
 
         public string GitHubHandle => string.Empty;
+        public GeoPosition Position => GeoPosition.Empty;
 
         public bool Filter(SyndicationItem item) =>
             item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
