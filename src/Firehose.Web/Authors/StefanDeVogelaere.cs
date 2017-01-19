@@ -15,10 +15,10 @@ namespace Firehose.Web.Authors
 		public string EmailAddress => "stefan.de.vogelaere@gmail.com";
 		public string TwitterHandle => "stefandevo";
 
-		public Uri WebSite => new Uri("http://stefandevo.com");
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://stefandevo.com/feed/"); } }
+		public Uri WebSite => new Uri("http://www.stefandevo.com");
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.stefandevo.com/feed/"); } }
 
-		public string GravatarHash => "d3ac2144120f923f23c49ee4ce4437ab";
+		public string GravatarHash => "c91dbad10c922f0fef71e9e2df15b763";
 
 		public bool Filter(SyndicationItem item)
 		{
