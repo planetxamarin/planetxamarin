@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string FirstName => "Robin-Manuel";
         public string LastName => "Thiel";
-        public string ShortBioOrTagLine => "technical evangelist at Microsoft";
+        public string ShortBioOrTagLine => "";
         public string StateOrRegion => "Munich, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "einRobby";
