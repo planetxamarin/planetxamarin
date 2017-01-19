@@ -1,0 +1,67 @@
+﻿@using Firehose.Web.Infrastructure
+@model IAmACommunityMember
+
+<div class="col-md-4 profileCard" id="@Model.GetType().Name">
+    <img class="mugShot" src="@Model.GravatarImage()" alt="@Model.FirstName @Model.LastName"/>
+    <div class="mugShotBorder">
+    </div>
+    <div class="profileCardWrapper">
+
+        <p class="name">@Model.FirstName @Model.LastName</p>
+        <p class="twitter">
+            <a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a>
+        </p>
+
+        <p class="description">
+            @if (!string.IsNullOrWhiteSpace(Model.ShortBioOrTagLine))
+            {
+
+                if (Model is IWorkAtXamarinOrMicrosoft)
+                {
+                    <text>@Model.FirstName @Model.LastName @Model.ShortBioOrTagLine at Microsoft</text>
+                }
+                else
+                {
+                    if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
+                    {
+                        <text>@Model.FirstName @Model.LastName is</text>
+
+                        var output = string.Empty;
+                        var xamarinMvpModel = Model as IAmAXamarinMVP;
+                        if (xamarinMvpModel != null)
+                        {
+                            output += "a Xamarin";
+                        }
+                        if (Model is IAmAXamarinMVP && Model is IAmAMicrosoftMVP)
+                        {
+                            output += " and Microsoft";
+                        }
+                        else
+                        {
+                            var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+                            if (microsoftMvpModel != null)
+                            {
+                                output += "a Microsoft";
+                            }
+                        }
+
+                        output += " MVP ";
+                        <text>@Html.Raw(output)</text>
+
+                        <text>who @Model.ShortBioOrTagLine</text>
+                    }
+                    else
+                    {
+                        <text>@Model.FirstName @Model.LastName @Model.ShortBioOrTagLine</text>
+                    }
+                }
+            }
+        </p>
+
+        <p class="location">
+            <i class="fa fa-map-marker"></i> @Model.StateOrRegion</p>
+        <p class="website">
+            <a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a>
+        </p>
+    </div>
+</div>
