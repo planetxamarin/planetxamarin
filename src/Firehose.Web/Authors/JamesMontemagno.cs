@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => string.Empty;
+        public string ShortBioOrTagLine => "is a Principal Program Manager for Mobile Developer Tools";
 
         public Uri WebSite => new Uri("http://motzcod.es");
 
@@ -23,12 +23,12 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("http://motzcod.es/rss"); }
         }
 
-        public string TwitterHandle => "jamesmontemagno";
+        public string TwitterHandle => "JamesMontemagno";
 
 
         public string GravatarHash => "5df4d86308e585c879c19e5f909d8bfe";
+        public string GitHubHandle => "jamesmontemagno";
 
-        public string GitHubHandle => string.Empty;
         public GeoPosition Position => GeoPosition.Empty;
     }
 }

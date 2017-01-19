@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => "Weekly Developer Show for Xamarin Developers";
+        public string ShortBioOrTagLine => "is a Weekly Developer Show for Xamarin Developers";
 
         public Uri WebSite => new Uri("http://xamarinshow.com");
 
@@ -23,7 +23,7 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("https://s.ch9.ms/Shows/XamarinShow/feed"); }
         }
 
-        public string TwitterHandle => "thexamarinshow";
+        public string TwitterHandle => "TheXamarinShow";
 
         public string GravatarHash => "7a0c7da0279b4e90439e780fa01924e0";
         public string GitHubHandle => string.Empty;
