@@ -17,12 +17,17 @@ namespace Firehose.Web.Authors
 
 		public Uri WebSite => new Uri("http://peterfoot.net");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://peterfoot.net/feed/"); } }
-
-		DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2003, 4, 1);
-
+        
 		public string GravatarHash => "fa15aeeccc4b23e8a4677aeacb65b7bb";
 
-		public bool Filter(SyndicationItem item)
+        public string ShortBioOrTagLine => "Peter Foot is a Xamarin and Windows developer at In The Hand Ltd";
+
+        public string GitHubHandle => "peterfoot";
+
+
+        public GeoPosition Position => new GeoPosition(52.76872, -2.37825);
+
+        public bool Filter(SyndicationItem item)
 		{
 			
 			return item.Categories.Where(i => i.Name.Equals("Xamarin", StringComparison.OrdinalIgnoreCase)).Any();
