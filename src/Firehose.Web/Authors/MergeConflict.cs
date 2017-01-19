@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "mergeconflictfm@gmail.com";
 
-        public string ShortBioOrTagLine => "Podcast";
+        public string ShortBioOrTagLine => "is a weekly development podcast hosted by Frank Krueger and James Montemagno.";
 
         public Uri WebSite => new Uri("http://mergeconflict.fm");
 
@@ -23,8 +23,10 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("http://simplecast.com/podcasts/2117/rss"); }
         }
 
-        public string TwitterHandle => "mergeconflictfm";
+        public string TwitterHandle => "MergeConflictFM";
 
         public string GravatarHash => "24527eb9b29a8adbfc4155db4044dd3c";
+        public string GitHubHandle => string.Empty;
+        public GeoPosition Position => new GeoPosition(47.6062100, -122.3320710);
     }
 }

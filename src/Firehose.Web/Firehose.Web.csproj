@@ -263,6 +263,7 @@
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\CombinedFeedSource.cs" />
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -296,11 +297,8 @@
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\NunoHorta.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
-
     <Compile Include="Authors\StefanDeVogelaere.cs" />
-
     <Compile Include="ViewModels\PreviewViewModel.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -316,6 +314,9 @@
     <Content Include="Content\plugins\jquery\jquery-3.1.1.min.map" />
     <Content Include="Views\Preview\Index.cshtml" />
     <Content Include="Views\Authors\ProfileCard.cshtml" />
+    <Content Include="Views\Authors\Map.cshtml" />
+    <Content Include="Views\Shared\_ContainerLayout.cshtml" />
+    <Content Include="Views\Authors\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -15,10 +15,14 @@ namespace Firehose.Web.Authors
         public string LastName => "Cielecki";
         public string StateOrRegion => "Copenhagen, Denmark";
         public string EmailAddress => "tomasz@ostebaronen.dk";
-        public string ShortBioOrTagLine => "loves long walks on the beach, yelling at the screen. More importantly write code.";
+
+        public string ShortBioOrTagLine
+            => "loves long walks on the beach, yelling at the screen. More importantly writes code.";
+
         public Uri WebSite => new Uri("http://blog.ostebaronen.dk");
         public string TwitterHandle => "Cheesebaron";
-        public DateTime FirstAwarded => new DateTime(2015, 1, 1);
+        public string GitHubHandle => string.Empty;
         public string GravatarHash => "f780d57997526876b0625e517c1e0884";
+        public GeoPosition Position => new GeoPosition(55.6760970, 12.5683370);
     }
 }

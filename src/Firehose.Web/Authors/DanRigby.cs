@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -8,8 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Dan";
         public string LastName => "Rigby";
-        public string ShortBioOrTagLine => "Xamarin Technical Solutions Professional";
-        public DateTime Started => new DateTime(2015, 12, 1);
+        public string ShortBioOrTagLine => string.Empty;
         public string StateOrRegion => "North Carolina";
         public string EmailAddress => "dan.rigby@xamarin.com";
         public string TwitterHandle => "DanRigby";
@@ -21,5 +20,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GravatarHash => "f025f772418fbcfd3a1e15a74bf0f8a4";
+        public string GitHubHandle => string.Empty;
+        public GeoPosition Position => new GeoPosition(35.7595730, -79.0193000);
     }
 }

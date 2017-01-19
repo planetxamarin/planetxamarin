@@ -61,21 +61,14 @@
                     <li>@Html.ActionLink("Authors", "Index", "Authors")</li>
                     <li>@Html.ActionLink("Preview", "Index", "Preview")</li>
                     <li><a href="@Url.Action("Index", "Feed")"><i class="fa fa-rss" aria-hidden="true"></i> <span id="rssText">RSS Feed</span></a></li>
-                    <li><a href="https://www.facebook.com/planetxamarin/"><i class="fa fa-facebook" aria-hidden="true"></i> <span id="facebookText">Facebook</span></a></li>
                     <li><a href="https://twitter.com/PlanetXamarin"><i class="fa fa-twitter" aria-hidden="true"></i> <span id="twitterText">Twitter</span></a></li>
+                    <li><a href="https://www.facebook.com/planetxamarin/"><i class="fa fa-facebook" aria-hidden="true"></i> <span id="facebookText">Facebook</span></a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
-        <div class="container">
-            @RenderBody()
-        </div>
-        <hr />
-        <footer>
-            <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/planetxamarin/planetxamarin">pull-request to our repository</a> on GitHub. Planet Xamarin is not affiliated with Xamarin Inc. or Microsoft and is a open-source project maintained <a href="https://twitter.com/GeoffreyHuntley/status/795812681680756736">by the community for the community</a>.</p>
-        </footer>
-    </div>
+    
+    @RenderBody()
 
     <script src="~/Content/plugins/jquery/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

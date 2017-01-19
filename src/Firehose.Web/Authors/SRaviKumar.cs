@@ -10,11 +10,12 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "S Ravi";
         public string LastName => "Kumar";
-        public string ShortBioOrTagLine => "Xamarin Developer | Solution Architect";
+        public string ShortBioOrTagLine => string.Empty;
         public string StateOrRegion => "Greater Noida, India";
         public string EmailAddress => "srkrathore@gmail.com";
         public string TwitterHandle => "srkrathore";
         public string GravatarHash => "";
+        public GeoPosition Position => new GeoPosition(28.4743880, 77.5039900);
 
         public Uri WebSite => new Uri("http://err2solution.com/");
 
@@ -22,6 +23,8 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("http://err2solution.com/feed/"); }
         }
+
+        public string GitHubHandle => string.Empty;
 
         public bool Filter(SyndicationItem item)
         {

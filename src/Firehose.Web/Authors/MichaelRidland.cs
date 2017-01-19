@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "michael@xam-consulting.com";
 
-        public string ShortBioOrTagLine => "director of an Xamarin consultancy";
+        public string ShortBioOrTagLine => "";
 
         public Uri WebSite => new Uri("http://www.michaelridland.com");
 
@@ -25,8 +25,8 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "rid00z";
 
-        public DateTime FirstAwarded => new DateTime(2015, 4, 1);
-
         public string GravatarHash => "";
+        public string GitHubHandle => string.Empty;
+        public GeoPosition Position => new GeoPosition(-33.8688200, 151.2092960);
     }
 }
