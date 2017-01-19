@@ -22,6 +22,6 @@ namespace Firehose.Web.Authors
 
         public string GravatarHash => "";
         public string GitHubHandle => "ghuntley";
-        public GeoPosition Position => new GeoPosition(-33.8726629, 151.2044161);
+        public GeoPosition Position => new GeoPosition(-33.8641859, 151.2143821);
     }
 }

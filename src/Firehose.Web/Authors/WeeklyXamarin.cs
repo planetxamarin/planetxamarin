@@ -31,6 +31,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => string.Empty;
 
         public string GravatarHash => "";
-        public GeoPosition Position => GeoPosition.Empty;
+        public GeoPosition Position => new GeoPosition(-22.9791499, 133.0190863);
     }
 }

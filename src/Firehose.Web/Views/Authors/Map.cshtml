@@ -5,13 +5,13 @@
 
 <script type='text/javascript'>
     var map, selectedAuthor = null;
-    var markerRadius = 25;
+    var markerRadius = 20;
 
     function loadMap() {
         var map = new google.maps.Map(document.getElementById('authorMap'),
         {
             zoom: 2,
-            center: { lat: 34.88593094075314, lng: -15.732421875 },
+            center: { lat: 34.88593094075314, lng: -10.732421875 },
             streetViewControl: false,
             disableDefaultUI: true
         });
@@ -20,7 +20,8 @@
         var markers = getMarkers();
         var markerCluster = new MarkerClusterer(map, markers,
             {
-                imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'
+                imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m',
+                gridSize: 20
             });
     }
 
