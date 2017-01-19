@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "kent.boogaart@gmail.com";
 
-        public string ShortBioOrTagLine => "is a kick-a** software engineer";
+        public string ShortBioOrTagLine => "is a kick-a** freelance software engineer";
 
         public Uri WebSite => new Uri("http://kent-boogaart.com/");
 
