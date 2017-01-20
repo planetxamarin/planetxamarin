@@ -307,8 +307,6 @@
     <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
-    <Compile Include="Authors\IoneSouzaJunior.cs" />
-    <Compile Include="Authors\RoyCornelissen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
