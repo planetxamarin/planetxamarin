@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 		public string StateOrRegion => "New Zealand";
 
 		public string EmailAddress => "nigel.sampson@compiledexperience.com";
-		public string ShortBioOrTagLine => "is the project lead of Caliburn.Micro and has been known to develop mobile applications at Pushpay";
+		public string ShortBioOrTagLine => "is the project lead of Caliburn.Micro and is often a developer at Pushpay";
 
 		public Uri WebSite => new Uri("http://compiledexperience.com/");
 
