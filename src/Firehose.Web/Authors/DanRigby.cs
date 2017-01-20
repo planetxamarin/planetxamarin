@@ -8,11 +8,11 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Dan";
         public string LastName => "Rigby";
-        public string ShortBioOrTagLine => string.Empty;
-        public string StateOrRegion => "North Carolina";
+        public string ShortBioOrTagLine => "is a Xamarin Technical Solutions Professional at Microsoft.";
+        public string StateOrRegion => "Raleigh, North Carolina";
         public string EmailAddress => "dan.rigby@xamarin.com";
         public string TwitterHandle => "DanRigby";
-        public string ShortBioOrTagLine => "is a Xamarin Technical Solutions Professional at Microsoft.";
+        
         public Uri WebSite => new Uri("http://danrigby.com/");
 
         public IEnumerable<Uri> FeedUris
