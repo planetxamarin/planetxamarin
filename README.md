@@ -6,7 +6,17 @@ If you write about Xamarin, you belong here. You're welcome to add your blog and
 
 # Add yourself as an author
 
-To add yourself as an author you can fork this project, add yourself to the [authors folder](https://github.com/planetxamarin/planetxamarin/tree/master/src/Firehose.Web/Authors) as a class, implementing the `IAmACommunityMember` interface.
+### Author Guidelines
+- I have a valid blog & RSS URL
+- Host NO malicious or offensive content on the blog (including photos, swearing, etc.)
+- Blog is active with atleast 3 Xamarin related blog posts in the last 6 months
+- If the blog has mixed content (Xamarin and Personal/Non-Xamarin blogs) a filter has been applied
+- If you delete your blog you will come delete your blog from Planet Xamarin
+- Your blog may be removed at any time if any of these are broken.
+
+### How to add
+
+To add yourself as an author you can fork this project, add yourself to the [authors folder](https://github.com/planetxamarin/planetxamarin/tree/master/src/Firehose.Web/Authors) as a class, implementing the `IAmACommunityMember` interface. If you are doing this via the GitHub editor, don't forget to _add the class to the .csproj_.
 
 The result should look something like this:
 
@@ -15,21 +25,21 @@ public class BruceWayne : IAmACommunityMember
 {
     public string FirstName => "Bruce";
     public string LastName => "Wayne";
-    public string Title => "The Dark Knight";
+    public string ShortBioOrTagLine => "potentially batman";
     public string StateOrRegion => "Gotham";
-    public string EmailAddress => "rescueme@batman.com";
+    public string EmailAddress => "rescueme@planetxamarin.com";
     public string TwitterHandle => "batman";
     public string GravatarHash => "42abc1337def";
 
-    public Uri WebSite => new Uri("https://iamthebatman.com/");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://iamthebatman.com/rss"); } }
+    public Uri WebSite => new Uri("https://planetxamarin.com/");
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
 }
 ```
 
 A few things: 
 - Name the class after your first and lastname with CamelCase
 - The `FirstName` and `LastName` property should resemble that same name
-- `Title` property can be whatever you like. Most likely something like: 'Senior Developer @ Wayne Enterprises' or 'Xamarin Developer & Microsoft MVP'
+- `ShortBioOrTagLine` property can be whatever you like. If you can't think of anything choose: 'software engineer' or 'software engineer at Microsoft'
 - `StateOrRegion` will be your geographical location, i.e.: Holland, New York, etc.
 - `EmailAddress` and `TwitterHandle` should be pretty clear, `TwitterHandle` without the leading @
 - The `Website` property can be your global website or whatever you want people to look at
@@ -42,7 +52,7 @@ public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
     {
         public string FirstName => "Awesome";
         public string LastName => "Sauce";
-        public string Title => "Unicorn tamer";
+        public string ShortBioOrTagLine => "unicorn tamer";
         public string StateOrRegion => "127.0.0.1";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "theboss";
@@ -87,6 +97,11 @@ public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
 # A small step for an author...
 
 A big step for mankind! Last thing that remains is submit a Pull Request to us and whenever it gets merged: hooray! You're an author now!
+
+Don't forget to incorporate the Featured on Planet Xamarin badge on your blog and link back to us!
+
+
+![Featured on Planet Xamarin Badge](https://www.planetxamarin.com/Content/img/planetxamarin-featured-badge.png)
 
 Enjoy all of our great content! 
 

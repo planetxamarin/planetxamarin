@@ -5,22 +5,24 @@ using System.Configuration;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Threading;
+using System.Web;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
 
 namespace Firehose.Web.Infrastructure
 {
     public class CombinedFeedSource
     {
-        private readonly IAmABlogger[] _bloggers;
+        private readonly IAmACommunityMember[] _bloggers;
         private readonly Lazy<ISyndicationFeedSource> _combinedFeedSource;
 
-        public CombinedFeedSource(IAmABlogger[] bloggers)
+        public CombinedFeedSource(IAmACommunityMember[] bloggers)
         {
             _bloggers = bloggers;
             _combinedFeedSource = new Lazy<ISyndicationFeedSource>(LoadFeeds, LazyThreadSafetyMode.PublicationOnly);
         }
 
         public SyndicationFeed Feed => _combinedFeedSource.Value.Feed;
+        public IAmACommunityMember[] Bloggers => _bloggers;
 
         private ISyndicationFeedSource LoadFeeds()
         {
@@ -45,11 +47,11 @@ namespace Firehose.Web.Infrastructure
                 .Grr();
         }
 
-        private static ISyndicationFeedSource TryLoadFeed(IAmABlogger readifarian, Uri uri)
+        private static ISyndicationFeedSource TryLoadFeed(IAmACommunityMember tamarin, Uri uri)
         {
             try
             {
-                var iFilterMyBlogPosts = readifarian as IFilterMyBlogPosts;
+                var iFilterMyBlogPosts = tamarin as IFilterMyBlogPosts;
 
                 var filter = iFilterMyBlogPosts != null
                     ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
@@ -63,8 +65,10 @@ namespace Firehose.Web.Infrastructure
 
                 return feedSource;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Logger.Error(ex, $"{tamarin.FirstName} {tamarin.LastName}'s feed of {uri} failed to load.");
+
                 // Not my problem if your feed asplodes but we at least won't crash the app for all the other nice people :)
                 return null;
             }

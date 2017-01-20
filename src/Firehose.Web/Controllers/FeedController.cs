@@ -17,16 +17,11 @@ namespace Firehose.Web.Controllers
             _combinedFeedSource = combinedFeedSource;
         }
 
-        public RssFeedResult Rss(int? numPosts = 50)
+        [Route("feed")]
+        public RssFeedResult Index(int? numPosts = 50)
         {
             var feed = GetFeed(numPosts);
             return new RssFeedResult(feed);
-        }
-
-        public ViewResult Read(int? numPosts = 50)
-        {
-            var feed = GetFeed(numPosts);
-            return View(feed);
         }
 
         private SyndicationFeed GetFeed(int? numPosts)

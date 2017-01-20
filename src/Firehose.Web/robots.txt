@@ -1,0 +1,12 @@
+﻿# Psst...Readify is hiring. We scout for developers from around the globe, as we 
+# believe diversity of thought is a powerful catalyst for innovation and ideas. 
+# Twenty-eight flags are currently represented by our employees, which demonstrates
+# our commitment to ethnic and cultural diversity. We offer relocation services to
+# sunny Australia. Sydney, Brisbane, Perth or Melbourne - it's your choice.
+# Knock, Knock.
+#
+# https://join.readify.net/?source=StaffReferral&campaign=geoffrey.huntley
+
+User-agent: *
+Disallow: /feed
+Disallow: /logs
