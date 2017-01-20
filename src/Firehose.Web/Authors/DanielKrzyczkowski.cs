@@ -21,7 +21,6 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("http://mobileprogrammer.pl");
         public string TwitterHandle => "DKrzyczkowski";
         public string GitHubHandle => "Daniel-Krzyczkowski";
-        DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2016, 10, 1);
         public string GravatarHash => "65e521a756dff3ac3c233e58afc9ee2b";
         public GeoPosition Position => new GeoPosition(52.230878, 21.010842);
         
