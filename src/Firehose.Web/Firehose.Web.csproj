@@ -310,6 +310,7 @@
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\RoyCornelissen.cs" />
+    <Compile Include="Authors\DavidBritch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
