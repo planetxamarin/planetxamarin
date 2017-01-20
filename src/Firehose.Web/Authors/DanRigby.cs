@@ -10,18 +10,16 @@ namespace Firehose.Web.Authors
         public string LastName => "Rigby";
         public string ShortBioOrTagLine => "is a Xamarin Technical Solutions Professional at Microsoft.";
         public string StateOrRegion => "Raleigh, North Carolina";
-        public string EmailAddress => "dan.rigby@xamarin.com";
+        public string EmailAddress => "Dan.Rigby@Xamarin.com";
         public string TwitterHandle => "DanRigby";
-        
+        public string GitHubHandle => "DanRigby";
+        public string GravatarHash => "f025f772418fbcfd3a1e15a74bf0f8a4";
+        public GeoPosition Position => new GeoPosition(35.7795900,-78.6381790);
         public Uri WebSite => new Uri("http://danrigby.com/");
 
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("https://feeds.feedburner.com/DanRigby"); }
         }
-
-        public string GravatarHash => "f025f772418fbcfd3a1e15a74bf0f8a4";
-        public string GitHubHandle => string.Empty;
-        public GeoPosition Position => new GeoPosition(35.7595730, -79.0193000);
     }
 }
