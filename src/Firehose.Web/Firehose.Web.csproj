@@ -239,6 +239,7 @@
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
+    <Compile Include="Authors\CorradoCavalli.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
