@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Marc";
         public string LastName => "Bruins";
-        public string ShortBioOrTagLine => "Native iOS/Android developer who fell in love with Xamarin";
+        public string ShortBioOrTagLine => "is a native iOS/Android developer who fell in love with Xamarin";
         public string EmailAddress => "marc@marcbruins.nl";
         public string TwitterHandle => "MarcBruins";
         public string GravatarHash => "3795d2031be87499f76f6336ec5a3a45";
