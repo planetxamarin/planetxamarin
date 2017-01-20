@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Li";
         public string LastName => "Xiaobin";
-        public string ShortBioOrTagLine => "Xamarin.Froms and UWP";
+        public string ShortBioOrTagLine => "";
         public string StateOrRegion => "Jiangxi";
         public string EmailAddress => "newblifes@hotmail.com";
         public string TwitterHandle => "newblifes";
