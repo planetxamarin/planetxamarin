@@ -304,6 +304,7 @@
     <Compile Include="Authors\NunoHorta.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
+    <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
   </ItemGroup>
