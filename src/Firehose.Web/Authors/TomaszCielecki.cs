@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class TomaszCielecki : IAmAXamarinMVP
+    public class TomaszCielecki : IAmAXamarinMVP, IFilterMyBlogPosts
     {
         public IEnumerable<Uri> FeedUris
         {
@@ -21,8 +21,12 @@ namespace Firehose.Web.Authors
 
         public Uri WebSite => new Uri("http://blog.ostebaronen.dk");
         public string TwitterHandle => "Cheesebaron";
-        public string GitHubHandle => string.Empty;
+        public string GitHubHandle => "Cheesebaron";
         public string GravatarHash => "f780d57997526876b0625e517c1e0884";
-        public GeoPosition Position => new GeoPosition(55.6760970, 12.5683370);
+        public GeoPosition Position => new GeoPosition(55.8019193, 12.523124);
+        
+        public bool Filter(SyndicationItem item)
+            => item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
+               item.Categories.Any(c => c.Name.Equals("xamarin", StringComparison.OrdinalIgnoreCase));
     }
 }
