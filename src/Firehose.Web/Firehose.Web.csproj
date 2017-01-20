@@ -241,6 +241,7 @@
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
+    <Compile Include="Authors\AlmirVuk.cs" />
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
