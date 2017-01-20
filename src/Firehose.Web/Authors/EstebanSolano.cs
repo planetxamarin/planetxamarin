@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Firehose.Web.Authors
 {
-    public class EstebanSolano : IAmAMicrosoftMVP, IAmAXamarinMVP, IAmACommunityMember, IFilterMyBlogPosts
+    public class EstebanSolano : IAmAMicrosoftMVP, IAmAXamarinMVP, IFilterMyBlogPosts
     {
         public string FirstName => "Esteban";
         public string LastName => "Solano";
@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "stvansolano@outlook.com";
 
-        public string ShortBioOrTagLine => "Passionate software community guy from Costa Rica who enjoys learning, talk and help others to learn C# and Xamarin";
+        public string ShortBioOrTagLine => "is a passionate software community guy from Costa Rica who enjoys learning, talk and help others to learn C# and Xamarin";
 
         public Uri WebSite => new Uri("https://stvansolano.github.io/");
 
