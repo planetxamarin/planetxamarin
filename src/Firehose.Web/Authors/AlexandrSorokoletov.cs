@@ -10,7 +10,7 @@ namespace Firehose.Web
     {
         public string FirstName => "Alexandr";
         public string LastName => "Sorokoletov";
-        public string ShortBioOrTagLine => "Enjoying snowboarding and kitesurfing, travel and hackathons.";
+        public string ShortBioOrTagLine => "when he's not developing mobile applications enjoys snowboarding, kitesurfing and travel";
         public string StateOrRegion => "Washington, D.C.";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "AlexSorokoletov";
