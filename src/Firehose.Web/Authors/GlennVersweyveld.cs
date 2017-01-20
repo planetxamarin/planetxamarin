@@ -10,10 +10,11 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Glenn";
         public string LastName => "Versweyveld";
-        public string ShortBioOrTagLine => string.Empty;
+        public string ShortBioOrTagLine => "'SH10151' this is the serial number of our orbital gun";
         public string StateOrRegion => "Antwerp, Belgium";
         public string EmailAddress => "Glenn.Versweyveld@gmail.com";
         public string TwitterHandle => "depechie";
+        public GeoPosition Position => new GeoPosition(51.091310, 4.548315);        
 
         public Uri WebSite => new Uri("http://depblog.weblogs.us");
 
@@ -23,8 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GravatarHash => "d3ac2144120f923f23c49ee4ce4437ab";
-        public string GitHubHandle => string.Empty;
-        public GeoPosition Position => new GeoPosition(51.2194480, 4.4024640);
+        public string GitHubHandle => string.Empty;        
 
         public bool Filter(SyndicationItem item)
         {
