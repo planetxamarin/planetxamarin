@@ -27,7 +27,9 @@ namespace Firehose.Web.Authors
 
 		public bool Filter(SyndicationItem item)
 		{
-			return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+            var allowedCategories = new [] { "xamarin", "caliburn-micro" };
+
+            return item.Categories.Any(c => allowedCategories.Contains(c.Name.ToLowerInvariant()));
 		}
 	}
 }
