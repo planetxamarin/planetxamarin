@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 		public string EmailAddress => "marc@marcbruins.nl";
 		public string TwitterHandle => "MarcBruins";
 		public string GravatarHash => "3795d2031be87499f76f6336ec5a3a45";
-
+        public string ShortBioOrTagLine => "Native iOS/Android developer who fell in love with Xamarin";
 		public string StateOrRegion => "Groningen, Netherlands";
 		public Uri WebSite => new Uri("http://www.marcbruins.nl");
 
