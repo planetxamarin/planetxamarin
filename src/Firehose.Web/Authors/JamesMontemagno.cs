@@ -1,10 +1,10 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class JamesMontemagno : IWorkAtXamarinOrMicrosoft
+    public class JamesMontemagno : IWorkAtXamarinOrMicrosoft
     {
         public string FirstName => "James";
 
@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string Title => "Principal Program Manager";
+        public string ShortBioOrTagLine => "is a Principal Program Manager for Mobile Developer Tools";
 
         public Uri WebSite => new Uri("http://motzcod.es");
 
@@ -23,12 +23,12 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("http://motzcod.es/rss"); }
         }
 
-        public string TwitterHandle => "jamesmontemagno";
+        public string TwitterHandle => "JamesMontemagno";
 
 
         public string GravatarHash => "5df4d86308e585c879c19e5f909d8bfe";
+        public string GitHubHandle => "jamesmontemagno";
 
-		public DateTime Started => new DateTime(2013, 10, 11); 
-			
-	}
+        public GeoPosition Position => new GeoPosition(47.6541770, -122.3500000);
+    }
 }

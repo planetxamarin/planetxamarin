@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "adam.pedley@gmail.com";
 
-        public string Title => "Xamarin Developer | Microsoft MVP";
+        public string ShortBioOrTagLine => string.Empty;
 
         public Uri WebSite => new Uri("https://xamarinhelp.com/");
 
@@ -25,8 +25,8 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "adpedley";
 
-        public DateTime FirstAwarded => new DateTime(2016, 10, 1);
-
         public string GravatarHash => "";
+        public string GitHubHandle { get; }
+        public GeoPosition Position => new GeoPosition(-37.8136280, 144.9630580);
     }
 }
