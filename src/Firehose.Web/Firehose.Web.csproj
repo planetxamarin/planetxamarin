@@ -243,6 +243,7 @@
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
+    <Compile Include="Authors\PeterFoot.cs" />
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
@@ -300,6 +301,7 @@
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
+    <Compile Include="Authors\IoneSouzaJunior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
