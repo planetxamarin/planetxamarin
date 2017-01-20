@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
 	{
 		public string FirstName => "Corrado";
 		public string LastName => "Cavalli";
-		public string ShortBioOrTagLine => "Former Microsoft MVP, Xamarin MVP and SSDE at ibvsolutions.com";
+		public string ShortBioOrTagLine => "";
 		public string StateOrRegion => "Italy";
 		public string EmailAddress => "corrado@outlook.com";
 		public string TwitterHandle => "corcav";
@@ -21,8 +21,7 @@ namespace Firehose.Web.Authors
 
 		public bool Filter(SyndicationItem item)
 		{
-			// Of course you can make the checks as complicated as you want and combine some stuff
-			return item.Title.Text.ToLowerInvariant().Contains("xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+			return item.Title.Text.ToLowerInvariant().Contains("xamarin") || item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
 		}
 
 		public string GitHubHandle => "corradocavalli";
