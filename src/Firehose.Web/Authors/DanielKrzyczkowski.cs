@@ -4,7 +4,7 @@ namespace Firehose.Web.Authors
     {
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://mobileprogrammerblog.wordpress.com/feeds/posts/default"); }
+            get { yield return new Uri("http://mobileprogrammerblog.wordpress.com/feed/rss"); }
         }
 
         public string FirstName => "Daniel";
