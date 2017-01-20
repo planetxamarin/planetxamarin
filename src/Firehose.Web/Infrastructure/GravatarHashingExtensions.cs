@@ -14,7 +14,7 @@ namespace Firehose.Web.Infrastructure
                 hash = member.EmailAddress.Trim().ToLowerInvariant().ToMd5Hash().ToLowerInvariant();
 
             var defaultImage = HttpUtility.UrlEncode(ConfigurationManager.AppSettings["DefaultGravatarImage"]);
-            return $"http://www.gravatar.com/avatar/{hash}.jpg?s={size}&d={defaultImage}";
+            return $"//www.gravatar.com/avatar/{hash}.jpg?s={size}&d={defaultImage}";
         }
     }
 }

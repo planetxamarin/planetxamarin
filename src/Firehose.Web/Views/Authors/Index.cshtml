@@ -1,0 +1,37 @@
+﻿@using Firehose.Web.Infrastructure
+@model IAmACommunityMember[]
+
+@{ Html.RenderPartial("Map", Model.Where(m => m.Position != GeoPosition.Empty).ToArray()); }
+
+<div class="container body-content">
+    <div class="container">
+        @{ Html.RenderPartial("List", Model); }
+    </div>
+    <hr />
+    <footer>
+        <p>Do you blog about Xamarin? Add yourself to the aggregator by sending in a <a href="https://github.com/planetxamarin/planetxamarin">pull-request to our repository</a> on GitHub. Planet Xamarin is not affiliated with Xamarin Inc. or Microsoft and is a open-source project maintained <a href="https://twitter.com/GeoffreyHuntley/status/795812681680756736">by the community for the community</a>.</p>
+    </footer>
+</div>
+
+@section scripts {
+    <script>
+        var timeoutId = 0;
+
+        $('.live-search-box').on('keyup', function () {
+            clearTimeout(timeoutId); // doesn't matter if it's 0
+            timeoutId = setTimeout(function () {
+                var searchTerm = $('.live-search-box').val().toLowerCase();
+                searchTerm = searchTerm.replace(/\s+/g, '');
+
+                $('.profileCard').each(function () {
+                    var lowerId = $(this).attr('id').toLowerCase();
+                    if (lowerId.indexOf(searchTerm) > -1 || searchTerm.length < 1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }, 500);
+        });
+    </script>
+}

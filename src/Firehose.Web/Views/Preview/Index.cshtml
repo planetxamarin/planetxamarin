@@ -1,0 +1,63 @@
+﻿@using BlogMonster.Extensions
+@using Firehose.Web.Infrastructure
+@using Humanizer
+@using ThirdDrawer.Extensions.ClassExtensionMethods
+@using Firehose.Web.Extensions
+
+@model Firehose.Web.ViewModels.PreviewViewModel
+
+@{
+    Layout = "~/Views/Shared/_ContainerLayout.cshtml";
+}
+
+@foreach (var item in Model.Feed.Items)
+{
+    var itemUri = item.Links.FirstOrDefault();
+    var author = Model.Bloggers.FirstOrDefault(b => b.FeedUris.Any(u => itemUri != null && itemUri.Uri.Host == u.Host));
+    string authorName;
+
+    // If we couldn't match the autor by FeedUri link, retry on Website
+    if (author == null)
+    {
+        author = Model.Bloggers.FirstOrDefault(b => itemUri != null && b.WebSite.Host == itemUri.Uri.Host);
+    }
+
+    // If we matched an author construct his name
+    if (author != null)
+    {
+        authorName = author.FirstName + " " + author.LastName;
+    }
+    // If no author was matched, extract the name from the RSS feed, something is better than nothing right?!
+    else
+    {
+        var creator = item.ElementExtensions.FirstOrDefault(x => x.OuterName == "creator" && x.OuterNamespace == "http://purl.org/dc/elements/1.1/");
+        authorName = creator.Coalesce(c => c.GetObject<System.Xml.Linq.XElement>().Value, string.Empty);
+    }
+
+    var link = item.Links.FirstOrDefault().Coalesce(l => l.Uri.ToString(), string.Empty);
+    var html = item.Content.Coalesce(c => c.ToHtml(), item.Summary.Coalesce(c => c.ToHtml(), string.Empty)
+    );
+
+    <div class="syndicationItem">
+        @if (author != null)
+        {
+            <img src="@author.GravatarImage()" alt="@author.FirstName @author.LastName avatar" style="float: left; max-width: 65px; margin-right: 10px;" class="img-circle" />
+        }
+        <h1 class="syndicationItemTitle"><a href="@link" target="_blank">@Html.Raw(item.Title.Text)</a></h1>
+        <h2 class="syndicationItemDate">
+            @item.PublishDate.Humanize()
+            @if (!string.IsNullOrWhiteSpace(authorName))
+                {
+                <text>|</text>
+                @authorName
+            }
+        </h2>
+        <div class="syndicationItemContent">
+            @Html.Raw(html.Sanitize())
+        </div>
+        <div class="syndicationItemFooter">
+            <a href="@link" class="btn btn-primary">View original post</a>
+        </div>
+    </div>
+    <hr />
+}
