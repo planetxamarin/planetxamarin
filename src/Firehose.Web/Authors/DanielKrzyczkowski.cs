@@ -21,7 +21,7 @@ namespace Firehose.Web.Authors
         
           public bool Filter(SyndicationItem item)
           {
-            return item.Title.Text.ToLowerInvariant().Contains("Xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("Xamarin") || c.Name.ToLowerInvariant().Equals("xamarin"));
+            return item.Title.Text.ToLowerInvariant().Contains("xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
           }
     }
 }
