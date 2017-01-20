@@ -10,7 +10,7 @@ namespace Firehose.Web
     {
         public string FirstName => "Alexandr";
         public string LastName => "Sorokoletov";
-        public string ShortBioOrTagLine => "I plan, design and develop mobile products to achieve measurable business results";
+        public string ShortBioOrTagLine => "Enjoying snowboarding and kitesurfing, travel and hackathons.";
         public string StateOrRegion => "Washington, D.C.";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "AlexSorokoletov";
@@ -19,6 +19,5 @@ namespace Firehose.Web
         public Uri WebSite => new Uri("https://sorokoletov.com");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://sorokoletov.com/atom.xml"); } }
         public string GravatarHash => "b07fef8827dd03655303751e2fd5ca95";
-        DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2013, 7, 1);
     }
 }
