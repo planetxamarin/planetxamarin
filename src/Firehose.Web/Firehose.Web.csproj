@@ -251,6 +251,7 @@
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
+    <Compile Include="Authors\NigelSampson.cs" />
     <Compile Include="Authors\LiXiaobin.cs" />
     <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
