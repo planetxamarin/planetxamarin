@@ -240,6 +240,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CorradoCavalli.cs" />
+    <Compile Include="Authors\EnricoRossini.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
@@ -307,6 +308,7 @@
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
+    <Compile Include="Authors\RoyCornelissen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
