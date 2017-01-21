@@ -20,8 +20,8 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("https://medium.com/feed/@donblas"); }
         }
 
-        public string GravatarHash => "";
-        public string GitHubHandle => string.Empty;
+        public string GravatarHash => "8fb3e7f07ea1386cefe1326b48e0e21a";
+        public string GitHubHandle => "chamons";
         public GeoPosition Position => new GeoPosition(30.2671530, -97.7430610);
     }
 }
