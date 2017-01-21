@@ -12,9 +12,9 @@ namespace Firehose.Web.Authors
         public string LastName => "Xiaobin";
         public string ShortBioOrTagLine => "";
         public string StateOrRegion => "Jiangxi";
-        public string EmailAddress => "newblifes@hotmail.com";
+        public string EmailAddress => "lixiaobinemail@gmail.com";
         public string TwitterHandle => "newblifes";
-        public string GravatarHash => string.Empty;
+        public string GravatarHash => "e9d748e701a4b275b096f7b2da551837";
         public string GitHubHandle => "NewBLife";
         public GeoPosition Position => new GeoPosition(27.424025, 114.552699);
         public Uri WebSite => new Uri("http://www.cnblogs.com/lixiaobin/");
