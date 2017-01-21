@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Krzyczkowski";
         public string StateOrRegion => "Warsaw, Poland";
         public string EmailAddress => "daniel.krzyczkowski@hotmail.com";
-        public string ShortBioOrTagLine => "Focused on mobile world. He is passionate about mobile applications and devices. He loves learning new things about mobile development. Main part of these activities is to teach others about .NET Framework, C# programming language, Universal Windows Platform and Xamarin.";
+        public string ShortBioOrTagLine => "Daniel Krzyczkowski is a Microsoft MVP passionate about Universal Windows Platform and Xamarin.";
         public Uri WebSite => new Uri("http://mobileprogrammer.pl");
         public string TwitterHandle => "DKrzyczkowski";
         public string GitHubHandle => "Daniel-Krzyczkowski";
