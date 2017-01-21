@@ -1,7 +1,6 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
@@ -25,8 +24,6 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "inquisitorjax";
         public Uri WebSite => new Uri("http://www.inquisitorjax.blogspot.com/");
 
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public bool Filter(SyndicationItem item) => item.Title.Text.ToLowerInvariant().Contains("xamarin");
     }
 }
