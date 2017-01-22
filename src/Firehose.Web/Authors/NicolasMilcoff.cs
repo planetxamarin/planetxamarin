@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "nicolas.milcoff@d-genix.com";
 
-        public string ShortBioOrTagLine => Mobile lead developer;
+        public string ShortBioOrTagLine => "Mobile lead developer";
 
         public Uri WebSite => new Uri("http://nmilcoff.com");
 
@@ -29,7 +29,7 @@ namespace Firehose.Web.Authors
 
         public string GravatarHash => "a689293f9c38aecdf729583533665e4a";
 
-        public string GitHubHandle => nmilcoff;
+        public string GitHubHandle => "nmilcoff";
         public GeoPosition Position => new GeoPosition(-32.945689, -60.642421);
     }
 }
