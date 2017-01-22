@@ -19,7 +19,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "e84ea2a58f302e42497e352212bfe5e5";
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://blog.burkharts.net/"); }
+            get { yield return new Uri("http://www.burkharts.net/apps/blog/feed/"); }
         }
         public GeoPosition Position => new GeoPosition(50.687586, 7.149718);
     }
