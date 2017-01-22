@@ -1,0 +1,45 @@
+﻿@using Firehose.Web.Infrastructure
+@model IAmACommunityMember
+
+<div class="businessCard">
+    <span class="mugShot" style="background-image: url('@Model.GravatarImage()');"></span>
+    <p>
+        <strong>@Model.FirstName @Model.LastName</strong><br />
+        <span title="Planet Xamarin | @Model.ShortBioOrTagLine">@Model.ShortBioOrTagLine</span><br />
+        @Model.StateOrRegion<br />
+        @if (Model is IAmAXamarinMVP || Model is IAmAMicrosoftMVP)
+        {
+            string output = string.Empty;
+            var xamarinMvpModel = Model as IAmAXamarinMVP;
+            if (xamarinMvpModel != null)
+            {
+                output += " Xamarin MVP";
+                if (Model is IAmAMicrosoftMVP)
+                {
+                    output += " and";
+                }
+            }
+            var microsoftMvpModel = Model as IAmAMicrosoftMVP;
+            if (microsoftMvpModel != null)
+            {
+                output += " Microsoft MVP";
+            }
+
+            <text>@output</text>
+        }
+    </p>
+    <p>
+    </p>
+    <p>
+        <a href="https://twitter.com/@Model.TwitterHandle" class="twitter-follow-button" data-show-count="false">Follow @@@Model.TwitterHandle</a>
+    </p>
+    <p>
+        <a class="contactDetail" href="https://twitter.com/@Model.TwitterHandle">Twitter</a><br />
+        @foreach (var uri in Model.FeedUris)
+        {
+            <a class="contactDetail" href="@uri.ToString()" title="@uri.ToString()">RSS</a>
+        }
+        <br />
+        <a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a>
+    </p>
+</div>

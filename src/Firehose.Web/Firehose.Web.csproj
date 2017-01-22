@@ -15,7 +15,7 @@
     <AssemblyName>Firehose.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44371</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -39,14 +39,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.2.0\lib\net40\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.2.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Autofac.Integration.Mvc">
-      <HintPath>..\packages\Autofac.Mvc5.3.2.0\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="BlogMonster, Version=2.2.136.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BlogMonster.2.2.136.0\lib\net40\BlogMonster.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.13605.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Humanizer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.1.0\lib\netstandard1.0\Humanizer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MarkdownSharp">
@@ -79,29 +93,28 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -114,53 +127,156 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="ThirdDrawer">
-      <HintPath>..\packages\ThirdDrawer.1.0.1.3\lib\net40\ThirdDrawer.dll</HintPath>
+    <Reference Include="ThirdDrawer, Version=1.1.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ThirdDrawer.1.1.9.0\lib\net40\ThirdDrawer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap.readify.css" />
-    <Content Include="Content\bootstrap.readify.min.css" />
-    <Content Include="Content\readify-box-mask.svg" />
-    <Content Include="Content\readify-device.png" />
-    <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\css\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\img\card-background.png" />
+    <Content Include="Content\img\icons\android-icon-144x144.png" />
+    <Content Include="Content\img\icons\android-icon-192x192.png" />
+    <Content Include="Content\img\icons\android-icon-36x36.png" />
+    <Content Include="Content\img\icons\android-icon-48x48.png" />
+    <Content Include="Content\img\icons\android-icon-72x72.png" />
+    <Content Include="Content\img\icons\android-icon-96x96.png" />
+    <Content Include="Content\img\icons\apple-icon-114x114.png" />
+    <Content Include="Content\img\icons\apple-icon-120x120.png" />
+    <Content Include="Content\img\icons\apple-icon-144x144.png" />
+    <Content Include="Content\img\icons\apple-icon-152x152.png" />
+    <Content Include="Content\img\icons\apple-icon-180x180.png" />
+    <Content Include="Content\img\icons\apple-icon-57x57.png" />
+    <Content Include="Content\img\icons\apple-icon-60x60.png" />
+    <Content Include="Content\img\icons\apple-icon-72x72.png" />
+    <Content Include="Content\img\icons\apple-icon-76x76.png" />
+    <Content Include="Content\img\icons\apple-icon-precomposed.png" />
+    <Content Include="Content\img\icons\apple-icon.png" />
+    <Content Include="Content\img\icons\browserconfig.xml" />
+    <Content Include="Content\img\icons\favicon-16x16.png" />
+    <Content Include="Content\img\icons\favicon-32x32.png" />
+    <Content Include="Content\img\icons\favicon-96x96.png" />
+    <Content Include="Content\img\icons\favicon.ico" />
+    <Content Include="Content\img\icons\ms-icon-144x144.png" />
+    <Content Include="Content\img\icons\ms-icon-150x150.png" />
+    <Content Include="Content\img\icons\ms-icon-310x310.png" />
+    <Content Include="Content\img\icons\ms-icon-70x70.png" />
+    <Content Include="Content\img\planetxamarin-featured-badge.png" />
+    <Content Include="Content\plugins\animate.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.min.css" />
+    <Content Include="Content\img\planetxamarin-box-mask.svg" />
+    <Content Include="Content\img\planetxamarin-device.png" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\plugins\fontawesome\css\font-awesome.css" />
+    <Content Include="Content\plugins\fontawesome\css\font-awesome.min.css" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <None Include="Scripts\jquery-1.9.0.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.0.js" />
-    <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="robots.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.min.js" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\css\site.less" />
+    <Content Include="Content\img\icons\manifest.json" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\plugins\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\plugins\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\plugins\fontawesome\less\animated.less" />
+    <Content Include="Content\plugins\fontawesome\less\bordered-pulled.less" />
+    <Content Include="Content\plugins\fontawesome\less\core.less" />
+    <Content Include="Content\plugins\fontawesome\less\fixed-width.less" />
+    <Content Include="Content\plugins\fontawesome\less\font-awesome.less" />
+    <Content Include="Content\plugins\fontawesome\less\icons.less" />
+    <Content Include="Content\plugins\fontawesome\less\larger.less" />
+    <Content Include="Content\plugins\fontawesome\less\list.less" />
+    <Content Include="Content\plugins\fontawesome\less\mixins.less" />
+    <Content Include="Content\plugins\fontawesome\less\path.less" />
+    <Content Include="Content\plugins\fontawesome\less\rotated-flipped.less" />
+    <Content Include="Content\plugins\fontawesome\less\screen-reader.less" />
+    <Content Include="Content\plugins\fontawesome\less\stacked.less" />
+    <Content Include="Content\plugins\fontawesome\less\variables.less" />
+    <Content Include="Content\plugins\fontawesome\scss\font-awesome.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_animated.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_core.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_fixed-width.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_icons.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_larger.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_list.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_mixins.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_path.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_screen-reader.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_stacked.scss" />
+    <Content Include="Content\plugins\fontawesome\scss\_variables.scss" />
+    <Content Include="Content\css\variables.less" />
+    <None Include="Content\plugins\jquery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.min.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\MalcolmJack.cs" />
+    <Compile Include="Authors\AdamPatridge.cs" />
+    <Compile Include="Authors\CorradoCavalli.cs" />
+    <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
+    <Compile Include="Authors\AlmirVuk.cs" />
+    <Compile Include="Authors\DanRigby.cs" />
+    <Compile Include="Authors\DanielKrzyczkowski.cs" />
+    <Compile Include="Authors\GlennStephens.cs" />
+    <Compile Include="Authors\PeterFoot.cs" />
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\GeoffreyHuntley.cs" />
+    <Compile Include="Authors\KymPhillpotts.cs" />
+    <Compile Include="Authors\NigelSampson.cs" />
+    <Compile Include="Authors\SRaviKumar.cs" />
+    <Compile Include="Authors\StevenThewissen.cs" />
+    <Compile Include="Authors\RyanDavis.cs" />
+    <Compile Include="Authors\ThomasBurkhart.cs" />
+    <Compile Include="Authors\ThomasLebrun.cs" />
+    <Compile Include="Authors\TomSoderling.cs" />
+    <Compile Include="Authors\WeeklyXamarin.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
     <Compile Include="Authors\KerryLothrop.cs" />
     <Compile Include="Authors\RobinManuelThiel.cs" />
+    <Compile Include="Authors\RobGibbens.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
+    <Compile Include="Authors\JonDouglas.cs" />
+    <Compile Include="Authors\WilliamRodriguez.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
-    <Compile Include="Controllers\WhoAreWeController.cs" />
+    <Compile Include="Controllers\PreviewController.cs" />
+    <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\CombinedFeedSource.cs" />
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Infrastructure\Logger.cs" />
     <Compile Include="Infrastructure\GravatarHashingExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,7 +293,28 @@
     <Compile Include="Authors\GregShackles.cs" />
     <Compile Include="Authors\ChrisWilliams.cs" />
     <Compile Include="Authors\GeertVanDerCruijsen.cs" />
+    <Compile Include="Authors\JamesMontemagno.cs" />
+    <Compile Include="Authors\MergeConflict.cs" />
+    <Compile Include="Authors\GoneMobile.cs" />
+    <Compile Include="Authors\TheXamarinShow.cs" />
+    <Compile Include="Authors\OfficialXamarinBlog.cs" />
+    <Compile Include="Authors\JonDick.cs" />
     <Compile Include="Authors\JohnMiller.cs" />
+    <Compile Include="Authors\MarcBruins.cs" />
+    <Compile Include="Authors\ChrisHamons.cs" />
+    <Compile Include="Authors\GiusepeCasagrande.cs" />
+    <Compile Include="Authors\MichaelRidland.cs" />
+    <Compile Include="Authors\NunoHorta.cs" />
+    <Compile Include="Authors\MatthewSoucoup.cs" />
+    <Compile Include="Authors\StefanDeVogelaere.cs" />
+    <Compile Include="Authors\AlexandrSorokoletov.cs" />
+    <Compile Include="ViewModels\PreviewViewModel.cs" />
+    <Compile Include="Authors\IoneSouzaJunior.cs" />
+    <Compile Include="Authors\RoyCornelissen.cs" />
+    <Compile Include="Authors\DavidBritch.cs" />
+    <Compile Include="Authors\AlejandroRuiz.cs" />
+    <Compile Include="Authors\AloisDeniel.cs" />
+    <Compile Include="Authors\ChrisRiesgo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -186,10 +323,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Feed\Read.cshtml" />
-    <Content Include="Views\WhoAreWe\Members.cshtml" />
-    <Content Include="Views\WhoAreWe\BusinessCard.cshtml" />
-    <Content Include="Content\bootstrap.readify.less" />
-    <Content Include="Scripts\jquery-1.9.0.min.map" />
+    <Content Include="Views\Authors\Index.cshtml" />
+    <Content Include="Views\Authors\BusinessCard.cshtml" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.planetxamarin.less" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.min.map" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.min.map" />
+    <Content Include="Views\Preview\Index.cshtml" />
+    <Content Include="Views\Authors\ProfileCard.cshtml" />
+    <Content Include="Views\Authors\Map.cshtml" />
+    <Content Include="Views\Shared\_ContainerLayout.cshtml" />
+    <Content Include="Views\Authors\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,7 +342,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -231,7 +373,7 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

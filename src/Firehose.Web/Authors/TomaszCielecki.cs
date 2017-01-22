@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class TomaszCielecki : IAmAXamarinMVP
+    public class TomaszCielecki : IAmAXamarinMVP, IFilterMyBlogPosts
     {
         public IEnumerable<Uri> FeedUris
         {
@@ -15,10 +17,18 @@ namespace Firehose.Web.Authors
         public string LastName => "Cielecki";
         public string StateOrRegion => "Copenhagen, Denmark";
         public string EmailAddress => "tomasz@ostebaronen.dk";
-        public string Title => "Software Engineer";
+
+        public string ShortBioOrTagLine
+            => "loves long walks on the beach, yelling at the screen. More importantly writes code.";
+
         public Uri WebSite => new Uri("http://blog.ostebaronen.dk");
         public string TwitterHandle => "Cheesebaron";
-        public DateTime FirstAwarded => new DateTime(2015, 1, 1);
-        public string GravatarHash => "84dd5af4b090f251344f5df8cc85f251";
+        public string GitHubHandle => "Cheesebaron";
+        public string GravatarHash => "f780d57997526876b0625e517c1e0884";
+        public GeoPosition Position => new GeoPosition(55.8019193, 12.523124);
+        
+        public bool Filter(SyndicationItem item)
+            => item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
+               item.Categories.Any(c => c.Name.Equals("xamarin", StringComparison.OrdinalIgnoreCase));
     }
 }
