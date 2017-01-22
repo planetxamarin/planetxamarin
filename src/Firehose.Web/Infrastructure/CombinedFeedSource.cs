@@ -3,9 +3,9 @@ using BlogMonster.Infrastructure.SyndicationFeedSources;
 using System;
 using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.ServiceModel.Syndication;
 using System.Threading;
-using System.Web;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
 
 namespace Firehose.Web.Infrastructure
@@ -61,7 +61,17 @@ namespace Firehose.Web.Infrastructure
                     .FromUrl(uri)
                     .WithFilter(filter)
                     .Grr();
+
                 var dummy = feedSource.Feed; // poke it to make sure it doesn't go bang.
+
+                // Poke it some more, to see if we can really reach it
+                var request = (HttpWebRequest)WebRequest.Create(uri);
+                request.Method = "HEAD";
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception("Feed says no");
 
                 return feedSource;
             }
