@@ -238,14 +238,15 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\CorradoCavalli.cs" />
-    <Compile Include="Authors\EnricoRossini.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
     <Compile Include="Authors\DanRigby.cs" />
+    <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
     <Compile Include="Authors\JavierSuarez.cs" />
@@ -254,10 +255,11 @@
     <Compile Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
-    <Compile Include="Authors\LiXiaobin.cs" />
     <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
+    <Compile Include="Authors\ThomasBurkhart.cs" />
+    <Compile Include="Authors\ThomasLebrun.cs" />
     <Compile Include="Authors\TomSoderling.cs" />
     <Compile Include="Authors\WeeklyXamarin.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
@@ -309,6 +311,11 @@
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
+    <Compile Include="Authors\RoyCornelissen.cs" />
+    <Compile Include="Authors\DavidBritch.cs" />
+    <Compile Include="Authors\AlejandroRuiz.cs" />
+    <Compile Include="Authors\AloisDeniel.cs" />
+    <Compile Include="Authors\ChrisRiesgo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
