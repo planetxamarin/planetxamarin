@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "alois.deniel@outlook.com";
 
-        public string ShortBioOrTagLine => "is a french Microsoft MVP focused on mobile technologies.";
+        public string ShortBioOrTagLine => "is a french developer passionate about mobile technologies and game development.";
 
         public Uri WebSite => new Uri("http://aloisdeniel.github.io/");
 
@@ -24,7 +24,7 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "AloisDeniel";
-        public string GravatarHash => "c0ee52c4665817f3957a0c5da646f53c";
+        public string GravatarHash => "093260fab3e542911199de8f4c3b6175";
         public string GitHubHandle => "aloisdeniel";
 
         public GeoPosition Position => new GeoPosition(48.1182843, -1.642746);
