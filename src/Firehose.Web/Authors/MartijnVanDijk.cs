@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Van Dijk";
         public string StateOrRegion => "Amsterdam, Netherlands";
         public string EmailAddress => "mhvdijk@gmail.com";
-        public string ShortBioOrTagLine => "is a Xamarin and Microsoft MVP working with MvvmCross";
+        public string ShortBioOrTagLine => "is developing apps at Xablu, and working with MvvmCross";
         public Uri WebSite => new Uri("https://medium.com/@martijn00");
         public string TwitterHandle => "mhvdijk";
         public string GravatarHash => "22155f520ab611cf04f76762556ca3f5";
