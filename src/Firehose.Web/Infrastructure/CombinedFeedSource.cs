@@ -62,9 +62,7 @@ namespace Firehose.Web.Infrastructure
                     .WithFilter(filter)
                     .Grr();
 
-                var dummy = feedSource.Feed; // poke it to make sure it doesn't go bang.
-
-                // Poke it some more, to see if we can really reach it
+                // Poke it, to see if we can really reach it
                 var request = (HttpWebRequest)WebRequest.Create(uri);
                 request.Method = "HEAD";
 
