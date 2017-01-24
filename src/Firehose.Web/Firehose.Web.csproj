@@ -248,6 +248,7 @@
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
+    <Compile Include="Authors\MarcosSantos.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
