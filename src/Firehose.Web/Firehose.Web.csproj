@@ -289,7 +289,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Authors\JimBennett.cs" />
     <Compile Include="Authors\MarcoKuiper.cs" />
-    <Compile Include="Authors\AshanDhanapala.cs"/>
     <Compile Include="Authors\GlennVersweyveld.cs" />
     <Compile Include="Authors\MartijnVanDijk.cs" />
     <Compile Include="Authors\AntonioFeregrino.cs" />
