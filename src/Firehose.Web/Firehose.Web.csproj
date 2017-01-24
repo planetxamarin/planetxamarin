@@ -240,6 +240,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
+    <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\CorradoCavalli.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
@@ -257,7 +258,9 @@
     <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
+    <Compile Include="Authors\ThomasBurkhart.cs" />
     <Compile Include="Authors\ThomasLebrun.cs" />
+    <Compile Include="Authors\TimotheLariviere.cs" />
     <Compile Include="Authors\TomSoderling.cs" />
     <Compile Include="Authors\WeeklyXamarin.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
@@ -267,6 +270,7 @@
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
     <Compile Include="Authors\WilliamRodriguez.cs" />
+    <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
@@ -313,6 +317,8 @@
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
     <Compile Include="Authors\AloisDeniel.cs" />
+    <Compile Include="Authors\FabioCozzolino.cs" />
+    <Compile Include="Authors\ChrisRiesgo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

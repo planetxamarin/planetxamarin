@@ -15,11 +15,11 @@ namespace Firehose.Web.Authors
         public string LastName => "Van Dijk";
         public string StateOrRegion => "Amsterdam, Netherlands";
         public string EmailAddress => "mhvdijk@gmail.com";
-        public string ShortBioOrTagLine => "";
+        public string ShortBioOrTagLine => "is developing apps at Xablu, and working with MvvmCross";
         public Uri WebSite => new Uri("https://medium.com/@martijn00");
         public string TwitterHandle => "mhvdijk";
         public string GravatarHash => "22155f520ab611cf04f76762556ca3f5";
-        public string GitHubHandle => string.Empty;
+        public string GitHubHandle => "martijn00";
         public GeoPosition Position => new GeoPosition(52.3702160, 4.8951680);
     }
 }
