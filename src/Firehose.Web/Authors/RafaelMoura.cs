@@ -8,6 +8,8 @@ namespace Firehose.Web.Authors
 {
     public class RafaelMoura : IAmAXamarinMVP
     {
+        //DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 2, 1);
+
         public string FirstName => "Rafael";
         public string LastName => "Moura";
         public string StateOrRegion => "Cuiabá, Brasil";
@@ -27,8 +29,8 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("http://www.studyxnet.com.br/rss"); }
         }
 
-        //public bool Filter(SyndicationItem item) =>
-        //    item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-        //    item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public bool Filter(SyndicationItem item) =>
+            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
+            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }
