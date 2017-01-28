@@ -8,7 +8,6 @@ namespace Firehose.Web.Controllers
         [Route("")]
         public ViewResult Index()
         {
-            throw new Exception("Tralala");
             return View();
         }
 
