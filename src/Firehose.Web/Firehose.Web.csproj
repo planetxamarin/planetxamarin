@@ -298,7 +298,6 @@
     <Compile Include="Authors\GeertVanDerCruijsen.cs" />
     <Compile Include="Authors\JamesMontemagno.cs" />
     <Compile Include="Authors\MergeConflict.cs" />
-    <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
@@ -311,13 +310,11 @@
     <Compile Include="Authors\NunoHorta.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
-    <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\RoyCornelissen.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
-    <Compile Include="Authors\AloisDeniel.cs" />
     <Compile Include="Authors\FabioCozzolino.cs" />
     <Compile Include="Authors\ChrisRiesgo.cs" />
   </ItemGroup>
