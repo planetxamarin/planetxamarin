@@ -164,6 +164,7 @@
     <Content Include="Content\img\icons\ms-icon-310x310.png" />
     <Content Include="Content\img\icons\ms-icon-70x70.png" />
     <Content Include="Content\img\planetxamarin-featured-badge.png" />
+    <Content Include="Content\img\puppy.png" />
     <Content Include="Content\plugins\animate.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap-theme.min.css" />
@@ -274,6 +275,7 @@
     <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
@@ -336,6 +338,7 @@
     <Content Include="Views\Authors\Map.cshtml" />
     <Content Include="Views\Shared\_ContainerLayout.cshtml" />
     <Content Include="Views\Authors\List.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
