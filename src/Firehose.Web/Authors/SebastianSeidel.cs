@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class SebastianSeidel : IAmAMicrosoftMVP
+    public class SebastianSeidel : IAmAMicrosoftMVP, IFilterMyBlogPosts
     {
         public string FirstName => "Sebastian";
         public string LastName => "Seidel";
@@ -22,6 +22,11 @@ namespace Firehose.Web.Authors
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("http://blog.cayas.de/feed/rss"); }
+        }
+
+        public bool Filter(SyndicationItem item)
+        {
+            return item.Title.Text.ToLowerInvariant().Contains("xamarin") || item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("Android") || category.Name.ToLowerInvariant().Contains("iOS"));
         }
     }
 }
