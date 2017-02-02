@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Sebastian";
         public string LastName => "Seidel";
-        public string ShortBioOrTagLine => "Using Xamarin since I got my first smartphone";
+        public string ShortBioOrTagLine => "is using Xamarin since he got his first smartphone.";
         public string StateOrRegion => "Bad Oeynhausen, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "cayas_software";
