@@ -30,6 +30,7 @@ public class BruceWayne : IAmACommunityMember
     public string EmailAddress => "rescueme@planetxamarin.com";
     public string TwitterHandle => "batman";
     public string GravatarHash => "42abc1337def";
+    public string GitHubHandle => "batman";
 
     public Uri WebSite => new Uri("https://planetxamarin.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
@@ -56,13 +57,11 @@ public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
         public string StateOrRegion => "127.0.0.1";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "theboss";
+        public string GravatarHash => "";
+        public string GitHubHandle => "theboss";
 
         public Uri WebSite => new Uri("http://www.awesomesite.com");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.awesomesite.com/feed/"); } }
-
-        DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2016, 4, 1);
-        DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 5, 27);
-        public string GravatarHash => "";
     }
 ```
 
