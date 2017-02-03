@@ -31,6 +31,7 @@ public class BruceWayne : IAmACommunityMember
     public string TwitterHandle => "batman";
     public string GravatarHash => "42abc1337def";
     public string GitHubHandle => "batman";
+    public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
 
     public Uri WebSite => new Uri("https://planetxamarin.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
@@ -59,6 +60,7 @@ public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
         public string TwitterHandle => "theboss";
         public string GravatarHash => "";
         public string GitHubHandle => "theboss";
+        public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
 
         public Uri WebSite => new Uri("http://www.awesomesite.com");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.awesomesite.com/feed/"); } }
