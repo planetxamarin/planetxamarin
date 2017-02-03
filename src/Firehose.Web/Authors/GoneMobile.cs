@@ -20,7 +20,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://feed.gonemobile.io"); }
+            get { yield return new Uri("http://gonemobile.io/podcast.rss"); }
         }
 
         public string TwitterHandle => "gonemobilecast";
