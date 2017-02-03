@@ -43,11 +43,12 @@ A few things:
 - The `FirstName` and `LastName` property should resemble that same name
 - `ShortBioOrTagLine` property can be whatever you like. If you can't think of anything choose: 'software engineer' or 'software engineer at Microsoft'
 - `StateOrRegion` will be your geographical location, i.e.: Holland, New York, etc.
-- `EmailAddress` and `TwitterHandle` should be pretty clear, `TwitterHandle` without the leading @
+- `EmailAddress`, `TwitterHandle` and `GitHubHandle` should be pretty clear, `TwitterHandle` without the leading @
+- `Position` is your latitude and longitude, this allows you to be placed on the map on the Authors page
 - The `Website` property can be your global website or whatever you want people to look at
 - And finally with `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin. 
 - If you do not want your e-mailaddress publicly available but you _do_ want to show your Gravatar go to https://en.gravatar.com/site/check/ and get your hash! If you don't fill the hash, you will be viewed as a silhouette.
-- When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces and let us know when you were first awarded, see below for a small sample.
+- When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces, see below for a small sample.
 
 ``` csharp
 public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
