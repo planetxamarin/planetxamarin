@@ -30,6 +30,8 @@ public class BruceWayne : IAmACommunityMember
     public string EmailAddress => "rescueme@planetxamarin.com";
     public string TwitterHandle => "batman";
     public string GravatarHash => "42abc1337def";
+    public string GitHubHandle => "batman";
+    public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
 
     public Uri WebSite => new Uri("https://planetxamarin.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
@@ -41,11 +43,12 @@ A few things:
 - The `FirstName` and `LastName` property should resemble that same name
 - `ShortBioOrTagLine` property can be whatever you like. If you can't think of anything choose: 'software engineer' or 'software engineer at Microsoft'
 - `StateOrRegion` will be your geographical location, i.e.: Holland, New York, etc.
-- `EmailAddress` and `TwitterHandle` should be pretty clear, `TwitterHandle` without the leading @
+- `EmailAddress`, `TwitterHandle` and `GitHubHandle` should be pretty clear, `TwitterHandle` without the leading @
+- `Position` is your latitude and longitude, this allows you to be placed on the map on the Authors page
 - The `Website` property can be your global website or whatever you want people to look at
 - And finally with `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin. 
 - If you do not want your e-mailaddress publicly available but you _do_ want to show your Gravatar go to https://en.gravatar.com/site/check/ and get your hash! If you don't fill the hash, you will be viewed as a silhouette.
-- When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces and let us know when you were first awarded, see below for a small sample.
+- When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces, see below for a small sample.
 
 ``` csharp
 public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
@@ -56,13 +59,12 @@ public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
         public string StateOrRegion => "127.0.0.1";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "theboss";
+        public string GravatarHash => "";
+        public string GitHubHandle => "theboss";
+        public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
 
         public Uri WebSite => new Uri("http://www.awesomesite.com");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.awesomesite.com/feed/"); } }
-
-        DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2016, 4, 1);
-        DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 5, 27);
-        public string GravatarHash => "";
     }
 ```
 
