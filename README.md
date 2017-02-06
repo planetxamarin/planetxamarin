@@ -28,9 +28,9 @@ public class BruceWayne : IAmACommunityMember
     public string ShortBioOrTagLine => "potentially batman";
     public string StateOrRegion => "Gotham";
     public string EmailAddress => "rescueme@planetxamarin.com";
-    public string TwitterHandle => "batman";
+    public string TwitterHandle => "planetxamarin";
     public string GravatarHash => "42abc1337def";
-    public string GitHubHandle => "batman";
+    public string GitHubHandle => "planetxamarin";
     public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
 
     public Uri WebSite => new Uri("https://planetxamarin.com/");
@@ -51,21 +51,21 @@ A few things:
 - When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces, see below for a small sample.
 
 ``` csharp
-public class DoubleMVPGuy : IAmAMicrosoftMVP, IAmAXamarinMVP
-    {
-        public string FirstName => "Awesome";
-        public string LastName => "Sauce";
-        public string ShortBioOrTagLine => "unicorn tamer";
-        public string StateOrRegion => "127.0.0.1";
-        public string EmailAddress => string.Empty;
-        public string TwitterHandle => "theboss";
-        public string GravatarHash => "";
-        public string GitHubHandle => "theboss";
-        public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
+public class DoubleMVPHuman : IAmAMicrosoftMVP, IAmAXamarinMVP
+{
+    public string FirstName => "Bruce";
+    public string LastName => "Wayne";
+    public string ShortBioOrTagLine => "potentially batman";
+    public string StateOrRegion => "Gotham";
+    public string EmailAddress => "rescueme@planetxamarin.com";
+    public string TwitterHandle => "planetxamarin";
+    public string GravatarHash => "";
+    public string GitHubHandle => "planetxamarin";
+    public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
 
-        public Uri WebSite => new Uri("http://www.awesomesite.com");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.awesomesite.com/feed/"); } }
-    }
+    public Uri WebSite => new Uri("http://www.planetxamarin.com");
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.planetxamarin.com/feed/"); } }
+}
 ```
 
 This way you can have both dates implemented, if you have just one, implement just the one interface.
