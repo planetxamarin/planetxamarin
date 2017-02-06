@@ -258,6 +258,7 @@
     <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
+    <Compile Include="Authors\ThomasBandt.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
     <Compile Include="Authors\ThomasLebrun.cs" />
     <Compile Include="Authors\TimotheLariviere.cs" />
@@ -301,6 +302,7 @@
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
+     <Compile Include="Authors\DileepaRajapaksa.cs" />
     <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
