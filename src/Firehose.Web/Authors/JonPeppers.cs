@@ -9,7 +9,7 @@ namespace Firehose.Web
     {
         public string FirstName => "Jon";
         public string LastName => "Peppers";
-        public string ShortBioOrTagLine => "Senior Developer at Hitcents";
+        public string ShortBioOrTagLine => "develops award-winning apps at Hitcents";
         public string StateOrRegion => "Bowling Green, KY";
         public string EmailAddress => "jonathan.peppers@gmail.com";
         public string TwitterHandle => "jonathanpeppers";
