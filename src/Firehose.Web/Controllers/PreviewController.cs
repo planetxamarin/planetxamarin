@@ -7,7 +7,7 @@ using Firehose.Web.ViewModels;
 
 namespace Firehose.Web.Controllers
 {
-    public class PreviewController : Controller
+    public class PreviewController : BaseController
     {
         private readonly CombinedFeedSource _combinedFeedSource;
 

@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
-    public class AuthorsController : Controller
+    public class AuthorsController : BaseController
     {
         private readonly IAmACommunityMember[] _members;
 
