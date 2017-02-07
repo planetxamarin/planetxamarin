@@ -239,6 +239,9 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\AlexandrSorokoletov.cs" />
+    <Compile Include="Authors\AloisDeniel.cs" />
+    <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
@@ -304,7 +307,7 @@
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
-     <Compile Include="Authors\DileepaRajapaksa.cs" />
+    <Compile Include="Authors\DileepaRajapaksa.cs" />
     <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
