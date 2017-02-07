@@ -1,13 +1,20 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace Firehose.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         [Route("")]
         public ViewResult Index()
         {
             return View();
+        }
+
+        [Route("error")]
+        public ActionResult Error()
+        {
+            return View(TempData["LastError"]);
         }
     }
 }
