@@ -30,3 +30,4 @@ namespace Firehose.Web
 			get { yield return new Uri("http://alejandroruizvarela.blogspot.mx/rss.xml"); }
 		}
 	}
+}
