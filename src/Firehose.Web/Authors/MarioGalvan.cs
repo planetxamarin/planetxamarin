@@ -25,9 +25,9 @@ namespace Firehose.Web
 
 		public GeoPosition Position => new GeoPosition(20.6024900, -103.4469050);
 
-		IEnumerable<Uri> IAmACommunityMember.FeedUris
+		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("http://alejandroruizvarela.blogspot.mx/rss.xml"); }
+			get { yield return new Uri("http://15mgm15.ghost.io/rss/"); }
 		}
 	}
 }
