@@ -13,7 +13,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Boston, MA";
         public string TwitterHandle => "suave_pirate";
         public string EmailAddress => "alexander.dunn@outlook.com";
-        public string ShortBioOrTagLine => "I build robust applications and train other developers along the way.";
+        public string ShortBioOrTagLine => " - I build robust applications and train other developers along the way.";
         public string GravatarHash => "bd76e4531285c3b6c423a890378c6002";
         public Uri WebSite => new Uri("https://alexdunn.org");
 
