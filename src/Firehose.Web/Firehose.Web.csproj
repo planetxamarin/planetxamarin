@@ -239,6 +239,7 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
