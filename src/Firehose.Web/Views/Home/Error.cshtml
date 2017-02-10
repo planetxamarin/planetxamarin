@@ -1,0 +1,35 @@
+﻿@model System.Exception
+@{
+    ViewBag.Title = "Error :)";
+}
+
+<section class="container">
+    <div class="row area">
+        <div class="col-xs-12">
+            <h1>@ViewBag.Title</h1>
+            <p>
+                Rats, something unfortunate happened. Below you can find some additional, technical information which can be helpful to track down what went wrong.
+                No additional information here? Check out the <a href="~/logs">logs</a> yourself, debug it and send us a <a href="https://github.com/planetxamarin/planetxamarin/pulls">pull request</a>! Or wait for us to do it.
+            </p>
+
+            @if (Model != null)
+            {
+                <div class="alert alert-warning">
+                    @Model.Message @Model.StackTrace
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    No additional information is available.
+                </div>
+            }
+
+            <p>To brighten your life, here is a picture of a Xamarin monkey eating a Death Star waffle!</p>
+
+            <div class="text-center">
+                <img src="~/Content/img/deathstar_monkey.jpg" class="img-rounded" title="Awww look at it, it is so cute" alt="Xamarin monkey eating a Death Star waffle to make it all better" />
+            </div>
+        </div>
+    </div>
+</section>
