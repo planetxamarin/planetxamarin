@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Syndication;
@@ -9,7 +8,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
-    public class FeedController : Controller
+    public class FeedController : BaseController
     {
         private readonly CombinedFeedSource _combinedFeedSource;
 
