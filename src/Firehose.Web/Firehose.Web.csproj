@@ -251,6 +251,7 @@
     <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
     <Compile Include="Authors\LarryOBrien.cs" />
+    <Compile Include="Authors\TheXamarinPodcast.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
@@ -344,6 +345,7 @@
     <Content Include="Views\Shared\_ContainerLayout.cshtml" />
     <Content Include="Views\Authors\List.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Home\PodcastCard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
