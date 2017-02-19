@@ -1,11 +1,13 @@
 ﻿using BlogMonster.Configuration;
 using BlogMonster.Infrastructure.SyndicationFeedSources;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.ServiceModel.Syndication;
 using System.Threading;
+using System.Xml;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
 
 namespace Firehose.Web.Infrastructure
@@ -26,7 +28,45 @@ namespace Firehose.Web.Infrastructure
 
         private ISyndicationFeedSource LoadFeeds()
         {
-            var feedSources = (from blogger in _bloggers.AsParallel()
+            var excludedBloggers = new List<IAmACommunityMember>();
+
+            // Loop through the bloggers...
+            foreach (var b in _bloggers)
+            {
+                try
+                {
+                    // ... And their feeds
+                    foreach (var u in b.FeedUris)
+                    {
+                        // Poke it, to see if we can really reach it
+                        var request = (HttpWebRequest)WebRequest.Create(u);
+                        request.Method = "HEAD";
+
+                        var response = (HttpWebResponse)request.GetResponse();
+
+                        // If return code is not success or redirect, it's no good
+                        if ((int)response.StatusCode < 200 || (int)response.StatusCode > 399)
+                        {
+                            excludedBloggers.Add(b);
+                            break;
+                        }
+
+                        // If url can be reached, check if the feed is valid
+                        // It will throw an exception if it isn't
+                        var reader = XmlReader.Create(u.ToString());
+                        var fooFeed = SyndicationFeed.Load(reader);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e, $"One or more of {b.FirstName} {b.LastName}'s feed failed to load.");
+
+                    // if anything happens exclude the blogger from the feed
+                    excludedBloggers.Add(b);
+                }
+            }
+
+            var feedSources = (from blogger in _bloggers.Except(excludedBloggers).AsParallel()
                                from uri in blogger.FeedUris
                                select TryLoadFeed(blogger, uri))
                 .NotNull()
