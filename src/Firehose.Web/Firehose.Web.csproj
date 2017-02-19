@@ -242,6 +242,8 @@
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\AloisDeniel.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
+    <Compile Include="Authors\AlexDunn.cs" />
+    <Compile Include="Authors\DiegoPonceDeLeon.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
@@ -252,6 +254,7 @@
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
+    <Compile Include="Authors\LarryOBrien.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
@@ -262,6 +265,7 @@
     <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
+    <Compile Include="Authors\Suthahar.cs" />
     <Compile Include="Authors\ThomasBandt.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
     <Compile Include="Authors\ThomasLebrun.cs" />
@@ -323,6 +327,10 @@
     <Compile Include="Authors\AlejandroRuiz.cs" />
     <Compile Include="Authors\FabioCozzolino.cs" />
     <Compile Include="Authors\ChrisRiesgo.cs" />
+    <Compile Include="Authors\AlessandroCaliaro.cs" />
+    <Compile Include="Authors\JonPeppers.cs" />
+    <Compile Include="Authors\MarioGalvan.cs" />
+    <Compile Include="Authors\HumbertoJaimes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
