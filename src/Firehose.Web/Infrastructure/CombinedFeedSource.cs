@@ -1,12 +1,14 @@
 ﻿using BlogMonster.Configuration;
 using BlogMonster.Infrastructure.SyndicationFeedSources;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.ServiceModel.Syndication;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Xml;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
 
@@ -28,43 +30,8 @@ namespace Firehose.Web.Infrastructure
 
         private ISyndicationFeedSource LoadFeeds()
         {
-            var excludedBloggers = new List<IAmACommunityMember>();
-
-            // Loop through the bloggers...
-            foreach (var b in _bloggers)
-            {
-                try
-                {
-                    // ... And their feeds
-                    foreach (var u in b.FeedUris)
-                    {
-                        // Poke it, to see if we can really reach it
-                        var request = (HttpWebRequest)WebRequest.Create(u);
-                        request.Method = "HEAD";
-
-                        var response = (HttpWebResponse)request.GetResponse();
-
-                        // If return code is not success or redirect, it's no good
-                        if ((int)response.StatusCode < 200 || (int)response.StatusCode > 399)
-                        {
-                            excludedBloggers.Add(b);
-                            break;
-                        }
-
-                        // If url can be reached, check if the feed is valid
-                        // It will throw an exception if it isn't
-                        var reader = XmlReader.Create(u.ToString());
-                        var fooFeed = SyndicationFeed.Load(reader);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e, $"One or more of {b.FirstName} {b.LastName}'s feed failed to load.");
-
-                    // if anything happens exclude the blogger from the feed
-                    excludedBloggers.Add(b);
-                }
-            }
+            var tasks = (from b in _bloggers from u in b.FeedUris select DetectFeedBroken(u, b)).ToList();
+            var excludedBloggers = Task.WhenAll(tasks).GetAwaiter().GetResult().Where(b => b != null);
 
             var feedSources = (from blogger in _bloggers.Except(excludedBloggers).AsParallel()
                                from uri in blogger.FeedUris
@@ -85,6 +52,31 @@ namespace Firehose.Web.Infrastructure
                         "The copyright for each post is retained by its author.",
                         new Uri(ConfigurationManager.AppSettings["BaseUrl"])))
                 .Grr();
+        }
+
+        private static readonly HttpClient HttpClient = new HttpClient();
+        private static async Task<IAmACommunityMember> DetectFeedBroken(Uri feedUri, IAmACommunityMember blogger)
+        {
+            try
+            {
+                var res = await HttpClient.GetAsync(feedUri).ConfigureAwait(false);
+                if (res.IsSuccessStatusCode)
+                {
+                    using (var stream = await res.Content.ReadAsStreamAsync().ConfigureAwait(false))
+                    using (var reader = new StreamReader(stream))
+                    using (var xmlReader = XmlReader.Create(reader))
+                    {
+                        var fooFeed = SyndicationFeed.Load(xmlReader);
+                        return null;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e, $"Feed {feedUri} of {blogger.FirstName} {blogger.LastName}'s feed failed to load.");
+            }
+
+            return blogger;
         }
 
         private static ISyndicationFeedSource TryLoadFeed(IAmACommunityMember tamarin, Uri uri)
