@@ -6,38 +6,40 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Reflection;
 using System.ServiceModel.Syndication;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
+using BlogMonster;
+using BlogMonster.Infrastructure;
+using BlogMonster.Infrastructure.SyndicationFeedSources.Remote;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
 
 namespace Firehose.Web.Infrastructure
 {
     public class CombinedFeedSource
     {
-        private readonly IAmACommunityMember[] _bloggers;
+        private static readonly HttpClient HttpClient = new HttpClient();
         private readonly Lazy<ISyndicationFeedSource> _combinedFeedSource;
 
         public CombinedFeedSource(IAmACommunityMember[] bloggers)
         {
-            _bloggers = bloggers;
+            Bloggers = bloggers;
             _combinedFeedSource = new Lazy<ISyndicationFeedSource>(LoadFeeds, LazyThreadSafetyMode.PublicationOnly);
+            HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
+            HttpClient.Timeout = TimeSpan.FromMinutes(1);
         }
 
         public SyndicationFeed Feed => _combinedFeedSource.Value.Feed;
-        public IAmACommunityMember[] Bloggers => _bloggers;
+
+        public IAmACommunityMember[] Bloggers { get; }
 
         private ISyndicationFeedSource LoadFeeds()
         {
-            var tasks = (from b in _bloggers from u in b.FeedUris select DetectFeedBroken(u, b)).ToList();
-            var excludedBloggers = Task.WhenAll(tasks).GetAwaiter().GetResult().Where(b => b != null);
-
-            var feedSources = (from blogger in _bloggers.Except(excludedBloggers).AsParallel()
-                               from uri in blogger.FeedUris
-                               select TryLoadFeed(blogger, uri))
-                .NotNull()
-                .ToArray();
+            var feedTasks = Bloggers.SelectMany(b => b.FeedUris, TryLoadFeedAsync);
+            var feedSources = Task.WhenAll(feedTasks).GetAwaiter().GetResult().NotNull().ToArray();
 
             return BlogMonsterBuilder.FromOtherFeedSources(feedSources.First(), feedSources.Skip(1).ToArray())
                 .WithRssSettings(
@@ -54,32 +56,7 @@ namespace Firehose.Web.Infrastructure
                 .Grr();
         }
 
-        private static readonly HttpClient HttpClient = new HttpClient();
-        private static async Task<IAmACommunityMember> DetectFeedBroken(Uri feedUri, IAmACommunityMember blogger)
-        {
-            try
-            {
-                var res = await HttpClient.GetAsync(feedUri).ConfigureAwait(false);
-                if (res.IsSuccessStatusCode)
-                {
-                    using (var stream = await res.Content.ReadAsStreamAsync().ConfigureAwait(false))
-                    using (var reader = new StreamReader(stream))
-                    using (var xmlReader = XmlReader.Create(reader))
-                    {
-                        var fooFeed = SyndicationFeed.Load(xmlReader);
-                        return null;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Logger.Error(e, $"Feed {feedUri} of {blogger.FirstName} {blogger.LastName}'s feed failed to load.");
-            }
-
-            return blogger;
-        }
-
-        private static ISyndicationFeedSource TryLoadFeed(IAmACommunityMember tamarin, Uri uri)
+        private async Task<ISyndicationFeedSource> TryLoadFeedAsync(IAmACommunityMember tamarin, Uri uri)
         {
             try
             {
@@ -89,10 +66,10 @@ namespace Firehose.Web.Infrastructure
                     ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
                     : (si => true);
 
-                var feedSource = BlogMonsterBuilder
-                    .FromUrl(uri)
-                    .WithFilter(filter)
-                    .Grr();
+                var feedSource = new CachingRemoteSyndicationFeedSource();
+
+                var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
+                feedSource.CachedFeed = new Cached<SyndicationFeed>(TimeSpan.FromHours(1), new SystemClock(), () => feed);
 
                 return feedSource;
             }
@@ -103,6 +80,55 @@ namespace Firehose.Web.Infrastructure
                 // Not my problem if your feed asplodes but we at least won't crash the app for all the other nice people :)
                 return null;
             }
+        }
+
+        public async Task<SyndicationFeed> FetchAsync(Uri feedUri, Func<SyndicationItem, bool> filter)
+        {
+            HttpResponseMessage response;
+            try
+            {
+                response = await HttpClient.GetAsync(feedUri).ConfigureAwait(false);
+                if (response.IsSuccessStatusCode)
+                {
+                    using (var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
+                    using (var reader = new StreamReader(stream))
+                    using (var xmlReader = XmlReader.Create(reader))
+                    {
+                        var feed = SyndicationFeed.Load(xmlReader);
+                        var filteredItems = feed.Items
+                            .Where(filter)
+                            .ToArray();
+
+                        var itemsField = feed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
+                        itemsField?.SetValue(feed, filteredItems);
+                        return feed;
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                throw new RemoteSyndicationFeedFailedException("Loading remote syndication feed timed out", ex)
+                    .WithData("FeedUri", feedUri);
+            }
+
+            throw new RemoteSyndicationFeedFailedException("Loading remote syndication feed failed.")
+                .WithData("FeedUri", feedUri)
+                .WithData("HttpStatusCode", (int)response.StatusCode);
+        }
+    }
+
+    public class CachingRemoteSyndicationFeedSource : ISyndicationFeedSource
+    {
+        public Cached<SyndicationFeed> CachedFeed { get; set; } 
+        public SyndicationFeed Feed => CachedFeed.Value;
+    }
+
+    internal static class ExceptionExtensions
+    {
+        public static TException WithData<TException>(this TException exception, string key, object value) where TException : Exception
+        {
+            exception.Data[key] = value;
+            return exception;
         }
     }
 }
