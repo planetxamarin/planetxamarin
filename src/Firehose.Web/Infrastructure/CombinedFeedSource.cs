@@ -94,16 +94,6 @@ namespace Firehose.Web.Infrastructure
                     .WithFilter(filter)
                     .Grr();
 
-                // Poke it, to see if we can really reach it
-                var request = (HttpWebRequest)WebRequest.Create(uri);
-                request.Method = "HEAD";
-
-                var response = (HttpWebResponse)request.GetResponse();
-
-                // If return code is not success or redirect, it's no good
-                if ((int)response.StatusCode < 200 || (int)response.StatusCode > 399)
-                    throw new Exception("Feed says no");
-
                 return feedSource;
             }
             catch (Exception ex)
