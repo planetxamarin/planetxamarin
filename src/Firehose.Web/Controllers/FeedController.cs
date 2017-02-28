@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Syndication;
@@ -8,7 +8,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
-    public class FeedController : Controller
+    public class FeedController : BaseController
     {
         private readonly CombinedFeedSource _combinedFeedSource;
 
@@ -29,16 +29,25 @@ namespace Firehose.Web.Controllers
             var originalFeed = _combinedFeedSource.Feed;
             if (numPosts == null) return originalFeed;
 
-            var items = _combinedFeedSource.Feed.Items
-                                           .OrderByDescending(item => item.PublishDate)
-                                           .Take((int)numPosts)
-                                           .ToArray();
+            try
+            {
+                var items = _combinedFeedSource.Feed.Items
+                    .OrderByDescending(item => item.PublishDate)
+                    .Take((int)numPosts)
+                    .ToArray();
 
-            var shorterFeed = originalFeed.Clone(false);
-            var itemsField = shorterFeed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
-            itemsField.SetValue(shorterFeed, items);
+                var shorterFeed = originalFeed.Clone(false);
+                var itemsField = shorterFeed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
+                itemsField.SetValue(shorterFeed, items);
 
-            return shorterFeed;
+                return shorterFeed;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+
+                return originalFeed;
+            }
         }
     }
 }

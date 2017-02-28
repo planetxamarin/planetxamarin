@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
+using System.ServiceModel.Syndication;
+using System.Linq;
 
 namespace Firehose.Web
 {
-    public class TomSoderling : IAmACommunityMember
+    public class TomSoderling : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "Tom";
         public string LastName => "Soderling";
@@ -23,5 +25,9 @@ namespace Firehose.Web
         }
 
         public string GitHubHandle => string.Empty;
+
+        public bool Filter(SyndicationItem item) =>
+            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
+            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }
