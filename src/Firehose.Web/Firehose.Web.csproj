@@ -329,6 +329,7 @@
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\MarioGalvan.cs" />
     <Compile Include="Authors\HumbertoJaimes.cs" />
+    <Compile Include="Authors\ChrisRiesgo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
