@@ -22,17 +22,18 @@ namespace Firehose.Web.Infrastructure
     public class CombinedFeedSource
     {
         private static readonly HttpClient HttpClient = new HttpClient();
-        private readonly Lazy<ISyndicationFeedSource> _combinedFeedSource;
+        private readonly Lazy<Cached<ISyndicationFeedSource>> _combinedFeedSource;
 
         public CombinedFeedSource(IAmACommunityMember[] bloggers)
         {
             Bloggers = bloggers;
-            _combinedFeedSource = new Lazy<ISyndicationFeedSource>(LoadFeeds, LazyThreadSafetyMode.PublicationOnly);
+            var cached = new Cached<ISyndicationFeedSource>(TimeSpan.FromHours(1), new SystemClock(), LoadFeeds);
+            _combinedFeedSource = new Lazy<Cached<ISyndicationFeedSource>>(() => cached, LazyThreadSafetyMode.PublicationOnly);
             HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
             HttpClient.Timeout = TimeSpan.FromMinutes(1);
         }
 
-        public SyndicationFeed Feed => _combinedFeedSource.Value.Feed;
+        public SyndicationFeed Feed => _combinedFeedSource.Value.Value.Feed;
 
         public IAmACommunityMember[] Bloggers { get; }
 
@@ -69,7 +70,7 @@ namespace Firehose.Web.Infrastructure
                 var feedSource = new CachingRemoteSyndicationFeedSource();
 
                 var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
-                feedSource.CachedFeed = new Cached<SyndicationFeed>(TimeSpan.FromHours(1), new SystemClock(), () => feed);
+                feedSource.Feed = feed;
 
                 return feedSource;
             }
@@ -119,8 +120,7 @@ namespace Firehose.Web.Infrastructure
 
     public class CachingRemoteSyndicationFeedSource : ISyndicationFeedSource
     {
-        public Cached<SyndicationFeed> CachedFeed { get; set; } 
-        public SyndicationFeed Feed => CachedFeed.Value;
+        public SyndicationFeed Feed { get; set; }
     }
 
     internal static class ExceptionExtensions
