@@ -1,5 +1,11 @@
-public class AmjadHusseini : IAmACommunityMember
+using System;
+using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
+
+namespace Firehose.Web.Authors
 {
+    public class AmjadHusseini : IAmACommunityMember
+    {
     public string FirstName => "Amjad";
     public string LastName => "Al-Husseini";
     public string ShortBioOrTagLine => "A Web/Mobile lead developer @aramex | Technology enthusiastic | Body builder and Guitar player";
@@ -10,4 +16,5 @@ public class AmjadHusseini : IAmACommunityMember
 
     public Uri WebSite => new Uri("https://amjadhusseini.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://amjadhusseini.com/feed"); } }
+    }
 }
