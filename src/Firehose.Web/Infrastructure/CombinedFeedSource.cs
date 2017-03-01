@@ -67,7 +67,7 @@ namespace Firehose.Web.Infrastructure
                     ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
                     : (si => true);
 
-                var feedSource = new CachingRemoteSyndicationFeedSource();
+                var feedSource = new DummyRemoteSyndicationFeedSource();
 
                 var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
                 feedSource.Feed = feed;
@@ -118,7 +118,7 @@ namespace Firehose.Web.Infrastructure
         }
     }
 
-    public class CachingRemoteSyndicationFeedSource : ISyndicationFeedSource
+    public class DummyRemoteSyndicationFeedSource : ISyndicationFeedSource
     {
         public SyndicationFeed Feed { get; set; }
     }
