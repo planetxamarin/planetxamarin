@@ -8,6 +8,7 @@ namespace Firehose.Web
 {
 	public class JuniorPorfirio : IAmACommunityMember, IFilterMyBlogPosts
     {
+        public string EmailAddress => "juniorporfirio@gmail.com";
 		public string FirstName => "Junior";
 		public string GitHubHandle => "juniorporfirio";
 		public string GravatarHash => "cc6a0796549f7eab6d3db20a3afa3148";
