@@ -1,5 +1,5 @@
 
-    public class BryanAnthonyGarcia : IWorkAtXamarinOrMicrosoft
+    public class BryanAnthonyGarcia : IAmACommunityMember
     {
         public string FirstName => "Bryan Anthony";
         public string LastName => "Garcia";
