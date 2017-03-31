@@ -1,4 +1,11 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
 
+namespace Firehose.Web.Authors
+{
     public class BryanAnthonyGarcia : IAmACommunityMember
     {
         public string FirstName => "Bryan Anthony";
@@ -16,5 +23,6 @@
         {
             get { yield return new Uri("https://mindofai.github.io/feed.xml"); }
         }
-
     }
+}
+   
