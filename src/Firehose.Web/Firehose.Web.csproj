@@ -333,8 +333,8 @@
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\MarioGalvan.cs" />
     <Compile Include="Authors\ChrisRiesgo.cs" />
-    <Compile Include="Authors\JunianTriajianto.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
+    <Compile Include="Authors\JunianTriajianto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
