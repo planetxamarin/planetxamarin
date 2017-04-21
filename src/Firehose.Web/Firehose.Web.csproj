@@ -241,6 +241,7 @@
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
+    <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\DiegoPonceDeLeon.cs" />
