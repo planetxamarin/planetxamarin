@@ -21,8 +21,8 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("https://cjlotz.github.io");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://cjlotz.github.io/feed.xml"); } }
 
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public bool Filter(SyndicationItem item) =>            
+            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin")) &&
+            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("community"));
     }
 }
