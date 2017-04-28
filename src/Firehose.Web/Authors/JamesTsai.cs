@@ -23,7 +23,7 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("http://xamarintech.blogspot.tw/feeds/posts/default?alt=rss"); }
         }
 
-        public string GitHubHandle => "Jatsai;
+        public string GitHubHandle => "Jatsai";
         
         public bool Filter(SyndicationItem item)
         {
