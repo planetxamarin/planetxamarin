@@ -13,7 +13,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Taipei, Taiwan";
         public string TwitterHandle => "";
         public string EmailAddress => "";
-        public string ShortBioOrTagLine => "James Tsai is a Microsoft MVP who develops Xamarin at ThinkPower Ltd";
+        public string ShortBioOrTagLine => "James Tsai is a Microsoft MVP who develops Xamarin at ThinkPower Corp.";
         public string GravatarHash => "";
         public Uri WebSite => new Uri("http://xamarintech.blogspot.tw/");
         public GeoPosition Position => new GeoPosition(25.078713, 121.570265);
