@@ -10,7 +10,7 @@ public class JesseLiberty :IAmACommunityMember, IAmAXamarinMVP, IFilterMyBlogPos
   public string GitHubHandle => "JesseLiberty";
   public GeoPosition Position => new GeoPosition(42.4703963,-71.4477468,15);
   public Uri WebSite => new Uri("http://jesseliberty.me");
-  public IEnumerable(Uri) FeedUris { get { yield return new Uri("http://jesseliberty.com");
+  public IEnumerable(Uri) FeedUris { get { yield return new Uri("http://feeds.feedburner.com/JesseLiberty-SilverlightGeek");
   
    public bool Filter(SyndicationItem item)
     {
