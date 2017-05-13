@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "asfend@hotmail.com";
 
-        public string ShortBioOrTagLine => "Passionate Software Engineer.";
+        public string ShortBioOrTagLine => "is a Technical Trainer, Author at Udemy and Passionate Community Member as well as Software Engineer";
 
         public Uri WebSite => new Uri("https://xamarinui.blogspot.com/");
 
