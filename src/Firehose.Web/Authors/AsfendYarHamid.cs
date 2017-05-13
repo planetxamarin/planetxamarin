@@ -25,7 +25,7 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "asfend";
 
-        public string GravatarHash => "";
+        public string GravatarHash => "1aa9a7436eec5ad5d0418a385d1bdbe0";
         public string GitHubHandle => "asfend";
         public GeoPosition Position => new GeoPosition(31.5712, 74.3646);
     }
