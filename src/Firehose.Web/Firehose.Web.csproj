@@ -240,6 +240,7 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\AlexDunn.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
     <Compile Include="Authors\DanRigby.cs" />
+    <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
     <Compile Include="Authors\MarcosSantos.cs" />
@@ -337,6 +339,7 @@
     <Compile Include="Authors\ChrisRiesgo.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
     <Compile Include="Authors\JunianTriajianto.cs" />
+    <Compile Include="Authors\AsfendYarHamid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
