@@ -339,6 +339,7 @@
     <Compile Include="Authors\ChrisRiesgo.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
     <Compile Include="Authors\JunianTriajianto.cs" />
+    <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
   </ItemGroup>
   <ItemGroup>
