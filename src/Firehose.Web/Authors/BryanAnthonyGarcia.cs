@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "mindofai";
         public string TwitterHandle => "mindofai";
         public string EmailAddress => "bryananthonygarcia@live.com";
-        public string ShortBioOrTagLine => "Bryan Anthony Garcia is a Mobile .NET Developer who enjoys learning and writing about Mobile .NET stuff and has passion for basketball and football. Co-leads Xamarin Mobile Developers - Philippines";
+        public string ShortBioOrTagLine => "Mobile .NET Developer who enjoys learning and writing about Mobile .NET stuff and has passion for football. Co-leads Mobile .NET Developers - Philippines";
         public string GravatarHash => "29e1cdab06c48322805220e33556c20c";
         public Uri WebSite => new Uri("https://mindofai.github.io/");
         public GeoPosition Position => new GeoPosition(14.668896, 120.947204);
