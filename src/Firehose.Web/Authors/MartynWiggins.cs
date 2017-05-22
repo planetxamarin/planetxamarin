@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
@@ -8,7 +9,7 @@ namespace Firehose.Web.Authors
 	{
 		public string FirstName => "Martyn";
 		public string LastName => "Wiggins";
-		public string ShortBioOrTagLine => "Mobile Developer, Mountain Biker, Traveller, Wannabe Adventurer";
+		public string ShortBioOrTagLine => "Mobile Developer, Mountain Biker, Wannabe Adventurer";
 		public string StateOrRegion => "Nottingham";
 		public string EmailAddress => "Martynnw@gmail.com";
 		public string TwitterHandle => "Martynnw";
@@ -19,9 +20,9 @@ namespace Firehose.Web.Authors
 		public Uri WebSite => new Uri("https://martynnw.wordpress.com");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://martynnw.wordpress.com/feed/"); } }
 
-		public bool Filter(SyndicationItem item)
-		{
-			return item.Title.Text.ToLowerInvariant().Contains("xamarin");
-		}
-	}
+        public bool Filter(SyndicationItem item)
+        {
+            return item.Title.Text.ToLowerInvariant().Contains("xamarin");
+        }
+    }
 }
