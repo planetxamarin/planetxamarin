@@ -1,0 +1,15 @@
+public class LoganEdge : IAmACommunityMember
+{
+    public string FirstName => "Logan";
+    public string LastName => "Edge";
+    public string ShortBioOrTagLine => "I'm not wolverine";
+    public string StateOrRegion => "Taiwan Tainan";
+    public string EmailAddress => "finianex@gmail.com";
+    public string TwitterHandle => "";
+    public string GravatarHash => "";
+    public string GitHubHandle => "";
+    public GeoPosition Position => new GeoPosition(22.9730067,120.2108808);
+
+    public Uri WebSite => new Uri("http://loganedge.tw/");
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://loganedge.tw/rss"); } }
+}
