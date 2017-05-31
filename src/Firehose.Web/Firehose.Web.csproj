@@ -247,6 +247,7 @@
     <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\DiegoPonceDeLeon.cs" />
+    <Compile Include="Authors\JonathanBraga.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
