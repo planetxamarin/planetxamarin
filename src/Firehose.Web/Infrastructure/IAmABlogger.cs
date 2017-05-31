@@ -38,10 +38,12 @@ namespace Firehose.Web.Infrastructure
 
     public interface IAmAXamarinMVP : IAmACommunityMember
     {
+        DateTime FirstAwarded { get; }
     }
 
     public interface IAmAMicrosoftMVP : IAmACommunityMember
     {
+        DateTime FirstAwarded { get; }
     }
 
     public interface IAmAPodcast : IAmACommunityMember
