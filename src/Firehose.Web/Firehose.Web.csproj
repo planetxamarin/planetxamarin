@@ -345,6 +345,7 @@
     <Compile Include="Authors\RamonEsteban.cs" />
     <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
+    <Compile Include="Authors\BasDeCort.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
