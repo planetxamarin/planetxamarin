@@ -24,9 +24,20 @@ namespace Firehose.Web.Authors
 
         public string GitHubHandle => "vulcanlee";
 
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
+        public bool Filter(SyndicationItem item)
+        {
+            if (item.Title.Text.ToLowerInvariant().Contains("disableplanetxamarin") || 
+                item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("disableplanetxamarin")))
+            {
+                // if my blog has keyword, disableplanetxamarin, Prohibit publishing to on planetxamarin
+                return false;
+            }
+            else
+            {
+                return item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
             item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+            }
+        }
         public GeoPosition Position => new GeoPosition(25.043847, 121.525645);
     }
 }
