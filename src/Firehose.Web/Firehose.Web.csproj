@@ -240,6 +240,8 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\MartynWiggins.cs" />
+    <Compile Include="Authors\SamDebruyn.cs" />
     <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
@@ -253,6 +255,7 @@
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
     <Compile Include="Authors\DanRigby.cs" />
+    <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
     <Compile Include="Authors\MarcosSantos.cs" />
@@ -286,6 +289,7 @@
     <Compile Include="Authors\WilliamRodriguez.cs" />
     <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="Authors\WinstonGubantes.cs" />
+    <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -338,6 +342,9 @@
     <Compile Include="Authors\ChrisRiesgo.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
     <Compile Include="Authors\JunianTriajianto.cs" />
+    <Compile Include="Authors\RamonEsteban.cs" />
+    <Compile Include="Authors\TimKlingeleers.cs" />
+    <Compile Include="Authors\AsfendYarHamid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

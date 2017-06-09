@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
 	{
 		public string FirstName => "Junian";
 		public string LastName => "Triajianto";
-		public string ShortBioOrTagLine => "software engineer";
+		public string ShortBioOrTagLine => "Software Engineer, who enjoys problem solving and technology related to C#, Xamarin, ASP.NET Core, and Unity 3D.";
 		public string StateOrRegion => "Surabaya, Indonesia";
 		public string EmailAddress => "";
 		public string TwitterHandle => "JunianNet";
