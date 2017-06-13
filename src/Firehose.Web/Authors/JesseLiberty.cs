@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-  public class JesseLiberty :IAmACommunityMember, IAmAXamarinMVP, IFilterMyBlogPosts
+  public class JesseLiberty : IAmACommunityMember, IAmAXamarinMVP, IFilterMyBlogPosts
   {
     public string FirstName => "Jesse";
     public string LastName => "Liberty";
@@ -18,7 +18,7 @@ namespace Firehose.Web.Authors
     public string GitHubHandle => "JesseLiberty";
     public GeoPosition Position => new GeoPosition(42.4703963,-71.4477468,15);
     public Uri WebSite => new Uri("http://jesseliberty.me");
-    public IEnumerable(Uri) FeedUris { get { yield return new Uri("http://feeds.feedburner.com/JesseLiberty-SilverlightGeek"); } }
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://feeds.feedburner.com/JesseLiberty-SilverlightGeek"); } }
     
      public bool Filter(SyndicationItem item)
       {
