@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
     public string TwitterHandle => "jesseliberty";
     public string GravatarHash => "78d5b6609fe5a80ce67e9f971833a6c3";
     public string GitHubHandle => "JesseLiberty";
-    public GeoPosition Position => new GeoPosition(42.4703963,-71.4477468,15);
+    public GeoPosition Position => new GeoPosition(42.4703963,-71.4477468);
     public Uri WebSite => new Uri("http://jesseliberty.me");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://feeds.feedburner.com/JesseLiberty-SilverlightGeek"); } }
     
