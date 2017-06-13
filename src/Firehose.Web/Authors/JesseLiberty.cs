@@ -1,3 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
+
+namespace Firehose.Web
+{
+
 public class JesseLiberty :IAmACommunityMember, IAmAXamarinMVP, IFilterMyBlogPosts
 {
   public string FirstName => "Jesse";
@@ -17,4 +26,5 @@ public class JesseLiberty :IAmACommunityMember, IAmAXamarinMVP, IFilterMyBlogPos
         // This filters out only the posts that have the "xamarin" category
         return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
     }
+  }
   }
