@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "kent.boogaart@gmail.com";
 
-        public string Title => "Xamarin Developer | Microsoft MVP";
+        public string ShortBioOrTagLine => "is a kick-a** freelance software engineer";
 
         public Uri WebSite => new Uri("http://kent-boogaart.com/");
 
@@ -25,6 +25,8 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "kent_boogaart";
 
-        public DateTime FirstAwarded => new DateTime(2009, 04, 01);
+        public string GravatarHash => "";
+        public string GitHubHandle => string.Empty;
+        public GeoPosition Position => new GeoPosition(-35.0004451, 138.3309978);
     }
 }

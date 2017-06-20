@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -10,11 +10,11 @@ namespace Firehose.Web.Authors
 
         public string LastName => "Versluis";
 
-        public string StateOrRegion => "Holland";
+        public string StateOrRegion => "The Netherlands";
 
         public string EmailAddress => "gerald@verslu.is";
 
-        public string Title => "Xamarin Developer | Microsoft MVP";
+        public string ShortBioOrTagLine => "builds awesome Xamarin apps, speaks, blogs, trains, writes and has this weird thing for unicorns";
 
         public Uri WebSite => new Uri("https://blog.verslu.is/");
 
@@ -25,6 +25,8 @@ namespace Firehose.Web.Authors
 
         public string TwitterHandle => "jfversluis";
 
-        public DateTime FirstAwarded => new DateTime(2016, 10, 1);
+        public string GravatarHash => "f9d4d4211d7956ce3e07e83df0889731";
+        public string GitHubHandle => "jfversluis";
+        public GeoPosition Position => new GeoPosition(50.9983300, 5.8694400);
     }
 }

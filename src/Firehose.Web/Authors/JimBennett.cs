@@ -4,19 +4,25 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-   public class JimBennett : IAmAMicrosoftMVP, IAmAXamarinMVP
-   {
-      public string FirstName => "Jim";
-      public string LastName => "Bennett";
-      public string Title => "Mobile developer at EROAD";
-      public string StateOrRegion => "Auckland, New Zealand";
-      public string EmailAddress => "jim@jimbobbennett.io";
-      public string TwitterHandle => "jimbobbennett";
+    public class JimBennett : IAmAMicrosoftMVP, IAmAXamarinMVP
+    {
+        public string FirstName => "Jim";
+        public string LastName => "Bennett";
+        public string ShortBioOrTagLine => "is the author of Xamarin in Action and a all-round nice guy";
+        public string StateOrRegion => "Auckland, New Zealand";
+        public string EmailAddress => "jim@jimbobbennett.io";
+        public string TwitterHandle => "jimbobbennett";
 
-      public Uri WebSite => new Uri("https://jimbobbennett.io/");
-      public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.jimbobbennett.io/rss"); } }
+        public Uri WebSite => new Uri("https://jimbobbennett.io/");
 
-      DateTime IAmAXamarinMVP.FirstAwarded => new DateTime(2016, 1, 1);
-      DateTime IAmAMicrosoftMVP.FirstAwarded => new DateTime(2017, 1, 1);
-   }
+        public IEnumerable<Uri> FeedUris
+        {
+            get { yield return new Uri("https://www.jimbobbennett.io/rss"); }
+        }
+
+
+        public string GravatarHash => "";
+        public string GitHubHandle => string.Empty;
+        public GeoPosition Position => new GeoPosition(-36.8484600, 174.7633320);
+    }
 }

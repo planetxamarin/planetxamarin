@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
@@ -7,7 +8,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
-    public class FeedController : Controller
+    public class FeedController : BaseController
     {
         private readonly CombinedFeedSource _combinedFeedSource;
 
@@ -16,33 +17,38 @@ namespace Firehose.Web.Controllers
             _combinedFeedSource = combinedFeedSource;
         }
 
-        public RssFeedResult Rss(int? numPosts = 50)
+        [Route("feed")]
+        public RssFeedResult Index(int? numPosts = 50)
         {
             var feed = GetFeed(numPosts);
             return new RssFeedResult(feed);
         }
 
-        public ViewResult Read(int? numPosts = 50)
-        {
-            var feed = GetFeed(numPosts);
-            return View(feed);
-        }
-
         private SyndicationFeed GetFeed(int? numPosts)
         {
-            var originalFeed = _combinedFeedSource.Feed;
-            if (numPosts == null) return originalFeed;
+            SyndicationFeed originalFeed = null;
+            try
+            {
+                originalFeed = _combinedFeedSource.Feed;
+                if (numPosts == null) return originalFeed;
 
-            var items = _combinedFeedSource.Feed.Items
-                                           .OrderByDescending(item => item.PublishDate)
-                                           .Take((int) numPosts)
-                                           .ToArray();
+                var items = _combinedFeedSource.Feed.Items
+                    .OrderByDescending(item => item.PublishDate)
+                    .Take((int)numPosts)
+                    .ToArray();
 
-            var shorterFeed = originalFeed.Clone(false);
-            var itemsField = shorterFeed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
-            itemsField.SetValue(shorterFeed, items);
+                var shorterFeed = originalFeed.Clone(false);
+                var itemsField = shorterFeed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
+                itemsField.SetValue(shorterFeed, items);
 
-            return shorterFeed;
+                return shorterFeed;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+
+                return originalFeed;
+            }
         }
     }
 }
