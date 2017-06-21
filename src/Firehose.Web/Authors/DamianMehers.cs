@@ -18,7 +18,7 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "DamianMehers";
         public GeoPosition Position => new GeoPosition(46.3635288, 6.1860801);
 
-        public Uri WebSite => new Uri("https://damianblog.com.com/");
+        public Uri WebSite => new Uri("https://damianblog.com/");
 
         public IEnumerable<Uri> FeedUris
         {
