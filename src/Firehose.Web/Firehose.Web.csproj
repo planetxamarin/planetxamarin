@@ -240,6 +240,7 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\HozefaMangalorewala.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
     <Compile Include="Authors\SamDebruyn.cs" />
     <Compile Include="Authors\VulcanLee.cs" />
