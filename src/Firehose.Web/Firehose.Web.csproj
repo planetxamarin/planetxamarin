@@ -287,6 +287,7 @@
     <Compile Include="Authors\RobGibbens.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
+    <Compile Include="Authors\JulianoCustodio.cs" />
     <Compile Include="Authors\WilliamRodriguez.cs" />
     <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="Authors\WinstonGubantes.cs" />
@@ -346,6 +347,8 @@
     <Compile Include="Authors\RamonEsteban.cs" />
     <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
+    <Compile Include="Authors\CharlinAgramonte.cs" />
+    <Compile Include="Authors\JesseLiberty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
