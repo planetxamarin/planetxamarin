@@ -250,6 +250,7 @@
     <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\DiegoPonceDeLeon.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
+    <Compile Include="Authors\CarelLotz.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\CorradoCavalli.cs" />
@@ -331,6 +332,7 @@
     <Compile Include="Authors\GiusepeCasagrande.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
+    <Compile Include="Authors\MatthewLeibowitz.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
