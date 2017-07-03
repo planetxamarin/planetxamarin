@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
 	{
         public string FirstName => "Ashan";
         public string LastName => "Dhanapala";
-        public string ShortBioOrTagLine => "Wannabe serious guy and Xamarin enthusiast";
+        public string ShortBioOrTagLine => " is a wannabe serious guy and a Xamarin enthusiast. Loves blogging and an early adapter of mobile development technologies";
         public string StateOrRegion => "Sri Lanka";
         public string EmailAddress => "ashandhanapala@gmail.com";
         public string TwitterHandle => "ashanCodes";
