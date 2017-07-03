@@ -23,10 +23,9 @@ namespace Firehose.Web.Authors
 
         public bool Filter(SyndicationItem item)
         {
-            
-			// Of course you can make the checks as complicated as you want and combine some stuff
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
 
+			// This filters out only the posts that have the "xamarin" category
+			return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
 		}
     }
 }
