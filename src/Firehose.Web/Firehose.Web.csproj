@@ -293,7 +293,6 @@
     <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="Authors\WinstonGubantes.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
-    <Compile Include="Authors\AshanDhanapala.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -352,6 +351,7 @@
     <Compile Include="Authors\AsfendYarHamid.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\JesseLiberty.cs" />
+    <Compile Include="Authors\AshanDhanapala.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
