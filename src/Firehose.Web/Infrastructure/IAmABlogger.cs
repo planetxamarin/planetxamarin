@@ -43,4 +43,8 @@ namespace Firehose.Web.Infrastructure
     public interface IAmAMicrosoftMVP : IAmACommunityMember
     {
     }
+
+    public interface IAmAPodcast : IAmACommunityMember
+    {
+    }
 }

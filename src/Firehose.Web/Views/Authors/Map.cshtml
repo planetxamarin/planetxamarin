@@ -40,8 +40,8 @@
             }
 
             @:var marker = getMarker(@id, @Json.Encode(@member.Position.Lat), @Json.Encode(member.Position.Lng), @name, @gravatar);
-                            @:markers.push(marker);
-                        }
+                                    @:markers.push(marker);
+                                }
         return markers;
     }
 
@@ -61,6 +61,12 @@
         });
 
         marker.addListener('click', function () {
+            $('.live-search-box').val('');
+
+            $('.profileCard').each(function() {
+                $(this).show();
+            });
+
             if (selectedAuthor) {
                 selectedAuthor.removeClass('active');
             }

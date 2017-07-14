@@ -1,0 +1,27 @@
+﻿@using Firehose.Web.Infrastructure
+@model IAmACommunityMember
+
+<div class="col-md-4 profileCard" id="@Model.GetType().Name">
+    <img class="mugShot" src="@Model.GravatarImage()" alt="@Model.FirstName @Model.LastName"/>
+    <div class="mugShotBorder">
+    </div>
+    <div class="profileCardWrapper">
+
+        <p class="name">@Model.FirstName @Model.LastName</p>
+        <p class="twitter">
+            <a href="https://twitter.com/@Model.TwitterHandle">@@@Model.TwitterHandle</a>
+        </p>
+
+        <p class="description">
+            @if (!string.IsNullOrWhiteSpace(Model.ShortBioOrTagLine))
+            {
+               
+                <text>@Model.FirstName @Model.LastName @Model.ShortBioOrTagLine</text>          
+            }
+        </p>
+
+        <p class="website">
+            <a href="@(Model.WebSite.ToString())" title="@Model.WebSite.ToString()">@Model.WebSite.ToString()</a>
+        </p>
+    </div>
+</div>
