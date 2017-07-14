@@ -98,7 +98,7 @@ namespace Firehose.Web.Infrastructure
                         var feed = SyndicationFeed.Load(xmlReader);
                         var filteredItems = feed.Items
                             .Where(filter)
-                            .Where(item => item.LastUpdatedTime <= DateTimeOffset.Now && item.PublishDate <= DateTimeOffset.Now)
+                            .Where(item => item.LastUpdatedTime.UtcDateTime <= DateTimeOffset.UtcNow && item.PublishDate.UtcDateTime <= DateTimeOffset.UtcNow)
                             .ToArray();
 
                         var itemsField = feed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
