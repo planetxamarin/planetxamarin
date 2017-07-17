@@ -19,7 +19,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "a90b830f123ffdcac52f8e16c8bcd829";
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://deanilvincent.github.io/feed/"); }
+            get { yield return new Uri("https://deanilvincent.github.io/feed"); }
         }
         public GeoPosition Position => new GeoPosition(14.5547, 121.0244);
     }
