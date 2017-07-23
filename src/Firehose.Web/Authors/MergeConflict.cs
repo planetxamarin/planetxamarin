@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class MergeConflict : IAmACommunityMember
+    public class MergeConflict : IAmACommunityMember, IAmAPodcast
     {
         public string FirstName => "Merge";
 

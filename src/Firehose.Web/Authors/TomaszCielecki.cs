@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class TomaszCielecki : IAmAXamarinMVP, IFilterMyBlogPosts
+    public class TomaszCielecki : IAmAXamarinMVP, IAmAMicrosoftMVP, IFilterMyBlogPosts
     {
         public IEnumerable<Uri> FeedUris
         {
