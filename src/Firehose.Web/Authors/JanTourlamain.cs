@@ -15,11 +15,11 @@ namespace Firehose.Web
 	public string TwitterHandle => string.Empty;
         public string GravatarHash => "2af061e0817546c0934a59f38e8ab9e2";
         public string StateOrRegion => "Belgium";
-        public Uri WebSite => new Uri("http://www.devprotocol.com/");
+        public Uri WebSite => new Uri("https://www.devprotocol.com/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://www.devprotocol.com/rss/"); }
+            get { yield return new Uri("https://www.devprotocol.com/rss/"); }
         }
 
         public string GitHubHandle => "jtourlamain";
