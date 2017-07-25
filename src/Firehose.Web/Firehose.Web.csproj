@@ -339,6 +339,7 @@
     <Compile Include="Authors\RoyCornelissen.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
+    <Compile Include="Authors\SebastianCabrera.cs" />
     <Compile Include="Authors\SebastianSeidel.cs" />
     <Compile Include="Authors\FabioCozzolino.cs" />
     <Compile Include="Authors\AlessandroCaliaro.cs" />
