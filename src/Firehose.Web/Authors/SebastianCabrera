@@ -11,5 +11,5 @@ public class BruceWayne : IAmACommunityMember
     public GeoPosition Position => new GeoPosition(-34.811421, -56.209936);
 
     public Uri WebSite => new Uri("https://sebacabrera.com/");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://http://sebacabrera.com/feed/"); } }
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://http://sebacabrera.com/feed"); } }
 }
