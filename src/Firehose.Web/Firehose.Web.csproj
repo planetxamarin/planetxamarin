@@ -290,6 +290,7 @@
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
     <Compile Include="Authors\JulianoCustodio.cs" />
+    <Compile Include="Authors\VenkataramanaMadugula.cs" />
     <Compile Include="Authors\WilliamRodriguez.cs" />
     <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="Authors\WinstonGubantes.cs" />
