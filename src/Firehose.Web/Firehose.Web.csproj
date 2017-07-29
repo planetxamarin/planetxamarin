@@ -351,8 +351,8 @@
     <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
-    <Compile Include="Authors\JesseLiberty.cs" />
     <Compile Include="Authors\VenkataramanaMadugula.cs" />
+    <Compile Include="Authors\JesseLiberty.cs" />    
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
