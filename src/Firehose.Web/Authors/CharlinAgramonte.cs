@@ -22,7 +22,6 @@ namespace Firehose.Web
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://xamgirl.com/rss"); } }
 
         public bool Filter(SyndicationItem item) =>
-                item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
                 item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }
