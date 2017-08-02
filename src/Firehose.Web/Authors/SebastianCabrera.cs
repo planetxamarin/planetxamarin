@@ -15,5 +15,5 @@ public class SebastianCabrera : IAmACommunityMember
     public GeoPosition Position => new GeoPosition(-34.811421, -56.209936);
 
     public Uri WebSite => new Uri("http://sebacabrera.com/");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://http://sebacabrera.com/feed"); } }
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://sebacabrera.com/feed"); } }
 }
