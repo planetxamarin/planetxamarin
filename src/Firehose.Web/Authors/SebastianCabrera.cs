@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-public class BruceWayne : IAmACommunityMember
+public class SebastianCabrera : IAmACommunityMember
 {
     public string FirstName => "Sebastian";
     public string LastName => "Cabrera";
@@ -14,6 +14,6 @@ public class BruceWayne : IAmACommunityMember
     public string GitHubHandle => "seba47";
     public GeoPosition Position => new GeoPosition(-34.811421, -56.209936);
 
-    public Uri WebSite => new Uri("https://sebacabrera.com/");
+    public Uri WebSite => new Uri("http://sebacabrera.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://http://sebacabrera.com/feed"); } }
 }
