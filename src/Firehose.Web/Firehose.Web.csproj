@@ -353,6 +353,7 @@
     <Compile Include="Authors\BasDeCort.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\JesseLiberty.cs" />
+    <Compile Include="Authors\SebastianCabrera.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
