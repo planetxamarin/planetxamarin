@@ -12,7 +12,7 @@ namespace Firehose.Web.Authors
 		public string LastName => "de Cort";
 		public string StateOrRegion => "Tilburg, The Netherlands";
 		public string EmailAddress => "";
-		public string ShortBioOrTagLine => "Bas de Cort is a mobile developer with a passion for Xamarin.";
+		public string ShortBioOrTagLine => "is a mobile developer with a passion for Xamarin.";
 		public Uri WebSite => new Uri("https://www.basdecort.com");
 		public string TwitterHandle => "basdecort";
 		public string GitHubHandle => "basdecort";
