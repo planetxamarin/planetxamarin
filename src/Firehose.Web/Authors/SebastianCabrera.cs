@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
+
 public class BruceWayne : IAmACommunityMember
 {
     public string FirstName => "Sebastian";
