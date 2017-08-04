@@ -240,12 +240,18 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\Xablu.cs" />
+    <Compile Include="Authors\LoganEdge.cs" />
+    <Compile Include="Authors\MartynWiggins.cs" />
+    <Compile Include="Authors\SamDebruyn.cs" />
+    <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\BartoszRadlak.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\DiegoPonceDeLeon.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
+    <Compile Include="Authors\CarelLotz.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\CorradoCavalli.cs" />
@@ -253,6 +259,7 @@
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
     <Compile Include="Authors\DanRigby.cs" />
+    <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
     <Compile Include="Authors\MarcosSantos.cs" />
@@ -283,9 +290,11 @@
     <Compile Include="Authors\RobGibbens.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
+    <Compile Include="Authors\JulianoCustodio.cs" />
     <Compile Include="Authors\WilliamRodriguez.cs" />
     <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="Authors\WinstonGubantes.cs" />
+    <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -324,6 +333,7 @@
     <Compile Include="Authors\GiusepeCasagrande.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
+    <Compile Include="Authors\MatthewLeibowitz.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
@@ -338,6 +348,12 @@
     <Compile Include="Authors\ChrisRiesgo.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
     <Compile Include="Authors\JunianTriajianto.cs" />
+    <Compile Include="Authors\RamonEsteban.cs" />
+    <Compile Include="Authors\TimKlingeleers.cs" />
+    <Compile Include="Authors\AsfendYarHamid.cs" />
+    <Compile Include="Authors\BasDeCort.cs" />
+    <Compile Include="Authors\CharlinAgramonte.cs" />
+    <Compile Include="Authors\JesseLiberty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
