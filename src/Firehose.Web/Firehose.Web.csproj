@@ -247,6 +247,7 @@
     <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\BartoszRadlak.cs" />
+	<Compile Include="Authors\KrzysztofStepnikowski.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\DiegoPonceDeLeon.cs" />
