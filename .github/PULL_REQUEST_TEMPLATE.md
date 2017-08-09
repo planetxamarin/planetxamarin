@@ -1,5 +1,7 @@
 If you are submitting a new blog please read:
 
+**Please do not forget to add the cs file to the csproj file!**
+
 By sending this pull request to add my blog I verify that I adhere to the Planet Xamarin blog guidelines (please check each item that applies):
 
 - [ ] I have a valid blog & RSS URL, if HTTPS is used, the certificate is valid
