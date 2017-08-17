@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Syndication;
@@ -18,17 +17,13 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("http://lawebdelprogramador.cl/bloglawebdelprogramador/");
 
         public IEnumerable<Uri> FeedUris
-        {
+     	{
             get { yield return new Uri("http://lawebdelprogramador.cl/bloglawebdelprogramador/feed/"); }
         }
-
         public string GitHubHandle => "lawebdeprogramador";
-
         public GeoPosition Position => new GeoPosition(-33.4488897, -70.6692655);
-
-        public bool Filter(SyndicationItem item)
-		{
-			return item.Title.Text.ToLowerInvariant().Contains("xamarin");
-		}
+        public bool Filter(SyndicationItem item){
+		return item.Title.Text.ToLowerInvariant().Contains("xamarin");
+	}
     }
 }
