@@ -19,7 +19,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("hhttp://lawebdelprogramador.cl/bloglawebdelprogramador/feed/"); }
+            get { yield return new Uri("http://lawebdelprogramador.cl/bloglawebdelprogramador/feed/"); }
         }
 
         public string GitHubHandle => "lawebdeprogramador";
