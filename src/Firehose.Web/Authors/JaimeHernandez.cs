@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class JaimeHernandez : IAmACommunityMember
+    public class JaimeHernandez : IAmACommunityMember,IFilterMyBlogPosts
     {
         public string FirstName => "Jaime";
         public string LastName => "Hernandez";
@@ -24,9 +24,11 @@ namespace Firehose.Web.Authors
 
         public string GitHubHandle => "lawebdeprogramador";
 
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
         public GeoPosition Position => new GeoPosition(-33.4488897, -70.6692655);
+
+        public bool Filter(SyndicationItem item)
+		{
+			return item.Title.Text.ToLowerInvariant().Contains("xamarin");
+		}
     }
 }
