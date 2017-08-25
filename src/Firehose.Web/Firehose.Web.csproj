@@ -352,10 +352,10 @@
     <Compile Include="Authors\RamonEsteban.cs" />
     <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
-    <Compile Include="Authors\JaimeHernandez.cs" />
     <Compile Include="Authors\BasDeCort.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\JesseLiberty.cs" />
+    <Compile Include="Authors\JaimeHernandez.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
