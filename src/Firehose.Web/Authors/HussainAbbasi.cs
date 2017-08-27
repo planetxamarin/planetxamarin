@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
+
+namespace Firehose.Web.Authors
+{
+    public class HussainAbbasi : IAmACommunityMember, IFilterMyBlogPosts
+    {
+        public string FirstName => "Hussain";
+
+        public string LastName => "Abbasi";
+
+        public string StateOrRegion => "Houston, Texas";
+
+        public string EmailAddress => "hnabbasi@outlook.com";
+
+        public string ShortBioOrTagLine => "is a Blogger, Mobile Architect, and founder of intelliAbb.com. More at HussainAbbasi.com";
+
+        public Uri WebSite => new Uri("http://www.intelliabb.com/");
+
+        public string TwitterHandle => "intelliAbb";
+
+        public string GitHubHandle => "intelliAbb";
+
+        public string GravatarHash => "6f415af725ae2d6b5b912a7e93b105b9";
+
+        public IEnumerable<Uri> FeedUris => new List<Uri> {
+            new Uri("http://www.intelliabb.com/feed")
+        };
+
+        public GeoPosition Position => new GeoPosition(29.7656, -95.3681);
+
+        public bool Filter(SyndicationItem item) {
+			return item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
+		        item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        }
+    }
+}
