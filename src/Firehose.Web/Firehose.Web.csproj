@@ -240,6 +240,8 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\NigelFerrissey.cs" />
+    <Compile Include="Authors\DamianMehers.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\LoganEdge.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
@@ -354,6 +356,7 @@
     <Compile Include="Authors\BasDeCort.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\JesseLiberty.cs" />
+    <Compile Include="Authors\RendyDelRosario.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
