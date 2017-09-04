@@ -11,7 +11,7 @@ namespace Firehose.Web.Authors
 		public string FirstName => "Joe";
 		public string LastName => "Meyer";
 		public string StateOrRegion => "Chicago, IL";
-		public string TwitterHandle => throw new NotImplementedException();
+		public string TwitterHandle => "iwritecodesmtms";
 		public string EmailAddress => "joseph.w.meyer@live.com";
 		public string ShortBioOrTagLine => "I write code sometimes";
 		public string GravatarHash => "1431dd2c4749b0a178c7a3130e71831e";
