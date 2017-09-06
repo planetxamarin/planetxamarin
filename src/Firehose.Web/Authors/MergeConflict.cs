@@ -20,7 +20,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://www.mergeconflict.fm/rss"); }
+            get { yield return new Uri("https://mergeconflict.fireside.fm/rss"); }
         }
 
         public string TwitterHandle => "MergeConflictFM";
