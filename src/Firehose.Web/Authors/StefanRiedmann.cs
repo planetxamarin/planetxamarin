@@ -17,11 +17,11 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "stefan.riedmann@ciclosoftware.com";
         public string TwitterHandle => "CicloSoftware";
 
-        public Uri WebSite => new Uri("http://www.ciclosoftware.com");
+        public Uri WebSite => new Uri("https://www.ciclosoftware.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://www.ciclosoftware.com/feed/"); }
+            get { yield return new Uri("https://www.ciclosoftware.com/feed/"); }
         }
 
         public string GravatarHash => "2781a55d04634584326bedfe08660537";
