@@ -16,11 +16,11 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is the official Xamarin podcast discussing all things Xamarin!";
 
-        public Uri WebSite => new Uri("https://soundcloud.com/xamarin-podcast");
+        public Uri WebSite => new Uri("http://www.xamarinpodcast.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://feeds.soundcloud.com/users/soundcloud:users:55118534/sounds.rss"); }
+            get { yield return new Uri("https://xamarinpodcast.fireside.fm/rss"); }
         }
 
         public string TwitterHandle => "XamarinPodcast";
