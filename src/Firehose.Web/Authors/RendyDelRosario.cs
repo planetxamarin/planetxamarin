@@ -10,7 +10,7 @@ namespace Firehose.Web
     {
         public string FirstName => "Rendy";
         public string LastName => "Del Rosario";
-        public string ShortBioOrTagLine => "Xamarinholic";
+        public string ShortBioOrTagLine => "is a senior software developer with a passion for mobile development using Xamarin platform";
         public string StateOrRegion => "Dominican Republic";
         public string EmailAddress => "rendy@crossgeeks.com";
         public string TwitterHandle => "rdelrosario";
@@ -18,8 +18,8 @@ namespace Firehose.Web
         public string GitHubHandle => "rdelrosario";
         public GeoPosition Position => new GeoPosition(18.486058,-69.931212);
 
-        public Uri WebSite => new Uri("http://xamboy.com/");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://xamboy.com/rss"); } }
+        public Uri WebSite => new Uri("https://xamboy.com/");
+        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://xamboy.com/rss"); } }
 
         public bool Filter(SyndicationItem item) =>
                 item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
