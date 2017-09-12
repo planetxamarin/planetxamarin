@@ -19,7 +19,7 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "Web and Mobile Developer";
 
-        public Uri WebSite => new Uri("http://high5devs.com/");
+        public Uri WebSite => new Uri("https://www.lambda3.com.br/blog");
 
         public string TwitterHandle => "akamud";
 
