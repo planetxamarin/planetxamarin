@@ -360,6 +360,7 @@
     <Compile Include="Authors\JesseLiberty.cs" />
     <Compile Include="Authors\RendyDelRosario.cs" />
     <Compile Include="Authors\JoeMeyer.cs" />
+    <Compile Include="Authors\JohanKarlsson.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
