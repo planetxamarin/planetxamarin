@@ -18,8 +18,8 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "PieEatingNinjas";
         public GeoPosition Position => new GeoPosition(50.93, 5.3375);
 
-        public Uri WebSite => new Uri("http://blog.pieeatingninjas.be/");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://blog.pieeatingninjas.be/feed/rss"); } }
+        public Uri WebSite => new Uri("https://blog.pieeatingninjas.be/");
+        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://blog.pieeatingninjas.be/feed/rss"); } }
 
         public bool Filter(SyndicationItem item)
         {
