@@ -10,15 +10,15 @@ public class KymPhillpotts : IWorkAtXamarinOrMicrosoft
     public string StateOrRegion => "Melbourne, Australia";
     public string EmailAddress => "kphillpotts@gmail.com";
     public string TwitterHandle => "kphillpotts";
-    public string GravatarHash => "";
+    public string GravatarHash => "3218e66502c6f0836dfd0f02f210ba0b";
 
-    public Uri WebSite => new Uri("http://kymphillpotts.com/");
+    public Uri WebSite => new Uri("https://kymphillpotts.com/");
 
     public IEnumerable<Uri> FeedUris
     {
-        get { yield return new Uri("http://kymphillpotts.com/rss/"); }
+        get { yield return new Uri("https://kymphillpotts.com/rss/"); }
     }
 
-    public string GitHubHandle => string.Empty;
+    public string GitHubHandle => "kphillpotts";
     public GeoPosition Position => new GeoPosition(-37.8136280, 144.9630580);
 }

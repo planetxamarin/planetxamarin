@@ -17,8 +17,8 @@ namespace Firehose.Web.Authors {
         public string TwitterHandle => "almirvuk";
         public string GravatarHash => "d58b6fd6c2d9f949345e8d14d203a4b2";
 
-        public Uri WebSite => new Uri("http://almirvuk.blogspot.com/");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://almirvuk.blogspot.ba/feeds/posts/default?alt=rss"); } }
+        public Uri WebSite => new Uri("https://almirvuk.blogspot.com/");
+        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://almirvuk.blogspot.ba/feeds/posts/default?alt=rss"); } }
 
         public string GitHubHandle => "almirvuk";
 

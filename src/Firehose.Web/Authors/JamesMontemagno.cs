@@ -18,11 +18,11 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is a Principal Program Manager for Mobile Developer Tools";
 
-        public Uri WebSite => new Uri("http://motzcod.es");
+        public Uri WebSite => new Uri("https://montemagno.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://motzcod.es/rss"); }
+            get { yield return new Uri("https://montemagno.com/rss"); }
         }
 
         public string TwitterHandle => "JamesMontemagno";
