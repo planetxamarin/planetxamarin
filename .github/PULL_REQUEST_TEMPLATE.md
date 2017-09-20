@@ -4,7 +4,7 @@ If you are submitting a new blog please read:
 
 By sending this pull request to add my blog I verify that I adhere to the Planet Xamarin blog guidelines (please check each item that applies):
 
-- [ ] I have a valid blog & RSS URL, if HTTPS is used, the certificate is valid
+- [ ] I have a valid blog & RSS URL, both using HTTPS with a valid certificate
 - [ ] I host NO malicious or offensive content on the blog (including photos, swearing, etc.)
 - [ ] My blog is active with at least 3 Xamarin related blog posts in the last 6 months
 - [ ] In addition to the previous guideline; it should be apperant that the blog is active for a longer period of time and the posts on it are not fabricated in a small amount of time to comply to the '3 posts in last 6 months' guideline.
