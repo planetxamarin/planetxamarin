@@ -15,11 +15,11 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "";
         public string ShortBioOrTagLine => string.Empty;
         public string GravatarHash => "29f7fb03af5c354d6098f0300114056b";
-        public Uri WebSite => new Uri("http://www.patridgedev.com/");
+        public Uri WebSite => new Uri("https://www.patridgedev.com/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://www.patridgedev.com/feed/"); }
+            get { yield return new Uri("https://www.patridgedev.com/feed/"); }
         }
 
         public string GitHubHandle => "patridge";
