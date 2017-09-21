@@ -16,11 +16,13 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is a development podcast focused on mobile development hosted by Jon Dick and Greg Shackles.";
 
+        // TEMPORARY WORKAROUND - We'll get https support shortly, for now we have it for the feed at least
         public Uri WebSite => new Uri("http://gonemobile.io");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://gonemobile.io/podcast.rss"); }
+            // TEMPORARY WORKAROUND - We'll have proper https support in fireside soon and can use https://gonemobile.io/rss at that point
+            get { yield return new Uri("https://gonemobile.fireside.fm/rss"); }
         }
 
         public string TwitterHandle => "gonemobilecast";
