@@ -21,8 +21,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            // TEMPORARY WORKAROUND - We'll have proper https support in fireside soon and can use https://gonemobile.io/rss at that point
-            get { yield return new Uri("https://gonemobile.fireside.fm/rss"); }
+            get { yield return new Uri("https://feed.gonemobile.io"); }
         }
 
         public string TwitterHandle => "gonemobilecast";
