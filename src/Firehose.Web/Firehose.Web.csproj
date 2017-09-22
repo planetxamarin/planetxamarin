@@ -284,7 +284,6 @@
     <Compile Include="Authors\Suthahar.cs" />
     <Compile Include="Authors\ThomasBandt.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
-    <Compile Include="Authors\ThomasLebrun.cs" />
     <Compile Include="Authors\TimotheLariviere.cs" />
     <Compile Include="Authors\MFractor.cs" />
     <Compile Include="Authors\TomSoderling.cs" />
@@ -331,18 +330,15 @@
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
-    <Compile Include="Authors\DileepaRajapaksa.cs" />
     <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
-    <Compile Include="Authors\GiusepeCasagrande.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\MatthewLeibowitz.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
-    <Compile Include="Authors\RoyCornelissen.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
     <Compile Include="Authors\SebastianSeidel.cs" />
