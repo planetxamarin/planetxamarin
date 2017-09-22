@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://ghuntley.com/atom.xml"); }
+            get { yield return new Uri("https://ghuntley.com/feed.atom"); }
         }
 
         public string GravatarHash => "";
