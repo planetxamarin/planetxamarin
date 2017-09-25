@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "elbrinner@elbrinner.com";
 
-        public string ShortBioOrTagLine => "is consultant Xamarin in everis Spain and organizer of the meetup group Xamarin Madrid.";
+        public string ShortBioOrTagLine => "is a Xamarin consultant in everis Spain and organizer of the meetup group Xamarin Madrid.";
 
         public Uri WebSite => new Uri("https://www.elbrinner.com/");
 
