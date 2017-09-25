@@ -17,11 +17,11 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "b850b7ab6cd9cdb2d5edc6739b624fdf";
         public GeoPosition Position => new GeoPosition(28.4743880, 77.5039900);
 
-        public Uri WebSite => new Uri("http://techierathore.com/");
+        public Uri WebSite => new Uri("https://techierathore.com/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://techierathore.com/feed/"); }
+            get { yield return new Uri("https://techierathore.com/feed/"); }
         }
 
         public string GitHubHandle => string.Empty;
