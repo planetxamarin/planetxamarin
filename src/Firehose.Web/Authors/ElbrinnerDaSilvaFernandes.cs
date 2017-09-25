@@ -17,9 +17,9 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "elbrinner@elbrinner.com";
 
-        public string ShortBioOrTagLine => "is Xamarin consultant at everis Spain.";
+        public string ShortBioOrTagLine => "is consultant Xamarin in everis Spain and organizer of the meetup group Xamarin Madrid.";
 
-        public Uri WebSite => new Uri("http://www.elbrinner.com/");
+        public Uri WebSite => new Uri("https://www.elbrinner.com/");
 
         public string TwitterHandle => "elbrinner";
 
@@ -29,7 +29,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://www.elbrinner.com/rss"); }
+            get { yield return new Uri("https://www.elbrinner.com/rss"); }
         }
 
         public GeoPosition Position => new GeoPosition(40.4167750, -3.7037900);
