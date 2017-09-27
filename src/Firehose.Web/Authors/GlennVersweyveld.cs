@@ -16,11 +16,11 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "depechie";
         public GeoPosition Position => new GeoPosition(51.091310, 4.548315);        
 
-        public Uri WebSite => new Uri("http://depblog.weblogs.us");
+        public Uri WebSite => new Uri("https://depblog.weblogs.us");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://depblog.weblogs.us/feed/"); }
+            get { yield return new Uri("https://depblog.weblogs.us/feed/"); }
         }
 
         public string GravatarHash => "d3ac2144120f923f23c49ee4ce4437ab";
