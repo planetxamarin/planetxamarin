@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://kerry.lothrop.de/de/feed/"); }
+            get { yield return new Uri("http://kerry.lothrop.de/en/feed/"); }
         }
 
         public string GravatarHash => "250241b2800a1de895a75ce039bcfef4";

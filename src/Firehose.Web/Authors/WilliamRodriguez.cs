@@ -10,10 +10,12 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "William";
         public string LastName => "Rodriguez";
-        public string ShortBioOrTagLine => string.Empty;
         public string StateOrRegion => "Curitiba, Brasil";
         public string TwitterHandle => "williamsrodz";
-        public string GitHubHandle => string.Empty;
+        public string GitHubHandle => "williamsrz";
+
+        public string ShortBioOrTagLine
+            => "C# mobile developer, community enthusiast, Microsoft & Xamarin MVP";
 
         public string EmailAddress => "ping@williamsrz.com.br";
         public string GravatarHash => "c8f3160f0a24c13821d14b8848d62cea";
