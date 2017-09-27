@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class MergeConflict : IAmACommunityMember
+    public class MergeConflict : IAmACommunityMember, IAmAPodcast
     {
         public string FirstName => "Merge";
 
@@ -20,7 +20,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://simplecast.com/podcasts/2117/rss"); }
+            get { yield return new Uri("https://mergeconflict.fireside.fm/rss"); }
         }
 
         public string TwitterHandle => "MergeConflictFM";

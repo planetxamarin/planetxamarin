@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class GeoffreyHuntley : IAmAMicrosoftMVP
+    public class GeoffreyHuntley : IAmAMicrosoftMVP, IAmAXamarinMVP
     {
         public string FirstName => "Geoffrey";
         public string LastName => "Huntley";
@@ -17,11 +17,11 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://ghuntley.com/atom.xml"); }
+            get { yield return new Uri("https://ghuntley.com/feed.atom"); }
         }
 
         public string GravatarHash => "";
         public string GitHubHandle => "ghuntley";
-        public GeoPosition Position => new GeoPosition(-33.8641859, 151.2143821);
+        public GeoPosition Position => new GeoPosition(-29.044725, 141.0844449);
     }
 }
