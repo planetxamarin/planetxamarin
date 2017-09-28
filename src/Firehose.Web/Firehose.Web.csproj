@@ -282,7 +282,6 @@
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
-    <Compile Include="Authors\ThomasLebrun.cs" />
     <Compile Include="Authors\Suthahar.cs" />
     <Compile Include="Authors\ThomasBandt.cs" />
     <Compile Include="Authors\TimotheLariviere.cs" />
