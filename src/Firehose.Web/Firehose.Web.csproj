@@ -74,6 +74,7 @@
     <Reference Include="MvcNavigationHelpers">
       <HintPath>..\packages\MvcNavigationHelpers.0.0.0.5\lib\net45\MvcNavigationHelpers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData">
       <Private>True</Private>
@@ -137,6 +138,7 @@
       <DependentUpon>site.css</DependentUpon>
     </Content>
     <Content Include="Content\img\card-background.png" />
+    <Content Include="Content\img\deathstar_monkey.jpg" />
     <Content Include="Content\img\icons\android-icon-144x144.png" />
     <Content Include="Content\img\icons\android-icon-192x192.png" />
     <Content Include="Content\img\icons\android-icon-36x36.png" />
@@ -238,15 +240,37 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\MahmoudAli.cs" />
+    <Compile Include="Authors\NigelFerrissey.cs" />
+    <Compile Include="Authors\DamianMehers.cs" />
+    <Compile Include="Authors\StefanRiedmann.cs" />
+    <Compile Include="Authors\Xablu.cs" />
+    <Compile Include="Authors\LoganEdge.cs" />
+    <Compile Include="Authors\MartynWiggins.cs" />
+    <Compile Include="Authors\SamDebruyn.cs" />
+    <Compile Include="Authors\VulcanLee.cs" />
+    <Compile Include="Authors\AlexandrSorokoletov.cs" />
+    <Compile Include="Authors\BartoszRadlak.cs" />
+    <Compile Include="Authors\GoneMobile.cs" />
+    <Compile Include="Authors\AlexDunn.cs" />
+    <Compile Include="Authors\DiegoPonceDeLeon.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
+    <Compile Include="Authors\CarelLotz.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
+    <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\CorradoCavalli.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
     <Compile Include="Authors\DanRigby.cs" />
+    <Compile Include="Authors\DanSiegel.cs" />
+    <Compile Include="Authors\ReactiveUI.cs" />
     <Compile Include="Authors\DanielKrzyczkowski.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
+    <Compile Include="Authors\MarcosSantos.cs" />
+    <Compile Include="Authors\LarryOBrien.cs" />
+    <Compile Include="Authors\PieterNijs.cs" />
+    <Compile Include="Authors\TheXamarinPodcast.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
@@ -259,6 +283,10 @@
     <Compile Include="Authors\RyanDavis.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
     <Compile Include="Authors\ThomasLebrun.cs" />
+    <Compile Include="Authors\Suthahar.cs" />
+    <Compile Include="Authors\ThomasBandt.cs" />
+    <Compile Include="Authors\TimotheLariviere.cs" />
+    <Compile Include="Authors\MFractor.cs" />
     <Compile Include="Authors\TomSoderling.cs" />
     <Compile Include="Authors\WeeklyXamarin.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
@@ -267,9 +295,14 @@
     <Compile Include="Authors\RobGibbens.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
+    <Compile Include="Authors\JulianoCustodio.cs" />
     <Compile Include="Authors\WilliamRodriguez.cs" />
+    <Compile Include="Authors\JanTourlamain.cs" />
+    <Compile Include="Authors\WinstonGubantes.cs" />
+    <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
@@ -295,26 +328,36 @@
     <Compile Include="Authors\GeertVanDerCruijsen.cs" />
     <Compile Include="Authors\JamesMontemagno.cs" />
     <Compile Include="Authors\MergeConflict.cs" />
-    <Compile Include="Authors\GoneMobile.cs" />
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
     <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
-    <Compile Include="Authors\GiusepeCasagrande.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
-    <Compile Include="Authors\NunoHorta.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
+    <Compile Include="Authors\MatthewLeibowitz.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
-    <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
-    <Compile Include="Authors\RoyCornelissen.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
-    <Compile Include="Authors\AloisDeniel.cs" />
+    <Compile Include="Authors\SebastianSeidel.cs" />
+    <Compile Include="Authors\FabioCozzolino.cs" />
+    <Compile Include="Authors\AlessandroCaliaro.cs" />
+    <Compile Include="Authors\JonPeppers.cs" />
+    <Compile Include="Authors\MarioGalvan.cs" />
     <Compile Include="Authors\ChrisRiesgo.cs" />
+    <Compile Include="Authors\BryanAnthonyGarcia.cs" />
+    <Compile Include="Authors\JunianTriajianto.cs" />
+    <Compile Include="Authors\RamonEsteban.cs" />
+    <Compile Include="Authors\TimKlingeleers.cs" />
+    <Compile Include="Authors\AsfendYarHamid.cs" />
+    <Compile Include="Authors\BasDeCort.cs" />
+    <Compile Include="Authors\CharlinAgramonte.cs" />
+    <Compile Include="Authors\JesseLiberty.cs" />
+    <Compile Include="Authors\RendyDelRosario.cs" />
+    <Compile Include="Authors\JoeMeyer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -333,6 +376,8 @@
     <Content Include="Views\Authors\Map.cshtml" />
     <Content Include="Views\Shared\_ContainerLayout.cshtml" />
     <Content Include="Views\Authors\List.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Home\PodcastCard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

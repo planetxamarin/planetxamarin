@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Syndication;
@@ -9,7 +8,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
-    public class FeedController : Controller
+    public class FeedController : BaseController
     {
         private readonly CombinedFeedSource _combinedFeedSource;
 
@@ -27,11 +26,12 @@ namespace Firehose.Web.Controllers
 
         private SyndicationFeed GetFeed(int? numPosts)
         {
-            var originalFeed = _combinedFeedSource.Feed;
-            if (numPosts == null) return originalFeed;
-
+            SyndicationFeed originalFeed = null;
             try
             {
+                originalFeed = _combinedFeedSource.Feed;
+                if (numPosts == null) return originalFeed;
+
                 var items = _combinedFeedSource.Feed.Items
                     .OrderByDescending(item => item.PublishDate)
                     .Take((int)numPosts)

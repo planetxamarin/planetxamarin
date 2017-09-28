@@ -6,11 +6,11 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class TomaszCielecki : IAmAXamarinMVP, IFilterMyBlogPosts
+    public class TomaszCielecki : IAmAXamarinMVP, IAmAMicrosoftMVP, IFilterMyBlogPosts
     {
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://blog.ostebaronen.dk/feeds/posts/default"); }
+            get { yield return new Uri("https://blog.ostebaronen.dk/feed.xml"); }
         }
 
         public string FirstName => "Tomasz";
@@ -19,9 +19,9 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "tomasz@ostebaronen.dk";
 
         public string ShortBioOrTagLine
-            => "loves long walks on the beach, yelling at the screen. More importantly writes code.";
+            => "Open Source all the things!";
 
-        public Uri WebSite => new Uri("http://blog.ostebaronen.dk");
+        public Uri WebSite => new Uri("https://blog.ostebaronen.dk");
         public string TwitterHandle => "Cheesebaron";
         public string GitHubHandle => "Cheesebaron";
         public string GravatarHash => "f780d57997526876b0625e517c1e0884";

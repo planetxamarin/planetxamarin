@@ -1,5 +1,7 @@
 ﻿@using Firehose.Web.Controllers
 @using MvcNavigationHelpers
+@using Firehose.Web.Infrastructure
+@model IAmACommunityMember[]
 
 @{
     Layout = "~/Views/Shared/_ContainerLayout.cshtml";
@@ -38,6 +40,7 @@
 </div>
 
 <hr />
+
 <h2>Authors' opinions</h2>
 <p>
 
@@ -54,3 +57,12 @@
     You can show off to the world by incorporating this badge into your blog. If you would have it link back to us, that would be totally awesome!
 </p>
 <img class="featuredbadge" src="~/Content/img/planetxamarin-featured-badge.png" alt="Featured on Planet Xamarin badge" />
+
+<hr />
+<h1>Xamarin Podcasts, Shows, Newsletters & Open-source Software</h1>
+<p>
+    @foreach (var member in Model.Where(m => m is IAmAPodcast || m is IAmANewsletter || m is IAmAFrameworkForXamarin).ToArray())
+    {
+        Html.RenderPartial("PodcastCard", member);
+    }
+</p>

@@ -8,14 +8,14 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Dan";
         public string LastName => "Rigby";
-        public string ShortBioOrTagLine => "is a Xamarin Technical Solutions Professional";
+        public string ShortBioOrTagLine => "is a Technical Solutions Professional";
         public string StateOrRegion => "Raleigh, North Carolina";
-        public string EmailAddress => "Dan.Rigby@Xamarin.com";
+        public string EmailAddress => "Dan.Rigby@Microsoft.com";
         public string TwitterHandle => "DanRigby";
         public string GitHubHandle => "DanRigby";
         public string GravatarHash => "f025f772418fbcfd3a1e15a74bf0f8a4";
         public GeoPosition Position => new GeoPosition(35.7795900,-78.6381790);
-        public Uri WebSite => new Uri("http://danrigby.com/");
+        public Uri WebSite => new Uri("https://danrigby.com/");
 
         public IEnumerable<Uri> FeedUris
         {
