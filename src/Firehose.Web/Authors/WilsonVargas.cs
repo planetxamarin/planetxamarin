@@ -18,11 +18,11 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is a guy with lots of experience in the software development art and with a great passion for mobile development using Xamarin platform.";
 
-        public Uri WebSite => new Uri("http://blog.wilsonvargas.com");
+        public Uri WebSite => new Uri("https://blog.wilsonvargas.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://blog.wilsonvargas.com/rss/"); }
+            get { yield return new Uri("https://blog.wilsonvargas.com/rss/"); }
         }
 
         public string TwitterHandle => "Wilson_VargasM";
