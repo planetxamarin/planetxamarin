@@ -12,16 +12,16 @@ namespace Firehose.Web.Authors
         public string LastName => "Kumar";
         public string ShortBioOrTagLine => string.Empty;
         public string StateOrRegion => "Greater Noida, India";
-        public string EmailAddress => "srkrathore@gmail.com";
-        public string TwitterHandle => "srkrathore";
-        public string GravatarHash => "";
+        public string EmailAddress => "techierathore@gmail.com";
+        public string TwitterHandle => "techierathore";
+        public string GravatarHash => "b850b7ab6cd9cdb2d5edc6739b624fdf";
         public GeoPosition Position => new GeoPosition(28.4743880, 77.5039900);
 
-        public Uri WebSite => new Uri("http://err2solution.com/");
+        public Uri WebSite => new Uri("https://techierathore.com/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://err2solution.com/feed/"); }
+            get { yield return new Uri("https://techierathore.com/feed/"); }
         }
 
         public string GitHubHandle => string.Empty;
