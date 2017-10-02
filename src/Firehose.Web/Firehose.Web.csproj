@@ -298,6 +298,7 @@
     <Compile Include="Authors\WilliamRodriguez.cs" />
     <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="Authors\WinstonGubantes.cs" />
+    <Compile Include="Authors\WilsonVargas.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
