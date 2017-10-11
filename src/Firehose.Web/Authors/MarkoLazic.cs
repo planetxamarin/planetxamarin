@@ -9,18 +9,18 @@ namespace Firehose.Web.Authors
     public class MarkoLazic : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "Marko";
-        public string LastName => "Lazic";
-        public string ShortBioOrTagLine => "Software engineer, tech enthusiast, passionate traveler";
-        public string StateOrRegion => "Serbia";
+        public string LastName => "Lazić";
+        public string ShortBioOrTagLine => "Software engineer, tech enthusiast, passionate traveler. 3 years of active development in Xamarin Forms";
+        public string StateOrRegion => "Belgrade, Serbia";
         public string EmailAddress => "marko.lazic88@gmail.com";
         public string TwitterHandle => "markolazic88";
         public string GravatarHash => "5645586a7d29654e9b296b1409107014";
 
-        public Uri WebSite => new Uri("http://markolazic.com/");
+        public Uri WebSite => new Uri("https://markolazic.com/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://markolazic.com/feed/"); }
+            get { yield return new Uri("https://markolazic.com/feed/"); }
         }
 
         public string GitHubHandle => "markolazic88";
