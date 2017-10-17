@@ -20,7 +20,7 @@ namespace Firehose.Web
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://glennstephensblog.azurewebsites.net/tag/xamarin/rss/"); }
+            get { yield return new Uri("https://glennstephensblog.azurewebsites.net/tag/mobile/rss/"); }
         }
 
         public string TwitterHandle => "glenntstephens";
