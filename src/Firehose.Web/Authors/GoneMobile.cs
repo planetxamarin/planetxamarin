@@ -12,7 +12,7 @@ namespace Firehose.Web.Authors
 
         public string StateOrRegion => "Internet";
 
-        public string EmailAddress => "gonemobilecast@gmail.com";
+        public string EmailAddress => "hello@gonemobile.io";
 
         public string ShortBioOrTagLine => "is a development podcast focused on mobile development hosted by Jon Dick and Greg Shackles.";
 
