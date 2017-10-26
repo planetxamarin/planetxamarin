@@ -6,11 +6,11 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web
 {
-    public class DevlinDuldulao : IFilterMyBlogPosts
+    public class DevlinDuldulao : IFilterMyBlogPosts, IAmACommunityMember
     {
         public string FirstName => "Devlin";
         public string LastName => "Duldulao";
-        public string ShortBioOrTagLine => "";
+        public string ShortBioOrTagLine => "Xamarin certified, a trainer, a speaker";
         public string StateOrRegion => "Manila";
         public string EmailAddress => "webmasterdevlin@gmail.com";
         public string TwitterHandle => "DevlinDuldulao";
