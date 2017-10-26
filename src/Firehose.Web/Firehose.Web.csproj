@@ -361,6 +361,7 @@
     <Compile Include="Authors\RendyDelRosario.cs" />
     <Compile Include="Authors\JoeMeyer.cs" />
     <Compile Include="Authors\MarkoLazic.cs" />
+    <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
   </ItemGroup>
   <ItemGroup>
