@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "willsb";
 
         public string ShortBioOrTagLine
-        => "Microsoft MVP, Blogger, Speaker, Monkey Nights Co-founder/Host and MvvmCross contributor";
+            => "Microsoft MVP, Blogger, Speaker, Monkey Nights Co-founder/Host and MvvmCross contributor";
 
         public string EmailAddress => "heytherewill@gmail.com";
         public string GravatarHash => "e47d219e8ee5d6dd5a44940dc26585c4";
