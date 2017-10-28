@@ -6,7 +6,7 @@ using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-    public class JeffersonBalivo : IAmACommunityMember
+    public class JeffersonBalivo : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "Jefferson";
         public string LastName => "Balivo";
@@ -19,6 +19,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => string.Empty;
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://balivo.com.br/rss"); } }
         public GeoPosition Position => new GeoPosition(-22.2997067, -48.5931324);
-        public bool Filter(SyndicationItem item) => item.Title.Text.ToLowerInvariant().Contains("xamarin") || item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+
+        public bool Filter(SyndicationItem item) => item.Title.Text.ToLowerInvariant().Contains("xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
     }
 }
