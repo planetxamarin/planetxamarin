@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Jefferson";
         public string LastName => "Balivo";
-        public string StateOrRegion => "São Paulo, Brazil";
+        public string StateOrRegion => "Jaú, São Paulo, Brazil";
         public string EmailAddress => "jefferson@balivo.com.br";
         public string ShortBioOrTagLine => "don't work, \"have fun\" with .NET. I'm \"Line of Business\" software (Desktop, Web and Mobile) specialist. Xamarin enthusiats since was just \"Mono4Android\" and \"MonoTouch\" (~2009).";
         public Uri WebSite => new Uri("https://balivo.com.br/");
