@@ -7,7 +7,7 @@ using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-    public class JesusAngulo : IAmACommunityMember, IFilterMyBlogPosts
+    public class JesusAngulo : IAmAMicrosoftMVP, IFilterMyBlogPosts
     {
         public string FirstName => "Jesús";
 
@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "jesus.angulo@outlook.com";
 
-        public string ShortBioOrTagLine => "Certified Xamarin Mobile Developer";
+        public string ShortBioOrTagLine => "Microsoft MVP | Certified Xamarin Mobile Developer";
 
         public Uri WebSite => new Uri("https://somostechies.com");
 
