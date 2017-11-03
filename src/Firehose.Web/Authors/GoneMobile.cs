@@ -12,15 +12,16 @@ namespace Firehose.Web.Authors
 
         public string StateOrRegion => "Internet";
 
-        public string EmailAddress => "gonemobilecast@gmail.com";
+        public string EmailAddress => "hello@gonemobile.io";
 
         public string ShortBioOrTagLine => "is a development podcast focused on mobile development hosted by Jon Dick and Greg Shackles.";
 
+        // TEMPORARY WORKAROUND - We'll get https support shortly, for now we have it for the feed at least
         public Uri WebSite => new Uri("http://gonemobile.io");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://gonemobile.io/podcast.rss"); }
+            get { yield return new Uri("https://feed.gonemobile.io"); }
         }
 
         public string TwitterHandle => "gonemobilecast";
