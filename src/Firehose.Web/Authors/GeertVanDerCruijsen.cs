@@ -22,7 +22,7 @@ namespace Firehose.Web
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://mobilefirstcloudfirst.net/feed"); }
+            get { yield return new Uri("https://mobilefirstcloudfirst.net/feed"); }
         }
 
         

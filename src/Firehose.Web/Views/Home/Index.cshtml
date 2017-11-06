@@ -59,9 +59,9 @@
 <img class="featuredbadge" src="~/Content/img/planetxamarin-featured-badge.png" alt="Featured on Planet Xamarin badge" />
 
 <hr />
-<h1>Xamarin Podcasts & Shows</h1>
+<h1>Xamarin Podcasts, Shows, Newsletters & Open-source Software</h1>
 <p>
-    @foreach (var member in Model.Where(m => m is IAmAPodcast).ToArray())
+    @foreach (var member in Model.Where(m => m is IAmAPodcast || m is IAmANewsletter || m is IAmAFrameworkForXamarin).ToArray())
     {
         Html.RenderPartial("PodcastCard", member);
     }
