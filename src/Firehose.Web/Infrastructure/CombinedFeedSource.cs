@@ -87,6 +87,29 @@ namespace Firehose.Web.Infrastructure
             }
         }
 
+        private static bool WrappedFilter(SyndicationItem item, Func<SyndicationItem, bool> filterFunc)
+        {
+            try
+            {
+                return filterFunc(item);
+            }
+            catch (NullReferenceException)
+            {
+                // the authors' filter is derped
+                // try some sane defaults
+
+                var hasXamarinCategory = false;
+
+                if (item.Categories.Count > 0)
+                    hasXamarinCategory = item.Categories.Any(category =>
+                        category.Name.ToLowerInvariant().Contains("xamarin"));
+
+                var hasXamarinTitle = item.Title?.Text.ToLowerInvariant().Contains("xamarin") ?? false;
+
+                return hasXamarinTitle || hasXamarinCategory;
+            }
+        }
+
         public async Task<SyndicationFeed> FetchAsync(Uri feedUri, Func<SyndicationItem, bool> filter)
         {
             HttpResponseMessage response;
@@ -101,7 +124,7 @@ namespace Firehose.Web.Infrastructure
                     {
                         var feed = SyndicationFeed.Load(xmlReader);
                         var filteredItems = feed.Items
-                            .Where(filter)
+                            .Where(item => WrappedFilter(item, filter))
                             .Where(item => item.LastUpdatedTime.UtcDateTime <= DateTimeOffset.UtcNow && item.PublishDate.UtcDateTime <= DateTimeOffset.UtcNow)
                             .ToArray();
 
