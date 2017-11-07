@@ -6,13 +6,13 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class MarkDeanilVicente : IAmAMicrosoftMVP, IAmAXamarinMVP
+    public class MarkDeanilVicente : IAmAMicrosoftMVP
     {
         public string FirstName => "Mark Deanil";
         public string LastName => "Vicente";
         public string StateOrRegion => "Manila, Philippines";
         public string EmailAddress => "markdeanilvicente@gmail.com";
-        public string ShortBioOrTagLine => "Microsoft MVP. Programmer and a developer. He enjoys drinking wine and hot tea";
+        public string ShortBioOrTagLine => "is passionate programmer & a developer. Co-founder of Mobile .Net Developers - Philippines. He enjoys wine and hot tea";
         public Uri WebSite => new Uri("https://deanilvincent.github.io/");
         public string TwitterHandle => "DeanilVincent03";
         public string GitHubHandle => "deanilvincent";
