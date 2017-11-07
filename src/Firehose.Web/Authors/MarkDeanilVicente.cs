@@ -12,7 +12,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Vicente";
         public string StateOrRegion => "Manila, Philippines";
         public string EmailAddress => "markdeanilvicente@gmail.com";
-        public string ShortBioOrTagLine => "Mark Deanil Vicente is a Microsoft MVP. He's currently working as programmer & a developer. He's also one of the founders of Mobile .Net Developers PH (MondPH) Community. He enjoys drinking wine and hot tea";
+        public string ShortBioOrTagLine => "Microsoft MVP. Programmer and a developer. He enjoys drinking wine and hot tea";
         public Uri WebSite => new Uri("https://deanilvincent.github.io/");
         public string TwitterHandle => "DeanilVincent03";
         public string GitHubHandle => "deanilvincent";
