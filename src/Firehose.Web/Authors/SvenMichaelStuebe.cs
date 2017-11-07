@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Sven-Michael";
         public string LastName => "Stübe";
-        public string ShortBioOrTagLine => "loves the cross plattform approach and develops some Xamarin plugins. He organizes the Xamarin Pizza & Beer Meetups in Munich.";
+        public string ShortBioOrTagLine => "loves the cross platform approach, develops Xamarin plugins and organizes Xamarin Pizza & Beer Meetups in Munich";
         public string StateOrRegion => "Munich, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "stuebe2k14";
