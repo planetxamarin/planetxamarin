@@ -10,12 +10,12 @@ namespace Firehose.Web
         public string LastName => "Miller";
         public string StateOrRegion => "Pennsylvania, USA";
         public string EmailAddress => "";
-	public string ShortBioOrTagLine => "Senior Support Engineer at Microsoft";
-        public Uri WebSite => new Uri("http://jmillerdev.net");
+	public string ShortBioOrTagLine => "Senior Support Engineer";
+        public Uri WebSite => new Uri("https://jmillerdev.net");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://jmillerdev.net/rss"); }
+            get { yield return new Uri("https://jmillerdev.net/rss"); }
         }
 
         public string TwitterHandle => "jmillerdev";
