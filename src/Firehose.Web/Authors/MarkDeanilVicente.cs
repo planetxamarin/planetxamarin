@@ -12,7 +12,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Vicente";
         public string StateOrRegion => "Manila, Philippines";
         public string EmailAddress => "markdeanilvicente@gmail.com";
-        public string ShortBioOrTagLine => ". Programmer and a developer. Co-founder of Mobile .Net Developers - Philippines. He enjoys drinking wine and hot tea";
+        public string ShortBioOrTagLine => "programmer and a developer. Co-founder of Mobile .Net Developers - Philippines. He enjoys drinking wine and hot tea";
         public Uri WebSite => new Uri("https://deanilvincent.github.io/");
         public string TwitterHandle => "DeanilVincent03";
         public string GitHubHandle => "deanilvincent";
