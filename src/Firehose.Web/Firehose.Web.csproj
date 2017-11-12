@@ -242,7 +242,7 @@
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
-    <Compile Include="Authors\DanielCauser.cs" />
+	<Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\MahmoudAli.cs" />
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
@@ -362,6 +362,8 @@
     <Compile Include="Authors\JesseLiberty.cs" />
     <Compile Include="Authors\RendyDelRosario.cs" />
     <Compile Include="Authors\JoeMeyer.cs" />
+    <Compile Include="Authors\MarkoLazic.cs" />
+    <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
   </ItemGroup>
   <ItemGroup>
