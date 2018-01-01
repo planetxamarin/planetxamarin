@@ -1,10 +1,10 @@
-+using System;
- +using System.Collections.Generic;
- +using System.ServiceModel.Syndication;
- +using Firehose.Web.Infrastructure;
- +
- +namespace Firehose.Web.Authors
- +{
+using System;
+using System.Collections.Generic;
+using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
+ 
+namespace Firehose.Web.Authors
+{
     public class MarcoSiccardi : IAmACommunityMember
     {
         public string FirstName => "Marco";
