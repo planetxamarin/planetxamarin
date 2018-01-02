@@ -32,8 +32,7 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(-23.552339, -46.661393);
 
         public bool Filter(SyndicationItem item)
-            => item.Authors.Any(a => a.Name.ToLowerInvariant().Contains("mahmoud")) &&
-                (item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-                    item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin")));
+            => item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
+                    item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }

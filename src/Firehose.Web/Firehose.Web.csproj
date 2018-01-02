@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -303,6 +304,7 @@
     <Compile Include="Authors\WinstonGubantes.cs" />
     <Compile Include="Authors\WilsonVargas.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
+    <Compile Include="Authors\MarcoSiccardi.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -340,6 +342,7 @@
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\MatthewLeibowitz.cs" />
+    <Compile Include="Authors\MarkDeanilVicente.cs" />
     <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
