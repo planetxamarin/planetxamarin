@@ -242,11 +242,12 @@
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
-	<Compile Include="Authors\DanielCauser.cs" />
+    <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\MahmoudAli.cs" />
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
+    <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\LoganEdge.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
