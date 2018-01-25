@@ -20,7 +20,7 @@ namespace Firehose.Web
 		public GeoPosition Position => new GeoPosition(41.2773300, 16.4101100);
 		
 		public Uri WebSite => new Uri("http://www.fabiocozzolino.eu/");
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.fabiocozzolino.eu/feed/"); } }
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.fabiocozzolino.eu/feed.xml"); } }
 
 		public bool Filter(SyndicationItem item) =>
 			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
