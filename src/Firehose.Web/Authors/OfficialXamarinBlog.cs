@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class OfficialXamarinBlog : IAmACommunityMember
+    public class OfficialXamarinBlog : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "The Xamarin";
 
@@ -16,11 +17,11 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is your official source for Xamarin developer news.";
 
-        public Uri WebSite => new Uri("http://blog.xamarin.com");
+        public Uri WebSite => new Uri("https://blog.xamarin.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://blog.xamarin.com/feed/"); }
+            get { yield return new Uri("https://blog.xamarin.com/feed/"); }
         }
 
         public string TwitterHandle => "xamarinhq";
@@ -29,5 +30,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "70148d964bb389d42547834e1062c886";
         public string GitHubHandle => "xamarin";
         public GeoPosition Position => new GeoPosition(37.7749300, -122.4194160);
+
+        public bool Filter(SyndicationItem item) => true;
     }
 }
