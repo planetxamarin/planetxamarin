@@ -16,7 +16,7 @@ namespace Firehose.Web
 
 		public string EmailAddress => "15mgm15@gmail.com";
 
-		public Uri WebSite => new Uri("http://15mgm15.ghost.io/");
+		public Uri WebSite => new Uri("https://15mgm15.ghost.io/");
 
 		public string TwitterHandle => "MayitoGalvan";
 
@@ -27,7 +27,7 @@ namespace Firehose.Web
 
 		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("http://15mgm15.ghost.io/rss/"); }
+			get { yield return new Uri("https://15mgm15.ghost.io/rss/"); }
 		}
 	}
 }

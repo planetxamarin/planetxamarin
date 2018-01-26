@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class SRaviKumar : IAmACommunityMember, IFilterMyBlogPosts
+    public class SRaviKumar : IAmACommunityMember
     {
         public string FirstName => "S Ravi";
         public string LastName => "Kumar";
@@ -25,11 +23,5 @@ namespace Firehose.Web.Authors
         }
 
         public string GitHubHandle => string.Empty;
-
-        public bool Filter(SyndicationItem item)
-        {
-            // This filters out only the posts that have the "xamarin" category
-            return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
-        }
     }
 }

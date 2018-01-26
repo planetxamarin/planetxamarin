@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class ReactiveUI : IAmAFrameworkForXamarin
+    public class ReactiveUI : IAmAFrameworkForXamarin, IFilterMyBlogPosts
     {
         public string FirstName => "ReactiveUI";
 
@@ -28,5 +29,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "";
         public string GitHubHandle => "ReactiveUI";
         public GeoPosition Position => new GeoPosition(-13.6981464, 37.3979239);
+
+        public bool Filter(SyndicationItem item) => true;
     }
 }

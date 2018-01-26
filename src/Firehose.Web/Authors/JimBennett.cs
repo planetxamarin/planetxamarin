@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class JimBennett : IAmAMicrosoftMVP, IAmAXamarinMVP
+    public class JimBennett : IWorkAtXamarinOrMicrosoft
     {
         public string FirstName => "Jim";
         public string LastName => "Bennett";
@@ -19,7 +19,6 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://www.jimbobbennett.io/rss"); }
         }
-
 
         public string GravatarHash => "";
         public string GitHubHandle => string.Empty;

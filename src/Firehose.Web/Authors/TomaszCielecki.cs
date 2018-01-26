@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class TomaszCielecki : IAmAXamarinMVP, IAmAMicrosoftMVP, IFilterMyBlogPosts
+    public class TomaszCielecki : IAmAXamarinMVP, IAmAMicrosoftMVP
     {
         public IEnumerable<Uri> FeedUris
         {
@@ -26,9 +24,5 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "Cheesebaron";
         public string GravatarHash => "f780d57997526876b0625e517c1e0884";
         public GeoPosition Position => new GeoPosition(55.8019193, 12.523124);
-        
-        public bool Filter(SyndicationItem item)
-            => item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-               item.Categories.Any(c => c.Name.Equals("xamarin", StringComparison.OrdinalIgnoreCase));
     }
 }

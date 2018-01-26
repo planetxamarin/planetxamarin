@@ -1,13 +1,10 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
-using System.Web;
 
 namespace Firehose.Web.Authors
 {
-    public class ThiagoBertuzzi : IAmACommunityMember, IFilterMyBlogPosts
+    public class ThiagoBertuzzi : IAmACommunityMember
     {
         public string FirstName => "Thiago";
         public string LastName => "Bertuzzi";
@@ -21,10 +18,5 @@ namespace Firehose.Web.Authors
 
         public Uri WebSite => new Uri("https://medium.com/@bertuzzi/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://medium.com/feed/@bertuzzi"); } }
-
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
-
     }
 }

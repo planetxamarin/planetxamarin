@@ -1,7 +1,5 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors

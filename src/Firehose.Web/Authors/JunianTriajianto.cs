@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class JunianTriajianto : IAmACommunityMember, IFilterMyBlogPosts
+	public class JunianTriajianto : IAmACommunityMember
 	{
 		public string FirstName => "Junian";
 		public string LastName => "Triajianto";
@@ -20,9 +20,5 @@ namespace Firehose.Web.Authors
 
 		public Uri WebSite => new Uri("https://www.junian.net");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.junian.net/feeds/posts/default?alt=rss"); } }
-
-		public bool Filter(SyndicationItem item) =>
-			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
 	}
 }
