@@ -10,7 +10,7 @@ namespace Firehose.Web
         public string LastName => "Miller";
         public string StateOrRegion => "Pennsylvania, USA";
         public string EmailAddress => "";
-	public string ShortBioOrTagLine => "Senior Support Engineer";
+	    public string ShortBioOrTagLine => "Senior Support Engineer";
         public Uri WebSite => new Uri("https://jmillerdev.net");
 
         public IEnumerable<Uri> FeedUris

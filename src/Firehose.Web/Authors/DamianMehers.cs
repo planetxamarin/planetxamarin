@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class DamianMehers : IAmACommunityMember, IFilterMyBlogPosts
+    public class DamianMehers : IAmACommunityMember
     {
         public string FirstName => "Damian";
         public string LastName => "Mehers";
@@ -23,11 +21,6 @@ namespace Firehose.Web.Authors
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("https://damian.fyi/feed/"); }
-        }
-
-        public bool Filter(SyndicationItem item)
-        {
-            return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
         }
     }
 }

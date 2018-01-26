@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class VulcanLee : IWorkAtXamarinOrMicrosoft
+    public class VulcanLee : IWorkAtXamarinOrMicrosoft, IFilterMyBlogPosts
     {
         public string FirstName => "Vulcan";
         public string LastName => "Lee";
@@ -28,11 +28,11 @@ namespace Firehose.Web.Authors
         {
             // if my blog has keyword, disableplanetxamarin, Prohibit publishing to on planetxamarin
             if (item.Title.Text.ToLowerInvariant().Contains("disableplanetxamarin") || 
-                item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("disableplanetxamarin")))
+                (item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("disableplanetxamarin")) ?? false))
                 return false;
 
             return item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-                item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+                (item.Categories?.Any(category => category.Name.ToLowerInvariant().Contains("xamarin")) ?? false);
         }
         
         public GeoPosition Position => new GeoPosition(25.043847, 121.525645);

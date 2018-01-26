@@ -1,17 +1,16 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-    public class MalcolmJack : IAmACommunityMember, IFilterMyBlogPosts
+    public class MalcolmJack : IAmACommunityMember
     {
         public string EmailAddress => "inquisitorjax@gmail.com";
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://inquisitorjax.blogspot.co.za/feeds/posts/default?alt=rss"); }
+            get { yield return new Uri("https://inquisitorjax.blogspot.co.za/feeds/posts/default?alt=rss"); }
         }
 
         public string FirstName => "Malcolm";
@@ -22,8 +21,6 @@ namespace Firehose.Web.Authors
         public string ShortBioOrTagLine => "Superhero in-training building a side-project into a startup using Xamarin and Azure";
         public string StateOrRegion => "Cape Town, South Africa";
         public string TwitterHandle => "inquisitorjax";
-        public Uri WebSite => new Uri("http://www.inquisitorjax.blogspot.com/");
-
-        public bool Filter(SyndicationItem item) => item.Title.Text.ToLowerInvariant().Contains("xamarin");
+        public Uri WebSite => new Uri("https://www.inquisitorjax.blogspot.com/");
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class MarcoKuiper : IAmACommunityMember, IFilterMyBlogPosts
+    public class MarcoKuiper : IAmACommunityMember
 	{
 		public string FirstName => "Marco";
 		public string LastName => "Kuiper";
@@ -17,12 +16,7 @@ namespace Firehose.Web.Authors
 		public string GitHubHandle => "marcofolio";
 		public GeoPosition Position => new GeoPosition(51.987642, 5.904598);
 
-		public Uri WebSite => new Uri("http://www.marcofolio.net/");
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://feeds2.feedburner.com/marcofolio"); } }
-
-        public bool Filter(SyndicationItem item)
-        {
-            return item.BaseUri.ToString().ToLowerInvariant().Contains("xamarin");
-        }
+		public Uri WebSite => new Uri("https://www.marcofolio.net/");
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://feeds2.feedburner.com/marcofolio"); } }
     }
 }

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class StevenThewissen : IAmACommunityMember, IFilterMyBlogPosts
+    public class StevenThewissen : IAmACommunityMember
     {
         public string FirstName => "Steven";
 
@@ -32,10 +30,5 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(50.889039, 5.853717);
 
         public string GitHubHandle => "sthewissen";
-
-        public bool Filter(SyndicationItem item)
-        {
-            return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
-        }
     }
 }
