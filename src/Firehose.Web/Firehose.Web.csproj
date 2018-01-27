@@ -246,6 +246,7 @@
     <Compile Include="Authors\MahmoudAli.cs" />
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
+    <Compile Include="Authors\SebastianJensen.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\Xablu.cs" />
