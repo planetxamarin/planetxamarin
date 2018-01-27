@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web
 {
-
-	public class GeertVanDerCruijsen : IAmACommunityMember, IFilterMyBlogPosts
+    public class GeertVanDerCruijsen : IAmACommunityMember
 	{
 		public string FirstName => "Geert";
 		public string LastName => "van der Cruijsen";
@@ -25,12 +22,6 @@ namespace Firehose.Web
             get { yield return new Uri("https://mobilefirstcloudfirst.net/feed"); }
         }
 
-        
         public GeoPosition Position => new GeoPosition(51.6631070, 5.6239230);
-
-
-		public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }

@@ -61,6 +61,19 @@ namespace Firehose.Web.Infrastructure
                 .Grr();
         }
 
+        private static bool DefaultFilter(SyndicationItem item)
+        {
+            var hasXamarinCategory = false;
+
+            if (item.Categories.Count > 0)
+                hasXamarinCategory = item.Categories.Any(category =>
+                    category.Name.ToLowerInvariant().Contains("xamarin"));
+
+            var hasXamarinTitle = item.Title?.Text.ToLowerInvariant().Contains("xamarin") ?? false;
+
+            return hasXamarinTitle || hasXamarinCategory;
+        }
+
         private async Task<ISyndicationFeedSource> TryLoadFeedAsync(IAmACommunityMember tamarin, Uri uri)
         {
             try
@@ -69,7 +82,7 @@ namespace Firehose.Web.Infrastructure
 
                 var filter = iFilterMyBlogPosts != null
                     ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
-                    : (si => true);
+                    : (si => DefaultFilter(si));
 
                 var feedSource = new DummyRemoteSyndicationFeedSource();
 
@@ -98,15 +111,7 @@ namespace Firehose.Web.Infrastructure
                 // the authors' filter is derped
                 // try some sane defaults
 
-                var hasXamarinCategory = false;
-
-                if (item.Categories.Count > 0)
-                    hasXamarinCategory = item.Categories.Any(category =>
-                        category.Name.ToLowerInvariant().Contains("xamarin"));
-
-                var hasXamarinTitle = item.Title?.Text.ToLowerInvariant().Contains("xamarin") ?? false;
-
-                return hasXamarinTitle || hasXamarinCategory;
+                return DefaultFilter(item);
             }
         }
 

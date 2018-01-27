@@ -1,13 +1,10 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-    public class MahmoudAli : IAmACommunityMember, IFilterMyBlogPosts
+    public class MahmoudAli : IAmACommunityMember
     {
         public string FirstName => "Mahmoud";
 
@@ -30,9 +27,5 @@ namespace Firehose.Web.Authors
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.lambda3.com.br/feed/"); } }
 
         public GeoPosition Position => new GeoPosition(-23.552339, -46.661393);
-
-        public bool Filter(SyndicationItem item)
-            => item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-                    item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }
