@@ -355,6 +355,7 @@
     <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
     <Compile Include="Authors\SaturninoPimentel.cs" />
+    <Compile Include="Authors\MarcosCobenaMorian.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
