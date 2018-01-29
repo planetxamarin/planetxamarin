@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Marcos";
         public string LastName => "Cobeña Morián";
-		public string ShortBioOrTagLine => "is a Senior Mobile Developer at DevsDNA";
+		public string ShortBioOrTagLine => "I write apps for people using Xamarin";
         public string EmailAddress => "marcoscm.digital@gmail.com";
 		public Uri WebSite => new Uri("http://marcoscobena.com");
 
@@ -16,8 +16,8 @@ namespace Firehose.Web.Authors
 		public GeoPosition Position => new GeoPosition(37.3753501, -6.0250978);
         
 		public string GitHubHandle => "MarcosCobena";
-		public string TwitterHandle => "MarcosCobena_";
+		public string TwitterHandle => "1Marcos2Cobena";
 
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://marcoscobena.com/feed-xamarin.xml"); } }
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://marcoscobena.com/feed-Xamarin.rss"); } }
     }
 }
