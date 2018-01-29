@@ -18,6 +18,6 @@ namespace Firehose.Web.Authors
 		public string GitHubHandle => "MarcosCobena";
 		public string TwitterHandle => "1Marcos2Cobena";
 
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://marcoscobena.com/feed-Xamarin.rss"); } }
+        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://feeds.feedburner.com/MarcosCobena"); } }
     }
 }
