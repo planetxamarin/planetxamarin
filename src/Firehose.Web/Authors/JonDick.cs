@@ -13,11 +13,11 @@ namespace Firehose.Web
         public string TwitterHandle => "redth";
         public string GravatarHash => "ad73e52d7e4d89e904e7c4cfd91fc2b9";
         public string StateOrRegion => "Ontario, Canada";
-        public Uri WebSite => new Uri("http://redth.codes");
+        public Uri WebSite => new Uri("https://redth.codes");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://redth.codes/feed/"); }
+            get { yield return new Uri("https://redth.codes/feed/"); }
         }
 
         public string GitHubHandle => "redth";

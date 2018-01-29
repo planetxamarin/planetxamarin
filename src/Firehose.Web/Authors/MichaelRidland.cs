@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class MichaelRidland : IAmAXamarinMVP
+    public class MichaelRidland : IAmAXamarinMVP, IAmAMicrosoftMVP
     {
         public string FirstName => "Michael";
 
@@ -16,11 +16,11 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "Xamarin Contractor/Consultant | Founder XAM Consulting (xam-consulting.com) | Creator of FreshMvvm";
 
-        public Uri WebSite => new Uri("http://www.michaelridland.com");
+        public Uri WebSite => new Uri("https://michaelridland.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://www.michaelridland.com/feed/"); }
+            get { yield return new Uri("https://michaelridland.com/feed/"); }
         }
 
         public string TwitterHandle => "rid00z";

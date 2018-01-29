@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web
 {
-    public class ChrisWilliams : IAmACommunityMember, IFilterMyBlogPosts
+    public class ChrisWilliams : IAmACommunityMember
     {
         public string FirstName => "Chris";
         public string LastName => "Williams";
@@ -24,9 +22,6 @@ namespace Firehose.Web
 
         public string GitHubHandle => string.Empty;
 
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
         public GeoPosition Position => new GeoPosition(30.2671530, -97.7430610);
     }
 }

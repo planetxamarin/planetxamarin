@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class StevenThewissen : IAmACommunityMember, IFilterMyBlogPosts
+    public class StevenThewissen : IAmACommunityMember
     {
         public string FirstName => "Steven";
 
@@ -18,11 +16,11 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => " is a Xamarin Developer with a knack for Photoshop and a passion for soccer and cycling. He is also in love with his Xbox One";
 
-        public Uri WebSite => new Uri("http://www.dvolve.org/");
+        public Uri WebSite => new Uri("https://www.thewissen.io/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://www.dvolve.org/feed/"); }
+            get { yield return new Uri("https://www.thewissen.io/feed/"); }
         }
 
         public string TwitterHandle => "devnl";
@@ -31,11 +29,6 @@ namespace Firehose.Web.Authors
 
         public GeoPosition Position => new GeoPosition(50.889039, 5.853717);
 
-        public string GitHubHandle => "dvolvenl";
-
-        public bool Filter(SyndicationItem item)
-        {
-            return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
-        }
+        public string GitHubHandle => "sthewissen";
     }
 }

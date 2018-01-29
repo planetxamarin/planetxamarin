@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
-using System.ServiceModel.Syndication;
-using System.Linq;
 
 namespace Firehose.Web.Authors
 {
-    public class JamesMontemagno : IWorkAtXamarinOrMicrosoft, IFilterMyBlogPosts
+    public class JamesMontemagno : IWorkAtXamarinOrMicrosoft
     {
         public string FirstName => "James";
 
@@ -18,11 +16,11 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is a Principal Program Manager for Mobile Developer Tools";
 
-        public Uri WebSite => new Uri("http://motzcod.es");
+        public Uri WebSite => new Uri("https://montemagno.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://motzcod.es/rss"); }
+            get { yield return new Uri("https://montemagno.com/rss"); }
         }
 
         public string TwitterHandle => "JamesMontemagno";
@@ -32,9 +30,5 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "jamesmontemagno";
 
         public GeoPosition Position => new GeoPosition(47.6541770, -122.3500000);
-
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }

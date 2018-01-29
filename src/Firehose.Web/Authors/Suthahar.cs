@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web
 {
-    public class Suthahar : IAmACommunityMember, IFilterMyBlogPosts
+    public class Suthahar : IAmACommunityMember
     {
         public string FirstName => "Suthahar";
 
@@ -20,7 +18,7 @@ namespace Firehose.Web
 
         public string GravatarHash => "2a34ebf4e9c4dca84eb7feee7217568f";
 
-        public string StateOrRegion => "Bangalore,India";
+        public string StateOrRegion => "Bangalore, India";
 
         public Uri WebSite => new Uri("http://www.devenvexe.com/");
 
@@ -31,10 +29,5 @@ namespace Firehose.Web
         }
 
         public string GitHubHandle => "jssuthahar";
-
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
-
     }
 }
