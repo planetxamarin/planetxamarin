@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Jensen";
         public string StateOrRegion => "Pforzheim, Germany";
         public string EmailAddress => "apps@tsjdev-apps.de";
-        public string ShortBioOrTagLine => "Sebastian Jensen is Mobile .NET Developer and creates apps for UWP, iOS and Android.";
+        public string ShortBioOrTagLine => "is Mobile .NET Developer and creates apps for UWP, iOS and Android.";
         public Uri WebSite => new Uri("https://www.tsjdev-apps.de");
         public string TwitterHandle => "tsjdevapps";
         public string GitHubHandle => "tsjdev-apps";
