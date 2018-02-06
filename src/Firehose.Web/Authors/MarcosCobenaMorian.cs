@@ -4,12 +4,13 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class MarcosCobenaMorian
+    public class MarcosCobenaMorian : IAmACommunityMember
     {
         public string FirstName => "Marcos";
         public string LastName => "Cobeña Morián";
         public string ShortBioOrTagLine => "writes apps for people using Xamarin";
         public string EmailAddress => "marcoscm.digital@gmail.com";
+		public string GravatarHash => "d5b1d9c158409e0093ad57e2e76a1727";
         public Uri WebSite => new Uri("https://marcoscobena.com");
 
         public string StateOrRegion => "Sevilla (Andalucía), Spain";
