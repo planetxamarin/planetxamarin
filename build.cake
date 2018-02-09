@@ -1,3 +1,5 @@
+#tool "nuget:?package=xunit.runner.console"
+
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 ///////////////////////////////////////////////////////////////////////////////
@@ -36,8 +38,22 @@ Task("Build")
             .SetConfiguration(configuration));
 });
 
+Task("UnitTest")
+    .IsDependentOn("Build")
+    .Does(() => 
+{
+    Information("Running Unit Tests...");
+    var testPaths = GetFiles($"./src/UnitTest/bin/{configuration}/**/*UnitTest.dll");
+    XUnit2(testPaths,
+        new XUnit2Settings {
+            XmlReport = true,
+            OutputDirectory = "./build"
+    });
+});
+
 Task("Default")
-    .IsDependentOn("Build");
+    .IsDependentOn("Build")
+    .IsDependentOn("UnitTest");
 
 ///////////////////////////////////////////////////////////////////////////////
 // EXECUTION
