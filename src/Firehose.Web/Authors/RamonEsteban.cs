@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class RamonEsteban : IAmACommunityMember
 	{
