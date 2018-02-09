@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class AlexandrSorokoletov : IAmAMicrosoftMVP
     {
