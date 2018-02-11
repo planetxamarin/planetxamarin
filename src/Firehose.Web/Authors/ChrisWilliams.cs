@@ -13,11 +13,11 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "crswlls";
         public string GravatarHash => "21e379df7ba9c57f167188e2fcb7dd75";
         public string StateOrRegion => "Bristol, UK";
-        public Uri WebSite => new Uri("http://crswlls.wordpress.com");
+        public Uri WebSite => new Uri("https://crswlls.wordpress.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://crswlls.wordpress.com/rss/"); }
+            get { yield return new Uri("https://crswlls.wordpress.com/rss/"); }
         }
 
         public string GitHubHandle => string.Empty;
