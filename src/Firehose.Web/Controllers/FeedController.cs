@@ -33,9 +33,7 @@ namespace Firehose.Web.Controllers
                 originalFeed = _combinedFeedSource.Feed;
                 if (numPosts == null) return originalFeed;
 
-                var bloggers = _combinedFeedSource.Bloggers.Where(b => b.FeedLanguageCode == lang);
-
-                var items = _combinedFeedSource.Bloggers.SelectMany().Feed.Items
+                var items = _combinedFeedSource.Feed.Items
                     .OrderByDescending(item => item.PublishDate)
                     .Take((int)numPosts)
                     .ToArray();
