@@ -16,11 +16,11 @@ namespace Firehose.Web.Authors
 
 		public string EmailAddress => "alejandro@alejandroruizvarela.com";
 
-		public Uri WebSite => new Uri("http://alejandroruizvarela.blogspot.mx");
+		public Uri WebSite => new Uri("https://alejandroruizvarela.blogspot.mx");
 
 		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("http://alejandroruizvarela.blogspot.mx/rss.xml"); }
+			get { yield return new Uri("https://alejandroruizvarela.blogspot.mx/rss.xml"); }
 		}
 
 		public string TwitterHandle => "alejandroruizva";

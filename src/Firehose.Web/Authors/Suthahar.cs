@@ -25,7 +25,7 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(12.9715990, 77.5945630);
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://xamarininterviewquestion.blogspot.in/feeds/posts/default"); }
+            get { yield return new Uri("https://xamarininterviewquestion.blogspot.in/feeds/posts/default"); }
         }
 
         public string GitHubHandle => "jssuthahar";

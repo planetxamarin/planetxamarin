@@ -30,8 +30,7 @@ namespace Firehose.Web.Infrastructure
             var cached = new Cached<ISyndicationFeedSource>(TimeSpan.FromHours(1), new SystemClock(), LoadFeeds);
             _combinedFeedSource = new Lazy<Cached<ISyndicationFeedSource>>(() => cached, LazyThreadSafetyMode.PublicationOnly);
 
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 |
-                                                              SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
 
             HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
             HttpClient.Timeout = TimeSpan.FromMinutes(1);
