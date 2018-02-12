@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
+using System.Globalization;
 
 namespace UnitTest
 {
@@ -114,6 +115,7 @@ namespace UnitTest
         public void All_Authors_Specified_Valid_LanguageCode()
         {
             var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
+            var cultureNames = CultureInfo.GetCultures(CultureTypes.NeutralCultures).Select(c => c.Name);
 
             var types = assembly.GetTypes();
             var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
@@ -123,9 +125,7 @@ namespace UnitTest
             {
                 var author = (IAmACommunityMember)Activator.CreateInstance(authorType);
 
-                Assert.False(string.IsNullOrWhiteSpace(author.FeedLanguageCode), $"{authorType.Name} has not specified a (valid) language code");
-                Assert.Equal(2, author.FeedLanguageCode.Length);
-                Assert.True(author.FeedLanguageCode.All(char.IsLower), $"{authorType.Name} specified language code is not lowercase");
+                Assert.Contains(author.FeedLanguageCode, cultureNames);
             }
         }
     }
