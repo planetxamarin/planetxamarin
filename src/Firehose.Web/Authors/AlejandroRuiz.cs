@@ -30,5 +30,7 @@ namespace Firehose.Web.Authors
 		public string GitHubHandle => "AlejandroRuiz";
 
 		public GeoPosition Position => new GeoPosition(20.6668200, -103.3918200);
+
+        public string FeedLanguageCode => "es";
 	}
 }

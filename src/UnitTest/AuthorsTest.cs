@@ -109,5 +109,24 @@ namespace UnitTest
                 _output.WriteLine($"{feedUrl} sucks...");
             }
         }
+
+        [Fact]
+        public void All_Authors_Specified_Valid_LanguageCode()
+        {
+            var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
+
+            var types = assembly.GetTypes();
+            var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
+                !_interfaceNames.Contains(t.Name)).ToArray();
+
+            foreach (var authorType in authorTypes)
+            {
+                var author = (IAmACommunityMember)Activator.CreateInstance(authorType);
+
+                Assert.False(string.IsNullOrWhiteSpace(author.FeedLanguageCode), $"{authorType.Name} has not specified a (valid) language code");
+                Assert.Equal(2, author.FeedLanguageCode.Length);
+                Assert.True(author.FeedLanguageCode.All(char.IsLower), $"{authorType.Name} specified language code is not lowercase");
+            }
+        }
     }
 }

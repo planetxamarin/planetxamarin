@@ -22,5 +22,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "116669ac5e3589d5a5d404e47c32aa72";
         public string GitHubHandle => "therealjohn";
         public GeoPosition Position => new GeoPosition(41.2033220, -77.1945250);
+        public string FeedLanguageCode => "en";
     }
 }

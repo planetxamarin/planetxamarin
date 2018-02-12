@@ -12,7 +12,6 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Auckland, New Zealand";
         public string EmailAddress => "jim@jimbobbennett.io";
         public string TwitterHandle => "jimbobbennett";
-
         public Uri WebSite => new Uri("https://jimbobbennett.io/");
 
         public IEnumerable<Uri> FeedUris
@@ -23,5 +22,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "";
         public string GitHubHandle => string.Empty;
         public GeoPosition Position => new GeoPosition(-36.8484600, 174.7633320);
+        public string FeedLanguageCode => "en";
     }
 }

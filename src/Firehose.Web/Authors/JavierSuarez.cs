@@ -21,5 +21,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "";
         public GeoPosition Position => new GeoPosition(37.3890920, -5.9844590);
         public string GitHubHandle => "jsuarezruiz";
+        public string FeedLanguageCode => "es";
     }
 }

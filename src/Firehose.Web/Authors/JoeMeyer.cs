@@ -21,5 +21,7 @@ namespace Firehose.Web.Authors
 		{
 			get { yield return new Uri("https://iwritecodesometimes.net/feed/"); }
 		}
+
+        public string FeedLanguageCode => "en";
 	}
 }

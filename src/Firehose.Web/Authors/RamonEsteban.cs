@@ -15,8 +15,8 @@ namespace Firehose.Web.Authors
 		public string GravatarHash => "2fc49c3e9095aece416ad4e147fa1452";
 		public string GitHubHandle => "ramonesteban78";
 		public GeoPosition Position => new GeoPosition(36.5126395, -4.6483388);
-
 		public Uri WebSite => new Uri("https://ramonesteban78.github.io/");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://ramonesteban78.github.io/feed.xml"); } }
+        public string FeedLanguageCode => "es";
 	}
 }

@@ -17,7 +17,6 @@ namespace Firehose.Web.Authors
         public string ShortBioOrTagLine => "Vulcan Lee is a Microsoft MVP who develops Xamarin at Doggy Ltd";
         public string GravatarHash => "f5de84ba365a15a05748624c07e70075";
         public Uri WebSite => new Uri("https://mylabtw.blogspot.com/");
-
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("https://mylabtw.blogspot.com/feeds/posts/default?alt=rss"); }
@@ -36,5 +35,6 @@ namespace Firehose.Web.Authors
         }
 
         public GeoPosition Position => new GeoPosition(25.043847, 121.525645);
+        public string FeedLanguageCode => "zh";
     }
 }

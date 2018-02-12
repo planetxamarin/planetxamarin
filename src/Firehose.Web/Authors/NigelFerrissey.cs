@@ -21,7 +21,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GitHubHandle => "nigelferrissey";
-
         public GeoPosition Position => new GeoPosition(-27.469657, 153.025241);
+        public string FeedLanguageCode => "en";
     }
 }

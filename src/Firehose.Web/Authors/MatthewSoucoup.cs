@@ -19,8 +19,8 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("https://codemilltech.com");
         public string TwitterHandle => "codemillmatt";
         public string GravatarHash => "df69069a0bffd2dae5a8700a1bef7bfd";
-
         public string GitHubHandle => "codemillmatt";
         public GeoPosition Position => new GeoPosition(43.0730520, -89.4012300);
+        public string FeedLanguageCode => "en";
     }
 }

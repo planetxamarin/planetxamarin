@@ -23,5 +23,7 @@ namespace Firehose.Web.Authors
 		{
 			get { yield return new Uri("https://chrisriesgo.com/rss/"); }
 		}
+
+        public string FeedLanguageCode => "en";
 	}
 }

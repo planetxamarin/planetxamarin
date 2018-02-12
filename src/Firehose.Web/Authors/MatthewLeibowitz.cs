@@ -15,12 +15,13 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "365da45bdc71334831f228aff805738f";
         public string StateOrRegion => "Cape Town, South Africa";
         public GeoPosition Position => new GeoPosition(-34.02231, 18.46716);
-        
         public Uri WebSite => new Uri("https://dotnetdevaddict.co.za");
         
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("https://dotnetdevaddict.co.za/feed/"); }
         }
+
+        public string FeedLanguageCode => "en";
     }
 }

@@ -15,8 +15,8 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "4bece0ce1c33e65177110bcb95688c68";
         public string GitHubHandle => "rdelrosario";
         public GeoPosition Position => new GeoPosition(18.486058,-69.931212);
-
         public Uri WebSite => new Uri("https://xamboy.com/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://xamboy.com/rss"); } }
+        public string FeedLanguageCode => "en";
     }
 }

@@ -15,8 +15,8 @@ namespace Firehose.Web.Authors
 		public string GitHubHandle => "ionixjunior";
 		public string GravatarHash => "790726f5b5613d61926dea2e2efd4da1";
 		public GeoPosition Position => new GeoPosition(-26.914236, -49.068776);
-
 		public Uri WebSite => new Uri("https://www.ionixjunior.com.br");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.ionixjunior.com.br/rss"); } }
+        public string FeedLanguageCode => "pt";
 	}
 }

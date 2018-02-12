@@ -20,6 +20,8 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://saturninopimentel.com/rss/"); }
         }
+
         public GeoPosition Position => new GeoPosition(19.432608, -99.133209);
+        public string FeedLanguageCode => "es";
     }
 }

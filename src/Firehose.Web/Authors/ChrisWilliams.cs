@@ -21,7 +21,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GitHubHandle => string.Empty;
-
         public GeoPosition Position => new GeoPosition(30.2671530, -97.7430610);
+        public string FeedLanguageCode => "en";
     }
 }

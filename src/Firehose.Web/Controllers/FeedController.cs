@@ -18,21 +18,24 @@ namespace Firehose.Web.Controllers
         }
 
         [Route("feed")]
-        public RssFeedResult Index(int? numPosts = 50)
+        public RssFeedResult Index(int? numPosts = 50, string lang = "")
         {
-            var feed = GetFeed(numPosts);
+            var feed = GetFeed(numPosts, lang);
             return new RssFeedResult(feed);
         }
 
-        private SyndicationFeed GetFeed(int? numPosts)
+        private SyndicationFeed GetFeed(int? numPosts, string lang)
         {
             SyndicationFeed originalFeed = null;
+
             try
             {
                 originalFeed = _combinedFeedSource.Feed;
                 if (numPosts == null) return originalFeed;
 
-                var items = _combinedFeedSource.Feed.Items
+                var bloggers = _combinedFeedSource.Bloggers.Where(b => b.FeedLanguageCode == lang);
+
+                var items = _combinedFeedSource.Bloggers.SelectMany().Feed.Items
                     .OrderByDescending(item => item.PublishDate)
                     .Take((int)numPosts)
                     .ToArray();
