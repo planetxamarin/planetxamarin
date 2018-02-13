@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Syndication;
+using Firehose.Web.Extensions;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
@@ -27,14 +28,13 @@ namespace Firehose.Web.Authors
         public bool Filter(SyndicationItem item)
         {
             // if my blog has keyword, disableplanetxamarin, Prohibit publishing to on planetxamarin
-            if (item.Title.Text.ToLowerInvariant().Contains("disableplanetxamarin") || 
+            if (item.Title.Text.ToLowerInvariant().Contains("disableplanetxamarin") ||
                 (item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("disableplanetxamarin")) ?? false))
                 return false;
 
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-                (item.Categories?.Any(category => category.Name.ToLowerInvariant().Contains("xamarin")) ?? false);
+            return item.ApplyDefaultFilter();
         }
-        
+
         public GeoPosition Position => new GeoPosition(25.043847, 121.525645);
     }
 }
