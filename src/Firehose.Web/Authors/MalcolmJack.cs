@@ -24,7 +24,7 @@ namespace Firehose.Web.Authors
         public string ShortBioOrTagLine => "Superhero in-training building a side-project into a startup using Xamarin and Azure";
         public string StateOrRegion => "Cape Town, South Africa";
         public string TwitterHandle => "inquisitorjax";
-        public Uri WebSite => new Uri("https://www.inquisitorjax.blogspot.com/");
+        public Uri WebSite => new Uri("https://inquisitorjax.blogspot.com/");
 
         public bool Filter(SyndicationItem item)
         {
