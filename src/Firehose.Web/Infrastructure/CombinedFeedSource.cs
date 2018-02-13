@@ -16,6 +16,7 @@ using BlogMonster;
 using BlogMonster.Infrastructure;
 using BlogMonster.Infrastructure.SyndicationFeedSources.Remote;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
+using Firehose.Web.Extensions;
 
 namespace Firehose.Web.Infrastructure
 {
@@ -60,19 +61,6 @@ namespace Firehose.Web.Infrastructure
                 .Grr();
         }
 
-        private static bool DefaultFilter(SyndicationItem item)
-        {
-            var hasXamarinCategory = false;
-
-            if (item.Categories.Count > 0)
-                hasXamarinCategory = item.Categories.Any(category =>
-                    category.Name.ToLowerInvariant().Contains("xamarin"));
-
-            var hasXamarinTitle = item.Title?.Text.ToLowerInvariant().Contains("xamarin") ?? false;
-
-            return hasXamarinTitle || hasXamarinCategory;
-        }
-
         private async Task<ISyndicationFeedSource> TryLoadFeedAsync(IAmACommunityMember tamarin, Uri uri)
         {
             try
@@ -81,7 +69,7 @@ namespace Firehose.Web.Infrastructure
 
                 var filter = iFilterMyBlogPosts != null
                     ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
-                    : (si => DefaultFilter(si));
+                    : (si => si.ApplyDefaultFilter());
 
                 var feedSource = new DummyRemoteSyndicationFeedSource();
 
@@ -110,7 +98,7 @@ namespace Firehose.Web.Infrastructure
                 // the authors' filter is derped
                 // try some sane defaults
 
-                return DefaultFilter(item);
+                return item.ApplyDefaultFilter();
             }
         }
 

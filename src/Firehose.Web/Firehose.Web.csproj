@@ -304,6 +304,7 @@
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\SyndicationItemExtensions.cs" />
     <Compile Include="Infrastructure\CombinedFeedSource.cs" />
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
