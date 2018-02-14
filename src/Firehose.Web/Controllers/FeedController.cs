@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Syndication;
@@ -24,16 +25,20 @@ namespace Firehose.Web.Controllers
             return new RssFeedResult(feed);
         }
 
-        private SyndicationFeed GetFeed(int? numPosts, string lang)
+        private SyndicationFeed GetFeed(int? numPosts, string lang = "")
         {
             SyndicationFeed originalFeed = null;
 
             try
             {
-                originalFeed = _combinedFeedSource.Feed;
+                string language = null;
+                if (!string.IsNullOrEmpty(lang))
+                    language = CultureInfo.CreateSpecificCulture(lang).Name;
+
+                originalFeed = _combinedFeedSource.GetFeed(language);
                 if (numPosts == null) return originalFeed;
 
-                var items = _combinedFeedSource.Feed.Items
+                var items = _combinedFeedSource.GetFeed(language).Items
                     .OrderByDescending(item => item.PublishDate)
                     .Take((int)numPosts)
                     .ToArray();
