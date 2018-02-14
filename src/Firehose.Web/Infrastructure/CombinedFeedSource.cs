@@ -17,6 +17,7 @@ using BlogMonster.Infrastructure;
 using BlogMonster.Infrastructure.SyndicationFeedSources.Remote;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
 using Firehose.Web.Extensions;
+using System.Globalization;
 
 namespace Firehose.Web.Infrastructure
 {
@@ -74,6 +75,7 @@ namespace Firehose.Web.Infrastructure
                 var feedSource = new DummyRemoteSyndicationFeedSource();
 
                 var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
+                feed.Language = CultureInfo.CreateSpecificCulture(tamarin.FeedLanguageCode).Name;
                 feedSource.Feed = feed;
 
                 return feedSource;
