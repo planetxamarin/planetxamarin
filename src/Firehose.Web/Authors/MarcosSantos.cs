@@ -17,5 +17,6 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(-25.292939, -49.226630);
         public Uri WebSite => new Uri("https://www.mhbs.com.br");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.mhbs.com.br/rss"); } }
+        public string FeedLanguageCode => "pt";
     }
 }

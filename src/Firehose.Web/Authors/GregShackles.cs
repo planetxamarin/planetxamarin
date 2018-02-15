@@ -22,5 +22,6 @@ namespace Firehose.Web.Authors
 
         public string GitHubHandle => "gshackles";
         public GeoPosition Position => new GeoPosition(40.7127840, -74.0059410);
+        public string FeedLanguageCode => "en";
     }
 }

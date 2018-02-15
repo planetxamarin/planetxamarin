@@ -13,7 +13,6 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "kphillpotts@gmail.com";
         public string TwitterHandle => "kphillpotts";
         public string GravatarHash => "3218e66502c6f0836dfd0f02f210ba0b";
-
         public Uri WebSite => new Uri("https://kymphillpotts.com/");
 
         public IEnumerable<Uri> FeedUris
@@ -23,5 +22,6 @@ namespace Firehose.Web.Authors
 
         public string GitHubHandle => "kphillpotts";
         public GeoPosition Position => new GeoPosition(-37.8136280, 144.9630580);
+        public string FeedLanguageCode => "en";
     }
 }

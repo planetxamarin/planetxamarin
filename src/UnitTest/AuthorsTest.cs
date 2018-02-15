@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
+using System.Globalization;
 
 namespace UnitTest
 {
@@ -107,6 +108,24 @@ namespace UnitTest
             catch
             {
                 _output.WriteLine($"{feedUrl} sucks...");
+            }
+        }
+
+        [Fact]
+        public void All_Authors_Specified_Valid_LanguageCode()
+        {
+            var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
+            var cultureNames = CultureInfo.GetCultures(CultureTypes.NeutralCultures).Select(c => c.Name);
+
+            var types = assembly.GetTypes();
+            var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
+                !_interfaceNames.Contains(t.Name)).ToArray();
+
+            foreach (var authorType in authorTypes)
+            {
+                var author = (IAmACommunityMember)Activator.CreateInstance(authorType);
+
+                Assert.Contains(author.FeedLanguageCode, cultureNames);
             }
         }
     }

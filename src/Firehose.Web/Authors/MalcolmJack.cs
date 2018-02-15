@@ -26,6 +26,8 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "inquisitorjax";
         public Uri WebSite => new Uri("https://inquisitorjax.blogspot.com/");
 
+        public string FeedLanguageCode => "en";
+
         public bool Filter(SyndicationItem item)
         {
             if (item.Title.Text.StartsWith("daily links", StringComparison.InvariantCultureIgnoreCase))

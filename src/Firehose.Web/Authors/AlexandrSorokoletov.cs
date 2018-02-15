@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
@@ -19,5 +17,6 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("https://sorokoletov.com");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://sorokoletov.com/atom.xml"); } }
         public string GravatarHash => "b07fef8827dd03655303751e2fd5ca95";
+        public string FeedLanguageCode => "en";
     }
 }

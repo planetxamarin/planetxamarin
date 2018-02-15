@@ -23,5 +23,7 @@ namespace Firehose.Web.Authors
 		{
 			get { yield return new Uri("https://www.davidbritch.com/rss.xml"); }
 		}
+
+        public string FeedLanguageCode => "en";
 	}
 }

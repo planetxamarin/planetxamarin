@@ -22,5 +22,6 @@ namespace Firehose.Web.Authors
 
         public string GitHubHandle => "redth";
         public GeoPosition Position => new GeoPosition(51.2537750, -85.3232140);
+        public string FeedLanguageCode => "en";
     }
 }

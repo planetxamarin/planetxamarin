@@ -14,7 +14,6 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "techierathore";
         public string GravatarHash => "b850b7ab6cd9cdb2d5edc6739b624fdf";
         public GeoPosition Position => new GeoPosition(28.4743880, 77.5039900);
-
         public Uri WebSite => new Uri("https://techierathore.com/");
 
         public IEnumerable<Uri> FeedUris
@@ -23,5 +22,6 @@ namespace Firehose.Web.Authors
         }
 
         public string GitHubHandle => string.Empty;
+        public string FeedLanguageCode => "en";
     }
 }

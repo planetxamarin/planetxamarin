@@ -28,5 +28,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "";
         public string GitHubHandle { get; }
         public GeoPosition Position => new GeoPosition(-37.8136280, 144.9630580);
+
+        public string FeedLanguageCode => "en";
     }
 }

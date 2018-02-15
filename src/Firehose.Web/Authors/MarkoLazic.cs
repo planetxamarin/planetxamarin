@@ -13,7 +13,6 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "marko.lazic88@gmail.com";
         public string TwitterHandle => "markolazic88";
         public string GravatarHash => "5645586a7d29654e9b296b1409107014";
-
         public Uri WebSite => new Uri("https://markolazic.com/");
 
         public IEnumerable<Uri> FeedUris
@@ -22,7 +21,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GitHubHandle => "markolazic88";
-
         public GeoPosition Position => new GeoPosition(44.7866, 20.4489);
+        public string FeedLanguageCode => "en";
     }
 }
