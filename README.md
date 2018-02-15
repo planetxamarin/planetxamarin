@@ -32,9 +32,9 @@ public class BruceWayne : IAmACommunityMember
     public string GravatarHash => "42abc1337def";
     public string GitHubHandle => "planetxamarin";
     public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
-
     public Uri WebSite => new Uri("https://planetxamarin.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
+    public FeedLanguageCode => "en";
 }
 ```
 
@@ -46,29 +46,9 @@ A few things:
 - `EmailAddress`, `TwitterHandle` and `GitHubHandle` should be pretty clear, `TwitterHandle` without the leading @
 - `Position` is your latitude and longitude, this allows you to be placed on the map on the Authors page
 - The `Website` property can be your global website or whatever you want people to look at
-- And finally with `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin. 
+- With `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin.
+- And finally `FeedLanguageCode` specifies in what lanuage the majority of your content will be. This is used to be able to apply filters to the feed. This language code should be in [ISO 639-1 format](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 - If you do not want your e-mailaddress publicly available but you _do_ want to show your Gravatar go to https://en.gravatar.com/site/check/ and get your hash! If you don't fill the hash, you will be viewed as a silhouette.
-- When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces, see below for a small sample.
-
-``` csharp
-public class DoubleMVPHuman : IAmAMicrosoftMVP, IAmAXamarinMVP
-{
-    public string FirstName => "Bruce";
-    public string LastName => "Wayne";
-    public string ShortBioOrTagLine => "potentially batman";
-    public string StateOrRegion => "Gotham";
-    public string EmailAddress => "rescueme@planetxamarin.com";
-    public string TwitterHandle => "planetxamarin";
-    public string GravatarHash => "";
-    public string GitHubHandle => "planetxamarin";
-    public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
-
-    public Uri WebSite => new Uri("http://www.planetxamarin.com");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.planetxamarin.com/feed/"); } }
-}
-```
-
-This way you can have both dates implemented, if you have just one, implement just the one interface.
 
 If you also do some blogging about other stuff, no worries! You're fine! Just have a look at the next section on how to filter out your Xamarin specific posts.
 
