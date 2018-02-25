@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class NigelFerrissey : IAmACommunityMember
     {
@@ -21,7 +21,7 @@ namespace Firehose.Web
         }
 
         public string GitHubHandle => "nigelferrissey";
-
         public GeoPosition Position => new GeoPosition(-27.469657, 153.025241);
+        public string FeedLanguageCode => "en";
     }
 }

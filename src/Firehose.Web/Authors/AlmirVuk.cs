@@ -22,5 +22,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "almirvuk";
 
         public GeoPosition Position => new GeoPosition(43.3395522, 17.7862211);
+        public string FeedLanguageCode => "en";
     }
 }

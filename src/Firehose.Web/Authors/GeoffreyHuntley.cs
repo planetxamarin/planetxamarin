@@ -12,7 +12,6 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Sydney, Australia";
         public string EmailAddress => "ghuntley@ghuntley.com";
         public string TwitterHandle => "geoffreyhuntley";
-
         public Uri WebSite => new Uri("https://ghuntley.com/");
 
         public IEnumerable<Uri> FeedUris
@@ -23,5 +22,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "";
         public string GitHubHandle => "ghuntley";
         public GeoPosition Position => new GeoPosition(-29.044725, 141.0844449);
+        public string FeedLanguageCode => "en";
     }
 }

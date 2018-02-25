@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
 	public class AlejandroRuiz : IAmAXamarinMVP
 	{
@@ -16,11 +16,11 @@ namespace Firehose.Web
 
 		public string EmailAddress => "alejandro@alejandroruizvarela.com";
 
-		public Uri WebSite => new Uri("http://alejandroruizvarela.blogspot.mx");
+		public Uri WebSite => new Uri("https://alejandroruizvarela.blogspot.mx");
 
 		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("http://alejandroruizvarela.blogspot.mx/rss.xml"); }
+			get { yield return new Uri("https://alejandroruizvarela.blogspot.mx/rss.xml"); }
 		}
 
 		public string TwitterHandle => "alejandroruizva";
@@ -30,5 +30,7 @@ namespace Firehose.Web
 		public string GitHubHandle => "AlejandroRuiz";
 
 		public GeoPosition Position => new GeoPosition(20.6668200, -103.3918200);
+
+        public string FeedLanguageCode => "es";
 	}
 }

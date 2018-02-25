@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class GregShackles : IAmAMicrosoftMVP, IAmAXamarinMVP
     {
@@ -22,5 +22,6 @@ namespace Firehose.Web
 
         public string GitHubHandle => "gshackles";
         public GeoPosition Position => new GeoPosition(40.7127840, -74.0059410);
+        public string FeedLanguageCode => "en";
     }
 }

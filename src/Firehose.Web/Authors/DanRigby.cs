@@ -21,5 +21,7 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://feeds.feedburner.com/DanRigby"); }
         }
+
+        public string FeedLanguageCode => "en";
     }
 }

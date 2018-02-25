@@ -242,6 +242,7 @@
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
+    <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\JesusAngulo.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
     <Compile Include="Authors\MahmoudAli.cs" />
@@ -304,17 +305,18 @@
     <Compile Include="Controllers\PreviewController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\SyndicationItemExtensions.cs" />
     <Compile Include="Infrastructure\CombinedFeedSource.cs" />
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Logger.cs" />
-    <Compile Include="Infrastructure\GravatarHashingExtensions.cs" />
+    <Compile Include="Extensions\GravatarHashingExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\IAmABlogger.cs" />
     <Compile Include="Infrastructure\IFilterMyBlogPosts.cs" />
-    <Compile Include="Infrastructure\Md5HashingExtensions.cs" />
+    <Compile Include="Extensions\Md5HashingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Authors\JimBennett.cs" />
     <Compile Include="Authors\MarcoKuiper.cs" />
@@ -339,7 +341,7 @@
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
-    <Compile Include="Authors\SebastianSeidel.cs" />
+    <None Include="Authors\SebastianSeidel.cs" />
     <Compile Include="Authors\AlessandroCaliaro.cs" />
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\MarioGalvan.cs" />

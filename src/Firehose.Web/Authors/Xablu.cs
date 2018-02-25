@@ -15,10 +15,13 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "xabluhq";
         public string GitHubHandle => "xablu";
         public string GravatarHash => "508b1a99bb81e09c189e7487ecb69167";
+
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("https://www.xablu.com/tag/planet-xamarin/feed/"); }
         }
+
         public GeoPosition Position => new GeoPosition(52.3702, 4.8952);
+        public string FeedLanguageCode => "es";
     }
 }

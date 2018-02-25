@@ -21,5 +21,7 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://www.marcbruins.nl/feed.xml"); }
         }
+
+        public string FeedLanguageCode => "en";
     }
 }

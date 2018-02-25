@@ -24,5 +24,7 @@ namespace Firehose.Web.Authors
         public bool Filter(SyndicationItem item) =>
             item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin")) &&
             item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("community"));
+
+        public string FeedLanguageCode => "en";
     }
 }

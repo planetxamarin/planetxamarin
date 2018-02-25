@@ -12,7 +12,6 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Munich, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "stuebe2k14";
-
         public Uri WebSite => new Uri("https://smstuebe.de/");
 
         public IEnumerable<Uri> FeedUris
@@ -23,5 +22,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "smstuebe";
         public string GravatarHash => "08b73d0a58fc120a8cc8dc561d83b3d6";
         public GeoPosition Position => new GeoPosition(48.1373831, 11.5063151);
+        public string FeedLanguageCode => "en";
     }
 }

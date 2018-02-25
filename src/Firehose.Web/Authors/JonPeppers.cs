@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class JonPeppers : IAmAXamarinMVP
     {
@@ -15,8 +15,8 @@ namespace Firehose.Web
         public string GravatarHash => "ad57dcc21d67832387ce8abb879c3bba";
         public string GitHubHandle => "jonathanpeppers";
         public GeoPosition Position => new GeoPosition(36.9726673,-86.5600474);
-
         public Uri WebSite => new Uri("https://jonathanpeppers.com/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://jonathanpeppers.com/Home/Feed"); } }
+        public string FeedLanguageCode => "en";
     }
 }

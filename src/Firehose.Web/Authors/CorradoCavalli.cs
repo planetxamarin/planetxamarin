@@ -19,5 +19,6 @@ namespace Firehose.Web.Authors
 
 		public string GitHubHandle => "corradocavalli";
 		public GeoPosition Position => new GeoPosition(45.8353041, 9.6492825);
+        public string FeedLanguageCode => "en";
 	}
 }

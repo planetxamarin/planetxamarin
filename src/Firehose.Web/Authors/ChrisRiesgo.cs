@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class ChrisRiesgo : IAmAMicrosoftMVP, IAmAXamarinMVP
 	{
@@ -23,5 +23,7 @@ namespace Firehose.Web
 		{
 			get { yield return new Uri("https://chrisriesgo.com/rss/"); }
 		}
+
+        public string FeedLanguageCode => "en";
 	}
 }

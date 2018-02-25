@@ -21,5 +21,7 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://www.tsjdev-apps.de/feed"); }
         }
+
+        public string FeedLanguageCode => "de";
     }
 }
