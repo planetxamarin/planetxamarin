@@ -2,9 +2,9 @@
 If you are submitting a new blog please read and check the boxes below.
  -->
 
-:pencil2: **Blog Url**: https://example.com
+:pencil2: **Blog Url**: <!-- example: https://example.com -->
 
-:scroll: **Feed Url**: https://example.com/feed.rss
+:scroll: **Feed Url**: <!-- example: https://example.com/feed.rss -->
 
 By sending this pull request to add my blog I verify that I adhere to the Planet Xamarin blog guidelines (please check each item that applies):
 
