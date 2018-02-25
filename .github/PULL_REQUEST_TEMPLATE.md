@@ -12,7 +12,7 @@ By sending this pull request to add my blog I verify that I adhere to the Planet
 - [ ] I host NO malicious or offensive content on the blog (including photos, swearing, etc.)
 - [ ] My blog is active with at least 3 Xamarin related blog posts in the last 6 months
 - [ ] In addition to the previous guideline; it should be apperant that the blog is active for a longer period of time and the posts on it are not fabricated in a small amount of time to comply to the '3 posts in last 6 months' guideline.
-- [ ] I have applied a filter (Optional: if blog is only about Xamarin)
+- [ ] I have applied a filter (Optional: if blog is only about Xamarin or you use `xamarin` in the title or categories in your blog posts)
 - [ ] I have added my Author class to the csproj file
 - [ ] I have implemented `IAmACommunityMember` or one of the other derivatives
 - [ ] I understand, if I delete my blog, I will be deleted from Planet Xamarin
