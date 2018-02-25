@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Firehose.Web.Authors
 {
-    public class DamienDoumer : IAmACommunityMember, IFilterMyBlogPosts
+    public class DamienDoumer : IAmACommunityMember
     {
         public string FirstName => "Damien";
 
@@ -32,11 +32,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "damiendoumer";
         public GeoPosition Position => new GeoPosition(4.07316844239285, 9.684240818616558);
 
-        public bool Filter(SyndicationItem item)
-        {
-            // Here you filter out the given item by the criteria you want, i.e.
-            // this filters out posts that do not have Xamarin in the title
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin");
-        }
+        public string FeedLanguageCode => "en";
     }
 }
