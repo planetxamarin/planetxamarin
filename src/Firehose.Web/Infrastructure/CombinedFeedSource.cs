@@ -86,18 +86,19 @@ namespace Firehose.Web.Infrastructure
             return groupedFeeds;
         }
 
+        internal Task<ISyndicationFeedSource[]> LoadAllFeedsAsync(IEnumerable<IAmACommunityMember> tamarins)
+        {
+            var feedTasks = tamarins.SelectMany(b => b.FeedUris, TryLoadFeedAsync);
+            return Task.WhenAll(feedTasks);
+        }
+
         private async Task<ISyndicationFeedSource> TryLoadFeedAsync(IAmACommunityMember tamarin, Uri uri)
         {
             try
             {
-                var iFilterMyBlogPosts = tamarin as IFilterMyBlogPosts;
-
-                var filter = iFilterMyBlogPosts != null
-                    ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
-                    : (si => si.ApplyDefaultFilter());
-
                 var feedSource = new DummyRemoteSyndicationFeedSource();
 
+                var filter = GetFilterFunction(tamarin);
                 var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
                 feed.Language = CultureInfo.CreateSpecificCulture(tamarin.FeedLanguageCode).Name;
                 feedSource.Feed = feed;
@@ -111,6 +112,17 @@ namespace Firehose.Web.Infrastructure
                 // Not my problem if your feed asplodes but we at least won't crash the app for all the other nice people :)
                 return null;
             }
+        }
+
+        internal static Func<SyndicationItem, bool> GetFilterFunction(IAmACommunityMember tamarin)
+        {
+            var iFilterMyBlogPosts = tamarin as IFilterMyBlogPosts;
+
+            var filter = iFilterMyBlogPosts != null
+                ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
+                : (si => si.ApplyDefaultFilter());
+
+            return filter;
         }
 
         private static bool WrappedFilter(SyndicationItem item, Func<SyndicationItem, bool> filterFunc)
@@ -128,7 +140,7 @@ namespace Firehose.Web.Infrastructure
             }
         }
 
-        public async Task<SyndicationFeed> FetchAsync(Uri feedUri, Func<SyndicationItem, bool> filter)
+        internal static async Task<SyndicationFeed> FetchAsync(Uri feedUri, Func<SyndicationItem, bool> filter)
         {
             HttpResponseMessage response;
             try
