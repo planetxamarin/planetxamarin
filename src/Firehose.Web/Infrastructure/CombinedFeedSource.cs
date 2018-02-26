@@ -24,7 +24,7 @@ namespace Firehose.Web.Infrastructure
 {
     public class CombinedFeedSource
     {
-        private static readonly HttpClient HttpClient = new HttpClient();
+        private static HttpClient HttpClient { get; set; }
         private readonly Lazy<Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>> _combinedFeedSource;
 
         public CombinedFeedSource(IAmACommunityMember[] bloggers)
@@ -35,8 +35,12 @@ namespace Firehose.Web.Infrastructure
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
 
-            HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
-            HttpClient.Timeout = TimeSpan.FromMinutes(1);
+            if (HttpClient == null)
+            {
+                HttpClient = new HttpClient();
+                HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
+                HttpClient.Timeout = TimeSpan.FromMinutes(1);
+            }
         }
 
         public SyndicationFeed Feed => GetFeed(null);
