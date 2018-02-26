@@ -102,24 +102,6 @@ namespace UnitTest
             Assert.True(feed.SelectMany(f => f.Feed.Items).Count() > 0, $"Feed(s) for {author.FirstName} {author.LastName} is empty");
         }
 
-        private async Task<(bool, SyndicationFeed)> HitFeedAsync(IAmACommunityMember author, Uri feedUrl)
-        {
-            try
-            {
-                var response = await _policy.ExecuteAsync(() => _httpClient.GetAsync(feedUrl))
-                    .ConfigureAwait(false);
-
-                var filter = CombinedFeedSource.GetFilterFunction(author);
-                var feed = await CombinedFeedSource.FetchAsync(feedUrl, filter).ConfigureAwait(false);
-                return (true, feed);
-            }
-            catch
-            {
-                _output.WriteLine($"{feedUrl} sucks...");
-                return (false, null);
-            }
-        }
-
         [Theory]
         [MemberData(nameof(GetAuthorTestData))]
         public void Author_Specified_Valid_LanguageCode(IAmACommunityMember author)
