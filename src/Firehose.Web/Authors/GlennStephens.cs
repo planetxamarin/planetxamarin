@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class GlennStephens : IWorkAtXamarinOrMicrosoft
+    public class GlennStephens : IWorkAtXamarinOrMicrosoft, IFilterMyBlogPosts
     {
         public string FirstName => "Glenn";
         public string LastName => "Stephens";
@@ -24,5 +25,6 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(-26.6500000, 153.0666670);
         public string FeedLanguageCode => "en";
 
+        public bool Filter(SyndicationItem item) => true;
     }
 }
