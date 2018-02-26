@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 using System.Globalization;
+using System.ServiceModel.Syndication;
 
 namespace UnitTest
 {
     public class AuthorsTest
     {
-        string[] _interfaceNames =
+        static string[] _interfaceNames =
         {
             nameof(IAmACommunityMember),
             nameof(IWorkAtXamarinOrMicrosoft),
@@ -74,58 +75,74 @@ namespace UnitTest
         }
 
         [Fact]
-        public async Task All_Authors_Have_Secure_Feed()
+        public Task All_Authors_Have_Secure_And_Parsable_Feed()
         {
-            var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
+            var authors = GetAuthors();
 
-            var types = assembly.GetTypes();
-            var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
-                !_interfaceNames.Contains(t.Name)).ToArray();
+            // using MemberData for this test is slow. Intentionally using Task.WhenAll here!
 
-            var hitFeedTasks = new List<Task>();
-            foreach(var authorType in authorTypes)
-            {
-                var author = (IAmACommunityMember)Activator.CreateInstance(authorType);
-                foreach(var feed in author.FeedUris)
-                {
-                    Assert.Equal("https", feed.Scheme);
-
-                    // hit the url to see if it responds!
-                    hitFeedTasks.Add(HitFeedAsync(feed));
-                }
-            }
-
-            await Task.WhenAll(hitFeedTasks).ConfigureAwait(false);
+            return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed));
         }
 
-        private async Task HitFeedAsync(Uri feedUrl)
+        //[Theory]
+        //[MemberData(nameof(GetAuthorTestData))]
+        //public 
+        async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
+        {
+            foreach (var feedUri in author.FeedUris)
+            {
+                Assert.Equal("https", feedUri.Scheme);
+            }
+
+            var authors = new IAmACommunityMember[] { author };
+            var feedSource = new CombinedFeedSource(authors);
+            var feed = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
+
+            Assert.NotEmpty(feed);
+            Assert.True(feed.SelectMany(f => f.Feed.Items).Count() > 0, $"Feed(s) for {author.FirstName} {author.LastName} is empty");
+        }
+
+        private async Task<(bool, SyndicationFeed)> HitFeedAsync(IAmACommunityMember author, Uri feedUrl)
         {
             try
             {
-                await _policy.ExecuteAsync(() => _httpClient.GetAsync(feedUrl))
+                var response = await _policy.ExecuteAsync(() => _httpClient.GetAsync(feedUrl))
                     .ConfigureAwait(false);
+
+                var filter = CombinedFeedSource.GetFilterFunction(author);
+                var feed = await CombinedFeedSource.FetchAsync(feedUrl, filter).ConfigureAwait(false);
+                return (true, feed);
             }
             catch
             {
                 _output.WriteLine($"{feedUrl} sucks...");
+                return (false, null);
             }
         }
 
-        [Fact]
-        public void All_Authors_Specified_Valid_LanguageCode()
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Specified_Valid_LanguageCode(IAmACommunityMember author)
+        {
+            var cultureNames = CultureInfo.GetCultures(CultureTypes.NeutralCultures).Select(c => c.Name);
+            Assert.Contains(author.FeedLanguageCode, cultureNames);
+        }
+
+        public static IEnumerable<object[]> GetAuthorTestData() => GetAuthors().Select(author => new object[] { author });
+
+        private static IEnumerable<IAmACommunityMember> GetAuthors()
         {
             var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
             var cultureNames = CultureInfo.GetCultures(CultureTypes.NeutralCultures).Select(c => c.Name);
 
             var types = assembly.GetTypes();
             var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
-                !_interfaceNames.Contains(t.Name)).ToArray();
+                !_interfaceNames.Contains(t.Name));
 
-            foreach (var authorType in authorTypes)
+            foreach(var authorType in authorTypes)
             {
                 var author = (IAmACommunityMember)Activator.CreateInstance(authorType);
-
-                Assert.Contains(author.FeedLanguageCode, cultureNames);
+                yield return author;
             }
         }
     }
