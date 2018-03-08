@@ -361,6 +361,7 @@
     <Compile Include="Authors\SaturninoPimentel.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />
+    <Compile Include="Authors\EvgenyZborovsky.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
