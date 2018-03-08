@@ -7,7 +7,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class MartinZikmund : IAmACommunityMember, IFilterMyBlogPosts
+    public class MartinZikmund : IAmACommunityMember
     {
         public string FirstName => "Martin";
 
@@ -35,10 +35,5 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://blog.mzikmund.com/feed/?lang=en_us"); }
         }
-        
-        public bool Filter(SyndicationItem item)
-        {
-            return item.Categories.Any(c => c.Name.ToLowerInvariant().Contains("xamarin"));
-        }        
     }
 }
