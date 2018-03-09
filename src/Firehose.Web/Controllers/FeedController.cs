@@ -5,6 +5,7 @@ using System.Reflection;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
 using BlogMonster.Web;
+using Firehose.Web.Extensions;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
@@ -39,6 +40,7 @@ namespace Firehose.Web.Controllers
                 if (numPosts == null) return originalFeed;
 
                 var items = _combinedFeedSource.GetFeed(language).Items
+                    .DistinctBy(i => i.Id)
                     .OrderByDescending(item => item.PublishDate)
                     .Take((int)numPosts)
                     .ToArray();
