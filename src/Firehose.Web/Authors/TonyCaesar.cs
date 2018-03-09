@@ -15,11 +15,8 @@ namespace Firehose.Web.Authors
     public string GravatarHash => "7c63b2b2254e3b0abf896577ab2746aa"; 
     public string GitHubHandle => "digitalcaesar"; 
     public GeoPosition Position => new GeoPosition(33.30186, -84.5541); 
-    public Uri WebSite => new Uri("https://www.digitalcaesar.com/"); 
-    public IEnumerable<Uri> FeedUris 
-    { 
-      get { yield return new Uri("https://www.digitalcaesar.com/rss/"); } 
-    } 
+    public Uri WebSite => new Uri("https://digitalcaesar.com/"); 
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://digitalcaesar.com/rss"); } } 
     public FeedLanguageCode => "en"; 
   } 
 }
