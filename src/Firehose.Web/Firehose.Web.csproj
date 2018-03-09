@@ -260,6 +260,7 @@
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\CarelLotz.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
+    <Compile Include="Authors\DigitalCaesar.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\CorradoCavalli.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
@@ -362,6 +363,7 @@
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />
     <Compile Include="Authors\EvgenyZborovsky.cs" />
+    <Compile Include="Authors\TonyCaesar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
