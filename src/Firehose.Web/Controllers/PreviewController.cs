@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
+using Firehose.Web.Extensions;
 using Firehose.Web.Infrastructure;
 using Firehose.Web.ViewModels;
 
@@ -33,6 +34,7 @@ namespace Firehose.Web.Controllers
             if (numPosts == null) return originalFeed;
 
             var items = _combinedFeedSource.Feed.Items
+                                           .DistinctBy(i => i.Id)
                                            .OrderByDescending(item => item.PublishDate)
                                            .Take((int)numPosts)
                                            .ToArray();
