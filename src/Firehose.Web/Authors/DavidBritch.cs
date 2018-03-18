@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class DavidBritch : IWorkAtXamarinOrMicrosoft
 	{
@@ -23,5 +23,7 @@ namespace Firehose.Web
 		{
 			get { yield return new Uri("https://www.davidbritch.com/rss.xml"); }
 		}
+
+        public string FeedLanguageCode => "en";
 	}
 }

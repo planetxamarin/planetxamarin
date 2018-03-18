@@ -2,7 +2,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Firehose.Web.Infrastructure
+namespace Firehose.Web.Extensions
 {
     public static class Md5HashingExtensions
     {
@@ -12,9 +12,7 @@ namespace Firehose.Web.Infrastructure
             var hashedBytes = MD5.Create().ComputeHash(unhashedBytes);
 
             var hashedString = string.Join(string.Empty,
-                                           hashedBytes
-                                               .Select(b => b.ToString("X2"))
-                                               .ToArray());
+                hashedBytes.Select(b => b.ToString("X2")).ToArray());
             return hashedString;
         }
     }

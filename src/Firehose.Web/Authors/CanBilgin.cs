@@ -13,7 +13,6 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "can_bilgin@hotmail.com";
         public string TwitterHandle => "can_bilgin";
         public string GravatarHash => "3659d530c25e6188f7ef4c98ed100dc8";
-
         public Uri WebSite => new Uri("https://canbilgin.wordpress.com/");
 
         public IEnumerable<Uri> FeedUris
@@ -24,5 +23,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "canbilgin";
 
         public GeoPosition Position => new GeoPosition(43.8938256, 18.3129519);
+        public string FeedLanguageCode => "en";
     }
 }

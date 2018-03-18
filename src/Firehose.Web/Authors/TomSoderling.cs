@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class TomSoderling : IAmACommunityMember
     {
@@ -14,7 +14,6 @@ namespace Firehose.Web
         public string TwitterHandle => "tomsoderling";
         public string GravatarHash => "dd103f377899fc63b0b88c5bb62b15bd";
         public GeoPosition Position => new GeoPosition(44.986656, -93.258133);
-
         public Uri WebSite => new Uri("https://tomsoderling.github.io");
 
         public IEnumerable<Uri> FeedUris
@@ -23,5 +22,6 @@ namespace Firehose.Web
         }
 
         public string GitHubHandle => "TomSoderling";
+        public string FeedLanguageCode => "en";
     }
 }

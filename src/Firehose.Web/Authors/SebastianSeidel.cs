@@ -35,5 +35,7 @@ namespace Firehose.Web.Authors
 
             return title.Contains("xamarin") || hasAllowedCategory;
         }
+
+        public string FeedLanguageCode => "en";
     }
 }

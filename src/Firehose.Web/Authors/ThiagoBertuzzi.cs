@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -15,8 +15,8 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "tbertuzzi";
         public string GravatarHash => "82d95125be475913cdc7a7fe319d0133";
         public GeoPosition Position => new GeoPosition(-23.5834337, -46.6672048);
-
         public Uri WebSite => new Uri("https://medium.com/@bertuzzi/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://medium.com/feed/@bertuzzi"); } }
+        public string FeedLanguageCode => "pt";
     }
 }

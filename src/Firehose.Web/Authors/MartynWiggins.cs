@@ -15,8 +15,8 @@ namespace Firehose.Web.Authors
 		public string GravatarHash => "bf974dae53bdbf5018fbbbf928db0f4e";
 		public string GitHubHandle => "Martynnw";
 		public GeoPosition Position => new GeoPosition(52.95, -1.133333);
-
 		public Uri WebSite => new Uri("https://martynnw.wordpress.com");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://martynnw.wordpress.com/feed/"); } }
+        public string FeedLanguageCode => "en";
     }
 }

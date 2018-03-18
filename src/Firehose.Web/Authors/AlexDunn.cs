@@ -23,5 +23,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "SuavePirate";
 
         public GeoPosition Position => new GeoPosition(42.364940, -71.068876);
+        public string FeedLanguageCode => "en";
     }
 }

@@ -21,5 +21,7 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://pumpingco.de/feed/"); }
         }
+
+        public string FeedLanguageCode => "en";
     }
 }

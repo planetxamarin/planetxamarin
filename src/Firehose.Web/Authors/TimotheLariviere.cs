@@ -17,5 +17,6 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(48.8704842, 2.3449646);
         public Uri WebSite => new Uri("https://timothelariviere.com");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://timothelariviere.com/feed/"); } }
+        public string FeedLanguageCode => "en";
     }
 }

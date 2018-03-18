@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-public class KymPhillpotts : IWorkAtXamarinOrMicrosoft
+namespace Firehose.Web.Authors
 {
-    public string FirstName => "Kym";
-    public string LastName => "Phillpotts";
-    public string ShortBioOrTagLine => "is one of the Xamarin University instructors";
-    public string StateOrRegion => "Melbourne, Australia";
-    public string EmailAddress => "kphillpotts@gmail.com";
-    public string TwitterHandle => "kphillpotts";
-    public string GravatarHash => "3218e66502c6f0836dfd0f02f210ba0b";
-
-    public Uri WebSite => new Uri("https://kymphillpotts.com/");
-
-    public IEnumerable<Uri> FeedUris
+    public class KymPhillpotts : IWorkAtXamarinOrMicrosoft
     {
-        get { yield return new Uri("https://kymphillpotts.com/rss/"); }
-    }
+        public string FirstName => "Kym";
+        public string LastName => "Phillpotts";
+        public string ShortBioOrTagLine => "is one of the Xamarin University instructors";
+        public string StateOrRegion => "Melbourne, Australia";
+        public string EmailAddress => "kphillpotts@gmail.com";
+        public string TwitterHandle => "kphillpotts";
+        public string GravatarHash => "3218e66502c6f0836dfd0f02f210ba0b";
+        public Uri WebSite => new Uri("https://kymphillpotts.com/");
 
-    public string GitHubHandle => "kphillpotts";
-    public GeoPosition Position => new GeoPosition(-37.8136280, 144.9630580);
+        public IEnumerable<Uri> FeedUris
+        {
+            get { yield return new Uri("https://kymphillpotts.com/rss/"); }
+        }
+
+        public string GitHubHandle => "kphillpotts";
+        public GeoPosition Position => new GeoPosition(-37.8136280, 144.9630580);
+        public string FeedLanguageCode => "en";
+    }
 }

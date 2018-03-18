@@ -1,6 +1,6 @@
-﻿using Firehose.Web.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
@@ -15,8 +15,8 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "9e1aea174237384361fc260b33559d05";
         public string GitHubHandle => "winstongubantes";
         public GeoPosition Position => new GeoPosition(7.1066271, 125.6294976);
-
         public Uri WebSite => new Uri("https://winstongubantes.blogspot.com/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://winstongubantes.blogspot.com/feeds/posts/default?alt=rss"); } }
+        public string FeedLanguageCode => "es";
     }
 }

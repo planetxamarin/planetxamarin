@@ -21,6 +21,7 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://mindofai.github.io/feed.xml"); }
         }
+
+        public string FeedLanguageCode => "en";
     }
 }
-   

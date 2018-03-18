@@ -1,7 +1,8 @@
-﻿using System.Configuration;
+﻿using Firehose.Web.Infrastructure;
+using System.Configuration;
 using System.Web;
 
-namespace Firehose.Web.Infrastructure
+namespace Firehose.Web.Extensions
 {
     public static class GravatarHashingExtensions
     {

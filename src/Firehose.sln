@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27406.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firehose.Web", "Firehose.Web\Firehose.Web.csproj", "{CA8179B8-3FE5-465B-B8A6-DD9200744124}"
 EndProject
@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{3A061D
 		..\assets\profilecard-background.psd = ..\assets\profilecard-background.psd
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{9FDD2846-1DFA-4E06-A9C7-B0B9444A4BD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,18 @@ Global
 		{CA8179B8-3FE5-465B-B8A6-DD9200744124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA8179B8-3FE5-465B-B8A6-DD9200744124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA8179B8-3FE5-465B-B8A6-DD9200744124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C} = {9FDD2846-1DFA-4E06-A9C7-B0B9444A4BD4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B0411E1-8D7F-4652-A95D-F44434D8F830}
 	EndGlobalSection
 EndGlobal

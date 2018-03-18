@@ -17,5 +17,6 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(42.4703963,-71.4477468);
         public Uri WebSite => new Uri("http://jesseliberty.me");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://feeds.feedburner.com/JesseLiberty-SilverlightGeek"); } }
+        public string FeedLanguageCode => "en";
     }
 }

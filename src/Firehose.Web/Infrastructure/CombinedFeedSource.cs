@@ -16,37 +16,49 @@ using BlogMonster;
 using BlogMonster.Infrastructure;
 using BlogMonster.Infrastructure.SyndicationFeedSources.Remote;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
+using Firehose.Web.Extensions;
+using System.Globalization;
+using System.Collections.Generic;
 
 namespace Firehose.Web.Infrastructure
 {
     public class CombinedFeedSource
     {
         private static readonly HttpClient HttpClient = new HttpClient();
-        private readonly Lazy<Cached<ISyndicationFeedSource>> _combinedFeedSource;
+        private readonly Lazy<Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>> _combinedFeedSource;
 
         public CombinedFeedSource(IAmACommunityMember[] bloggers)
         {
             Bloggers = bloggers;
-            var cached = new Cached<ISyndicationFeedSource>(TimeSpan.FromHours(1), new SystemClock(), LoadFeeds);
-            _combinedFeedSource = new Lazy<Cached<ISyndicationFeedSource>>(() => cached, LazyThreadSafetyMode.PublicationOnly);
+            var cached = new Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>(TimeSpan.FromHours(1), new SystemClock(), LoadFeeds);
+            _combinedFeedSource = new Lazy<Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>>(() => cached, LazyThreadSafetyMode.PublicationOnly);
 
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 |
-                                                              SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
 
             HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
             HttpClient.Timeout = TimeSpan.FromMinutes(1);
         }
 
-        public SyndicationFeed Feed => _combinedFeedSource.Value.Value.Feed;
+        public SyndicationFeed Feed => GetFeed(null);
+
+        public SyndicationFeed GetFeed(string language)
+        {
+            var groupedFeeds = _combinedFeedSource.Value.Value;
+
+            if (string.IsNullOrEmpty(language) || !groupedFeeds.ContainsKey(language))
+            {
+                language = "mixed";
+                return GetCombinedFeed(language, groupedFeeds.Values.SelectMany(f => f)).Feed;
+            }
+
+            return GetCombinedFeed(language, groupedFeeds[language]).Feed;
+        }
 
         public IAmACommunityMember[] Bloggers { get; }
 
-        private ISyndicationFeedSource LoadFeeds()
+        private ISyndicationFeedSource GetCombinedFeed(string language, IEnumerable<ISyndicationFeedSource> feeds)
         {
-            var feedTasks = Bloggers.SelectMany(b => b.FeedUris, TryLoadFeedAsync);
-            var feedSources = Task.WhenAll(feedTasks).GetAwaiter().GetResult().NotNull().ToArray();
-
-            return BlogMonsterBuilder.FromOtherFeedSources(feedSources.First(), feedSources.Skip(1).ToArray())
+            return BlogMonsterBuilder.FromOtherFeedSources(feeds.First(), feeds.Skip(1).ToArray())
                 .WithRssSettings(
                     new RssFeedSettings(ConfigurationManager.AppSettings["BaseUrl"],
                         ConfigurationManager.AppSettings["RssFeedTitle"],
@@ -55,23 +67,19 @@ namespace Firehose.Web.Infrastructure
                         ConfigurationManager.AppSettings["SyndicationPersonName"],
                         ConfigurationManager.AppSettings["BaseUrl"]),
                         ConfigurationManager.AppSettings["RssFeedImageUrl"],
-                        "en-US",
+                        language,
                         "The copyright for each post is retained by its author.",
                         new Uri(ConfigurationManager.AppSettings["BaseUrl"])))
                 .Grr();
         }
 
-        private static bool DefaultFilter(SyndicationItem item)
+        private Dictionary<string, IEnumerable<ISyndicationFeedSource>> LoadFeeds()
         {
-            var hasXamarinCategory = false;
+            var feedTasks = Bloggers.SelectMany(b => b.FeedUris, TryLoadFeedAsync);
+            var feedSources = Task.WhenAll(feedTasks).GetAwaiter().GetResult().NotNull();
+            var groupedFeeds = feedSources.GroupBy(feed => feed.Feed.Language).ToDictionary(g => g.Key, g => g.AsEnumerable());
 
-            if (item.Categories.Count > 0)
-                hasXamarinCategory = item.Categories.Any(category =>
-                    category.Name.ToLowerInvariant().Contains("xamarin"));
-
-            var hasXamarinTitle = item.Title?.Text.ToLowerInvariant().Contains("xamarin") ?? false;
-
-            return hasXamarinTitle || hasXamarinCategory;
+            return groupedFeeds;
         }
 
         private async Task<ISyndicationFeedSource> TryLoadFeedAsync(IAmACommunityMember tamarin, Uri uri)
@@ -82,11 +90,12 @@ namespace Firehose.Web.Infrastructure
 
                 var filter = iFilterMyBlogPosts != null
                     ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
-                    : (si => DefaultFilter(si));
+                    : (si => si.ApplyDefaultFilter());
 
                 var feedSource = new DummyRemoteSyndicationFeedSource();
 
                 var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
+                feed.Language = CultureInfo.CreateSpecificCulture(tamarin.FeedLanguageCode).Name;
                 feedSource.Feed = feed;
 
                 return feedSource;
@@ -111,7 +120,7 @@ namespace Firehose.Web.Infrastructure
                 // the authors' filter is derped
                 // try some sane defaults
 
-                return DefaultFilter(item);
+                return item.ApplyDefaultFilter();
             }
         }
 

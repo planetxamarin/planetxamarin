@@ -18,6 +18,6 @@ namespace Firehose.Web.Authors
 
         public Uri WebSite => new Uri("https://xamgirl.com/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://xamgirl.com/rss"); } }
-        
+        public string FeedLanguageCode => "en";
     }
 }

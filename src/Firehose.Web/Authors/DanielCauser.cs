@@ -16,5 +16,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "2666956714a2c2d48c480a6bddac4071";
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://causerexception.com/feed"); } }
         public GeoPosition Position => new GeoPosition(43.653103, -79.383851);
+        public string FeedLanguageCode => "en";
     }
 }

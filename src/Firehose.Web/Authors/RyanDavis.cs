@@ -21,5 +21,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "rdavisau";
         public string GravatarHash => "d351762ec451e252b20ff860dfcded91d351762ec451e252b20ff860dfcded91";
         public GeoPosition Position => new GeoPosition(-27.4697710, 153.0251240);
+        public string FeedLanguageCode => "en";
     }
 }
