@@ -363,6 +363,7 @@
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />
     <Compile Include="Authors\EvgenyZborovsky.cs" />
+    <Compile Include="Authors\ManojKumar.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
