@@ -19,7 +19,7 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is an architect and developer using Xamarin and Azure. Working as a Ninja at tretton37. Also recording \"The Code Behind\" podcast!";
 
-        public Uri WebSite => new Uri("http://danielhindrikes.se");
+        public Uri WebSite => new Uri("https://danielhindrikes.se");
 
         public string TwitterHandle => "hindrikes";
 
@@ -29,7 +29,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://danielhindrikes.se/feed/"); }
+            get { yield return new Uri("https://danielhindrikes.se/index.php/feed/"); }
         }
 
         public GeoPosition Position => new GeoPosition(60.48604, 15.43391);
