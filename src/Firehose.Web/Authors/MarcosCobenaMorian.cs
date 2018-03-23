@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(37.3753501, -6.0250978);
         public string GitHubHandle => "MarcosCobena";
         public string TwitterHandle => "1Marcos2Cobena";
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://marcoscobena.com/feed.rss"); } }
+        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://medium.com/feed/@MarcosCobena"); } }
         public string FeedLanguageCode => "en";
     }
 }
