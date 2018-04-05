@@ -16,5 +16,20 @@ namespace Firehose.Web.Extensions
                 }
             }
         }
+
+        public static IEnumerable<TSource> DistinctByCollection<TSource>(this IEnumerable<TSource> source, Func<TSource, IEnumerable<TKey>> keySelector)
+        {
+            var seenKeys = new HashSet<TKey>();
+            foreach (TSource element in source)
+            {
+                foreach(TKey key in keySelector(element))
+                {
+                    if (seenKeys.Add(key))
+                    {
+                        yield return element;
+                    }
+                }
+            }
+        }
     }
 }
