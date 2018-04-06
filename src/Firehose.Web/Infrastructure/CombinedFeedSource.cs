@@ -75,7 +75,7 @@ namespace Firehose.Web.Infrastructure
 
         private Dictionary<string, IEnumerable<ISyndicationFeedSource>> LoadFeeds()
         {
-            var feedTasks = Bloggers.SelectMany(b => b.FeedUris, TryLoadFeedAsync);
+            var feedTasks = Bloggers.DistinctByCollection(b => b.FeedUris).SelectMany(b => b.FeedUris, TryLoadFeedAsync);
             var feedSources = Task.WhenAll(feedTasks).GetAwaiter().GetResult().NotNull();
             var groupedFeeds = feedSources.GroupBy(feed => feed.Feed.Language).ToDictionary(g => g.Key, g => g.AsEnumerable());
 
