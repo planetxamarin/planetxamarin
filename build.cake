@@ -1,4 +1,5 @@
 #tool "nuget:?package=xunit.runner.console"
+#tool "nuget:?package=vswhere"
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -18,11 +19,26 @@ var solutionPath    = MakeAbsolute(File("./src/Firehose.sln"));
 // TASK DEFINITIONS
 ///////////////////////////////////////////////////////////////////////////////
 
+FilePath msBuildPath;
+Task("ResolveBuildTools")
+    .WithCriteria(() => IsRunningOnWindows())
+    .Does(() => 
+{
+    var vsLatest = VSWhereLatest();
+    msBuildPath = (vsLatest == null)
+        ? null
+        : vsLatest.CombineWithFilePath("./MSBuild/15.0/Bin/MSBuild.exe");
+});
+
 Task("Restore")
-    .Does(() =>
+    .IsDependentOn("ResolveBuildTools")
+    .Does(() => 
 {
     Information("Restoring {0}...", solutionPath);
-    NuGetRestore(solutionPath);
+
+    var settings = GetDefaultBuildSettings()
+        .WithTarget("Restore");
+    MSBuild(solutionPath, settings);
 });
 
 Task("Build")
@@ -31,11 +47,12 @@ Task("Build")
 {
     // Build all solutions.
     Information("Building {0}", solutionPath);
-    MSBuild(solutionPath, settings =>
-        settings.SetPlatformTarget(PlatformTarget.MSIL)
-            .WithProperty("TreatWarningsAsErrors","true")
-            .WithTarget("Build")
-            .SetConfiguration(configuration));
+
+    var settings = GetDefaultBuildSettings()
+        .WithTarget("Build")
+        .WithProperty("TreatWarningsAsErrors","true");
+
+    MSBuild(solutionPath, settings);
 });
 
 Task("UnitTest")
@@ -60,3 +77,15 @@ Task("Default")
 ///////////////////////////////////////////////////////////////////////////////
 
 RunTarget(target);
+
+MSBuildSettings GetDefaultBuildSettings()
+{
+    var settings = new MSBuildSettings 
+    {
+        Configuration = configuration,
+        ToolPath = msBuildPath,
+        ArgumentCustomization = args => args.Append("/m")
+    };
+
+    return settings;
+}
