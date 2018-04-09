@@ -320,7 +320,8 @@
 	<Compile Include="Authors\VicenteGuzman.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />
     <Compile Include="Authors\EvgenyZborovsky.cs" />
-    <Compile Include="Authors\MarcioCampos.cs" />
+    <Compile Include="Authors\MarcioCampos.cs" />    
+    <Compile Include="Authors\DayaneLima.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
