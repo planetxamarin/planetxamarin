@@ -322,7 +322,8 @@
     <Compile Include="Authors\EvgenyZborovsky.cs" />
     <Compile Include="Authors\MarcioCampos.cs" />
     <Compile Include="Authors\LeonardoCarmonio.cs" />
-    <Compile Include="Extensions\IEnumerableExtensions.cs" />    
+    <Compile Include="Authors\DayaneLima.cs" />
+    <Compile Include="Extensions\IEnumerableExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
