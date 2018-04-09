@@ -25,7 +25,7 @@ namespace Firehose.Web.Authors
 
         public string GitHubHandle => "jgiacomini";
 
-        public string GravatarHash => "";
+        public string GravatarHash => "95e63961669a22586a1236fd6a7a494d";
 
         public IEnumerable<Uri> FeedUris
         {
@@ -35,8 +35,5 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(48.8704842, 2.3449646);
 
         public string FeedLanguageCode => "fr";
-
-        public bool Filter(SyndicationItem item) =>
-           item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
     }
 }
