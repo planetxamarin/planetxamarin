@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "jerome.giacomini@gmail.com";
 
-        public string ShortBioOrTagLine => "is a Software Architect/Developer that loe .Net and Xamarin. :)";
+        public string ShortBioOrTagLine => "is a Xamarin Enthusiast, co-author of a book on Xamarin";
 
         public Uri WebSite => new Uri("https://jeromegiacomini.net/Blog/");
 
