@@ -1,0 +1,15 @@
+public class AntonioFeregrino : IAmACommunityMember
+{
+    public string FirstName => "Antonio";
+    public string LastName => "Feregrino";
+    public string ShortBioOrTagLine => "That C# guy";
+    public string StateOrRegion => "México";
+    public string EmailAddress => "antonio.feregrino@messier16.com";
+    public string TwitterHandle => "io_exception";
+    public string GravatarHash => "554ae8cfcc9b562ef8b8110c187f1870";
+    public string GitHubHandle => "fferegrino";
+    public GeoPosition Position => new GeoPosition(19.432608, -99.133209);
+    public Uri WebSite => new Uri("https://thatcsharpguy.com/");
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://thatcsharpguy.com/xamarin-feed.xml"); } }
+    public FeedLanguageCode => "en";
+}
