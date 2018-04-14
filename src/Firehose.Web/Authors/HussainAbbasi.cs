@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class HussainAbbasi : IAmACommunityMember, IFilterMyBlogPosts
+    public class HussainAbbasi : IAmACommunityMember
     {
         public string FirstName => "Hussain";
 
@@ -33,11 +33,5 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(29.7656, -95.3681);
 
         public string FeedLanguageCode => "en";
-
-        public bool Filter(SyndicationItem item)
-        {
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-                item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
-        }
     }
 }
