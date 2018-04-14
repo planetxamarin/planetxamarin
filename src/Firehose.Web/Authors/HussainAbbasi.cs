@@ -18,7 +18,7 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => "is a Blogger, Mobile Architect, and founder of intelliAbb.com. More at HussainAbbasi.com";
 
-        public Uri WebSite => new Uri("http://www.intelliabb.com/");
+        public Uri WebSite => new Uri("https://www.intelliabb.com/");
 
         public string TwitterHandle => "HussainNAbbasi";
 
@@ -27,7 +27,7 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "6f415af725ae2d6b5b912a7e93b105b9";
 
         public IEnumerable<Uri> FeedUris => new List<Uri> {
-            new Uri("http://www.intelliabb.com/feed")
+            new Uri("https://www.intelliabb.com/feed")
         };
 
         public GeoPosition Position => new GeoPosition(29.7656, -95.3681);
