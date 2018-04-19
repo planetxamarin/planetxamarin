@@ -21,7 +21,6 @@ namespace Firehose.Web.Authors
             {
                return new List<Uri>()
                {
-                 new Uri("https://trailheadtechnology.com/blog"),
                  new Uri("https://trailheadtechnology.com/feed"),
                  new Uri("https://trailheadtechnology.com/feed/atom")                   
                };
