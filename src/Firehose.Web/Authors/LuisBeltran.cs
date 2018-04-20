@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
       public GeoPosition Position => new GeoPosition(20.487380, -100.952348);
       public Uri WebSite => new Uri("https://luisbeltran.mx/");
       public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://luisbeltran.mx/feed/"); } }
-      public FeedLanguageCode => "es";
+      public string FeedLanguageCode => "es";
   }
   
   public bool Filter(SyndicationItem item)
