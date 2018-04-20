@@ -18,17 +18,17 @@ namespace Firehose.Web.Authors
       public Uri WebSite => new Uri("https://luisbeltran.mx/");
       public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://luisbeltran.mx/feed/"); } }
       public string FeedLanguageCode => "es";
-  }
-  
-  public bool Filter(SyndicationItem item)
-  {
-      var allowedCategories = new[] { "xamarin", "android", "ios", "uwp" };
+    
+      public bool Filter(SyndicationItem item)
+      {
+          var allowedCategories = new[] { "xamarin", "android", "ios", "uwp" };
 
-      var hasAllowedCategory = item.Categories?.Any(category =>
-        allowedCategories.Contains(category.Name.ToLowerInvariant())) ?? false;
+          var hasAllowedCategory = item.Categories?.Any(category =>
+            allowedCategories.Contains(category.Name.ToLowerInvariant())) ?? false;
 
-      var title = item.Title.Text.ToLowerInvariant();
+          var title = item.Title.Text.ToLowerInvariant();
 
-      return title.Contains("xamarin") || hasAllowedCategory;
+          return title.Contains("xamarin") || hasAllowedCategory;
+      }
   }
 }
