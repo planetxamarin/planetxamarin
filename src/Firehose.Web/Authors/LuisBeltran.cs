@@ -1,6 +1,9 @@
+using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using Firehose.Web.Infrastructure;
+using System.Linq;
+using System.ServiceModel.Syndication;
+using System.Web;
 
 namespace Firehose.Web.Authors
 {
