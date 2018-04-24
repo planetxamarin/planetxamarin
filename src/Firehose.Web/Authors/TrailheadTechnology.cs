@@ -21,8 +21,7 @@ namespace Firehose.Web.Authors
             {
                return new List<Uri>()
                {
-                 new Uri("https://trailheadtechnology.com/feed"),
-                 new Uri("https://trailheadtechnology.com/feed/atom")                   
+                 new Uri("https://trailheadtechnology.com/feed")
                };
             }
         }
