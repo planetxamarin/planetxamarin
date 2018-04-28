@@ -6,7 +6,7 @@ public class AnbuMani : IAmACommunityMember
     {
         public string FirstName => "Anbu";
         public string LastName => "Mani";
-        public string ShortBioOrTagLine => "Anbu Mani is a Microsoft MVP.I'm Always love with Community work to Share, help, support, platform, spirit and passion :-)";
+        public string ShortBioOrTagLine => "I'm Always love with Working in Community";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "anbu_mani27";
         public string GravatarHash => "f97650474e4aa5b9609a28dcfdb052d4";
