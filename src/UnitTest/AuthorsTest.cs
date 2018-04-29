@@ -89,17 +89,29 @@ namespace UnitTest
         //public 
         async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
         {
-            foreach (var feedUri in author.FeedUris)
+            try
             {
-                Assert.Equal("https", feedUri.Scheme);
+                foreach (var feedUri in author.FeedUris)
+                {
+                    Assert.Equal("https", feedUri.Scheme);
+                }
+
+                var authors = new IAmACommunityMember[] { author };
+                var feedSource = new CombinedFeedSource(authors);
+                var allFeeds = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
+
+                Assert.NotNull(allFeeds);
+                Assert.Collection(allFeeds, feed => Assert.NotNull(feed));
+
+                var allItems = allFeeds.SelectMany(f => f?.Feed?.Items).Where(i => i != null).ToList();
+
+                Assert.True(allItems?.Count() > 0);
             }
-
-            var authors = new IAmACommunityMember[] { author };
-            var feedSource = new CombinedFeedSource(authors);
-            var feed = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
-
-            Assert.NotEmpty(feed);
-            Assert.True(feed.SelectMany(f => f.Feed.Items).Count() > 0, $"Feed(s) for {author.FirstName} {author.LastName} is empty");
+            catch (Exception)
+            {
+                _output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");
+                throw;
+            }
         }
 
         [Theory]
