@@ -110,6 +110,13 @@ namespace UnitTest
             Assert.Contains(author.FeedLanguageCode, cultureNames);
         }
 
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Has_FirstName(IAmACommunityMember author)
+        {
+            Assert.NotEmpty(author.FirstName);
+        }
+
         public static IEnumerable<object[]> GetAuthorTestData() => GetAuthors().Select(author => new object[] { author });
 
         private static IEnumerable<IAmACommunityMember> GetAuthors()
