@@ -24,7 +24,7 @@ namespace Firehose.Web.Authors
     
       public bool Filter(SyndicationItem item)
       {
-          var allowedCategories = new[] { "xamarin", "android", "ios", "uwp" };
+          var allowedCategories = new[] { "xamarin", "android", "ios" };
 
           var hasAllowedCategory = item.Categories?.Any(category =>
             allowedCategories.Contains(category.Name.ToLowerInvariant())) ?? false;
