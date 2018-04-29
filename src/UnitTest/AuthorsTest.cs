@@ -117,6 +117,13 @@ namespace UnitTest
             Assert.NotEmpty(author.FirstName);
         }
 
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Has_Website(IAmACommunityMember author)
+        {
+            Assert.NotNull(author.WebSite);
+        }
+
         public static IEnumerable<object[]> GetAuthorTestData() => GetAuthors().Select(author => new object[] { author });
 
         private static IEnumerable<IAmACommunityMember> GetAuthors()
