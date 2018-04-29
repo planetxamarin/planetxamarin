@@ -11,7 +11,7 @@ namespace Firehose.Web.Authors
   {
       public string FirstName => "Luis";
       public string LastName => "Beltran";
-      public string ShortBioOrTagLine => "is a passionate Mexican software community guy, who enjoys teaching, talking and helping others about Xamarin, Azure, and C#.";
+      public string ShortBioOrTagLine => "is a passionate Mexican software community guy, who enjoys teaching, talking and helping others with Xamarin, Azure, and C#.";
       public string StateOrRegion => "Guanajuato, Mexico";
       public string EmailAddress => "luis@luisbeltran.mx";
       public string TwitterHandle => "darkicebeam";
