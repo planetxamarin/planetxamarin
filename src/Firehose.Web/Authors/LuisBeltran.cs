@@ -7,11 +7,11 @@ using System.Web;
 
 namespace Firehose.Web.Authors
 {
-  public class LuisBeltran : IAmAMicrosoftMVP, IFilterMyBlogPosts
+  public class LuisBeltran : IAmAMicrosoftMVP
   {
       public string FirstName => "Luis";
       public string LastName => "Beltran";
-      public string ShortBioOrTagLine => "is a passionate Mexican software community guy who enjoys learning, talking and helping others about Xamarin, Azure, and C#";
+      public string ShortBioOrTagLine => ""is a passionate Mexican software community guy, who enjoys teaching, talking and helping others about Xamarin, Azure, and C#.";
       public string StateOrRegion => "Guanajuato, Mexico";
       public string EmailAddress => "luis@luisbeltran.mx";
       public string TwitterHandle => "darkicebeam";
@@ -21,17 +21,5 @@ namespace Firehose.Web.Authors
       public Uri WebSite => new Uri("https://luisbeltran.mx/");
       public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://luisbeltran.mx/feed/"); } }
       public string FeedLanguageCode => "es";
-    
-      public bool Filter(SyndicationItem item)
-      {
-          var allowedCategories = new[] { "xamarin", "android", "ios" };
-
-          var hasAllowedCategory = item.Categories?.Any(category =>
-            allowedCategories.Contains(category.Name.ToLowerInvariant())) ?? false;
-
-          var title = item.Title.Text.ToLowerInvariant();
-
-          return title.Contains("xamarin") || hasAllowedCategory;
-      }
   }
 }
