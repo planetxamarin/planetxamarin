@@ -236,7 +236,7 @@
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
-    <Compile Include="Authors\GeoffreyHuntley.cs" />
+    <None Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
     <Compile Include="Authors\SRaviKumar.cs" />
