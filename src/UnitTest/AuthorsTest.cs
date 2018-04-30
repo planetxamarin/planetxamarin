@@ -126,6 +126,20 @@ namespace UnitTest
             Assert.NotNull(author.WebSite);
         }
 
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Has_Valid_Coordinates(IAmACommunityMember author)
+        {
+            if (author.Position == null)
+                return;
+
+            if (author.Position == GeoPosition.Empty)
+                return;
+
+            Assert.InRange(author.Position.Lat, -90.0, 90);
+            Assert.InRange(author.Position.Lng, -180.0, 180);
+        }
+
         public static IEnumerable<object[]> GetAuthorTestData() => GetAuthors().Select(author => new object[] { author });
 
         private static IEnumerable<IAmACommunityMember> GetAuthors()
