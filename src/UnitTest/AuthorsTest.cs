@@ -4,13 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 using System.Globalization;
-using System.ServiceModel.Syndication;
 
 namespace UnitTest
 {
@@ -33,7 +31,6 @@ namespace UnitTest
             ex => !ex.Message.Contains("Could not create SSL/TLS secure channel"))
             .WaitAndRetryAsync(3, retryAttempt =>
                 TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
-        static HttpClient _httpClient = new HttpClient();
 
         public AuthorsTest(ITestOutputHelper output)
         {
@@ -80,21 +77,15 @@ namespace UnitTest
             var authors = GetAuthors();
 
             // using MemberData for this test is slow. Intentionally using Task.WhenAll here!
-
             return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed));
         }
 
-        //[Theory]
-        //[MemberData(nameof(GetAuthorTestData))]
-        //public 
         async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
         {
             try
             {
                 foreach (var feedUri in author.FeedUris)
-                {
                     Assert.Equal("https", feedUri.Scheme);
-                }
 
                 var authors = new IAmACommunityMember[] { author };
                 var feedSource = new CombinedFeedSource(authors);
