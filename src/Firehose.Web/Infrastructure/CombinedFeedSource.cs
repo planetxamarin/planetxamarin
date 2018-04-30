@@ -24,7 +24,6 @@ namespace Firehose.Web.Infrastructure
 {
     public class CombinedFeedSource
     {
-        private static HttpClient HttpClient { get; set; }
         private readonly Lazy<Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>> _combinedFeedSource;
 
         public CombinedFeedSource(IAmACommunityMember[] bloggers)
@@ -34,13 +33,15 @@ namespace Firehose.Web.Infrastructure
             _combinedFeedSource = new Lazy<Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>>(() => cached, LazyThreadSafetyMode.PublicationOnly);
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+        }
 
-            if (HttpClient == null)
-            {
-                HttpClient = new HttpClient();
-                HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
-                HttpClient.Timeout = TimeSpan.FromMinutes(1);
-            }
+        private HttpClient GetHttpClient()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
+            httpClient.Timeout = TimeSpan.FromMinutes(1);
+
+            return httpClient;
         }
 
         public SyndicationFeed Feed => GetFeed(null);
@@ -99,7 +100,8 @@ namespace Firehose.Web.Infrastructure
                 var feedSource = new DummyRemoteSyndicationFeedSource();
 
                 var filter = GetFilterFunction(tamarin);
-                var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
+                var client = GetHttpClient();
+                var feed = await FetchAsync(client, uri, filter).ConfigureAwait(false);
                 feed.Language = CultureInfo.CreateSpecificCulture(tamarin.FeedLanguageCode).Name;
                 feedSource.Feed = feed;
 
@@ -140,12 +142,12 @@ namespace Firehose.Web.Infrastructure
             }
         }
 
-        internal static async Task<SyndicationFeed> FetchAsync(Uri feedUri, Func<SyndicationItem, bool> filter)
+        internal static async Task<SyndicationFeed> FetchAsync(HttpClient client, Uri feedUri, Func<SyndicationItem, bool> filter)
         {
             HttpResponseMessage response;
             try
             {
-                response = await HttpClient.GetAsync(feedUri).ConfigureAwait(false);
+                response = await client.GetAsync(feedUri).ConfigureAwait(false);
                 if (response.IsSuccessStatusCode)
                 {
                     using (var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
