@@ -101,7 +101,6 @@ namespace UnitTest
                 var allFeeds = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
 
                 Assert.NotNull(allFeeds);
-                Assert.Collection(allFeeds, feed => Assert.NotNull(feed));
 
                 var allItems = allFeeds.SelectMany(f => f?.Feed?.Items).Where(i => i != null).ToList();
 
