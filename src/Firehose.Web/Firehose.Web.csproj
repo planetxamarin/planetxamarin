@@ -198,6 +198,7 @@
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
+    <Compile Include="Authors\JasonDeBoever.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
     <Compile Include="Authors\JesusAngulo.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
+    <Compile Include="Authors\TrailheadTechnology.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
     <Compile Include="Authors\VulcanLee.cs" />
@@ -235,7 +237,7 @@
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
-    <Compile Include="Authors\GeoffreyHuntley.cs" />
+    <None Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
     <Compile Include="Authors\SRaviKumar.cs" />
@@ -325,7 +327,9 @@
     <Compile Include="Authors\MarcioCampos.cs" />
     <Compile Include="Authors\LeonardoCarmonio.cs" />
     <Compile Include="Authors\DayaneLima.cs" />
+    <Compile Include="Authors\LuisBeltran.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="Authors\HussainAbbasi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

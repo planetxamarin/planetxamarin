@@ -24,7 +24,6 @@ namespace Firehose.Web.Authors
                {
                  new Uri("https://www.mfractor.com/blogs/news.atom"),
                  new Uri("https://www.mfractor.com/blogs/learn.atom"),
-                 new Uri("https://www.mfractor.com/blogs/blog.atom"),
                };
             }
         }
