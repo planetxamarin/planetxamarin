@@ -1,19 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class RobinManuelThiel : IWorkAtXamarinOrMicrosoft, IFilterMyBlogPosts
+    public class RobinManuelThiel : IWorkAtXamarinOrMicrosoft
     {
-        public bool Filter(SyndicationItem item)
-        {
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-                   item.Categories.Where(i => i.Name.Equals("Xamarin", StringComparison.OrdinalIgnoreCase)).Any();
-        }
-
         public string FirstName => "Robin-Manuel";
         public string LastName => "Thiel";
         public string ShortBioOrTagLine => "Techie at Microsoft by day, tinker and fiddler by night. Loves everything with a power plug or IP address.";
@@ -29,5 +21,7 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://pumpingco.de/feed/"); }
         }
+
+        public string FeedLanguageCode => "en";
     }
 }

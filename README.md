@@ -7,7 +7,7 @@ If you write about Xamarin, you belong here. You're welcome to add your blog and
 # Add yourself as an author
 
 ### Author Guidelines
-- I have a valid blog & RSS URL
+- I have a valid blog & RSS URL, both using HTTPS with a valid certificate
 - Host NO malicious or offensive content on the blog (including photos, swearing, etc.)
 - Blog is active with at least 3 Xamarin related blog posts in the last 6 months
 - If the blog has mixed content (Xamarin and Personal/Non-Xamarin blogs) a filter has been applied
@@ -32,49 +32,30 @@ public class BruceWayne : IAmACommunityMember
     public string GravatarHash => "42abc1337def";
     public string GitHubHandle => "planetxamarin";
     public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
-
     public Uri WebSite => new Uri("https://planetxamarin.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
+    public FeedLanguageCode => "en";
 }
 ```
 
 A few things: 
-- Name the class after your first and lastname with CamelCase
+- Name the class after your first and lastname with PascalCase
 - The `FirstName` and `LastName` property should resemble that same name
-- `ShortBioOrTagLine` property can be whatever you like. If you can't think of anything choose: 'software engineer' or 'software engineer at Microsoft'
+- `ShortBioOrTagLine` property can be whatever you like. If you can't think of anything choose: 'software engineer' or 'software engineer at Microsoft'. Please keep it short, like a 140 character tweet.
 - `StateOrRegion` will be your geographical location, i.e.: Holland, New York, etc.
 - `EmailAddress`, `TwitterHandle` and `GitHubHandle` should be pretty clear, `TwitterHandle` without the leading @
 - `Position` is your latitude and longitude, this allows you to be placed on the map on the Authors page
 - The `Website` property can be your global website or whatever you want people to look at
-- And finally with `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin. 
+- With `FeedUris` you can supply one or more URIs which resemble your blogs. Your blogs should be provided in RSS (Atom) format and of course be about Xamarin.
+- And finally `FeedLanguageCode` specifies in what lanuage the majority of your content will be. This is used to be able to apply filters to the feed. This language code should be in [ISO 639-1 format](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
 - If you do not want your e-mailaddress publicly available but you _do_ want to show your Gravatar go to https://en.gravatar.com/site/check/ and get your hash! If you don't fill the hash, you will be viewed as a silhouette.
-- When you are an Xamarin and/or Microsoft MVP check out the `IAmAXamarinMVP` and `IAmAMicrosoftMVP` interfaces, see below for a small sample.
-
-``` csharp
-public class DoubleMVPHuman : IAmAMicrosoftMVP, IAmAXamarinMVP
-{
-    public string FirstName => "Bruce";
-    public string LastName => "Wayne";
-    public string ShortBioOrTagLine => "potentially batman";
-    public string StateOrRegion => "Gotham";
-    public string EmailAddress => "rescueme@planetxamarin.com";
-    public string TwitterHandle => "planetxamarin";
-    public string GravatarHash => "";
-    public string GitHubHandle => "planetxamarin";
-    public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
-
-    public Uri WebSite => new Uri("http://www.planetxamarin.com");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://www.planetxamarin.com/feed/"); } }
-}
-```
-
-This way you can have both dates implemented, if you have just one, implement just the one interface.
 
 If you also do some blogging about other stuff, no worries! You're fine! Just have a look at the next section on how to filter out your Xamarin specific posts.
 
 # Just Xamarin please
 
-As you would suspect from 'PlanetXamarin', we would like to have our content about.. Xamarin. To ensure that we only get relevant content you can also implement the `IFilterMyBlogPosts` interface on your author class.
+Per default PlanetXamarin implements a default filter looking for Xamarin in the title and categories (tags) you have on your blog posts. This behavior can be modified by implementing `IFilterMyBlogPosts`, where you can implement your own filtering logic.
+It could be that you want to disable all filtering because your blog is solely about Xamarin. Maybe, you run a Xamarin newsletter or podcast.
 
 ``` csharp
 public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
@@ -88,10 +69,11 @@ public class BruceWayne : IAmACommunityMember, IFilterMyBlogPosts
         return item.Title.Text.ToLowerInvariant().Contains("xamarin");
         
         // This filters out only the posts that have the "xamarin" category
-        return item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+        // Not all blog posts have categories, please guard against this
+        return item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
         
         // Of course you can make the checks as complicated as you want and combine some stuff
-        return item.Title.Text.ToLowerInvariant().Contains("xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+        return item.Title.Text.ToLowerInvariant().Contains("xamarin") && (item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false);
     }
 }
 ```

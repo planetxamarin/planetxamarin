@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
     public class JonDick : IWorkAtXamarinOrMicrosoft
     {
@@ -22,5 +22,6 @@ namespace Firehose.Web
 
         public string GitHubHandle => "redth";
         public GeoPosition Position => new GeoPosition(51.2537750, -85.3232140);
+        public string FeedLanguageCode => "en";
     }
 }

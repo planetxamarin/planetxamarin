@@ -14,19 +14,28 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Bad Oeynhausen, Germany";
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "cayas_software";
-        public Uri WebSite => new Uri("http://blog.cayas.de/");
+        public Uri WebSite => new Uri("https://blog.cayas.de/");
         public string GravatarHash => "67dd9a9a01f36e0eca4f41b6464fdbe7";
         public string GitHubHandle => string.Empty;
         public GeoPosition Position => new GeoPosition(52.212539, 8.812332);
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://blog.cayas.de/feed/rss"); }
+            get { yield return new Uri("https://blog.cayas.de/feed/rss"); }
         }
 
         public bool Filter(SyndicationItem item)
         {
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin") || item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("Android") || category.Name.ToLowerInvariant().Contains("iOS"));
+            var allowedCategories = new[] { "xamarin", "android", "ios" };
+
+            var hasAllowedCategory = item.Categories?.Any(category =>
+                allowedCategories.Contains(category.Name.ToLowerInvariant())) ?? false;
+
+            var title = item.Title.Text.ToLowerInvariant();
+
+            return title.Contains("xamarin") || hasAllowedCategory;
         }
+
+        public string FeedLanguageCode => "en";
     }
 }

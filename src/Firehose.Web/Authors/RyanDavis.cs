@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class RyanDavis : IAmAXamarinMVP, IFilterMyBlogPosts
+    public class RyanDavis : IAmAXamarinMVP
     {
         public IEnumerable<Uri> FeedUris
         {
@@ -23,8 +21,6 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "rdavisau";
         public string GravatarHash => "d351762ec451e252b20ff860dfcded91d351762ec451e252b20ff860dfcded91";
         public GeoPosition Position => new GeoPosition(-27.4697710, 153.0251240);
-
-        public bool Filter(SyndicationItem item)
-            => item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
+        public string FeedLanguageCode => "en";
     }
 }
