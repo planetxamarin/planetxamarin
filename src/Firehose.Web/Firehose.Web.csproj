@@ -210,6 +210,7 @@
     <Compile Include="Authors\DamianMehers.cs" />
     <Compile Include="Authors\SebastianJensen.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
+    <Compile Include="Authors\StephenMarcus.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\TrailheadTechnology.cs" />
     <Compile Include="Authors\Xablu.cs" />
