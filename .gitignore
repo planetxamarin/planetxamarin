@@ -240,3 +240,6 @@ artifacts/
 src/CommonAssemblyInfo.cs
 src/ReactiveUI.Events/Events_*.cs
 src/.idea
+
+# MFractor
+.mfractor/

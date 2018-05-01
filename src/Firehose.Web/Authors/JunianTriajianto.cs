@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class JunianTriajianto : IAmACommunityMember, IFilterMyBlogPosts
+    public class JunianTriajianto : IAmACommunityMember
 	{
 		public string FirstName => "Junian";
 		public string LastName => "Triajianto";
@@ -17,12 +15,8 @@ namespace Firehose.Web.Authors
 		public string GravatarHash => "b67cdce8e2da7ffdadb5ff32bb66c132";
 		public string GitHubHandle => "junian";
 		public GeoPosition Position => new GeoPosition(-7.2574719, 112.75208829999997);
-
 		public Uri WebSite => new Uri("https://www.junian.net");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.junian.net/feeds/posts/default?alt=rss"); } }
-
-		public bool Filter(SyndicationItem item) =>
-			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
 	}
 }

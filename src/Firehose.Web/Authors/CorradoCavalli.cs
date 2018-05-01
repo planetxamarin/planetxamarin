@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class CorradoCavalli : IAmAXamarinMVP, IFilterMyBlogPosts
+    public class CorradoCavalli : IAmAXamarinMVP
 	{
 		public string FirstName => "Corrado";
 		public string LastName => "Cavalli";
@@ -16,15 +14,11 @@ namespace Firehose.Web.Authors
 		public string TwitterHandle => "corcav";
 		public string GravatarHash => "";
 
-		public Uri WebSite => new Uri("http://www.corradocavalli.com/");
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://feeds.feedburner.com/corradocavalli"); } }
-
-		public bool Filter(SyndicationItem item)
-		{
-			return item.Title.Text.ToLowerInvariant().Contains("xamarin") || item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
-		}
+		public Uri WebSite => new Uri("https://www.corradocavalli.com/");
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://feeds.feedburner.com/corradocavalli"); } }
 
 		public string GitHubHandle => "corradocavalli";
 		public GeoPosition Position => new GeoPosition(45.8353041, 9.6492825);
+        public string FeedLanguageCode => "en";
 	}
 }

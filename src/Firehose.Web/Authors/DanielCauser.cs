@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
-using System.ServiceModel.Syndication;
-using System.Linq;
 namespace Firehose.Web.Authors
 {
     public class DanielCauser : IAmACommunityMember
@@ -18,7 +16,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "2666956714a2c2d48c480a6bddac4071";
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://causerexception.com/feed"); } }
         public GeoPosition Position => new GeoPosition(43.653103, -79.383851);
-        public bool Filter(SyndicationItem item) =>
-        item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
     }
 }

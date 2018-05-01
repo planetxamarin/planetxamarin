@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
@@ -13,10 +11,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Santos, Brasil";
         public string TwitterHandle => "willdotnet";
         public string GitHubHandle => "willsb";
-
-        public string ShortBioOrTagLine
-            => "Microsoft MVP, Blogger, Speaker, Monkey Nights Co-founder/Host and MvvmCross contributor";
-
+        public string ShortBioOrTagLine => "Microsoft MVP, Blogger, Speaker, Monkey Nights Co-founder/Host and MvvmCross contributor";
         public string EmailAddress => "heytherewill@gmail.com";
         public string GravatarHash => "e47d219e8ee5d6dd5a44940dc26585c4";
         public GeoPosition Position => new GeoPosition(-23.954821, -46.3247136);
@@ -27,8 +22,6 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("https://medium.com/feed/@heytherewill"); }
         }
 
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
     }
 }

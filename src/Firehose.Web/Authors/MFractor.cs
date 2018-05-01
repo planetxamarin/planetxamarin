@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
@@ -17,6 +15,7 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "mfractor";
         public string GitHubHandle => "mfractor";
         public string GravatarHash => "35bac056166a67222ddcd48b57113a32";
+
         public IEnumerable<Uri> FeedUris
         {
             get
@@ -25,10 +24,11 @@ namespace Firehose.Web.Authors
                {
                  new Uri("https://www.mfractor.com/blogs/news.atom"),
                  new Uri("https://www.mfractor.com/blogs/learn.atom"),
-                 new Uri("https://www.mfractor.com/blogs/blog.atom"),
                };
             }
         }
+
         public GeoPosition Position => new GeoPosition(-33.8678500, 151.2073200);
+        public string FeedLanguageCode => "en";
     }
 }

@@ -1,12 +1,10 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
-	public class DavidBritch : IWorkAtXamarinOrMicrosoft, IFilterMyBlogPosts
+    public class DavidBritch : IWorkAtXamarinOrMicrosoft
 	{
 		public string FirstName => "David";
 		public string LastName => "Britch";
@@ -19,15 +17,13 @@ namespace Firehose.Web
 		public string ShortBioOrTagLine => string.Empty;
 		public string GitHubHandle => "davidbritch";
 		public GeoPosition Position => new GeoPosition(53.479300, -2.247900);
-		public Uri WebSite => new Uri("http://www.davidbritch.com");
+		public Uri WebSite => new Uri("https://www.davidbritch.com");
 
 		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("http://www.davidbritch.com/rss.xml"); }
+			get { yield return new Uri("https://www.davidbritch.com/rss.xml"); }
 		}
 
-		public bool Filter(SyndicationItem item) =>
-			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
 	}
 }

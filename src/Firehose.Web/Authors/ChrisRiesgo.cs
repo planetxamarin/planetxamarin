@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
-	public class ChrisRiesgo : IAmAMicrosoftMVP, IAmAXamarinMVP, IFilterMyBlogPosts
+    public class ChrisRiesgo : IAmAMicrosoftMVP, IAmAXamarinMVP
 	{
 		public string FirstName => "Chris";
 		public string LastName => "Riesgo";
@@ -19,15 +17,13 @@ namespace Firehose.Web
 		public string GravatarHash => "f2164f68df9d2592894bd9c8fdb758bc";
 		public string GitHubHandle => "chrisriesgo";
 
-		public Uri WebSite => new Uri("http://chrisriesgo.com");
+		public Uri WebSite => new Uri("https://chrisriesgo.com");
 
 		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("http://chrisriesgo.com/rss/"); }
+			get { yield return new Uri("https://chrisriesgo.com/rss/"); }
 		}
 
-		public bool Filter(SyndicationItem item) =>
-			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
 	}
 }
