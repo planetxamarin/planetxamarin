@@ -17,6 +17,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => string.Empty;
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://balivo.com.br/rss"); } }
         public GeoPosition Position => new GeoPosition(-22.2997067, -48.5931324);
-        public string FeedLanguageCode => "pt-br";
+        public string FeedLanguageCode => "pt";
     }
 }
