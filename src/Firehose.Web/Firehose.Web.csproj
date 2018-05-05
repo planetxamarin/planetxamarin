@@ -195,10 +195,12 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <None Include="Authors\CorradoCavalli.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
     <Compile Include="Authors\JasonDeBoever.cs" />
+    <Compile Include="Authors\JeffersonBalivo.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
     <Compile Include="Authors\JesusAngulo.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
@@ -207,6 +209,7 @@
     <Compile Include="Authors\MartinZikmund.cs" />
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
+    <None Include="Authors\PieterNijs.cs" />
     <Compile Include="Authors\SebastianJensen.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
@@ -229,6 +232,7 @@
     <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\ReactiveUI.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
+    <Compile Include="Authors\MarcosSantos.cs" />
     <Compile Include="Authors\PieterNijs.cs" />
     <Compile Include="Authors\TheXamarinPodcast.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
