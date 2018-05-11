@@ -7,7 +7,7 @@ namespace Firehose.Web.Authors
 	public class EsmerlinMoya : IAmACommunityMember
     {
 		public string FirstName => "Esmerlin";
-        public string LastName => "Rosario Moya";
+        public string LastName  => "Rosario Moya";
 		public string StateOrRegion => "Dominican Republic";
 		public string EmailAddress => "esmerlinmoya@gmail.com";
 		public string ShortBioOrTagLine => "Software and Mobile Developer";
@@ -15,7 +15,6 @@ namespace Firehose.Web.Authors
 		public string TwitterHandle => "merlin1827";
 		public string GitHubHandle => "esmerlinmoya";
 		public string GravatarHash => "7a6f9f3adcdd5eb3737bce3e52719997";
-
 		public Uri WebSite => new Uri("https://medium.com/@esmerlinmoya");
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://medium.com/feed/@esmerlinmoya"); } }
 		public string FeedLanguageCode => "en";
