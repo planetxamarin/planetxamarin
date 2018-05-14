@@ -13,8 +13,8 @@ namespace Firehose.Web.Authors
         public string EmailAddress => "esmerlinmoya@gmail.com";
         public string TwitterHandle => "merlin1827";
         public string GitHubHandle => "esmerlinmoya";
-		public string GravatarHash => "7a6f9f3adcdd5eb3737bce3e52719997";
-		public GeoPosition Position => new GeoPosition(18.503112, -69.889555);
+        public string GravatarHash => "0f726e3531d5fdbb045dd788a24ec37d";
+        public GeoPosition Position => new GeoPosition(18.503112, -69.889555);
         public Uri WebSite => new Uri("https://medium.com/@esmerlinmoya/");
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://medium.com/feed/@esmerlinmoya"); } }
         public string FeedLanguageCode => "en";
