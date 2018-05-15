@@ -222,7 +222,6 @@
     <Compile Include="Authors\CarelLotz.cs" />
     <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
-    <Compile Include="Authors\CorradoCavalli.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
@@ -230,7 +229,6 @@
     <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\ReactiveUI.cs" />
     <Compile Include="Authors\GlennStephens.cs" />
-    <Compile Include="Authors\MarcosSantos.cs" />
     <Compile Include="Authors\PieterNijs.cs" />
     <Compile Include="Authors\TheXamarinPodcast.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
