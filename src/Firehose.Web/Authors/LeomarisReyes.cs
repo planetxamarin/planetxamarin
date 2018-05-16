@@ -29,7 +29,7 @@ namespace Firehose.Web.Authors
             get { yield return new Uri("https://askxammy.com/rss"); }
         }
 
-		public GeoPosition Position => new GeoPosition(18.472313, -69.915376);
+		public GeoPosition Position => new GeoPosition(18.472209, -69.915665);
 
         public string FeedLanguageCode => "en";
     }
