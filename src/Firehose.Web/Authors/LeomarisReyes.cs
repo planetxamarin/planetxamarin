@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string ShortBioOrTagLine => ".NET Developer";
 
-        public Uri WebSite => new Uri("http://askxammy.com");
+        public Uri WebSite => new Uri("https://askxammy.com");
 
         public string TwitterHandle => "LeomarisReyes11";
 
@@ -26,10 +26,10 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("http://askxammy.com/rss"); }
+            get { yield return new Uri("https://askxammy.com/rss"); }
         }
 
-        public GeoPosition Position => new GeoPosition(18.507153, -69.889454);
+		public GeoPosition Position => new GeoPosition(18.472313, -69.915376);
 
         public string FeedLanguageCode => "en";
     }
