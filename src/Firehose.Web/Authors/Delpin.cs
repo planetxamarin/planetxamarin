@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class Suthahar : IAmACommunityMember
+    public class Delpin : IAmACommunityMember
     {
         public string FirstName => "Delpin";
         public string LastName => "Susai Raj";
