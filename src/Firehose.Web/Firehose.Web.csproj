@@ -250,7 +250,7 @@
     <Compile Include="Authors\ThomasBandt.cs" />
     <Compile Include="Authors\TimotheLariviere.cs" />
     <Compile Include="Authors\MFractor.cs" />
-    <Compile Include="Authors\TomSoderling.cs" />
+    <None Include="Authors\TomSoderling.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
     <Compile Include="Authors\KerryLothrop.cs" />
     <Compile Include="Authors\RobinManuelThiel.cs" />
