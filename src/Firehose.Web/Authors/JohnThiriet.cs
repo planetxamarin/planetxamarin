@@ -19,9 +19,9 @@ namespace Firehose.Web.Authors
         }
 
         public string TwitterHandle => "johnthiriet";
-		public string GravatarHash => "ed92222c19a155a929d9f2c12d39c3f4";
+	public string GravatarHash => "ed92222c19a155a929d9f2c12d39c3f4";
         public string GitHubHandle => "johnthiriet";
-		public GeoPosition Position => new GeoPosition(48.875485, 2.311039);
+	public GeoPosition Position => new GeoPosition(48.875485, 2.311039);
         public string FeedLanguageCode => "en";
     }
 }
