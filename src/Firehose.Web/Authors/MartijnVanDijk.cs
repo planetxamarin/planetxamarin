@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
         public string LastName => "van Dijk";
 		public string StateOrRegion => "Amsterdam, Netherlands";
 		public string EmailAddress => "mhvdijk@gmail.com";
-        public string ShortBioOrTagLine => "is working at Baseflow.com on Apps and MvvmCross. Microsoft & Xamarin MVP!";
+        public string ShortBioOrTagLine => "is working at Baseflow.com on Apps and MvvmCross";
 		public Uri WebSite => new Uri("https://medium.com/@martijn00");
 
         public IEnumerable<Uri> FeedUris
