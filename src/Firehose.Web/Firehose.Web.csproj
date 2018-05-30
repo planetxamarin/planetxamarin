@@ -288,7 +288,6 @@
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
-    <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
