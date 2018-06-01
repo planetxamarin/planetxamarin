@@ -289,6 +289,7 @@
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
+    <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
@@ -322,9 +323,6 @@
     <Compile Include="Authors\VicenteGuzman.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />
     <Compile Include="Authors\EvgenyZborovsky.cs" />
-    <Compile Include="Authors\MarcioCampos.cs" />
-    <Compile Include="Authors\LeonardoCarmonio.cs" />
-    <Compile Include="Authors\DayaneLima.cs" />
     <Compile Include="Authors\LuisBeltran.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Authors\HussainAbbasi.cs" />
