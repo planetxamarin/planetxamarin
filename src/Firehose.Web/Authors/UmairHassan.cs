@@ -9,7 +9,7 @@ public class UmairHassan : IAmACommunityMember
     public string GravatarHash => "ecc4a16874f8078faf13bb6b8e0c90db";
     public string GitHubHandle => "umair03";
     public GeoPosition Position => new GeoPosition(31.582045, 74.329376);
-    public Uri WebSite => new Uri("http://xamarinweb.com/");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://xamarinweb.com/blog/feed"); } }
+    public Uri WebSite => new Uri("https://xamarinweb.com/");
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://xamarinweb.com/blog/feed"); } }
     public FeedLanguageCode => "en";
 }
