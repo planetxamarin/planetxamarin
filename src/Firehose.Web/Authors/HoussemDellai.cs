@@ -11,5 +11,5 @@ public class HoussemDellai : IAmACommunityMember
     public GeoPosition Position => new GeoPosition(36.8188, 10.166);
     public Uri WebSite => new Uri("https://www.youtube.com/HoussemDellai");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.youtube.com/feeds/videos.xml?channel_id=UCCYR9GpcE3skVnyMU8Wx1kQ"); } }
-    public FeedLanguageCode => "en";
+    public string FeedLanguageCode => "en";
 }
