@@ -1,3 +1,9 @@
+using System;
+using System.Collections.Generic;
+using Firehose.Web.Infrastructure;
+
+namespace Firehose.Web.Authors
+{
 public class HoussemDellai : IAmACommunityMember
 {
     public string FirstName => "Houssem";
@@ -12,4 +18,5 @@ public class HoussemDellai : IAmACommunityMember
     public Uri WebSite => new Uri("https://www.youtube.com/HoussemDellai");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.youtube.com/feeds/videos.xml?channel_id=UCCYR9GpcE3skVnyMU8Wx1kQ"); } }
     public string FeedLanguageCode => "en";
+}
 }
