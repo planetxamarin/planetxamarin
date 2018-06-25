@@ -276,6 +276,7 @@
     <Compile Include="Infrastructure\IFilterMyBlogPosts.cs" />
     <Compile Include="Extensions\Md5HashingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Authors\HoussemDellai.cs" />
     <Compile Include="Authors\JimBennett.cs" />
     <Compile Include="Authors\MarcoKuiper.cs" />
     <Compile Include="Authors\MartijnVanDijk.cs" />
