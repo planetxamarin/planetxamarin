@@ -201,14 +201,12 @@
     <Compile Include="Authors\JasonDeBoever.cs" />
     <Compile Include="Authors\JeffersonBalivo.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
-    <Compile Include="Authors\JesusAngulo.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
     <Compile Include="Authors\MahmoudAli.cs" />
     <Compile Include="Authors\MarkAllibone.cs" />
     <Compile Include="Authors\MartinZikmund.cs" />
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
-    <Compile Include="Authors\SebastianJensen.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
