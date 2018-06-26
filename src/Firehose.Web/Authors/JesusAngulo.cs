@@ -22,7 +22,7 @@ namespace Firehose.Web.Authors
             {
                 return new Uri[]{
                     new Uri("https://somostechies.com/rss/"),
-                    new Uri("https://www.youtube.com/channel/UCnqaA_ArZIT0nytKMAiurzw")
+                    new Uri("https://www.youtube.com/feeds/videos.xml?channel_id=UCnqaA_ArZIT0nytKMAiurzw")
                 };
             }
         }
