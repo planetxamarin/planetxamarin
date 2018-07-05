@@ -12,6 +12,7 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "Italia";
         public string EmailAddress => "g.tucci@informaticapressapochista.com";
         public string ShortBioOrTagLine => "L'IT come non l'avete mai letta";
+        public string GravatarHash => "26850a95739983a8280262b0044fe3e5";
         
         public IEnumerable<Uri> FeedUris
         {
