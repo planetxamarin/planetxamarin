@@ -77,7 +77,7 @@ namespace UnitTest
             var authors = GetAuthors();
 
             // using MemberData for this test is slow. Intentionally using Task.WhenAll here!
-            return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed));
+            return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed).Select(t => _policy.ExecuteAsync(() => t)));
         }
 
         async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
