@@ -124,6 +124,7 @@ namespace UnitTest
         public void Author_Has_Website(IAmACommunityMember author)
         {
             Assert.NotNull(author.WebSite);
+            Assert.True(author.WebSite.IsWellFormedOriginalString());
         }
 
         [Theory]
