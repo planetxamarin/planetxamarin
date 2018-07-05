@@ -258,6 +258,7 @@
     <Compile Include="Authors\WilsonVargas.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="Authors\MarcoSiccardi.cs" />
+    <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
