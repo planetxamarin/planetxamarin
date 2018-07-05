@@ -6,12 +6,13 @@ namespace Firehose.Web.Authors
 {
     public class GiampaoloTucci : IAmACommunityMember, IAmAPodcast
     {
+        public Uri WebSite => new Uri("https:/www.informaticapressapochista.com/it");
         public string FirstName => "Giampaolo";
         public string LastName => "Tucci";
         public string StateOrRegion => "Italia";
         public string EmailAddress => "g.tucci@informaticapressapochista.com";
         public string ShortBioOrTagLine => "L'IT come non l'avete mai letta";
-        public Uri WebSite => new Uri("https:/www.informaticapressapochista.com/it");
+        
 
         public IEnumerable<Uri> FeedUris
         {
