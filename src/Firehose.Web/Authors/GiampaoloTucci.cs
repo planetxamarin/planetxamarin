@@ -18,7 +18,14 @@ namespace Firehose.Web.Authors
         {
             get { yield return new Uri("https://www.informaticapressapochista.com/it/?format=feed&type=rss"); }
         }
-
+        
+        public bool Filter(SyndicationItem item)
+        {    
+            if ((item.Links?.Any(c => c.Uri.ToString().ToLowerInvariant().Equals("xamarin")) ?? false))
+                return false;
+            
+            return item.ApplyDefaultFilter();
+        }
         public string TwitterHandle => "GiampaoloTUCCI";
         public string GitHubHandle => string.Empty;
         public GeoPosition Position => new GeoPosition(44.40138,8.93419);
