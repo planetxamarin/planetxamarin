@@ -157,14 +157,22 @@ namespace Firehose.Web.Infrastructure
                         var feed = SyndicationFeed.Load(xmlReader);
                         var filteredItems = feed.Items
                             .Where(item => WrappedFilter(item, filter))
-                            .Where(item => item.LastUpdatedTime.UtcDateTime <= DateTimeOffset.UtcNow && item.PublishDate.UtcDateTime <= DateTimeOffset.UtcNow)
+                            .Where(item =>
+                                item.LastUpdatedTime.UtcDateTime <= DateTimeOffset.UtcNow &&
+                                item.PublishDate.UtcDateTime <= DateTimeOffset.UtcNow)
                             .ToArray();
 
-                        var itemsField = feed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
+                        var itemsField = feed.GetType()
+                            .GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
                         itemsField?.SetValue(feed, filteredItems);
                         return feed;
                     }
                 }
+            }
+            catch (HttpRequestException hex)
+            {
+                throw new RemoteSyndicationFeedFailedException("Loading remote syndication feed failed", hex)
+                    .WithData("FeedUri", feedUri);
             }
             catch (WebException ex)
             {
