@@ -317,7 +317,6 @@
     <Compile Include="Authors\MarkoLazic.cs" />
     <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
-    <Compile Include="Authors\SaturninoPimentel.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\VicenteGuzman.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />
