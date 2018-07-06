@@ -208,6 +208,7 @@
     <Compile Include="Authors\MartinZikmund.cs" />
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
+    <Compile Include="Authors\SebastianJensen.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
@@ -306,7 +307,6 @@
     <Compile Include="Authors\AlessandroCaliaro.cs" />
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\MarioGalvan.cs" />
-    <Compile Include="Authors\ChrisRiesgo.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
     <Compile Include="Authors\JunianTriajianto.cs" />
     <Compile Include="Authors\RamonEsteban.cs" />
@@ -319,7 +319,6 @@
     <Compile Include="Authors\MarkoLazic.cs" />
     <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
-    <Compile Include="Authors\SaturninoPimentel.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
     <Compile Include="Authors\VicenteGuzman.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />

@@ -14,7 +14,7 @@ namespace UnitTest
 {
     public class AuthorsTest
     {
-        static string[] _interfaceNames =
+        private static string[] _interfaceNames =
         {
             nameof(IAmACommunityMember),
             nameof(IWorkAtXamarinOrMicrosoft),
@@ -25,9 +25,9 @@ namespace UnitTest
             nameof(IAmAFrameworkForXamarin)
         };
 
-        readonly ITestOutputHelper _output;
+        private readonly ITestOutputHelper _output;
 
-        Policy _policy = Policy.Handle<WebException>(
+        private Policy _policy = Policy.Handle<WebException>(
             ex => !ex.Message.Contains("Could not create SSL/TLS secure channel"))
             .WaitAndRetryAsync(3, retryAttempt =>
                 TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
@@ -77,7 +77,7 @@ namespace UnitTest
             var authors = GetAuthors();
 
             // using MemberData for this test is slow. Intentionally using Task.WhenAll here!
-            return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed));
+            return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed).Select(t => _policy.ExecuteAsync(() => t)));
         }
 
         async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
@@ -87,7 +87,7 @@ namespace UnitTest
                 foreach (var feedUri in author.FeedUris)
                     Assert.Equal("https", feedUri.Scheme);
 
-                var authors = new IAmACommunityMember[] { author };
+                var authors = new [] { author };
                 var feedSource = new CombinedFeedSource(authors);
                 var allFeeds = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
 
@@ -95,7 +95,7 @@ namespace UnitTest
 
                 var allItems = allFeeds.SelectMany(f => f?.Feed?.Items).Where(i => i != null).ToList();
 
-                Assert.True(allItems?.Count() > 0);
+                Assert.True(allItems?.Count > 0);
             }
             catch (Exception)
             {
@@ -124,6 +124,7 @@ namespace UnitTest
         public void Author_Has_Website(IAmACommunityMember author)
         {
             Assert.NotNull(author.WebSite);
+            Assert.True(author.WebSite.IsWellFormedOriginalString());
         }
 
         [Theory]
@@ -145,7 +146,6 @@ namespace UnitTest
         private static IEnumerable<IAmACommunityMember> GetAuthors()
         {
             var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
-            var cultureNames = CultureInfo.GetCultures(CultureTypes.NeutralCultures).Select(c => c.Name);
 
             var types = assembly.GetTypes();
             var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
