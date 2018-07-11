@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Firehose.Web.Infrastructure;
+using System;
 using System.Collections.Generic;
-using System.ServiceModel.Syndication;
-using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    
-    public class SaturninoPimentel : IAmAMicrosoftMVP, IFilterMyBlogPosts
+    public class SaturninoPimentel : IAmAMicrosoftMVP
     {
         public string FirstName => "Saturnino";
         public string LastName => "Pimentel";
@@ -25,10 +23,5 @@ namespace Firehose.Web.Authors
 
         public GeoPosition Position => new GeoPosition(19.432608, -99.133209);
         public string FeedLanguageCode => "es";
-
-        public bool Filter(SyndicationItem item)
-        {
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin");
-        }
     }
 }
