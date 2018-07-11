@@ -313,7 +313,6 @@
     <Compile Include="Authors\JesseLiberty.cs" />
     <Compile Include="Authors\RendyDelRosario.cs" />
     <Compile Include="Authors\JoeMeyer.cs" />
-    <Compile Include="Authors\MarkoLazic.cs" />
     <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
