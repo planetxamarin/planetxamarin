@@ -239,7 +239,6 @@
     <None Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
-    <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
@@ -307,7 +306,6 @@
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\MarioGalvan.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
-    <Compile Include="Authors\JunianTriajianto.cs" />
     <Compile Include="Authors\RamonEsteban.cs" />
     <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
