@@ -27,13 +27,11 @@ namespace Firehose.Web.Authors
         {
             if ((item.Links?.Any(c => c.Uri.ToString().ToLowerInvariant().Contains("xamarin")) ?? false))
                 return true;
-
             return item.ApplyDefaultFilter();
         }
 
-
         public string TwitterHandle => "GiampaoloTUCCI";
-        public string GitHubHandle => string.Empty;
+        public string GitHubHandle => "gptucci";
         public GeoPosition Position => new GeoPosition(44.40138, 8.93419);
         public string FeedLanguageCode => "it";
     }
