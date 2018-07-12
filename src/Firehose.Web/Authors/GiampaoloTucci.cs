@@ -8,7 +8,7 @@ using Firehose.Web.Extensions;
 
 namespace Firehose.Web.Authors
 {
-    public class GiampaoloTucci : IAmACommunityMember, IFilterMyBlogPosts
+    public class GiampaoloTucci : IAmACommunityMember
     {
         public Uri WebSite => new Uri("https://www.informaticapressapochista.com/it");
         public string FirstName => "Giampaolo";
@@ -21,13 +21,6 @@ namespace Firehose.Web.Authors
         public IEnumerable<Uri> FeedUris
         {
             get { yield return new Uri("https://www.informaticapressapochista.com/it/?format=feed&type=rss"); }
-        }
-
-        public bool Filter(SyndicationItem item)
-        {
-            if ((item.Links?.Any(c => c.Uri.ToString().ToLowerInvariant().Contains("xamarin")) ?? false))
-                return true;
-            return item.ApplyDefaultFilter();
         }
 
         public string TwitterHandle => "GiampaoloTUCCI";
