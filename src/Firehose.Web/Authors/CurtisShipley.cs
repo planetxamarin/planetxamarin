@@ -23,7 +23,7 @@ namespace Firehose.Web.Authors
         public string TwitterHandle => "CurtisShipley3";
         public string GravatarHash => "cbeaeab922ba29556c6235aeebc9e6f4";
         public string GitHubHandle => "curtisshipley";
-        public GeoPosition Position => new GeoPosition(-122.676482, 45.523062);
+        public GeoPosition Position => new GeoPosition(45.5190048, -122.6739562);
 
         public string FeedLanguageCode => "en";
     }
