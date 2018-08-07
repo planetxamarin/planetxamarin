@@ -306,7 +306,6 @@
     <None Include="Authors\SebastianSeidel.cs" />
     <Compile Include="Authors\AlessandroCaliaro.cs" />
     <Compile Include="Authors\JonPeppers.cs" />
-    <Compile Include="Authors\MarioGalvan.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
     <Compile Include="Authors\RamonEsteban.cs" />
     <Compile Include="Authors\TimKlingeleers.cs" />
