@@ -4,11 +4,11 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class DevlinDuldulao : IAmACommunityMember
+    public class DevlinDuldulao : IAmACommunityMember, IAmAMicrosoftMVP
     {
         public string FirstName => "Devlin";
         public string LastName => "Duldulao";
-        public string ShortBioOrTagLine => "Xamarin certified, a trainer, a speaker";
+        public string ShortBioOrTagLine => "is a Microsoft MVP, MCSD, MCT, Xamarin Certified Mobile Developer, and a travel junkie.";
         public string StateOrRegion => "Manila";
         public string EmailAddress => "webmasterdevlin@gmail.com";
         public string TwitterHandle => "DevlinDuldulao";
