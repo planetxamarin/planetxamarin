@@ -195,6 +195,7 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Authors\CurtisShipley.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
@@ -239,7 +240,6 @@
     <None Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
-    <Compile Include="Authors\SRaviKumar.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
@@ -260,6 +260,7 @@
     <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="Authors\UmairHassan.cs" />
     <Compile Include="Authors\MarcoSiccardi.cs" />
+    <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -306,9 +307,7 @@
     <None Include="Authors\SebastianSeidel.cs" />
     <Compile Include="Authors\AlessandroCaliaro.cs" />
     <Compile Include="Authors\JonPeppers.cs" />
-    <Compile Include="Authors\MarioGalvan.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
-    <Compile Include="Authors\JunianTriajianto.cs" />
     <Compile Include="Authors\RamonEsteban.cs" />
     <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
@@ -316,7 +315,6 @@
     <Compile Include="Authors\JesseLiberty.cs" />
     <Compile Include="Authors\RendyDelRosario.cs" />
     <Compile Include="Authors\JoeMeyer.cs" />
-    <Compile Include="Authors\MarkoLazic.cs" />
     <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
