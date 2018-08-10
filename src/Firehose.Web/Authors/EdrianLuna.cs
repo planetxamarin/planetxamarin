@@ -23,7 +23,7 @@ namespace Firehose.Web.Authors
         }
 
         public string GitHubHandle => "manaslootbuyer";
-
+        public string GravatarHash = "1cf7c6a73bcda2c63922a0e3c251b4c3";
         public GeoPosition Position => new GeoPosition(14.5995120, 120.9842200);
 
         public string FeedLanguageCode => "en";
