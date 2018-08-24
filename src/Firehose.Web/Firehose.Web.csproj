@@ -258,6 +258,7 @@
     <Compile Include="Authors\WinstonGubantes.cs" />
     <Compile Include="Authors\WilsonVargas.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
+    <Compile Include="Authors\UmairHassan.cs" />
     <Compile Include="Authors\MarcoSiccardi.cs" />
     <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
