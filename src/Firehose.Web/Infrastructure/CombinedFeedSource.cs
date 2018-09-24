@@ -24,7 +24,6 @@ namespace Firehose.Web.Infrastructure
 {
     public class CombinedFeedSource
     {
-        private static readonly HttpClient HttpClient = new HttpClient();
         private readonly Lazy<Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>> _combinedFeedSource;
 
         public CombinedFeedSource(IAmACommunityMember[] bloggers)
@@ -34,9 +33,15 @@ namespace Firehose.Web.Infrastructure
             _combinedFeedSource = new Lazy<Cached<Dictionary<string, IEnumerable<ISyndicationFeedSource>>>>(() => cached, LazyThreadSafetyMode.PublicationOnly);
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+        }
 
-            HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
-            HttpClient.Timeout = TimeSpan.FromMinutes(1);
+        private HttpClient GetHttpClient()
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
+            httpClient.Timeout = TimeSpan.FromMinutes(1);
+
+            return httpClient;
         }
 
         public SyndicationFeed Feed => GetFeed(null);
@@ -75,26 +80,28 @@ namespace Firehose.Web.Infrastructure
 
         private Dictionary<string, IEnumerable<ISyndicationFeedSource>> LoadFeeds()
         {
-            var feedTasks = Bloggers.SelectMany(b => b.FeedUris, TryLoadFeedAsync);
+            var feedTasks = Bloggers.DistinctByCollection(b => b.FeedUris).SelectMany(b => b.FeedUris, TryLoadFeedAsync);
             var feedSources = Task.WhenAll(feedTasks).GetAwaiter().GetResult().NotNull();
             var groupedFeeds = feedSources.GroupBy(feed => feed.Feed.Language).ToDictionary(g => g.Key, g => g.AsEnumerable());
 
             return groupedFeeds;
         }
 
+        internal Task<ISyndicationFeedSource[]> LoadAllFeedsAsync(IEnumerable<IAmACommunityMember> tamarins)
+        {
+            var feedTasks = tamarins.SelectMany(b => b.FeedUris, TryLoadFeedAsync);
+            return Task.WhenAll(feedTasks);
+        }
+
         private async Task<ISyndicationFeedSource> TryLoadFeedAsync(IAmACommunityMember tamarin, Uri uri)
         {
             try
             {
-                var iFilterMyBlogPosts = tamarin as IFilterMyBlogPosts;
-
-                var filter = iFilterMyBlogPosts != null
-                    ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
-                    : (si => si.ApplyDefaultFilter());
-
                 var feedSource = new DummyRemoteSyndicationFeedSource();
 
-                var feed = await FetchAsync(uri, filter).ConfigureAwait(false);
+                var filter = GetFilterFunction(tamarin);
+                var client = GetHttpClient();
+                var feed = await FetchAsync(client, uri, filter).ConfigureAwait(false);
                 feed.Language = CultureInfo.CreateSpecificCulture(tamarin.FeedLanguageCode).Name;
                 feedSource.Feed = feed;
 
@@ -107,6 +114,17 @@ namespace Firehose.Web.Infrastructure
                 // Not my problem if your feed asplodes but we at least won't crash the app for all the other nice people :)
                 return null;
             }
+        }
+
+        internal static Func<SyndicationItem, bool> GetFilterFunction(IAmACommunityMember tamarin)
+        {
+            var iFilterMyBlogPosts = tamarin as IFilterMyBlogPosts;
+
+            var filter = iFilterMyBlogPosts != null
+                ? (Func<SyndicationItem, bool>)iFilterMyBlogPosts.Filter
+                : (si => si.ApplyDefaultFilter());
+
+            return filter;
         }
 
         private static bool WrappedFilter(SyndicationItem item, Func<SyndicationItem, bool> filterFunc)
@@ -124,12 +142,12 @@ namespace Firehose.Web.Infrastructure
             }
         }
 
-        public async Task<SyndicationFeed> FetchAsync(Uri feedUri, Func<SyndicationItem, bool> filter)
+        internal static async Task<SyndicationFeed> FetchAsync(HttpClient client, Uri feedUri, Func<SyndicationItem, bool> filter)
         {
             HttpResponseMessage response;
             try
             {
-                response = await HttpClient.GetAsync(feedUri).ConfigureAwait(false);
+                response = await client.GetAsync(feedUri).ConfigureAwait(false);
                 if (response.IsSuccessStatusCode)
                 {
                     using (var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
@@ -139,14 +157,22 @@ namespace Firehose.Web.Infrastructure
                         var feed = SyndicationFeed.Load(xmlReader);
                         var filteredItems = feed.Items
                             .Where(item => WrappedFilter(item, filter))
-                            .Where(item => item.LastUpdatedTime.UtcDateTime <= DateTimeOffset.UtcNow && item.PublishDate.UtcDateTime <= DateTimeOffset.UtcNow)
+                            .Where(item =>
+                                item.LastUpdatedTime.UtcDateTime <= DateTimeOffset.UtcNow &&
+                                item.PublishDate.UtcDateTime <= DateTimeOffset.UtcNow)
                             .ToArray();
 
-                        var itemsField = feed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
+                        var itemsField = feed.GetType()
+                            .GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
                         itemsField?.SetValue(feed, filteredItems);
                         return feed;
                     }
                 }
+            }
+            catch (HttpRequestException hex)
+            {
+                throw new RemoteSyndicationFeedFailedException("Loading remote syndication feed failed", hex)
+                    .WithData("FeedUri", feedUri);
             }
             catch (WebException ex)
             {

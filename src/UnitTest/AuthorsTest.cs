@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
@@ -15,7 +14,7 @@ namespace UnitTest
 {
     public class AuthorsTest
     {
-        string[] _interfaceNames =
+        private static string[] _interfaceNames =
         {
             nameof(IAmACommunityMember),
             nameof(IWorkAtXamarinOrMicrosoft),
@@ -26,13 +25,12 @@ namespace UnitTest
             nameof(IAmAFrameworkForXamarin)
         };
 
-        readonly ITestOutputHelper _output;
+        private readonly ITestOutputHelper _output;
 
-        Policy _policy = Policy.Handle<WebException>(
+        private Policy _policy = Policy.Handle<WebException>(
             ex => !ex.Message.Contains("Could not create SSL/TLS secure channel"))
             .WaitAndRetryAsync(3, retryAttempt =>
                 TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
-        static HttpClient _httpClient = new HttpClient();
 
         public AuthorsTest(ITestOutputHelper output)
         {
@@ -74,58 +72,89 @@ namespace UnitTest
         }
 
         [Fact]
-        public async Task All_Authors_Have_Secure_Feed()
+        public Task All_Authors_Have_Secure_And_Parsable_Feed()
         {
-            var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
+            var authors = GetAuthors();
 
-            var types = assembly.GetTypes();
-            var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
-                !_interfaceNames.Contains(t.Name)).ToArray();
-
-            var hitFeedTasks = new List<Task>();
-            foreach(var authorType in authorTypes)
-            {
-                var author = (IAmACommunityMember)Activator.CreateInstance(authorType);
-                foreach(var feed in author.FeedUris)
-                {
-                    Assert.Equal("https", feed.Scheme);
-
-                    // hit the url to see if it responds!
-                    hitFeedTasks.Add(HitFeedAsync(feed));
-                }
-            }
-
-            await Task.WhenAll(hitFeedTasks).ConfigureAwait(false);
+            // using MemberData for this test is slow. Intentionally using Task.WhenAll here!
+            return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed).Select(t => _policy.ExecuteAsync(() => t)));
         }
 
-        private async Task HitFeedAsync(Uri feedUrl)
+        async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
         {
             try
             {
-                await _policy.ExecuteAsync(() => _httpClient.GetAsync(feedUrl))
-                    .ConfigureAwait(false);
+                foreach (var feedUri in author.FeedUris)
+                    Assert.Equal("https", feedUri.Scheme);
+
+                var authors = new [] { author };
+                var feedSource = new CombinedFeedSource(authors);
+                var allFeeds = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
+
+                Assert.NotNull(allFeeds);
+
+                var allItems = allFeeds.SelectMany(f => f?.Feed?.Items).Where(i => i != null).ToList();
+
+                Assert.True(allItems?.Count > 0);
             }
-            catch
+            catch (Exception)
             {
-                _output.WriteLine($"{feedUrl} sucks...");
+                _output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");
+                throw;
             }
         }
 
-        [Fact]
-        public void All_Authors_Specified_Valid_LanguageCode()
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Specified_Valid_LanguageCode(IAmACommunityMember author)
+        {
+            var cultureNames = CultureInfo.GetCultures(CultureTypes.NeutralCultures).Select(c => c.Name);
+            Assert.Contains(author.FeedLanguageCode, cultureNames);
+        }
+
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Has_FirstName(IAmACommunityMember author)
+        {
+            Assert.NotEmpty(author.FirstName);
+        }
+
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Has_Website(IAmACommunityMember author)
+        {
+            Assert.NotNull(author.WebSite);
+            Assert.True(author.WebSite.IsWellFormedOriginalString());
+        }
+
+        [Theory]
+        [MemberData(nameof(GetAuthorTestData))]
+        public void Author_Has_Valid_Coordinates(IAmACommunityMember author)
+        {
+            if (author.Position == null)
+                return;
+
+            if (author.Position == GeoPosition.Empty)
+                return;
+
+            Assert.InRange(author.Position.Lat, -90.0, 90);
+            Assert.InRange(author.Position.Lng, -180.0, 180);
+        }
+
+        public static IEnumerable<object[]> GetAuthorTestData() => GetAuthors().Select(author => new object[] { author });
+
+        private static IEnumerable<IAmACommunityMember> GetAuthors()
         {
             var assembly = Assembly.GetAssembly(typeof(IAmACommunityMember));
-            var cultureNames = CultureInfo.GetCultures(CultureTypes.NeutralCultures).Select(c => c.Name);
 
             var types = assembly.GetTypes();
             var authorTypes = types.Where(t => typeof(IAmACommunityMember).IsAssignableFrom(t) &&
-                !_interfaceNames.Contains(t.Name)).ToArray();
+                !_interfaceNames.Contains(t.Name));
 
-            foreach (var authorType in authorTypes)
+            foreach(var authorType in authorTypes)
             {
                 var author = (IAmACommunityMember)Activator.CreateInstance(authorType);
-
-                Assert.Contains(author.FeedLanguageCode, cultureNames);
+                yield return author;
             }
         }
     }

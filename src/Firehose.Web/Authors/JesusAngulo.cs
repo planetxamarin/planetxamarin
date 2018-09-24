@@ -20,11 +20,14 @@ namespace Firehose.Web.Authors
         {
             get
             {
-                yield return new Uri("https://somostechies.com/rss/");
+                return new Uri[]{
+                    new Uri("https://somostechies.com/rss/"),
+                    new Uri("https://www.youtube.com/feeds/videos.xml?channel_id=UCnqaA_ArZIT0nytKMAiurzw")
+                };
             }
         }
 
-        public GeoPosition Position => new GeoPosition(-12.0896427,-77.0060778);
-        public string FeedLanguageCode => "en";
+        public GeoPosition Position => new GeoPosition(-12.0896427, -77.0060778);
+        public string FeedLanguageCode => "es";
     }
 }
