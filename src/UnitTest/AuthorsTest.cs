@@ -22,7 +22,8 @@ namespace UnitTest
             nameof(IAmAMicrosoftMVP),
             nameof(IAmAPodcast),
             nameof(IAmANewsletter),
-            nameof(IAmAFrameworkForXamarin)
+            nameof(IAmAFrameworkForXamarin),
+            nameof(IAmAYoutuber)
         };
 
         private readonly ITestOutputHelper _output;
