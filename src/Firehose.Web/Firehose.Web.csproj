@@ -285,6 +285,7 @@
     <Compile Include="Authors\MartijnVanDijk.cs" />
     <Compile Include="Authors\GregShackles.cs" />
     <Compile Include="Authors\ChrisWilliams.cs" />
+    <Compile Include="Authors\GeertVanDerCruijsen.cs" />
     <Compile Include="Authors\JamesMontemagno.cs" />
     <Compile Include="Authors\MergeConflict.cs" />
     <Compile Include="Authors\TheXamarinShow.cs" />
