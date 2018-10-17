@@ -204,6 +204,7 @@
     <Compile Include="Authors\JeromeGiacomini.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
     <Compile Include="Authors\JesusAngulo.cs" />
+    <Compile Include="Authors\JeanMarieAlfonsi.cs" />
     <Compile Include="Authors\MahmoudAli.cs" />
     <Compile Include="Authors\MarkAllibone.cs" />
     <Compile Include="Authors\MartinZikmund.cs" />
