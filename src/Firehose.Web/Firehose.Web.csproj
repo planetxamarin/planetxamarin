@@ -330,6 +330,7 @@
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Authors\HussainAbbasi.cs" />
     <Compile Include="Authors\JohnThiriet.cs" />
+    <Compile Include="Authors\Delpin.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
