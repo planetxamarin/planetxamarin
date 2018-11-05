@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class LuisMatos : IAmACommunityMember
+    public class LuisMatos : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "Luis";
         public string LastName => "Matos";
@@ -17,7 +19,11 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://www.luismts.com/feed/"); }
+            get
+            {
+                yield return new Uri("https://www.luismts.com/feed/");
+                yield return new Uri("https://www.luismts.com/es/feed/");
+            }
         }
 
         public string GitHubHandle => "luismts";
@@ -25,5 +31,11 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(18.4900563, -69.8962411);
 
         public string FeedLanguageCode => "en";
+
+        public bool Filter(SyndicationItem item)
+        {
+            // This filters out only the posts that have the "xamarin" category
+            return item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
+        }
     }
 }
