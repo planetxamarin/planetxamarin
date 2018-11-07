@@ -22,7 +22,7 @@ namespace Firehose.Web.Authors
             get
             {
                 yield return new Uri("https://www.luismts.com/feed/");
-                yield return new Uri("https://www.luismts.com/es/feed/");
+                //yield return new Uri("https://www.luismts.com/es/feed/");
             }
         }
 
