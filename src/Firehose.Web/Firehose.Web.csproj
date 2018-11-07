@@ -204,6 +204,7 @@
     <Compile Include="Authors\JeromeGiacomini.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
     <Compile Include="Authors\JesusAngulo.cs" />
+    <Compile Include="Authors\JeanMarieAlfonsi.cs" />
     <Compile Include="Authors\MahmoudAli.cs" />
     <Compile Include="Authors\MarkAllibone.cs" />
     <Compile Include="Authors\MartinZikmund.cs" />
@@ -292,7 +293,6 @@
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
     <Compile Include="Authors\JonDick.cs" />
-    <Compile Include="Authors\JohnMiller.cs" />
     <Compile Include="Authors\MarcBruins.cs" />
     <Compile Include="Authors\ChrisHamons.cs" />
     <Compile Include="Authors\MichaelRidland.cs" />
@@ -325,6 +325,7 @@
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Authors\HussainAbbasi.cs" />
     <Compile Include="Authors\JohnThiriet.cs" />
+    <Compile Include="Authors\JacobDuijzer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
