@@ -289,7 +289,6 @@
     <Compile Include="Authors\GeertVanDerCruijsen.cs" />
     <Compile Include="Authors\LuisMatos.cs" />
     <Compile Include="Authors\JamesMontemagno.cs" />
-    <Compile Include="Authors\LuisMatos.cs" />
     <Compile Include="Authors\MergeConflict.cs" />
     <Compile Include="Authors\TheXamarinShow.cs" />
     <Compile Include="Authors\OfficialXamarinBlog.cs" />
