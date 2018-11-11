@@ -22,8 +22,7 @@ namespace Firehose.Web.Authors
             {
                return new List<Uri>()
                {
-                 new Uri("https://www.mfractor.com/blogs/news.atom"),
-                 new Uri("https://www.mfractor.com/blogs/learn.atom"),
+                 new Uri("https://www.mfractor.com/blogs/news.atom")
                };
             }
         }
