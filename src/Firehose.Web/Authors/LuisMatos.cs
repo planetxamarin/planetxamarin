@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class LuisMatos : IAmACommunityMember//, IFilterMyBlogPosts
+    public class LuisMatos : IAmACommunityMember
     {
         public string FirstName => "Luis";
         public string LastName => "Matos";
@@ -22,7 +22,6 @@ namespace Firehose.Web.Authors
             get
             {
                 yield return new Uri("https://www.luismts.com/feed/");
-                //yield return new Uri("https://www.luismts.com/es/feed/");
             }
         }
 
@@ -32,10 +31,5 @@ namespace Firehose.Web.Authors
 
         public string FeedLanguageCode => "en";
 
-        //public bool Filter(SyndicationItem item)
-        //{
-        //    // This filters out only the posts that have the "xamarin" category
-        //    return item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
-        //}
     }
 }
