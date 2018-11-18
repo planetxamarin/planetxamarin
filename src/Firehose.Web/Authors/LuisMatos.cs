@@ -19,17 +19,11 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get
-            {
-                yield return new Uri("https://www.luismts.com/feed/");
-            }
+            get { yield return new Uri("https://www.luismts.com/feed/"); }
         }
 
         public string GitHubHandle => "luismts";
-
         public GeoPosition Position => new GeoPosition(18.4900563, -69.8962411);
-
         public string FeedLanguageCode => "en";
-
     }
 }
