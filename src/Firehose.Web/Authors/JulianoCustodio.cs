@@ -7,7 +7,7 @@ namespace Firehose.Web.Authors
     public class JulianoCustodio : IAmAMicrosoftMVP
     {
         public string FirstName => "Juliano";
-        public string LastName => "Custóio";
+        public string LastName => "Custódio";
         public string StateOrRegion => "Piracicaba, Brasil";
         public string TwitterHandle => "JuuCustodio";
         public string GitHubHandle => "JuuCustodio";
