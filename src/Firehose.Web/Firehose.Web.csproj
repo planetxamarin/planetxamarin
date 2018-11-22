@@ -89,6 +89,7 @@
     <PackageReference Include="ThirdDrawer" Version="1.1.9.0" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Logo.png" />
     <Content Include="Content\css\site.min.css">
       <DependentUpon>site.css</DependentUpon>
     </Content>
