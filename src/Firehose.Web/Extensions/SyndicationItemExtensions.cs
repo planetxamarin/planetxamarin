@@ -7,6 +7,9 @@ namespace Firehose.Web.Extensions
     {
         public static bool ApplyDefaultFilter(this SyndicationItem item)
         {
+            if (item == null)
+                return false;
+
             var hasXamarinCategory = false;
             var hasXamarinKeywords = false;
 
