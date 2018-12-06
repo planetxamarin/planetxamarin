@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class JoeMeyer : IAmACommunityMember, IFilterMyBlogPosts
+    public class JoeMeyer : IAmACommunityMember
 	{
 		public string FirstName => "Joe";
 		public string LastName => "Meyer";
@@ -24,9 +22,6 @@ namespace Firehose.Web.Authors
 			get { yield return new Uri("https://iwritecodesometimes.net/feed/"); }
 		}
 
-
-		public bool Filter(SyndicationItem item) =>
-			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
 	}
 }

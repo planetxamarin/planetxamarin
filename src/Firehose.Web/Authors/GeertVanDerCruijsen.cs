@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
-
-	public class GeertVanDerCruijsen : IAmACommunityMember, IFilterMyBlogPosts
+    public class GeertVanDerCruijsen : IAmACommunityMember
 	{
 		public string FirstName => "Geert";
 		public string LastName => "van der Cruijsen";
 		public string EmailAddress => "";
 		public string TwitterHandle => "geertvdc";
 		public string GravatarHash => "ec02820495ff6d50e58dd027aa2b0ae3";
-
 		public string StateOrRegion => "Uden, Netherlands";
 		public Uri WebSite => new Uri("https://mobilefirstcloudfirst.net");
 		public string GitHubHandle => "geertvdc";
@@ -25,12 +21,7 @@ namespace Firehose.Web
             get { yield return new Uri("https://mobilefirstcloudfirst.net/feed"); }
         }
 
-        
         public GeoPosition Position => new GeoPosition(51.6631070, 5.6239230);
-
-
-		public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
     }
 }
