@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Marko";
         public string LastName => "Lazić";
-        public string ShortBioOrTagLine => "Software engineer, tech enthusiast, passionate traveler. 3 years of active development in Xamarin Forms";
+        public string ShortBioOrTagLine => "Software engineer, tech enthusiast, passionate traveler. 4+ years of active development in Xamarin.Forms";
         public string StateOrRegion => "Belgrade, Serbia";
         public string EmailAddress => "marko.lazic88@gmail.com";
         public string TwitterHandle => "markolazic88";
