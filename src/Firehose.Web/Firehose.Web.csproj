@@ -184,7 +184,7 @@
     <Content Include="Content\plugins\fontawesome\scss\_stacked.scss" />
     <Content Include="Content\plugins\fontawesome\scss\_variables.scss" />
     <Content Include="Content\css\variables.less" />
-    <None Include="Content\plugins\jquery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Content\plugins\jquery\jquery-3.1.1.intellisense.js" />
     <Content Include="Content\plugins\jquery\jquery-3.1.1.js" />
     <Content Include="Content\plugins\jquery\jquery-3.1.1.min.js" />
     <Content Include="Content\plugins\jquery\jquery-3.1.1.slim.js" />
@@ -238,7 +238,7 @@
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
-    <None Include="Authors\GeoffreyHuntley.cs" />
+    <Compile Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
@@ -304,7 +304,7 @@
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
-    <None Include="Authors\SebastianSeidel.cs" />
+    <Compile Include="Authors\SebastianSeidel.cs" />
     <Compile Include="Authors\AlessandroCaliaro.cs" />
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
