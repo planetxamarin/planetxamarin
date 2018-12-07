@@ -198,7 +198,6 @@
     <Compile Include="Authors\CurtisShipley.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
-    <Compile Include="Authors\DanielHindrikes.cs" />
     <Compile Include="Authors\JasonDeBoever.cs" />
     <Compile Include="Authors\JeffersonBalivo.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
@@ -238,7 +237,6 @@
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
-    <None Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
@@ -304,7 +302,6 @@
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
-    <None Include="Authors\SebastianSeidel.cs" />
     <Compile Include="Authors\AlessandroCaliaro.cs" />
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
