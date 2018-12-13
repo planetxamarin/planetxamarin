@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class LuisPujols : IAmACommunityMember, IFilterMyBlogPosts
+    public class LuisPujols : IAmACommunityMember
     {
         public string FirstName => "Luis";
         public string LastName => "Pujols";
@@ -24,13 +24,5 @@ namespace Firehose.Web.Authors
         }
         public GeoPosition Position => new GeoPosition(26.0203048, -80.115093);
         public string FeedLanguageCode => "en";
-
-        public bool Filter(SyndicationItem item)
-        {
-            // This filters out only the posts that have the "xamarin" word on
-            // their title or as a category
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin")
-            || item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
-        }
     }
 }
