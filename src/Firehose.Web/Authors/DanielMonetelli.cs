@@ -6,6 +6,7 @@ namespace Firehose.Web.Authors
 {
 	public class DanielMonetelli : IAmACommunityMember
 	{
+	
 		public string FirstName => "Daniel";
 
 		public string LastName => "Monetelli";
@@ -31,6 +32,7 @@ namespace Firehose.Web.Authors
 
 		public GeoPosition Position => new GeoPosition(-16.4042643 , -71.5486383);
 
-    public string FeedLanguageCode => "es";
+                public string FeedLanguageCode => "es";
+		
 	}
 }
