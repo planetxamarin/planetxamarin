@@ -12,7 +12,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Pujols";
         public string StateOrRegion => "United States";
         public string EmailAddress => "luispujolso@gmail.com";
-        public string ShortBioOrTagLine => "Luis Pujols is a Software Engineer with a passion for Mobile Development and Software Architecture. Co-organizer of the .NET Community in the Dominican Republic and a Xamarin Lover.";
+        public string ShortBioOrTagLine => "is a Software Engineer with a passion for Mobile Development and Software Architecture. Co-organizer of the .NET Community in the Dominican Republic and a Xamarin Lover.";
         public Uri WebSite => new Uri("https://www.pujolsluis.com/");
         public string TwitterHandle => "Pujolsluis1";
         public string GitHubHandle => "Pujolsluis";
