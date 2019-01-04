@@ -10,9 +10,9 @@ namespace Firehose.Web.Authors
 
 		public string LastName => "Monetelli";
 
-		public string ShortBioOrTagLine => "Daniel Monetelli is a Xamarin Mobile Developer, UI/UX Architect";
+		public string ShortBioOrTagLine => "is a Xamarin Mobile Developer, UI/UX Architect";
 
-		public string StateOrRegion => "Arequipa - Perú";
+		public string StateOrRegion => "Arequipa, Perú";
 
 		public string EmailAddress => "danielmonetelli@hotmail.com";
 
