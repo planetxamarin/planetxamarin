@@ -238,7 +238,6 @@
     <Compile Include="Authors\JavierSuarez.cs" />
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
-    <None Include="Authors\GeoffreyHuntley.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\NigelSampson.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
@@ -287,6 +286,7 @@
     <Compile Include="Authors\GregShackles.cs" />
     <Compile Include="Authors\ChrisWilliams.cs" />
     <Compile Include="Authors\GeertVanDerCruijsen.cs" />
+    <Compile Include="Authors\LuisMatos.cs" />
     <Compile Include="Authors\JamesMontemagno.cs" />
     <Compile Include="Authors\MergeConflict.cs" />
     <Compile Include="Authors\TheXamarinShow.cs" />
@@ -303,7 +303,6 @@
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
     <Compile Include="Authors\AlejandroRuiz.cs" />
-    <None Include="Authors\SebastianSeidel.cs" />
     <Compile Include="Authors\AlessandroCaliaro.cs" />
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
@@ -314,6 +313,7 @@
     <Compile Include="Authors\JesseLiberty.cs" />
     <Compile Include="Authors\RendyDelRosario.cs" />
     <Compile Include="Authors\JoeMeyer.cs" />
+    <Compile Include="Authors\MarkoLazic.cs" />
     <Compile Include="Authors\DevlinDuldulao.cs" />
     <Compile Include="Authors\WilliamBarbosa.cs" />
     <Compile Include="Authors\CharlinAgramonte.cs" />
@@ -325,6 +325,10 @@
     <Compile Include="Authors\HussainAbbasi.cs" />
     <Compile Include="Authors\JohnThiriet.cs" />
     <Compile Include="Authors\JacobDuijzer.cs" />
+    <Compile Include="Authors\Martz.cs" />
+    <Compile Include="Authors\LuisPujols.cs" />
+    <Compile Include="Authors\LeomarisReyes.cs" />
+    <Compile Include="Authors\DanielMonetelli.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
