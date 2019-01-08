@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Syndication;
 using System.Web;
 
 namespace Firehose.Web.Authors
 {
-    public class AnbuMani : IAmACommunityMember
+    public class AnbuMani : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "Anbu";
 
@@ -24,15 +25,23 @@ namespace Firehose.Web.Authors
 
         public Uri WebSite => new Uri("https://www.xmonkeys360.com/");
 
-        public GeoPosition Position => new GeoPosition(13.029217, 80.2082503); 
+        public GeoPosition Position => new GeoPosition(13.029217, 80.2082503);
 
-        public IEnumerable<Uri> FeedUris 
-        { 
+        public IEnumerable<Uri> FeedUris
+        {
             get { yield return new Uri("https://xmonkeys360.com/feed/"); }
 
-        } 
+        }
         public string GitHubHandle => "AnbuMani27";
 
         public string FeedLanguageCode => "en";
+
+        public bool Filter(SyndicationItem item)
+        {
+
+            return item.Title.Text.ToLowerInvariant().Contains("xamarin") && (item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false);
+
+        }
+
     }
 }
