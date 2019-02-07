@@ -298,7 +298,6 @@
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\MatthewLeibowitz.cs" />
     <Compile Include="Authors\MarkDeanilVicente.cs" />
-    <Compile Include="Authors\StefanDeVogelaere.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
