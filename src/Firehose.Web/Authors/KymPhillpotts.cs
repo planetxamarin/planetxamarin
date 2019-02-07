@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://kymphillpotts.com/rss/"); }
+            get { yield return new Uri("https://kymphillpotts.com/feed"); }
         }
 
         public string GitHubHandle => "kphillpotts";
