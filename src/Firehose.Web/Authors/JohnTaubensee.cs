@@ -6,7 +6,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class JohnTaubensee : IAmACommunityMember, IFilterMyBlogPosts
+    public class JohnTaubensee : IAmACommunityMember
     {
         public string FirstName => "John";
         public string LastName => "Taubensee";
@@ -25,12 +25,5 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "jtaubensee";
         public GeoPosition Position => new GeoPosition(41.8778143, -87.6349955);
         public string FeedLanguageCode => "en";
-
-        public bool Filter(SyndicationItem item)
-        {
-            // This filters out only the posts that have the "xamarin" category
-            // Not all blog posts have categories, please guard against this
-            return item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
-        }
     }
 }
