@@ -232,7 +232,6 @@
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\ReactiveUI.cs" />
-    <Compile Include="Authors\GlennStephens.cs" />
     <Compile Include="Authors\PieterNijs.cs" />
     <Compile Include="Authors\TheXamarinPodcast.cs" />
     <Compile Include="Authors\PeterFoot.cs" />
