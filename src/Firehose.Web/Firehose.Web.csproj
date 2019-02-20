@@ -305,7 +305,6 @@
     <Compile Include="Authors\JonPeppers.cs" />
     <Compile Include="Authors\BryanAnthonyGarcia.cs" />
     <Compile Include="Authors\RamonEsteban.cs" />
-    <Compile Include="Authors\TimKlingeleers.cs" />
     <Compile Include="Authors\AsfendYarHamid.cs" />
     <Compile Include="Authors\BasDeCort.cs" />
     <Compile Include="Authors\JesseLiberty.cs" />
