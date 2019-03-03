@@ -223,7 +223,6 @@
     <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\CarelLotz.cs" />
-    <Compile Include="Authors\AdamPatridge.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AdamPedley.cs" />
