@@ -23,7 +23,7 @@ namespace Firehose.Web.Authors
 
         public string GitHubHandle => "aritchie";
 
-        public string GravatarHash => "";
+        public string GravatarHash => "5f22bd04ca38ed4d0a5225d0825e0726";
 
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://allancritchie.net/xamarin.rss"); } }
 
