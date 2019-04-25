@@ -1,7 +1,13 @@
-﻿using BlogMonster.Configuration;
+﻿using BlogMonster;
+using BlogMonster.Configuration;
+using BlogMonster.Infrastructure;
 using BlogMonster.Infrastructure.SyndicationFeedSources;
+using BlogMonster.Infrastructure.SyndicationFeedSources.Remote;
+using Firehose.Web.Extensions;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,13 +18,7 @@ using System.ServiceModel.Syndication;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
-using BlogMonster;
-using BlogMonster.Infrastructure;
-using BlogMonster.Infrastructure.SyndicationFeedSources.Remote;
 using ThirdDrawer.Extensions.CollectionExtensionMethods;
-using Firehose.Web.Extensions;
-using System.Globalization;
-using System.Collections.Generic;
 
 namespace Firehose.Web.Infrastructure
 {
@@ -95,25 +95,29 @@ namespace Firehose.Web.Infrastructure
 
         private async Task<ISyndicationFeedSource> TryLoadFeedAsync(IAmACommunityMember tamarin, Uri uri)
         {
-            try
+            var retryCount = 1;
+            while (retryCount++ < 2)
             {
-                var feedSource = new DummyRemoteSyndicationFeedSource();
+                try
+                {
+                    var feedSource = new DummyRemoteSyndicationFeedSource();
 
-                var filter = GetFilterFunction(tamarin);
-                var client = GetHttpClient();
-                var feed = await FetchAsync(client, uri, filter).ConfigureAwait(false);
-                feed.Language = CultureInfo.CreateSpecificCulture(tamarin.FeedLanguageCode).Name;
-                feedSource.Feed = feed;
+                    var filter = GetFilterFunction(tamarin);
+                    var client = GetHttpClient();
+                    var feed = await FetchAsync(client, uri, filter).ConfigureAwait(false);
+                    feed.Language = CultureInfo.CreateSpecificCulture(tamarin.FeedLanguageCode).Name;
+                    feedSource.Feed = feed;
 
-                return feedSource;
+                    return feedSource;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex, $"{tamarin.FirstName} {tamarin.LastName}'s feed of {uri} failed to load.");
+                }
             }
-            catch (Exception ex)
-            {
-                Logger.Error(ex, $"{tamarin.FirstName} {tamarin.LastName}'s feed of {uri} failed to load.");
 
-                // Not my problem if your feed asplodes but we at least won't crash the app for all the other nice people :)
-                return null;
-            }
+            // Not my problem if your feed asplodes but we at least won't crash the app for all the other nice people :)
+            return null;
         }
 
         internal static Func<SyndicationItem, bool> GetFilterFunction(IAmACommunityMember tamarin)
