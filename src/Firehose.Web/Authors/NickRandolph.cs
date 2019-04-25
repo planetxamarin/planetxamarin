@@ -14,7 +14,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "nick@builttoroam.com";
 
-        public string ShortBioOrTagLine => string.Empty;
+        public string ShortBioOrTagLine => "Microsoft MVP and maintainer of @MvvmCross. Co-founder, Tech Lead at Built to Roam (@btroam), special forces in cross platform app and cloud solutions.";
 
         public Uri WebSite => new Uri("https://builttoroam.com");
 
