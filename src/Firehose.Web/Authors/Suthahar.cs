@@ -18,7 +18,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://xamarininterviewquestion.blogspot.in/feeds/posts/default"); }
+            get { yield return new Uri("https://xamarininterviewquestion.blogspot.com/feeds/posts/default"); }
         }
 
         public string GitHubHandle => "jssuthahar";
