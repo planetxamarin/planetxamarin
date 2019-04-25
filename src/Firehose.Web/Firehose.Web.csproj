@@ -210,6 +210,7 @@
     <Compile Include="Authors\KodjoLaurentEgbakou.cs" />
     <Compile Include="Authors\MarkAllibone.cs" />
     <Compile Include="Authors\MartinZikmund.cs" />
+    <Compile Include="Authors\NickRandolph.cs" />
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
     <Compile Include="Authors\SebastianJensen.cs" />
@@ -278,7 +279,6 @@
     <Compile Include="Infrastructure\IFilterMyBlogPosts.cs" />
     <Compile Include="Extensions\Md5HashingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Authors\HoussemDellai.cs" />
     <Compile Include="Authors\JimBennett.cs" />
     <Compile Include="Authors\MarcoKuiper.cs" />
     <Compile Include="Authors\MartijnVanDijk.cs" />
@@ -321,7 +321,6 @@
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Authors\HussainAbbasi.cs" />
     <Compile Include="Authors\JohnThiriet.cs" />
-    <Compile Include="Authors\JacobDuijzer.cs" />
     <Compile Include="Authors\Martz.cs" />
     <Compile Include="Authors\LuisPujols.cs" />
     <Compile Include="Authors\LeomarisReyes.cs" />
