@@ -319,7 +319,6 @@
     <Compile Include="Authors\VicenteGuzman.cs" />
     <Compile Include="Authors\MarcosCobenaMorian.cs" />
     <Compile Include="Authors\EvgenyZborovsky.cs" />
-    <Compile Include="Authors\LuisBeltran.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Authors\HussainAbbasi.cs" />
     <Compile Include="Authors\JohnThiriet.cs" />
