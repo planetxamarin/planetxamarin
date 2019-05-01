@@ -12,31 +12,31 @@
 
 @foreach (var item in Model.Feed.Items)
 {
-    var itemUri = item.Links.FirstOrDefault();
-    var author = Model.Bloggers.FirstOrDefault(b => b.FeedUris.Any(u => itemUri != null && itemUri.Uri.Host == u.Host));
-    string authorName;
+	var itemUri = item.Links.FirstOrDefault();
+	var author = Model.Bloggers.FirstOrDefault(b => b.FeedUris.Any(u => itemUri != null && (itemUri.Uri.Host == u.Host || itemUri.Uri.Host.Replace("www.", "") == u.Host.Replace("www.", ""))));
+	string authorName;
 
-    // If we couldn't match the autor by FeedUri link, retry on Website
-    if (author == null)
-    {
-        author = Model.Bloggers.FirstOrDefault(b => itemUri != null && b.WebSite.Host == itemUri.Uri.Host);
-    }
+	// If we couldn't match the autor by FeedUri link, retry on Website
+	if (author == null)
+	{
+		author = Model.Bloggers.FirstOrDefault(b => itemUri != null && (b.WebSite.Host == itemUri.Uri.Host || b.WebSite.Host.Replace("www.", "") == itemUri.Uri.Host.Replace("www.", "")));
+	}
 
-    // If we matched an author construct his name
-    if (author != null)
-    {
-        authorName = author.FirstName + " " + author.LastName;
-    }
-    // If no author was matched, extract the name from the RSS feed, something is better than nothing right?!
-    else
-    {
-        var creator = item.ElementExtensions.FirstOrDefault(x => x.OuterName == "creator" && x.OuterNamespace == "http://purl.org/dc/elements/1.1/");
-        authorName = creator.Coalesce(c => c.GetObject<System.Xml.Linq.XElement>().Value, string.Empty);
-    }
+	// If we matched an author construct his name
+	if (author != null)
+	{
+		authorName = author.FirstName + " " + author.LastName;
+	}
+	// If no author was matched, extract the name from the RSS feed, something is better than nothing right?!
+	else
+	{
+		var creator = item.ElementExtensions.FirstOrDefault(x => x.OuterName == "creator" && x.OuterNamespace == "http://purl.org/dc/elements/1.1/");
+		authorName = creator.Coalesce(c => c.GetObject<System.Xml.Linq.XElement>().Value, string.Empty);
+	}
 
-    var link = item.Links.FirstOrDefault().Coalesce(l => l.Uri.ToString(), string.Empty);
-    var html = item.Content.Coalesce(c => c.ToHtml(), item.Summary.Coalesce(c => c.ToHtml(), string.Empty)
-    );
+	var link = item.Links.FirstOrDefault().Coalesce(l => l.Uri.ToString(), string.Empty);
+	var html = item.Content.Coalesce(c => c.ToHtml(), item.Summary.Coalesce(c => c.ToHtml(), string.Empty)
+	);
 
     <div class="syndicationItem">
         @if (author != null)
