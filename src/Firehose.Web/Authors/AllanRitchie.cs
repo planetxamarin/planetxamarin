@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 
 namespace Firehose.Web.Authors
 {
-    public class AllanRitchie : IAmAXamarinMVP, IAmAMicrosoftMVP
-    {
+    public class AllanRitchie : IAmAXamarinMVP, IAmAMicrosoftMVP, IFilterMyBlogPosts
+	{
         public string FirstName => "Allan";
 
         public string LastName => "Ritchie";
@@ -25,10 +26,12 @@ namespace Firehose.Web.Authors
 
         public string GravatarHash => "5f22bd04ca38ed4d0a5225d0825e0726";
 
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://allancritchie.net/xamarin.rss"); } }
-
         public GeoPosition Position => new GeoPosition(43.6425701,-79.3892455);
 
-        public string FeedLanguageCode => "en";
-    }
+		public string FeedLanguageCode => "en";
+
+		// my feed is prebuilt by wyam and has a dedicated rss feed for xamarin content - thus all items are "good"
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://allancritchie.net/xamarin.rss"); } }
+		public bool Filter(SyndicationItem item) => true;
+	}
 }
