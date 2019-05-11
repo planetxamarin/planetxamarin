@@ -202,6 +202,7 @@
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
     <Compile Include="Authors\Delpin.cs" />
+		<Compile Include="Authors\UmairHassan.cs" />
     <Compile Include="Authors\JasonDeBoever.cs" />
     <Compile Include="Authors\JeffersonBalivo.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
