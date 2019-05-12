@@ -202,7 +202,9 @@
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
     <Compile Include="Authors\Delpin.cs" />
-		<Compile Include="Authors\UmairHassan.cs" />
+    <Compile Include="Authors\GiampaoloTucci.cs" />
+    <Compile Include="Authors\JimBennett.cs" />
+    <Compile Include="Authors\UmairHassan.cs" />
     <Compile Include="Authors\JasonDeBoever.cs" />
     <Compile Include="Authors\JeffersonBalivo.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
@@ -255,7 +257,6 @@
     <Compile Include="Authors\TomSoderling.cs" />
     <Compile Include="Authors\SvenMichaelStuebe.cs" />
     <Compile Include="Authors\KerryLothrop.cs" />
-    <Compile Include="Authors\RobinManuelThiel.cs" />
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
     <Compile Include="Authors\JulianoCustodio.cs" />
@@ -263,7 +264,6 @@
     <Compile Include="Authors\WinstonGubantes.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="Authors\MarcoSiccardi.cs" />
-    <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -283,7 +283,6 @@
     <Compile Include="Infrastructure\IFilterMyBlogPosts.cs" />
     <Compile Include="Extensions\Md5HashingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Authors\JimBennett.cs" />
     <Compile Include="Authors\MarcoKuiper.cs" />
     <Compile Include="Authors\MartijnVanDijk.cs" />
     <Compile Include="Authors\GregShackles.cs" />
