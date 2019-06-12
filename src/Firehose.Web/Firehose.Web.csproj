@@ -206,7 +206,6 @@
     <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="Authors\JimBennett.cs" />
     <Compile Include="Authors\UmairHassan.cs" />
-    <Compile Include="Authors\JasonDeBoever.cs" />
     <Compile Include="Authors\JeffersonBalivo.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
     <Compile Include="Authors\ElbrinnerDaSilvaFernandes.cs" />
@@ -221,6 +220,7 @@
     <Compile Include="Authors\NigelFerrissey.cs" />
     <Compile Include="Authors\DamianMehers.cs" />
     <Compile Include="Authors\SebastianJensen.cs" />
+		<Compile Include="Authors\SheharyarShahid.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
@@ -331,6 +331,7 @@
     <Compile Include="Authors\DanielMonetelli.cs" />
     <Compile Include="Authors\JohnTaubensee.cs" />
     <Compile Include="Authors\JesseJiang.cs" />
+    <Compile Include="Authors\DivikiranRavela.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
