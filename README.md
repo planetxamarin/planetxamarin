@@ -1,4 +1,4 @@
-# Welcome [![Build status](https://ci.appveyor.com/api/projects/status/lpkmo9pftmku26ck?svg=true)](https://ci.appveyor.com/project/ghuntley/planetxamarin)
+# Welcome
 
 Hi! Welcome to PlanetXamarin.com!
 
@@ -90,6 +90,9 @@ Don't forget to incorporate the Featured on Planet Xamarin badge on your blog an
 Enjoy all of our great content! 
 
 Of course you are more than welcome to submit other features and bugfixes as well.
+
+# Build Status
+* [![Build status](https://dev.azure.com/jamont/Planet%20Xamarin/_apis/build/status/communityplanetxamarin%20-%20CI)](https://dev.azure.com/jamont/Planet%20Xamarin/_build/latest?definitionId=6)
 
 # Acknowledgements
 * Thanks to Readify for open sourcing their employee blog aggregation platform which we forked to create PlanetXamarin. Looking for your next challenge? [Readify is hiring](https://join.readify.net/?source=StaffReferral&campaign=geoffrey.huntley) and offers relocation services for developers from abroad.
