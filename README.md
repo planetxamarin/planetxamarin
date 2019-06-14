@@ -1,6 +1,6 @@
 # Welcome
 
-Hi! Welcome to PlanetXamarin.com!
+Hi! Welcome to [PlanetXamarin.com](https://www.planetxamarin.com)!
 
 If you write about Xamarin, you belong here. You're welcome to add your blog and have it aggregated as part of our feed as long as the content you are sharing does not violate the community [code of conduct](https://github.com/planetxamarin/planetxamarin/blob/master/CODE_OF_CONDUCT.md).
 
