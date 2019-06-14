@@ -92,7 +92,8 @@ Enjoy all of our great content!
 Of course you are more than welcome to submit other features and bugfixes as well.
 
 # Build Status
-* [![Build status](https://dev.azure.com/jamont/Planet%20Xamarin/_apis/build/status/communityplanetxamarin%20-%20CI)](https://dev.azure.com/jamont/Planet%20Xamarin/_build/latest?definitionId=6)
+* Public [![Build status](https://dev.azure.com/jamesmontemagno/Planet%20Xamarin/_apis/build/status/Planet%20Xamarin)](https://dev.azure.com/jamesmontemagno/Planet%20Xamarin/_build/latest?definitionId=33)
+* Private - [![Build status](https://dev.azure.com/jamont/Planet%20Xamarin/_apis/build/status/PlanetXamarin%20-%20CI%20-%20Private)](https://dev.azure.com/jamont/Planet%20Xamarin/_build/latest?definitionId=6)
 
 # Acknowledgements
 * Thanks to Readify for open sourcing their employee blog aggregation platform which we forked to create PlanetXamarin. Looking for your next challenge? [Readify is hiring](https://join.readify.net/?source=StaffReferral&campaign=geoffrey.huntley) and offers relocation services for developers from abroad.
