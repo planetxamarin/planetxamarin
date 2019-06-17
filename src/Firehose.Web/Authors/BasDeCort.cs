@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class BasDeCort : IAmACommunityMember, IFilterMyBlogPosts
+    public class BasDeCort : IAmACommunityMember
 	{
 		public string FirstName => "Bas";
 		public string LastName => "de Cort";
 		public string StateOrRegion => "Tilburg, The Netherlands";
 		public string EmailAddress => "";
-		public string ShortBioOrTagLine => "is a mobile developer with a passion for Xamarin.";
+		public string ShortBioOrTagLine => "Bas de Cort is a mobile developer with a passion for Xamarin.";
 		public Uri WebSite => new Uri("https://www.basdecort.com");
 		public string TwitterHandle => "basdecort";
 		public string GitHubHandle => "basdecort";
@@ -23,8 +21,6 @@ namespace Firehose.Web.Authors
 			get { yield return new Uri("https://www.basdecort.com/feed"); }
 		}
 
-		public bool Filter(SyndicationItem item) =>
-			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
 	}
 }

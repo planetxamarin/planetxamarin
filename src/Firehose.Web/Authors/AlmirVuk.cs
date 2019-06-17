@@ -1,13 +1,12 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
-using System.Web;
 
-namespace Firehose.Web.Authors {
+namespace Firehose.Web.Authors
+{
 
-    public class AlmirVuk : IAmACommunityMember, IFilterMyBlogPosts{
+    public class AlmirVuk : IAmACommunityMember
+    {
 
         public string FirstName => "Almir";
         public string LastName => "Vuk";
@@ -17,15 +16,12 @@ namespace Firehose.Web.Authors {
         public string TwitterHandle => "almirvuk";
         public string GravatarHash => "d58b6fd6c2d9f949345e8d14d203a4b2";
 
-        public Uri WebSite => new Uri("http://almirvuk.blogspot.com/");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://almirvuk.blogspot.ba/feeds/posts/default?alt=rss"); } }
+        public Uri WebSite => new Uri("https://almirvuk.blogspot.com/");
+        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://almirvuk.blogspot.ba/feeds/posts/default?alt=rss"); } }
 
         public string GitHubHandle => "almirvuk";
 
         public GeoPosition Position => new GeoPosition(43.3395522, 17.7862211);
-
-        public bool Filter(SyndicationItem item) {
-            return item.Title.Text.ToLowerInvariant().Contains("xamarin") && item.Categories.Any(c => c.Name.ToLowerInvariant().Equals("xamarin"));
-        }
+        public string FeedLanguageCode => "en";
     }
 }

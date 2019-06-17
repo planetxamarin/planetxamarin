@@ -23,5 +23,6 @@ namespace Firehose.Web.Authors
         public string GravatarHash => "8fb3e7f07ea1386cefe1326b48e0e21a";
         public string GitHubHandle => "chamons";
         public GeoPosition Position => new GeoPosition(30.2671530, -97.7430610);
+        public string FeedLanguageCode => "en";
     }
 }

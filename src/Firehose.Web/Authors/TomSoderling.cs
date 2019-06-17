@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
-using System.ServiceModel.Syndication;
-using System.Linq;
 
-namespace Firehose.Web
+namespace Firehose.Web.Authors
 {
-    public class TomSoderling : IAmACommunityMember, IFilterMyBlogPosts
+    public class TomSoderling : IAmACommunityMember
     {
         public string FirstName => "Tom";
         public string LastName => "Soderling";
@@ -16,7 +14,6 @@ namespace Firehose.Web
         public string TwitterHandle => "tomsoderling";
         public string GravatarHash => "dd103f377899fc63b0b88c5bb62b15bd";
         public GeoPosition Position => new GeoPosition(44.986656, -93.258133);
-
         public Uri WebSite => new Uri("https://tomsoderling.github.io");
 
         public IEnumerable<Uri> FeedUris
@@ -25,8 +22,6 @@ namespace Firehose.Web
         }
 
         public string GitHubHandle => "TomSoderling";
-        public bool Filter(SyndicationItem item) =>
-            item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-            item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
+        public string FeedLanguageCode => "en";
     }
 }
