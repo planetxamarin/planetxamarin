@@ -18,8 +18,8 @@ namespace Firehose.Web.Infrastructure
 {
     public class NewCombinedFeedSource
     {
-        private HttpClient _httpClient;
-        private AsyncPolicyWrap _policy;
+        private HttpClient httpClient;
+        private AsyncPolicyWrap policy;
 
         public IEnumerable<IAmACommunityMember> Tamarins { get; }
 
@@ -29,24 +29,27 @@ namespace Firehose.Web.Infrastructure
 
             Tamarins = tamarins;
 
+			// cache in memory for an hour
             var memoryCache = new MemoryCache(new MemoryCacheOptions());
             var memoryCacheProvider = new MemoryCacheProvider(memoryCache);
             var cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1));
 
+			// retry policy with max 2 retries, delay by x*x^1.2 where x is retry attempt
+			// this will ensure we don't retry too quickly
             var retryPolicy = Policy.Handle<FeedReadFailedException>()
-                .WaitAndRetryAsync(3, retry => TimeSpan.FromSeconds(retry * Math.Pow(1.2, retry)));
+                .WaitAndRetryAsync(2, retry => TimeSpan.FromSeconds(retry * Math.Pow(1.2, retry)));
 
-            _policy = Policy.WrapAsync(cachePolicy, retryPolicy);
+            policy = Policy.WrapAsync(cachePolicy, retryPolicy);
         }
         
         private void EnsureHttpClient()
         {
-            if (_httpClient == null)
+            if (httpClient == null)
             {
-                _httpClient = new HttpClient();
-                _httpClient.DefaultRequestHeaders.UserAgent.Add(
+                httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.UserAgent.Add(
                     new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
-                _httpClient.Timeout = TimeSpan.FromSeconds(20);
+                httpClient.Timeout = TimeSpan.FromSeconds(10);
 
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             }
@@ -80,15 +83,11 @@ namespace Firehose.Web.Infrastructure
         {
             try
             {
-                return await _policy.ExecuteAsync(context => ReadFeed(feedUri, filter), new Context(feedUri)).ConfigureAwait(false);
+                return await policy.ExecuteAsync(context => ReadFeed(feedUri, filter), new Context(feedUri)).ConfigureAwait(false);
             }
             catch (FeedReadFailedException ex)
             {
                 Logger.Error(ex, $"{tamarin.FirstName} {tamarin.LastName}'s feed of {ex.Data["FeedUri"]} failed to load.");
-            }
-            catch (Exception eex)
-            {
-
             }
 
             return new SyndicationItem[0];
@@ -99,7 +98,7 @@ namespace Firehose.Web.Infrastructure
             HttpResponseMessage response;
             try
             {
-                response = await _httpClient.GetAsync(feedUri).ConfigureAwait(false);
+                response = await httpClient.GetAsync(feedUri).ConfigureAwait(false);
                 if (response.IsSuccessStatusCode)
                 {
                     using (var feedStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
