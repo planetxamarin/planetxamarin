@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
 using BlogMonster.Web;
-using Firehose.Web.Extensions;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers
 {
     public class FeedController : BaseController
     {
-        private readonly CombinedFeedSource _combinedFeedSource;
+        private readonly NewCombinedFeedSource _combinedFeedSource;
 
-        public FeedController(CombinedFeedSource combinedFeedSource)
+        public FeedController(NewCombinedFeedSource combinedFeedSource)
         {
             _combinedFeedSource = combinedFeedSource;
         }
@@ -36,20 +33,8 @@ namespace Firehose.Web.Controllers
                 if (!string.IsNullOrEmpty(lang))
                     language = CultureInfo.CreateSpecificCulture(lang).Name;
 
-                originalFeed = _combinedFeedSource.GetFeed(language);
-                if (numPosts == null) return originalFeed;
-
-                var items = _combinedFeedSource.GetFeed(language).Items
-                    .DistinctBy(i => i.Id)
-                    .OrderByDescending(item => item.PublishDate)
-                    .Take((int)numPosts)
-                    .ToArray();
-
-                var shorterFeed = originalFeed.Clone(false);
-                var itemsField = shorterFeed.GetType().GetField("items", BindingFlags.Instance | BindingFlags.NonPublic);
-                itemsField.SetValue(shorterFeed, items);
-
-                return shorterFeed;
+                originalFeed = _combinedFeedSource.LoadFeed(numPosts, language).GetAwaiter().GetResult();
+                return originalFeed;
             }
             catch (Exception ex)
             {
