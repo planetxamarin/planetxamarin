@@ -1,6 +1,8 @@
-﻿using BlogMonster.Infrastructure.SyndicationFeedSources.Remote;
-using Firehose.Web.Extensions;
+﻿using Firehose.Web.Extensions;
+using Microsoft.Extensions.Caching.Memory;
 using Polly;
+using Polly.Caching.Memory;
+using Polly.Wrap;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,7 +12,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.ServiceModel.Syndication;
 using System.Threading.Tasks;
-using System.Web;
 using System.Xml;
 
 namespace Firehose.Web.Infrastructure
@@ -18,7 +19,7 @@ namespace Firehose.Web.Infrastructure
     public class NewCombinedFeedSource
     {
         private HttpClient _httpClient;
-        private Policy _policy;
+        private AsyncPolicyWrap _policy;
 
         public IEnumerable<IAmACommunityMember> Tamarins { get; }
 
@@ -28,7 +29,14 @@ namespace Firehose.Web.Infrastructure
 
             Tamarins = tamarins;
 
-            //_policy = new Policy.WaitAndRetryAsync(2, retry => TimeSpan.FromSeconds(retry * Math.Pow(2, retry))).
+            var memoryCache = new MemoryCache(new MemoryCacheOptions());
+            var memoryCacheProvider = new MemoryCacheProvider(memoryCache);
+            var cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1));
+
+            var retryPolicy = Policy.Handle<FeedReadFailedException>()
+                .WaitAndRetryAsync(3, retry => TimeSpan.FromSeconds(retry * Math.Pow(1.2, retry)));
+
+            _policy = Policy.WrapAsync(cachePolicy, retryPolicy);
         }
         
         private void EnsureHttpClient()
@@ -38,26 +46,52 @@ namespace Firehose.Web.Infrastructure
                 _httpClient = new HttpClient();
                 _httpClient.DefaultRequestHeaders.UserAgent.Add(
                     new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
-                _httpClient.Timeout = TimeSpan.FromSeconds(10);
+                _httpClient.Timeout = TimeSpan.FromSeconds(20);
+
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             }
         }
 
-        public Task<SyndicationFeed> LoadFeed(int? numberOfItems, string languageCode = "mixed")
+        public async Task<SyndicationFeed> LoadFeed(int? numberOfItems, string languageCode = "mixed")
         {
             IEnumerable<IAmACommunityMember> tamarins;
-            if (languageCode == "mixed")
+            if (languageCode == null || languageCode == "mixed") // use all tamarins
             {
-                // use all tamarins
                 tamarins = Tamarins;
-
-                // todo try get from cache
             }
             else
             {
                 tamarins = Tamarins.Where(t => t.FeedLanguageCode == languageCode);
             }
 
-            //var feedTasks = tamarins.Select(t => ReadFeed(t.))
+            var feedTasks = tamarins.SelectMany(t => TryReadFeeds(t, GetFilterFunction(t)));
+
+            var syndicationItems = await Task.WhenAll(feedTasks).ConfigureAwait(false);
+            var combinedFeed = GetCombinedFeed(syndicationItems.SelectMany(f => f), languageCode, tamarins, numberOfItems);
+            return combinedFeed;
+        }
+
+        private IEnumerable<Task<IEnumerable<SyndicationItem>>> TryReadFeeds(IAmACommunityMember tamarin, Func<SyndicationItem, bool> filter)
+        {
+            return tamarin.FeedUris.Select(uri => TryReadFeed(tamarin, uri.AbsoluteUri, filter));
+        }
+
+        private async Task<IEnumerable<SyndicationItem>> TryReadFeed(IAmACommunityMember tamarin, string feedUri, Func<SyndicationItem, bool> filter)
+        {
+            try
+            {
+                return await _policy.ExecuteAsync(context => ReadFeed(feedUri, filter), new Context(feedUri)).ConfigureAwait(false);
+            }
+            catch (FeedReadFailedException ex)
+            {
+                Logger.Error(ex, $"{tamarin.FirstName} {tamarin.LastName}'s feed of {ex.Data["FeedUri"]} failed to load.");
+            }
+            catch (Exception eex)
+            {
+
+            }
+
+            return new SyndicationItem[0];
         }
 
         private async Task<IEnumerable<SyndicationItem>> ReadFeed(string feedUri, Func<SyndicationItem, bool> filter)
@@ -73,7 +107,7 @@ namespace Firehose.Web.Infrastructure
                     {
                         var feed = SyndicationFeed.Load(reader);
                         var filteredItems = feed.Items
-                            .Where(item => filter(item));
+                            .Where(item => TryFilter(item, filter));
 
                         return filteredItems;
                     }
@@ -81,16 +115,26 @@ namespace Firehose.Web.Infrastructure
             }
             catch (HttpRequestException hex)
             {
-                throw new RemoteSyndicationFeedFailedException("Loading remote syndication feed failed", hex)
+                throw new FeedReadFailedException("Loading remote syndication feed failed", hex)
                     .WithData("FeedUri", feedUri);
             }
             catch (WebException ex)
             {
-                throw new RemoteSyndicationFeedFailedException("Loading remote syndication feed timed out", ex)
+                throw new FeedReadFailedException("Loading remote syndication feed timed out", ex)
+                    .WithData("FeedUri", feedUri);
+            }
+            catch (XmlException ex)
+            {
+                throw new FeedReadFailedException("Failed parsing remote syndication feed", ex)
+                    .WithData("FeedUri", feedUri);
+            }
+            catch (TaskCanceledException ex)
+            {
+                throw new FeedReadFailedException("Reading feed timed out", ex)
                     .WithData("FeedUri", feedUri);
             }
 
-            throw new RemoteSyndicationFeedFailedException("Loading remote syndication feed failed.")
+            throw new FeedReadFailedException("Loading remote syndication feed failed.")
                 .WithData("FeedUri", feedUri)
                 .WithData("HttpStatusCode", (int)response.StatusCode);
         }
@@ -137,22 +181,36 @@ namespace Firehose.Web.Infrastructure
                 return filterMyBlogPosts.Filter;
             }
 
-            return SyndicationItemExtensions.ApplyDefaultFilter;
+            return null;
         }
 
         private static bool TryFilter(SyndicationItem item, Func<SyndicationItem, bool> filterFunc)
         {
             try
             {
-                return filterFunc(item);
+                if (filterFunc != null)
+                    return filterFunc(item);
             }
-            catch (NullReferenceException)
+            catch (Exception)
             {
-                // the authors' filter is derped
-                // try some sane defaults
-
-                return item.ApplyDefaultFilter();
             }
+
+            // the authors' filter is derped or has no filter
+            // try some sane defaults
+            return item.ApplyDefaultFilter();
+        }
+    }
+
+    public class FeedReadFailedException : Exception
+    {
+        public FeedReadFailedException(string message) 
+            : base(message)
+        {
+        }
+
+        public FeedReadFailedException(string message, Exception inner) 
+            : base(message, inner)
+        {
         }
     }
 }
