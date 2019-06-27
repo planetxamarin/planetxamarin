@@ -28,11 +28,6 @@ namespace UnitTest
 
 		private readonly ITestOutputHelper _output;
 
-		private Policy _policy = Policy.Handle<WebException>(
-			ex => !ex.Message.Contains("Could not create SSL/TLS secure channel"))
-			.WaitAndRetryAsync(3, retryAttempt =>
-				TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
-
 		public AuthorsTest(ITestOutputHelper output)
 		{
 			_output = output;
@@ -78,7 +73,7 @@ namespace UnitTest
 			var authors = GetAuthors();
 
 			// using MemberData for this test is slow. Intentionally using Task.WhenAll here!
-			return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed).Select(t => _policy.ExecuteAsync(() => t)));
+			return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed));
 		}
 
 		private async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
@@ -88,19 +83,24 @@ namespace UnitTest
 				foreach (var feedUri in author.FeedUris)
 					Assert.Equal("https", feedUri.Scheme);
 
+				if (author.LastName == "Ritchie")
+				{
+
+				}
+
 				var authors = new[] { author };
-				var feedSource = new CombinedFeedSource(authors);
-				var allFeeds = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
+				var feedSource = new NewCombinedFeedSource(authors);
+				var feed = await feedSource.LoadFeed(null).ConfigureAwait(false);
 
-				Assert.NotNull(allFeeds);
+				Assert.NotNull(feed);
 
-				var allItems = allFeeds.SelectMany(f => f?.Feed?.Items).Where(i => i != null).ToList();
+				var allItems = feed.Items.Where(i => i != null).ToList();
 
 				Assert.True(allItems?.Count > 0, $"Author {author?.FirstName} {author?.LastName} @{author?.GitHubHandle} doesn't meet post policy @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 			}
 			catch (Exception)
 			{
-				Assert.True(false, $"Feed(s) for {author.FirstName} {author.LastName}  @{author?.GitHubHandle}  is null or empty @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
+				Assert.True(false, $"Feed(s) for {author.FirstName} {author.LastName}  @{author?.GitHubHandle} is null or empty @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 				_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");
 
 				if (author is IAmAYoutuber youtuber)

@@ -18,8 +18,8 @@ namespace Firehose.Web.Infrastructure
 {
     public class NewCombinedFeedSource
     {
-        private HttpClient httpClient;
-        private AsyncPolicyWrap policy;
+        private static HttpClient httpClient;
+        private static AsyncPolicyWrap policy;
 
         public IEnumerable<IAmACommunityMember> Tamarins { get; }
 
@@ -29,17 +29,20 @@ namespace Firehose.Web.Infrastructure
 
             Tamarins = tamarins;
 
-			// cache in memory for an hour
-            var memoryCache = new MemoryCache(new MemoryCacheOptions());
-            var memoryCacheProvider = new MemoryCacheProvider(memoryCache);
-            var cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1));
+			if (policy == null)
+			{
+				// cache in memory for an hour
+				var memoryCache = new MemoryCache(new MemoryCacheOptions());
+				var memoryCacheProvider = new MemoryCacheProvider(memoryCache);
+				var cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1));
 
-			// retry policy with max 2 retries, delay by x*x^1.2 where x is retry attempt
-			// this will ensure we don't retry too quickly
-            var retryPolicy = Policy.Handle<FeedReadFailedException>()
-                .WaitAndRetryAsync(2, retry => TimeSpan.FromSeconds(retry * Math.Pow(1.2, retry)));
+				// retry policy with max 2 retries, delay by x*x^1.2 where x is retry attempt
+				// this will ensure we don't retry too quickly
+				var retryPolicy = Policy.Handle<FeedReadFailedException>()
+					.WaitAndRetryAsync(2, retry => TimeSpan.FromSeconds(retry * Math.Pow(1.2, retry)));
 
-            policy = Policy.WrapAsync(cachePolicy, retryPolicy);
+				policy = Policy.WrapAsync(cachePolicy, retryPolicy);
+			}
         }
         
         private void EnsureHttpClient()
@@ -212,4 +215,13 @@ namespace Firehose.Web.Infrastructure
         {
         }
     }
+
+	internal static class ExceptionExtensions
+	{
+		public static TException WithData<TException>(this TException exception, string key, object value) where TException : Exception
+		{
+			exception.Data[key] = value;
+			return exception;
+		}
+	}
 }
