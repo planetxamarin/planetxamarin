@@ -74,7 +74,7 @@
     <PackageReference Include="Humanizer.Core" Version="2.1.0" />
     <PackageReference Include="jQuery" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.3" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.7" />
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
     <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
     <PackageReference Include="MvcNavigationHelpers" Version="0.0.0.5" />
@@ -272,7 +272,6 @@
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\SyndicationItemExtensions.cs" />
-    <Compile Include="Infrastructure\CombinedFeedSource.cs" />
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Logger.cs" />
