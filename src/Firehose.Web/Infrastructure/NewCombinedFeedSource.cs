@@ -1,4 +1,4 @@
-﻿using Firehose.Web.Extensions;
+using Firehose.Web.Extensions;
 using Microsoft.Extensions.Caching.Memory;
 using Polly;
 using Polly.Caching.Memory;
@@ -159,10 +159,10 @@ namespace Firehose.Web.Infrastructure
             var feed = new SyndicationFeed(
                 ConfigurationManager.AppSettings["RssFeedTitle"],
                 ConfigurationManager.AppSettings["RssFeedDescription"],
-                new Uri(ConfigurationManager.AppSettings["BaseUrl"]),
+                new Uri(ConfigurationManager.AppSettings["BaseUrl"] ?? "https://planetxamarin.com"),
                 orderedItems)
             {
-                ImageUrl = new Uri(ConfigurationManager.AppSettings["RssFeedImageUrl"]),
+                ImageUrl = new Uri(ConfigurationManager.AppSettings["RssFeedImageUrl"] ?? "https://planetxamarin.com/Content/Logo.png"),
                 Copyright = new TextSyndicationContent("The copyright for each post is retained by its author."),
                 Language = languageCode
             };
