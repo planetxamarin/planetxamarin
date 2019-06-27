@@ -1,10 +1,8 @@
 ﻿using Firehose.Web.Infrastructure;
-using Polly;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
@@ -31,8 +29,6 @@ namespace UnitTest
 		public AuthorsTest(ITestOutputHelper output)
 		{
 			_output = output;
-
-			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
 		}
 
 		[Fact]
@@ -83,11 +79,6 @@ namespace UnitTest
 				foreach (var feedUri in author.FeedUris)
 					Assert.Equal("https", feedUri.Scheme);
 
-				if (author.LastName == "Ritchie")
-				{
-
-				}
-
 				var authors = new[] { author };
 				var feedSource = new NewCombinedFeedSource(authors);
 				var feed = await feedSource.LoadFeed(null).ConfigureAwait(false);
@@ -96,12 +87,11 @@ namespace UnitTest
 
 				var allItems = feed.Items.Where(i => i != null).ToList();
 
-				Assert.True(allItems?.Count > 0, $"Author {author?.FirstName} {author?.LastName} @{author?.GitHubHandle} doesn't meet post policy @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
+				Assert.True(allItems?.Count > 0, $"Author {author?.FirstName} {author?.LastName} @{author?.GitHubHandle} doesn't meet post policy {author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 			}
 			catch (Exception)
 			{
-				Assert.True(false, $"Feed(s) for {author.FirstName} {author.LastName}  @{author?.GitHubHandle} is null or empty @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
-				_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");
+				_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} @{author?.GitHubHandle} is null or empty {author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 
 				if (author is IAmAYoutuber youtuber)
 				{
