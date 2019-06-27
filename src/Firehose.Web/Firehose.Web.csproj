@@ -221,6 +221,7 @@
     <Compile Include="Authors\DamianMehers.cs" />
     <Compile Include="Authors\SebastianJensen.cs" />
 		<Compile Include="Authors\SheharyarShahid.cs" />
+		  <Compile Include="Authors\BenceLenart.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
