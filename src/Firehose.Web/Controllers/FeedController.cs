@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
-using BlogMonster.Web;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Controllers

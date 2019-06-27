@@ -19,11 +19,7 @@ namespace Firehose.Web.Controllers
         public ViewResult Index(int? numPosts = 50)
         {
             var feed = GetFeed(numPosts);
-            return View(new PreviewViewModel
-            {
-                Feed = feed,
-                Bloggers = _combinedFeedSource.Tamarins.ToArray()
-            });
+            return View(new PreviewViewModel(feed, _combinedFeedSource.Tamarins.ToArray()));
         }
 
         private SyndicationFeed GetFeed(int? numPosts)
