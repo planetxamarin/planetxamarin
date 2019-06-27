@@ -164,7 +164,8 @@ namespace Firehose.Web.Infrastructure
             {
                 ImageUrl = new Uri(ConfigurationManager.AppSettings["RssFeedImageUrl"] ?? "https://planetxamarin.com/Content/Logo.png"),
                 Copyright = new TextSyndicationContent("The copyright for each post is retained by its author."),
-                Language = languageCode
+                Language = languageCode,
+				LastUpdatedTime = DateTimeOffset.UtcNow
             };
 
             foreach(var tamarin in tamarins)
