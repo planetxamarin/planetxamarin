@@ -84,6 +84,7 @@
     <PackageReference Include="Polly.Caching.Memory">
       <Version>3.0.1</Version>
     </PackageReference>
+    <PackageReference Include="System.ServiceModel.Syndication" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Logo.png" />
