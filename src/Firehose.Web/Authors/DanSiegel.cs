@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
         public string LastName => "Siegel";
         public string StateOrRegion => "San Diego, CA";
         public string EmailAddress => "dsiegel@avantipoint.com";
-        public string ShortBioOrTagLine => "is a Microsoft MVP, speaker, member of the Prism Team, and a Cross Platform, Mobile & Cloud Solutions Consultant.";
+        public string ShortBioOrTagLine => "is a Mobile App Consultant and Founder of AvantiPoint. He is an author of several OSS libraries, a maintainer of the Prism Library and a DevOps champion.";
         public Uri WebSite => new Uri("https://dansiegel.net");
 
         public IEnumerable<Uri> FeedUris
