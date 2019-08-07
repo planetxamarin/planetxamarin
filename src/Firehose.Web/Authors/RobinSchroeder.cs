@@ -7,8 +7,8 @@ using Firehose.Web.Infrastructure;
 namespace Firehose.Web.Authors
 {
 
-public class RobinSchroeder : IAmACommunityMember
-{
+  public class RobinSchroeder : IAmACommunityMember
+  {
     public string FirstName => "Robin";
     public string LastName => "Schroeder";
     public string ShortBioOrTagLine => "Where's Batman?";
@@ -21,7 +21,12 @@ public class RobinSchroeder : IAmACommunityMember
     public Uri WebSite => new Uri("https://msctek.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.msctek.com/feed/"); } }
     public FeedLanguageCode => "en";
-	public bool Filter(SyndicationItem item) => true;
-}
+	public bool Filter(SyndicationItem item)
+    {        
+        // This filters out only the posts that have the "xamarin" category
+        // Not all blog posts have categories, please guard against this
+        return item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
+    }
+  }
 
 }
