@@ -1,3 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.ServiceModel.Syndication;
+using Firehose.Web.Infrastructure;
+
+
+namespace Firehose.Web.Authors
+{
+
 public class RobinSchroeder : IAmACommunityMember
 {
     public string FirstName => "Robin";
@@ -12,4 +21,7 @@ public class RobinSchroeder : IAmACommunityMember
     public Uri WebSite => new Uri("https://msctek.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.msctek.com/feed/"); } }
     public FeedLanguageCode => "en";
+	public bool Filter(SyndicationItem item) => true;
+}
+
 }
