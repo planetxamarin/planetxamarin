@@ -34,7 +34,7 @@ public class BruceWayne : IAmACommunityMember
     public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
     public Uri WebSite => new Uri("https://planetxamarin.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
-    public FeedLanguageCode => "en";
+    public string FeedLanguageCode => "en";
 }
 ```
 
