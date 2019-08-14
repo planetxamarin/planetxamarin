@@ -206,6 +206,7 @@
     <Compile Include="Authors\DylanBerry.cs" />
     <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="Authors\JimBennett.cs" />
+`   <Compile Include="Authors\Syncfusion.cs" />
     <Compile Include="Authors\UmairHassan.cs" />
     <Compile Include="Authors\JeffersonBalivo.cs" />
     <Compile Include="Authors\JeromeGiacomini.cs" />
