@@ -1,11 +1,10 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-	public class Telerik : IAmACommunityMember, IFilterMyBlogPosts
+	public class Telerik : IAmACommunityMember
 	{
 		public string FirstName => "Telerik";
 
@@ -37,11 +36,5 @@ namespace Firehose.Web.Authors
 		public GeoPosition Position => new GeoPosition(42.512778, -71.251500); 
 
 		public string FeedLanguageCode => "en";
-
-		// Categories are not suffient enough for filer. Identifying 'xamarin' in the Title will be sufficient.
-		public bool Filter(SyndicationItem item)
-		{
-			return item.Title.Text.ToLowerInvariant().Contains("xamarin");
-		}
 	}
 }
