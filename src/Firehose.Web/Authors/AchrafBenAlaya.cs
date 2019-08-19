@@ -4,13 +4,13 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class JamesMontemagno : IWorkAtXamarinOrMicrosoft
+    public class AchrafBenAlaya : IAmACommunityMember , IFilterMyBlogPosts
     {
         public string FirstName => "Achraf";
         public string LastName => "Ben Alaya";
         public string StateOrRegion => "SFAX, Tunisia";
         public string EmailAddress => "";
-        public string ShortBioOrTagLine => "Software engineer ,Helping enthusiasts developers to learn mobile (Xamarin Forms & Windows) web (ASP.NET, Web API) ,azure development.";
+        public string ShortBioOrTagLine => "Software engineer,Helping enthusiasts developers to learn Xamarin.Forms,ASP.NET,azure dev";
         public Uri WebSite => new Uri("https://achrafbenalayablog.azurewebsites.net");
 
         public IEnumerable<Uri> FeedUris
