@@ -226,6 +226,7 @@
     <Compile Include="Authors\StephenMarcus.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\TrailheadTechnology.cs" />
+    <Compile Include="Authors\WilsonVargas.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
     <Compile Include="Authors\VulcanLee.cs" />
@@ -333,7 +334,7 @@
     <Compile Include="Authors\JohnTaubensee.cs" />
     <Compile Include="Authors\JesseJiang.cs" />
     <Compile Include="Authors\DivikiranRavela.cs" />
-		<Compile Include="Authors\RobinSchroeder.cs" />
+    <Compile Include="Authors\RobinSchroeder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
