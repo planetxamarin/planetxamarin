@@ -7,7 +7,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-	public class AhmedFouad : IAmACommunityMember , IFilterMyBlogPosts
+	public class AhmedFouad : IAmACommunityMember 
 	{
 		public string FirstName => "Ahmed";
 
@@ -17,9 +17,7 @@ namespace Firehose.Web.Authors
 
 		public string EmailAddress => "ahmed.fouad.net@hotmail.com";
 
-		public string ShortBioOrTagLine => "Hello, I’m Ahmed. I’m a software engineer with 10 years experience living in Vienna, Austria.\n" +
-		                                   "I am a fan of technology, web development, and programming.\n" +
-		                                   "I’m also interested in xamarin and mobile development.";
+		public string ShortBioOrTagLine => "Hello, I’m Ahmed. I’m a software engineer with 10 years experience in Microsoft Dot Net Framework living in Vienna, Austria.\n";
 
 		public Uri WebSite => new Uri("https://medium.com/@csharpwriter");
 
@@ -30,15 +28,12 @@ namespace Firehose.Web.Authors
 
 		public string TwitterHandle => "MCC_Ahmed";
 
-		public string GravatarHash => "";
+		public string GravatarHash => "5727eb3df565991947d90ed140962472";
 		public string GitHubHandle => "TheFo2sh";
 		public GeoPosition Position => new GeoPosition(37.7510, -97.8220);
 
 		public string FeedLanguageCode => "en";
-		public bool Filter(SyndicationItem item)
-		{
-			return item.Categories.Any(c => c.Name == "xamarin");
-		}
+	
 	}
 
 }
