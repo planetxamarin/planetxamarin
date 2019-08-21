@@ -6,7 +6,7 @@ using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-    public class AchrafBenAlaya : IAmACommunityMember, IFilterMyBlogPosts
+    public class AchrafBenAlaya : IAmACommunityMember
     {
         public string FirstName => "Achraf";
         public string LastName => "Ben Alaya";
