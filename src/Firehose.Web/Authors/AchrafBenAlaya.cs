@@ -2,11 +2,11 @@ using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel.Syndication;
+using System.ServiceModel.Syndication
 
 namespace Firehose.Web.Authors
 {
-    public class AchrafBenAlaya : IAmACommunityMember , IFilterMyBlogPosts
+    public class AchrafBenAlaya : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "Achraf";
         public string LastName => "Ben Alaya";
