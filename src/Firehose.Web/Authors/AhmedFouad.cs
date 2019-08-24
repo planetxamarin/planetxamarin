@@ -30,7 +30,7 @@ namespace Firehose.Web.Authors
 
 		public string GravatarHash => "5727eb3df565991947d90ed140962472";
 		public string GitHubHandle => "TheFo2sh";
-		public GeoPosition Position => new GeoPosition(37.7510, -97.8220);
+		public GeoPosition Position => new GeoPosition(48.20849, 16.37208);
 
 		public string FeedLanguageCode => "en";
 	
