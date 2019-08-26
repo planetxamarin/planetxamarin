@@ -28,7 +28,7 @@ namespace Firehose.Web.Authors
 		{
 			get
 			{
-				yield return new Uri("https://feeds.telerik.com/blogs/");
+				yield return new Uri("https://feeds.telerik.com/blogs");
 			}
 		}
 
