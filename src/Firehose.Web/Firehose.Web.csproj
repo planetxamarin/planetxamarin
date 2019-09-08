@@ -204,6 +204,7 @@
     <Compile Include="Authors\DanielHindrikes.cs" />
     <Compile Include="Authors\Delpin.cs" />
     <Compile Include="Authors\DylanBerry.cs" />
+		<Compile Include="Authors\SamirGC.cs" />
     <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="Authors\JimBennett.cs" />
     <Compile Include="Authors\Syncfusion.cs" />
