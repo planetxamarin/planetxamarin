@@ -229,6 +229,7 @@
     <Compile Include="Authors\TrailheadTechnology.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
+		 <Compile Include="Authors\SamirGC.cs" />
     <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
