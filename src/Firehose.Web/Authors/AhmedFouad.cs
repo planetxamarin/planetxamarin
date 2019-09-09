@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
 		public string EmailAddress => "ahmed.fouad.net@hotmail.com";
 
-		public string ShortBioOrTagLine => "Hello, I’m Ahmed. I’m a software engineer with 10 years experience in Microsoft Dot Net Framework living in Vienna, Austria.\n";
+		public string ShortBioOrTagLine => "software engineer with 10 years experience with the .NET Framework living in Vienna, Austria.";
 
 		public Uri WebSite => new Uri("https://medium.com/@csharpwriter");
 
