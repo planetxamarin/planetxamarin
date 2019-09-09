@@ -232,7 +232,6 @@
     <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
-    <Compile Include="Authors\AlexDunn.cs" />
     <Compile Include="Authors\MalcolmJack.cs" />
     <Compile Include="Authors\CarelLotz.cs" />
     <Compile Include="Authors\CanBilgin.cs" />
