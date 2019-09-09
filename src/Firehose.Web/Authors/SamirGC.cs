@@ -22,9 +22,9 @@ namespace Firehose.Web.Authors
 
 		public GeoPosition Position => new GeoPosition(27.700769, 85.300140);
 
-		public Uri WebSite => new Uri("http://xamaringuyshow.com/");
+		public Uri WebSite => new Uri("https://xamaringuyshow.com/");
 
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("http://xamaringuyshow.com/feed/"); } }
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://xamaringuyshow.com/feed/"); } }
 
 		public string GravatarHash => "4b0b695b7711b0184ab2049e33f2cfd7";
 
