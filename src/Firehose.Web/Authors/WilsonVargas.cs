@@ -6,7 +6,7 @@ using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-	public class WilsonVargas : IAmACommunityMember, IFilterMyBlogPosts
+	public class WilsonVargas : IAmACommunityMember
 	{
 		public string FirstName => "Wilson";
 
@@ -18,11 +18,11 @@ namespace Firehose.Web.Authors
 
 		public string ShortBioOrTagLine => "is a guy with lots of experience in the software development art and with a great passion for mobile development using Xamarin platform.";
 
-		public Uri WebSite => new Uri("https://wilsonvargas.com");
+		public Uri WebSite => new Uri("https://wilsonvargas.net");
 
 		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("https://wilsonvargas.com/rss/"); }
+			get { yield return new Uri("https://wilsonvargas.net/rss/"); }
 		}
 
 		public string TwitterHandle => "Wilson_VargasM";
@@ -34,9 +34,5 @@ namespace Firehose.Web.Authors
 		public GeoPosition Position => new GeoPosition(-8.120174, -79.035157);
 
 		public string FeedLanguageCode => "es";
-
-		public bool Filter(SyndicationItem item) =>
-			item.Title.Text.ToLowerInvariant().Contains("xamarin") ||
-			item.Categories.Any(category => category.Name.ToLowerInvariant().Contains("xamarin"));
 	}
 }
