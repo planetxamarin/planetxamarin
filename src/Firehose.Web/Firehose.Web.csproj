@@ -248,7 +248,6 @@
     <Compile Include="Authors\KentBoogaart.cs" />
     <Compile Include="Authors\GeraldVersluis.cs" />
     <Compile Include="Authors\KymPhillpotts.cs" />
-    <Compile Include="Authors\NigelSampson.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
