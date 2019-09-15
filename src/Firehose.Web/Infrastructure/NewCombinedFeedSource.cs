@@ -52,7 +52,7 @@ namespace Firehose.Web.Infrastructure
                 httpClient = new HttpClient();
                 httpClient.DefaultRequestHeaders.UserAgent.Add(
                     new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
-                httpClient.Timeout = TimeSpan.FromSeconds(10);
+                httpClient.Timeout = TimeSpan.FromSeconds(15);
 
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             }
