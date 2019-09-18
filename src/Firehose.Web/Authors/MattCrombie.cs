@@ -30,4 +30,4 @@ namespace Firehose.Web.Authors
 
 		public string FeedLanguageCode => "en";
 	}
-}
+  }
