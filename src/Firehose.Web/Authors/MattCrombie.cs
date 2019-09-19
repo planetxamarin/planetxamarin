@@ -18,7 +18,7 @@ namespace Firehose.Web.Authors
 
 		public string TwitterHandle => "xamarinhowto";
 
-		public string GravatarHash => "3F1200C50911032B3558B7C0FC29C847";
+		public string GravatarHash => "3f1200c50911032b3558b7c0fc29c847";
 
 		public string GitHubHandle => "xamarinhowto";
 
@@ -30,4 +30,4 @@ namespace Firehose.Web.Authors
 
 		public string FeedLanguageCode => "en";
 	}
-}
+  }
