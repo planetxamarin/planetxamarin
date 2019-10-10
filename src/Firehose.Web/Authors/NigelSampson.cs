@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 		public string TwitterHandle => "nigelsampson";
 		public string GitHubHandle => "nigel-sampson";
 		public string GravatarHash => "ffccec4c43820d5370ad22de8d569d77";
-		public IEnumerable<Uri> FeedUris => new [] { new Uri("https://compiledexperience.com/blog/syndicate/atom/") };
+		public IEnumerable<Uri> FeedUris => new [] { new Uri("https://compiledexperience.com/blog/syndicate/rss/") };
 		public GeoPosition Position => new GeoPosition(-36.848461, 174.763336);
 
 		public bool Filter(SyndicationItem item)
