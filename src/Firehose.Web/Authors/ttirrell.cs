@@ -1,5 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel.Syndication;
 using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
@@ -20,8 +22,6 @@ namespace Firehose.Web.Authors
         public string FeedLanguageCode => "en";
 
         public bool Filter(SyndicationItem item)
-        {
-            return item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
-        }
+            => item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
     }
 }
