@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
 		public string EmailAddress => "jucineisantos@outlook.com";
 
-		public string ShortBioOrTagLine => "Mobile Developer, Blogger and Speaker ";
+		public string ShortBioOrTagLine => "Mobile Developer, Blogger and Speaker.";
 
 		public Uri WebSite => new Uri("https://medium.com/@jucinei");
 
