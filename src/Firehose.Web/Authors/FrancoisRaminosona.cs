@@ -17,10 +17,6 @@ namespace Firehose.Web.Authors
             get
             {
                 yield return new Uri("https://blog.francois.raminosona.com/tag/xamarin/rss/");
-                yield return new Uri("https://blog.francois.raminosona.com/tag/xamarin-android/rss/");
-                yield return new Uri("https://blog.francois.raminosona.com/tag/xamarin-ios/rss/");
-                yield return new Uri("https://blog.francois.raminosona.com/tag/xamarin-forms/rss/");
-                yield return new Uri("https://blog.francois.raminosona.com/tag/mobile/rss/");
             }
         }
         public string TwitterHandle => "framinosona";
