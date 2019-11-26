@@ -195,6 +195,7 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IoC.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+		<Compile Include="Authors\ShankarMadeshvaran.cs" />
     <Compile Include="Authors\AhmedFouad.cs" />
     <Compile Include="Authors\AllanRitchie.cs" />
     <Compile Include="Authors\AndrewHoefling.cs" />
