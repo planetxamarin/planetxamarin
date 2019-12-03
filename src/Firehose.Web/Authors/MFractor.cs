@@ -8,9 +8,9 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "MFractor";
         public string LastName => "";
-        public string StateOrRegion => "Sydney, Australia";
-        public string EmailAddress => "hello@mfractor.com";
-        public string ShortBioOrTagLine => "is a mobile first productivity tool for Visual Studio for Mac.";
+        public string StateOrRegion => "Brisbane, Australia";
+        public string EmailAddress => "matthew@mfractor.com";
+        public string ShortBioOrTagLine => "is a powerful productivity tool for Xamarin Developers.";
         public Uri WebSite => new Uri("https://www.mfractor.com/");
         public string TwitterHandle => "mfractor";
         public string GitHubHandle => "mfractor";
@@ -27,7 +27,7 @@ namespace Firehose.Web.Authors
             }
         }
 
-        public GeoPosition Position => new GeoPosition(-33.8678500, 151.2073200);
+        public GeoPosition Position => new GeoPosition(-27.470125, 153.021072);
         public string FeedLanguageCode => "en";
     }
 }
