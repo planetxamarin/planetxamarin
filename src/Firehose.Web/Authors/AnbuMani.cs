@@ -6,7 +6,7 @@ public class AnbuMani : IAmACommunityMember
     {
         public string FirstName => "Anbu";
         public string LastName => "Mani";
-        public string ShortBioOrTagLine => "Anbu Mani is a Microsoft MVP who Blogger, Speaker, Founder & Organizer of XMonkeys360 Community – India.";
+        public string ShortBioOrTagLine => " is a Microsoft MVP who Blogger, Speaker, Founder & Organizer of XMonkeys360 Community â€“ India.";
         public string EmailAddress => "anbumani@xmonkeys360.com";
         public string TwitterHandle => "anbu_mani27";
         public string GravatarHash => "f97650474e4aa5b9609a28dcfdb052d4";
