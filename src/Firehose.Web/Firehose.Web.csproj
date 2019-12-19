@@ -197,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\AhmedFouad.cs" />
     <Compile Include="Authors\AllanRitchie.cs" />
+    <Compile Include="Authors\AnbuMani.cs" />
     <Compile Include="Authors\AndrewHoefling.cs" />
     <Compile Include="Authors\BenceLenart.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
@@ -230,7 +231,7 @@
     <Compile Include="Authors\TrailheadTechnology.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
-		<Compile Include="Authors\SamirGC.cs" />
+    <Compile Include="Authors\SamirGC.cs" />
     <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
