@@ -1,12 +1,10 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-	public class RicardoPrestes: IAmACommunityMember, IFilterMyBlogPosts
+	public class RicardoPrestes: IAmACommunityMember
 	{
 		public string FirstName => "Ricardo";
 		public string LastName => "Prestes";
@@ -23,8 +21,5 @@ namespace Firehose.Web.Authors
 		}
 		public GeoPosition Position => new GeoPosition(-23.194571, -50.7795215);
 		public string FeedLanguageCode => "pt";
-
-		public bool Filter(SyndicationItem item) =>
-			item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false;
 	}
 }
