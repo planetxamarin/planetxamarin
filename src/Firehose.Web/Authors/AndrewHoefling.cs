@@ -6,13 +6,13 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class AndrewHoefling : IAmACommunityMember
+    public class AndrewHoefling : IAmAMicrosoftMVP
     {
         public string FirstName => "Andrew";
         public string LastName => "Hoefling";
         public string StateOrRegion => "New York, United States";
         public string EmailAddress => "andrew@hoefling.me";
-        public string ShortBioOrTagLine => "Open Source developer who loves integrating Xamarin with other platforms";
+        public string ShortBioOrTagLine => "Microsoft MVP (Developer Technologies) Open Source developer who loves integrating Xamarin with other platforms";
         public Uri WebSite => new Uri("https://www.andrewhoefling.com/");
         public string TwitterHandle => "andrew_hoefling";
         public string GitHubHandle => "ahoefling";
