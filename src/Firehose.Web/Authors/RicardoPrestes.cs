@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
 		public string LastName => "Prestes";
 		public string StateOrRegion => "Cornélio Procópio, Brasil";
 		public string EmailAddress => "ricardo.logan@hotmail.com";
-		public string ShortBioOrTagLine => "Mobile developer, Burger Monkeys Co-founder";
+		public string ShortBioOrTagLine => "Tech lead mobile developer, Burger Monkeys Co-founder";
 		public Uri WebSite => new Uri("https://oficinadologan.wordpress.com/");
 		public string TwitterHandle => "ricardo_prestes";
 		public string GitHubHandle => "ricardoprestes";
