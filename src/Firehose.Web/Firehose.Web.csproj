@@ -198,6 +198,7 @@
     <Compile Include="Authors\AhmedFouad.cs" />
     <Compile Include="Authors\AllanRitchie.cs" />
     <Compile Include="Authors\AnbuMani.cs" />
+    <Compile Include="Authors\AndreasNesheim.cs" />
     <Compile Include="Authors\AndrewHoefling.cs" />
     <Compile Include="Authors\BenceLenart.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
