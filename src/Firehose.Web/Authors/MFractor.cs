@@ -4,7 +4,7 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class MFractor : IAmACommunityMember
+    public class MFractor : IAmACommunityMember, IFilterMyBlogPosts
     {
         public string FirstName => "MFractor";
         public string LastName => "";
@@ -29,5 +29,18 @@ namespace Firehose.Web.Authors
 
         public GeoPosition Position => new GeoPosition(-27.470125, 153.021072);
         public string FeedLanguageCode => "en";
+		
+		public bool Filter(SyndicationItem item)
+		{
+			// Filter out any topics that are for Visual Studio extensibility;
+			var isExtensibilityTopic = item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("visual studio extensibility")) ?? false;
+			
+			if (isExtensibilityTopic)
+			{
+				return false;
+			}
+			
+			return true;
+		}
     }
 }
