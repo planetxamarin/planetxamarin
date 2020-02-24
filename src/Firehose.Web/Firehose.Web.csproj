@@ -240,6 +240,7 @@
     <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
+    <Compile Include="Authors\BohdanBenetskyi.cs" />
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\ReactiveUI.cs" />
