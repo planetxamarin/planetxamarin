@@ -58,8 +58,8 @@ namespace UnitTest
 
 			foreach (var author in authors)
 			{
-				Assert.True(author.Namespace == "Firehose.Web.Authors",
-					$"{author.Name} is not in the correct namespace");
+				_output.WriteLine($"{author.Name} uses Namespace: {author.Namespace}");
+				Assert.Equal("Firehose.Web.Authors", author.Namespace);
 			}
 		}
 
