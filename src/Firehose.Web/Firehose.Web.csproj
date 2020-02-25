@@ -197,12 +197,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authors\AhmedFouad.cs" />
     <Compile Include="Authors\AllanRitchie.cs" />
+    <Compile Include="Authors\AnbuMani.cs" />
+    <Compile Include="Authors\AndreasNesheim.cs" />
     <Compile Include="Authors\AndrewHoefling.cs" />
     <Compile Include="Authors\BenceLenart.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
     <Compile Include="Authors\Delpin.cs" />
+    <Compile Include="Authors\LogeshPalani.cs" />
     <Compile Include="Authors\DylanBerry.cs" />
     <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="Authors\JimBennett.cs" />
@@ -229,7 +232,7 @@
     <Compile Include="Authors\TrailheadTechnology.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
-		<Compile Include="Authors\SamirGC.cs" />
+    <Compile Include="Authors\SamirGC.cs" />
     <Compile Include="Authors\VulcanLee.cs" />
     <Compile Include="Authors\AlexandrSorokoletov.cs" />
     <Compile Include="Authors\GoneMobile.cs" />
@@ -238,6 +241,8 @@
     <Compile Include="Authors\CanBilgin.cs" />
     <Compile Include="Authors\EstebanSolano.cs" />
     <Compile Include="Authors\AlmirVuk.cs" />
+    <Compile Include="Authors\BohdanBenetskyi.cs" />
+    <Compile Include="Authors\BoguslawBlonski.cs" />
     <Compile Include="Authors\DanRigby.cs" />
     <Compile Include="Authors\DanSiegel.cs" />
     <Compile Include="Authors\ReactiveUI.cs" />
@@ -339,6 +344,8 @@
 		<Compile Include="Authors\ttirrell.cs" />
 		<Compile Include="Authors\MattCrombie.cs" />
 		<Compile Include="Authors\RunarOvesenHjerpbakk.cs" />
+		<Compile Include="Authors\FrancoisRaminosona.cs" />
+		<Compile Include="Authors\RicardoPrestes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
