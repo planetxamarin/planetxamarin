@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <AssemblyName>PlanetXamarin.Integrationtests</AssemblyName>
+    <AssemblyName>PlanetXamarin.UnitTest</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
