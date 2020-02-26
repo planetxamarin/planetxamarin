@@ -1,4 +1,4 @@
-﻿using System;
+/*using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
@@ -19,4 +19,4 @@ namespace Firehose.Web.Authors
         public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://timothelariviere.com/feed/"); } }
         public string FeedLanguageCode => "en";
     }
-}
+}*/
