@@ -1,4 +1,4 @@
-﻿using Firehose.Web.Infrastructure;
+/*using Firehose.Web.Infrastructure;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -39,4 +39,4 @@ namespace Firehose.Web.Authors
             return item.ApplyDefaultFilter();
         }
     }
-}
+}*/
