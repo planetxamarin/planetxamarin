@@ -160,10 +160,7 @@ namespace Firehose.Web.Infrastructure
 				{
 					using (var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
 					using (var reader = new StreamReader(stream))
-					using (var xmlReader = XmlReader.Create(reader, new XmlReaderSettings
-					{
-						DtdProcessing = DtdProcessing.Parse
-					}))
+					using (var xmlReader = XmlReader.Create(reader))
 					{
 						var feed = SyndicationFeed.Load(xmlReader);
 						var filteredItems = feed.Items
