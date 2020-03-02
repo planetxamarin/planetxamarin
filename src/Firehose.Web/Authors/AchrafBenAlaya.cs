@@ -1,4 +1,4 @@
-﻿using Firehose.Web.Infrastructure;
+/*using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
 
@@ -23,5 +23,5 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "achrafbenalaya";
         public GeoPosition Position => new GeoPosition(34.74056, 10.76028);
         public string FeedLanguageCode => "en";
-	  }
-}
+    }
+}*/

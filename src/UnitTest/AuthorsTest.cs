@@ -89,7 +89,7 @@ namespace UnitTest
 
 				Assert.True(allItems?.Count > 0, $"Author {author?.FirstName} {author?.LastName} @{author?.GitHubHandle} doesn't meet post policy {author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} @{author?.GitHubHandle} is null or empty {author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 
@@ -98,8 +98,13 @@ namespace UnitTest
 					_output.WriteLine("Auhtor is a YouTuber, and will at max have 15 items in feed, ignore empty feed");
 					return;
 				}
+				else
+				{
+					Assert.True(false, $"Feed(s) for {author.FirstName} {author.LastName}  @{author?.GitHubHandle}  is null or empty @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
+					_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");
+				}
 
-				throw;
+				throw ex;
 			}
 		}
 
