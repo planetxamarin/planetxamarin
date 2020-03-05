@@ -20,7 +20,7 @@ namespace Firehose.Web.Infrastructure
 			var rssFormatter = new Rss20FeedFormatter(_feed);
 			using (var writer = XmlWriter.Create(context.HttpContext.Response.Output))
 			{
-				rssFormatter.WriteTo(writer);
+				rssFormatter.WriteTo(writer); 
 			}
 		}
 	}
