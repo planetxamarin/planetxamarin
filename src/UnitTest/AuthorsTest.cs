@@ -1,10 +1,8 @@
 ﻿using Firehose.Web.Infrastructure;
-using Polly;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
@@ -28,16 +26,9 @@ namespace UnitTest
 
 		private readonly ITestOutputHelper _output;
 
-		private Policy _policy = Policy.Handle<WebException>(
-			ex => !ex.Message.Contains("Could not create SSL/TLS secure channel"))
-			.WaitAndRetryAsync(3, retryAttempt =>
-				TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
-
 		public AuthorsTest(ITestOutputHelper output)
 		{
 			_output = output;
-
-			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
 		}
 
 		[Fact]
@@ -67,8 +58,8 @@ namespace UnitTest
 
 			foreach (var author in authors)
 			{
-				Assert.True(author.Namespace == "Firehose.Web.Authors",
-					$"{author.Name} is not in the correct namespace");
+				_output.WriteLine($"{author.Name} uses Namespace: {author.Namespace}");
+				Assert.Equal("Firehose.Web.Authors", author.Namespace);
 			}
 		}
 
@@ -78,7 +69,7 @@ namespace UnitTest
 			var authors = GetAuthors();
 
 			// using MemberData for this test is slow. Intentionally using Task.WhenAll here!
-			return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed).Select(t => _policy.ExecuteAsync(() => t)));
+			return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed));
 		}
 
 		private async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
@@ -89,19 +80,19 @@ namespace UnitTest
 					Assert.Equal("https", feedUri.Scheme);
 
 				var authors = new[] { author };
-				var feedSource = new CombinedFeedSource(authors);
-				var allFeeds = await feedSource.LoadAllFeedsAsync(authors).ConfigureAwait(false);
+				var feedSource = new NewCombinedFeedSource(authors);
+				var feed = await feedSource.LoadFeed(null).ConfigureAwait(false);
 
-				Assert.NotNull(allFeeds);
+				Assert.NotNull(feed);
 
-				var allItems = allFeeds.SelectMany(f => f?.Feed?.Items).Where(i => i != null).ToList();
+				var allItems = feed.Items.Where(i => i != null).ToList();
 
-				Assert.True(allItems?.Count > 0, $"Author {author?.FirstName} {author?.LastName} @{author?.GitHubHandle} doesn't meet post policy @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
+				Assert.True(allItems?.Count > 0, $"Author {author?.FirstName} {author?.LastName} @{author?.GitHubHandle} doesn't meet post policy {author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 			}
 			catch (Exception ex)
 			{
-				_output.WriteLine(ex.Message);
-				
+				_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} @{author?.GitHubHandle} is null or empty {author?.FeedUris?.FirstOrDefault()?.OriginalString}");
+
 				if (author is IAmAYoutuber youtuber)
 				{
 					_output.WriteLine("Auhtor is a YouTuber, and will at max have 15 items in feed, ignore empty feed");
