@@ -20,7 +20,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://www.andrewhoefling.com/feed.xml?category=xamarin"); }
+            get { yield return new Uri("https://www.andrewhoefling.com/feed.xml?category=xamarin&uno-platform"); }
         }
         public GeoPosition Position => new GeoPosition(43.156578, -77.608849);
         public string FeedLanguageCode => "en";
