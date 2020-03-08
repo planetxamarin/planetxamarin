@@ -27,6 +27,9 @@ namespace Firehose.Web.ViewModels
 					if (authorHosts.Contains(host))
 						return true;
 
+					if (authorHosts.Contains(host.Replace("www.", "")))
+						return true;
+
 					if (host.Contains("feedproxy.google")) //  feed burner is messed up :(
 					{
 						// url will look like:
