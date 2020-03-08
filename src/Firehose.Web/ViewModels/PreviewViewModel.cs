@@ -49,13 +49,13 @@ namespace Firehose.Web.ViewModels
 			var items = new List<PreviewModelItem>();
 			foreach(var item in feed.Items)
 			{
-				var author = authors.FirstOrDefault(b => MatchesAuthorUrls(b, item.Links.Select(l => l.Uri)));
+				var author = authors.FirstOrDefault(a => MatchesAuthorUrls(a, item.Links.Select(l => l.Uri)));
 
 				string authorName;
 
 				if (author != null)
 				{
-					authorName = author.FirstName + " " + author.LastName;
+					authorName = $"{author.FirstName} {author.LastName}".Trim();
 				}
 				// If no author was matched, extract the name from the RSS feed, something is better than nothing right?!
 				else
