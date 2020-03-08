@@ -144,23 +144,21 @@ namespace Firehose.Web.Infrastructure
         private SyndicationFeed GetCombinedFeed(IEnumerable<SyndicationItem> items, string languageCode, 
             IEnumerable<IAmACommunityMember> tamarins, int? numberOfItems)
         {
-            var beforeNowItems = items
+			DateTimeOffset GetMaxTime(SyndicationItem item)
+			{
+				return new[] { item.PublishDate.UtcDateTime, item.LastUpdatedTime.UtcDateTime }.Max();
+			}
+
+			var orderedItems = items
                 .Where(item =>
-                    item.LastUpdatedTime.UtcDateTime <= DateTimeOffset.UtcNow &&
-                    item.PublishDate.UtcDateTime <= DateTimeOffset.UtcNow);
+					GetMaxTime(item) <= DateTimeOffset.UtcNow)
+				.OrderByDescending(item => GetMaxTime(item));
 
-            if (numberOfItems.HasValue)
-            {
-                beforeNowItems = beforeNowItems.Take(numberOfItems.Value);
-            }
-
-            var orderedItems = beforeNowItems.OrderByDescending(item => item.PublishDate);
-
-            var feed = new SyndicationFeed(
+			var feed = new SyndicationFeed(
                 ConfigurationManager.AppSettings["RssFeedTitle"],
                 ConfigurationManager.AppSettings["RssFeedDescription"],
                 new Uri(ConfigurationManager.AppSettings["BaseUrl"] ?? "https://planetxamarin.com"),
-                orderedItems)
+                numberOfItems.HasValue ? orderedItems.Take(numberOfItems.Value) : orderedItems)
             {
                 ImageUrl = new Uri(ConfigurationManager.AppSettings["RssFeedImageUrl"] ?? "https://planetxamarin.com/Content/Logo.png"),
                 Copyright = new TextSyndicationContent("The copyright for each post is retained by its author."),
