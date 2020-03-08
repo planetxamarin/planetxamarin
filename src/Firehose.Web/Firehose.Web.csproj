@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -13,14 +13,17 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Firehose.Web</RootNamespace>
     <AssemblyName>Firehose.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44371</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <TargetFrameworkProfile />
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Runtime">
+      <Version>4.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.ServiceModel" />
@@ -339,13 +348,13 @@
     <Compile Include="Authors\JohnTaubensee.cs" />
     <Compile Include="Authors\JesseJiang.cs" />
     <Compile Include="Authors\DivikiranRavela.cs" />
-		<Compile Include="Authors\RobinSchroeder.cs" />
-		<Compile Include="Authors\AchrafBenAlaya.cs" />
-		<Compile Include="Authors\BrandonMinnick.cs" />
-		<Compile Include="Authors\MattCrombie.cs" />
-		<Compile Include="Authors\RunarOvesenHjerpbakk.cs" />
-		<Compile Include="Authors\FrancoisRaminosona.cs" />
-		<Compile Include="Authors\RicardoPrestes.cs" />
+    <Compile Include="Authors\RobinSchroeder.cs" />
+    <Compile Include="Authors\AchrafBenAlaya.cs" />
+    <Compile Include="Authors\BrandonMinnick.cs" />
+    <Compile Include="Authors\MattCrombie.cs" />
+    <Compile Include="Authors\RunarOvesenHjerpbakk.cs" />
+    <Compile Include="Authors\FrancoisRaminosona.cs" />
+    <Compile Include="Authors\RicardoPrestes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
