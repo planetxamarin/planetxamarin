@@ -16,20 +16,20 @@ namespace Firehose.Web.Controllers
         }
 
         [Route("feed")]
-        public RssFeedResult Index(int? numPosts = 50, string lang = "")
+        public RssFeedResult Index(int? numPosts = 150, string lang = "mixed")
         {
             var feed = GetFeed(numPosts, lang);
             return new RssFeedResult(feed);
         }
 
-        private SyndicationFeed GetFeed(int? numPosts, string lang = "")
+        private SyndicationFeed GetFeed(int? numPosts = 150, string lang = "mixed")
         {
             SyndicationFeed originalFeed = null;
 
             try
             {
                 string language = null;
-                if (!string.IsNullOrEmpty(lang))
+                if (!string.IsNullOrEmpty(lang) && lang != "mixed")
                     language = CultureInfo.CreateSpecificCulture(lang).Name;
 
                 originalFeed = _combinedFeedSource.LoadFeed(numPosts, language).GetAwaiter().GetResult();
