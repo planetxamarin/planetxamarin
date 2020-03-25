@@ -1,7 +1,9 @@
 using Firehose.Web.Extensions;
 using Microsoft.Extensions.Caching.Memory;
 using Polly;
+using Polly.Caching;
 using Polly.Caching.Memory;
+using Polly.Retry;
 using Polly.Wrap;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,8 @@ namespace Firehose.Web.Infrastructure
     public class NewCombinedFeedSource
     {
         private static HttpClient httpClient;
-        private static AsyncPolicyWrap policy;
+        private static AsyncRetryPolicy retryPolicy;
+		private static AsyncCachePolicy cachePolicy;
 
         public IEnumerable<IAmACommunityMember> Tamarins { get; }
 
@@ -30,19 +33,17 @@ namespace Firehose.Web.Infrastructure
 
             Tamarins = tamarins;
 
-			if (policy == null)
+			if (retryPolicy == null)
 			{
 				// cache in memory for an hour
 				var memoryCache = new MemoryCache(new MemoryCacheOptions());
 				var memoryCacheProvider = new MemoryCacheProvider(memoryCache);
-				var cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1), OnCacheError);
+				cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1), OnCacheError);
 
 				// retry policy with max 2 retries, delay by x*x^1.2 where x is retry attempt
 				// this will ensure we don't retry too quickly
-				var retryPolicy = Policy.Handle<FeedReadFailedException>()
+				retryPolicy = Policy.Handle<FeedReadFailedException>()
 					.WaitAndRetryAsync(2, retry => TimeSpan.FromSeconds(retry * Math.Pow(1.2, retry)));
-
-				policy = Policy.WrapAsync(cachePolicy, retryPolicy);
 			}
         }
 
@@ -64,23 +65,28 @@ namespace Firehose.Web.Infrastructure
             }
         }
 
-        public async Task<SyndicationFeed> LoadFeed(int? numberOfItems, string languageCode = "mixed")
+		private async Task<SyndicationFeed> LoadFeedInternal(int? numberOfItems, string languageCode = "mixed")
+		{
+			IEnumerable<IAmACommunityMember> tamarins;
+			if (languageCode == null || languageCode == "mixed") // use all tamarins
+			{
+				tamarins = Tamarins;
+			}
+			else
+			{
+				tamarins = Tamarins.Where(t => CultureInfo.CreateSpecificCulture(t.FeedLanguageCode).Name == languageCode);
+			}
+
+			var feedTasks = tamarins.SelectMany(t => TryReadFeeds(t, GetFilterFunction(t)));
+
+			var syndicationItems = await Task.WhenAll(feedTasks).ConfigureAwait(false);
+			var combinedFeed = GetCombinedFeed(syndicationItems.SelectMany(f => f), languageCode, tamarins, numberOfItems);
+			return combinedFeed;
+		}
+
+        public Task<SyndicationFeed> LoadFeed(int? numberOfItems, string languageCode = "mixed")
         {
-            IEnumerable<IAmACommunityMember> tamarins;
-            if (languageCode == null || languageCode == "mixed") // use all tamarins
-            {
-                tamarins = Tamarins;
-            }
-            else
-            {
-                tamarins = Tamarins.Where(t => CultureInfo.CreateSpecificCulture(t.FeedLanguageCode).Name == languageCode);
-            }
-
-            var feedTasks = tamarins.SelectMany(t => TryReadFeeds(t, GetFilterFunction(t)));
-
-            var syndicationItems = await Task.WhenAll(feedTasks).ConfigureAwait(false);
-            var combinedFeed = GetCombinedFeed(syndicationItems.SelectMany(f => f), languageCode, tamarins, numberOfItems);
-            return combinedFeed;
+			return cachePolicy.ExecuteAsync(context => LoadFeedInternal(numberOfItems, languageCode), new Context($"feed{numberOfItems}{languageCode}"));
         }
 
         private IEnumerable<Task<IEnumerable<SyndicationItem>>> TryReadFeeds(IAmACommunityMember tamarin, Func<SyndicationItem, bool> filter)
@@ -92,7 +98,7 @@ namespace Firehose.Web.Infrastructure
         {
             try
             {
-                return await policy.ExecuteAsync(context => ReadFeed(feedUri, filter), new Context(feedUri)).ConfigureAwait(false);
+                return await retryPolicy.ExecuteAsync(context => ReadFeed(feedUri, filter), new Context(feedUri)).ConfigureAwait(false);
             }
             catch (FeedReadFailedException ex)
             {
