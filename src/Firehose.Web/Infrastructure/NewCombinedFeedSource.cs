@@ -6,6 +6,7 @@ using Polly.Wrap;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -72,7 +73,7 @@ namespace Firehose.Web.Infrastructure
             }
             else
             {
-                tamarins = Tamarins.Where(t => t.FeedLanguageCode == languageCode);
+                tamarins = Tamarins.Where(t => CultureInfo.CreateSpecificCulture(t.FeedLanguageCode).Name == languageCode);
             }
 
             var feedTasks = tamarins.SelectMany(t => TryReadFeeds(t, GetFilterFunction(t)));
