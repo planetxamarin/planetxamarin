@@ -34,7 +34,7 @@ namespace Firehose.Web.Infrastructure
 				// cache in memory for an hour
 				var memoryCache = new MemoryCache(new MemoryCacheOptions());
 				var memoryCacheProvider = new MemoryCacheProvider(memoryCache);
-				var cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1));
+				var cachePolicy = Policy.CacheAsync(memoryCacheProvider, TimeSpan.FromHours(1), OnCacheError);
 
 				// retry policy with max 2 retries, delay by x*x^1.2 where x is retry attempt
 				// this will ensure we don't retry too quickly
@@ -44,8 +44,13 @@ namespace Firehose.Web.Infrastructure
 				policy = Policy.WrapAsync(cachePolicy, retryPolicy);
 			}
         }
-        
-        private void EnsureHttpClient()
+
+		private void OnCacheError(Context arg1, string arg2, Exception arg3)
+		{
+			Logger.Error(arg3, $"Failed caching item: {arg1} - {arg2}");
+		}
+
+		private void EnsureHttpClient()
         {
             if (httpClient == null)
             {
