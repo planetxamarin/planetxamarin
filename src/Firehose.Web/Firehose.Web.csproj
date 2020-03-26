@@ -208,6 +208,7 @@
     <Compile Include="Authors\DylanBerry.cs" />
     <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="Authors\JimBennett.cs" />
+    <Compile Include="Authors\MikeGrant.cs" />
     <Compile Include="Authors\Syncfusion.cs" />
     <Compile Include="Authors\UdaraAlwis.cs" />
     <Compile Include="Authors\UmairHassan.cs" />
