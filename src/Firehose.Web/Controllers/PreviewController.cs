@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
 using Firehose.Web.Infrastructure;
@@ -16,16 +17,17 @@ namespace Firehose.Web.Controllers
         }
 
         [Route("preview")]
-        public ViewResult Index(int? numPosts = 50)
+        public ViewResult Index()
         {
-            var feed = GetFeed(numPosts);
+            var feed = GetFeed();
             return View(new PreviewViewModel(feed, _combinedFeedSource.Tamarins.ToArray()));
         }
 
-        private SyndicationFeed GetFeed(int? numPosts)
+        private SyndicationFeed GetFeed()
         {
-            var originalFeed = _combinedFeedSource.LoadFeed(numPosts, "en").GetAwaiter().GetResult();
-            return originalFeed;
+			var lang = CultureInfo.CreateSpecificCulture("en").Name;
+			var feed = _combinedFeedSource.LoadFeed(50, lang).GetAwaiter().GetResult();
+            return feed;
         }
     }
 }
