@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
             public string GitHubHandle => "LeomarisReyes";
             public GeoPosition Position => new GeoPosition(18.470880, -69.911525);
             public Uri WebSite => new Uri("https://askxammy.com/");
-            public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://askxammy.com/rss"); } }
+            public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://askxammy.com/feed"); } }
             public string FeedLanguageCode => "en";
     }
 }
