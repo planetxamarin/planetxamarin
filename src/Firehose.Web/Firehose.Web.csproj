@@ -255,6 +255,7 @@
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
+    <Compile Include="Authors\SaamerMansoor.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
     <Compile Include="Authors\Suthahar.cs" />
     <Compile Include="Authors\ThomasBandt.cs" />
