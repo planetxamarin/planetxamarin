@@ -11,8 +11,8 @@ namespace Firehose.Web.Authors
 		public string StateOrRegion => "United Kingdom";
 		public string EmailAddress => "peter@peterfoot.net";
 		public string TwitterHandle => "peterfoot";
-		public Uri WebSite => new Uri("https://peterfoot.net");
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://peterfoot.net/feed/"); } }
+		public Uri WebSite => new Uri("https://inthehand.com/blog/");
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://inthehand.com/feed/"); } }
 		public string GravatarHash => "fa15aeeccc4b23e8a4677aeacb65b7bb";
         public string ShortBioOrTagLine => "develops Xamarin and Windows applications at In The Hand Ltd";
         public string GitHubHandle => "peterfoot";
