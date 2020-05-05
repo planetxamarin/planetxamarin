@@ -7,6 +7,9 @@ namespace Firehose.Web.Extensions
     {
         public static bool ApplyDefaultFilter(this SyndicationItem item)
         {
+            if (item == null)
+                return false;
+
             var hasXamarinCategory = false;
             var hasXamarinKeywords = false;
 
@@ -30,5 +33,16 @@ namespace Firehose.Web.Extensions
 
             return hasXamarinTitle || hasXamarinCategory || hasXamarinKeywords;
         }
-    }
+
+		public static string ToHtml(this SyndicationContent content)
+		{
+			var textSyndicationContent = content as TextSyndicationContent;
+			if (textSyndicationContent != null)
+			{
+				return textSyndicationContent.Text;
+			}
+
+			return content.ToString();
+		}
+	}
 }
