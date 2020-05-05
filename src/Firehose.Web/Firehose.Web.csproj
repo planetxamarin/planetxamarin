@@ -256,6 +256,7 @@
     <Compile Include="Authors\KymPhillpotts.cs" />
     <Compile Include="Authors\StevenThewissen.cs" />
     <Compile Include="Authors\RyanDavis.cs" />
+    <Compile Include="Authors\SaamerMansoor.cs" />
     <Compile Include="Authors\ThomasBurkhart.cs" />
     <Compile Include="Authors\Suthahar.cs" />
     <Compile Include="Authors\ThomasBandt.cs" />
@@ -330,7 +331,6 @@
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Authors\HussainAbbasi.cs" />
     <Compile Include="Authors\JohnThiriet.cs" />
-    <Compile Include="Authors\Martz.cs" />
     <Compile Include="Authors\LuisPujols.cs" />
     <Compile Include="Authors\LeomarisReyes.cs" />
     <Compile Include="Authors\DanielMonetelli.cs" />
