@@ -1,8 +1,6 @@
-using Firehose.Web.Infrastructure;
+/*using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
@@ -13,11 +11,11 @@ namespace Firehose.Web.Authors
         public string StateOrRegion => "SFAX, Tunisia";
         public string EmailAddress => "";
         public string ShortBioOrTagLine => "Helping enthusiasts developers to learn Xamarin.Forms,ASP.NET,azure";
-        public Uri WebSite => new Uri("https://achrafbenalayablog.azurewebsites.net");
+        public Uri WebSite => new Uri("https://achrafbenalaya.github.io/Achrafbenalayablog/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://achrafbenalayablog.azurewebsites.net/index.php/category/xamarin/"); }
+            get { yield return new Uri("https://achrafbenalaya.github.io/Achrafbenalayablog/categories/xamarin/"); }
         }
 
         public string TwitterHandle => "AchrafBenAlaya";
@@ -26,4 +24,4 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(34.74056, 10.76028);
         public string FeedLanguageCode => "en";
     }
-}
+}*/
