@@ -60,7 +60,7 @@ Task("UnitTest")
     .Does(() => 
 {
     Information("Running Unit Tests...");
-    var testPaths = GetFiles($"./src/UnitTest/bin/{configuration}/**/*UnitTest.dll");
+    var testPaths = GetFiles($"./src/UnitTest/bin/{configuration}/**/*test*.dll");
     XUnit2(testPaths,
         new XUnit2Settings {
             XmlReport = true,

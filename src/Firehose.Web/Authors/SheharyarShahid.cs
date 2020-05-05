@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using Firehose.Web.Infrastructure;
 
@@ -24,4 +24,4 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(33.579363, 73.057204);
         public string FeedLanguageCode => "en";
     }
-}
+}*/

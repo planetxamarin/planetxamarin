@@ -14,7 +14,7 @@ namespace Firehose.Web.AutofacModules
                    .AsImplementedInterfaces()
                    .SingleInstance();
 
-            builder.RegisterType<CombinedFeedSource>()
+            builder.RegisterType<NewCombinedFeedSource>()
                    .AsSelf()
                    .SingleInstance();
         }
