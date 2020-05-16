@@ -19,16 +19,20 @@ namespace Firehose.Web.ViewModels
 			{
 				var authorHosts = author.FeedUris.Select(au => au.Host.ToLowerInvariant()).Concat(new[] { author.WebSite.Host.ToLowerInvariant() }).ToArray();
 				var feedBurnerAuthors = author.FeedUris.Where(au => au.Host.Contains("feeds.feedburner")).ToList();
+				var mediumAuthors = author.FeedUris.Where(au => au.Host.Contains("medium.com")).ToList();
 
-				foreach(var itemUrl in urls)
+				foreach (var itemUrl in urls)
 				{
 					var host = itemUrl.Host.ToLowerInvariant();
 
-					if (authorHosts.Contains(host))
-						return true;
-
-					if (authorHosts.Contains(host.Replace("www.", "")))
-						return true;
+					if(host.Contains("medium.com"))
+					{
+						if(itemUrl.Segments.Count() >= 3)
+						{
+							var mediumId = itemUrl.Segments[1].Trim('/');
+							return mediumAuthors.Any(fba => fba.AbsoluteUri.Contains(mediumId));
+						}
+					}
 
 					if (host.Contains("feedproxy.google")) //  feed burner is messed up :(
 					{
@@ -37,10 +41,18 @@ namespace Firehose.Web.ViewModels
 						if (itemUrl.Segments.Count() >= 5)
 						{
 							var feedBurnerId = itemUrl.Segments[2].Trim('/');
-							if (feedBurnerAuthors.Any(fba => fba.AbsoluteUri.Contains(feedBurnerId)))
-								return true;
+							return feedBurnerAuthors.Any(fba => fba.AbsoluteUri.Contains(feedBurnerId));
 						}
 					}
+
+					if (authorHosts.Contains(host))
+						return true;
+
+					if (authorHosts.Contains(host.Replace("www.", "")))
+						return true;
+
+					if (authorHosts.Contains(host.Insert(0, "www.")))
+						return true;
 				}
 
 				return false;
