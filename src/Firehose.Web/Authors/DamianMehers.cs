@@ -19,7 +19,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://damian.fyi/feed/"); }
+            get { yield return new Uri("https://damian.fyi/feed/Xamarin.xml"); }
         }
 
         public string FeedLanguageCode => "en";
