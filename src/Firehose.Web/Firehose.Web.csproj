@@ -294,6 +294,7 @@
     <Compile Include="Infrastructure\NewCombinedFeedSource.cs" />
     <Compile Include="Infrastructure\RssFeedResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="Authors\AndrasToth.cs" />
     <Compile Include="Authors\MarcoKuiper.cs" />
     <Compile Include="Authors\MartijnVanDijk.cs" />
     <Compile Include="Authors\GregShackles.cs" />
