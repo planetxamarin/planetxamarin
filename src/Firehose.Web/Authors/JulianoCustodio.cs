@@ -8,18 +8,18 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Juliano";
         public string LastName => "Custódio";
-        public string StateOrRegion => "Piracicaba, Brasil";
+        public string StateOrRegion => "Alphaville - Barueri, Brasil";
         public string TwitterHandle => "JuuCustodio";
         public string GitHubHandle => "JuuCustodio";
-        public string ShortBioOrTagLine => "Microsoft MVP, Blogger and Speaker";
+        public string ShortBioOrTagLine => "Solutions Architect, Blogger and Speaker";
         public string EmailAddress => "juliano.custodio@hotmail.com.br";
         public string GravatarHash => "71de9936f2ffbc93e9918066479331f1";
-        public GeoPosition Position => new GeoPosition(-22.7342864, -47.6480644);
+        public GeoPosition Position => new GeoPosition(-23.4880831, -46.8496769);
         public Uri WebSite => new Uri("https://www.julianocustodio.com");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://www.julianocustodio.com/rss"); }
+            get { yield return new Uri("https://julianocustodio.com/category/xamarin/feed/"); }
         }
 
         public string FeedLanguageCode => "pt";
