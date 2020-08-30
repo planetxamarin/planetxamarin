@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://xamarinpodcast.fireside.fm/rss"); }
+            get { yield return new Uri("https://feeds.fireside.fm/xamarinpodcast/rss"); }
         }
 
         public string TwitterHandle => "XamarinPodcast";

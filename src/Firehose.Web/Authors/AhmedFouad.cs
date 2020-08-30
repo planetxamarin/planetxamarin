@@ -19,7 +19,7 @@ namespace Firehose.Web.Authors
 
 		public string ShortBioOrTagLine => "software engineer with 10 years experience with the .NET Framework living in Vienna, Austria.";
 
-		public Uri WebSite => new Uri("https://medium.com/@csharpwriter");
+		public Uri WebSite => new Uri("https://itnext.com/@csharpwriter");
 
 		public IEnumerable<Uri> FeedUris
 		{
