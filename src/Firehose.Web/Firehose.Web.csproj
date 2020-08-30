@@ -200,7 +200,6 @@
     <Compile Include="Authors\AnbuMani.cs" />
     <Compile Include="Authors\AndreasNesheim.cs" />
     <Compile Include="Authors\AndrewHoefling.cs" />
-    <Compile Include="Authors\BenceLenart.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
