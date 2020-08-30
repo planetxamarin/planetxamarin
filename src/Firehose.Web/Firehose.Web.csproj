@@ -205,6 +205,8 @@
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
     <Compile Include="Authors\Delpin.cs" />
+    <Compile Include="Authors\FelipeBaltazar.cs" />
+    <Compile Include="Authors\DenysFiediaiev.cs" />
     <Compile Include="Authors\LogeshPalani.cs" />
     <Compile Include="Authors\DylanBerry.cs" />
     <Compile Include="Authors\GiampaoloTucci.cs" />
@@ -294,6 +296,7 @@
     <Compile Include="Infrastructure\NewCombinedFeedSource.cs" />
     <Compile Include="Infrastructure\RssFeedResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="Authors\AndrasToth.cs" />
     <Compile Include="Authors\MarcoKuiper.cs" />
     <Compile Include="Authors\MartijnVanDijk.cs" />
     <Compile Include="Authors\GregShackles.cs" />
@@ -310,7 +313,6 @@
     <Compile Include="Authors\MichaelRidland.cs" />
     <Compile Include="Authors\MatthewSoucoup.cs" />
     <Compile Include="Authors\MatthewLeibowitz.cs" />
-    <Compile Include="Authors\MarkDeanilVicente.cs" />
     <Compile Include="ViewModels\PreviewViewModel.cs" />
     <Compile Include="Authors\IoneSouzaJunior.cs" />
     <Compile Include="Authors\DavidBritch.cs" />
@@ -336,7 +338,6 @@
     <Compile Include="Authors\LeomarisReyes.cs" />
     <Compile Include="Authors\DanielMonetelli.cs" />
     <Compile Include="Authors\JohnTaubensee.cs" />
-    <Compile Include="Authors\JesseJiang.cs" />
     <Compile Include="Authors\DivikiranRavela.cs" />
     <Compile Include="Authors\RobinSchroeder.cs" />
     <Compile Include="Authors\AchrafBenAlaya.cs" />
