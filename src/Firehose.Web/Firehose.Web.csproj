@@ -271,7 +271,6 @@
     <Compile Include="Authors\TomaszCielecki.cs" />
     <Compile Include="Authors\JonDouglas.cs" />
     <Compile Include="Authors\JulianoCustodio.cs" />
-    <Compile Include="Authors\JanTourlamain.cs" />
     <Compile Include="Authors\WinstonGubantes.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="Authors\MarcoSiccardi.cs" />
