@@ -232,6 +232,7 @@
     <Compile Include="Authors\SheharyarShahid.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
+    <Compile Include="Authors\StevenCheco.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\TrailheadTechnology.cs" />
     <Compile Include="Authors\Xablu.cs" />
