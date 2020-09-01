@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
 		public string EmailAddress => "steven.checo.19@gmail.com";
 
-		public string ShortBioOrTagLine => "Software Engineer";
+		public string ShortBioOrTagLine => "is a C# ASP.Net and Xamarin Developer, I'd preferd back-end but I get along with the Front-End, I love help others with code and build new things with friends, I ♥ C#";
 
 		public Uri WebSite => new Uri("https://checox.com");
 
@@ -28,7 +28,7 @@ namespace Firehose.Web.Authors
 
 		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://checox.com/feed/"); } }
 
-		public GeoPosition Position => new GeoPosition(40.8448, 73.8648);
+		public GeoPosition Position => new GeoPosition(40.837222, -73.886111);
 
 		public string FeedLanguageCode => "en";
 
