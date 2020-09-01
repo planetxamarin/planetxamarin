@@ -26,11 +26,11 @@ namespace Firehose.Web.Authors
 
 		public string GravatarHash => "47ad7178de588bb9a0b5922a5c1364c8";
 
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://checox.com/feed"); } }
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://checox.com/feed/"); } }
 
 		public GeoPosition Position => new GeoPosition(40.8448, 73.8648);
 
-		public string FeedLanguageCode => "Es";
+		public string FeedLanguageCode => "en";
 
 	}
 }
