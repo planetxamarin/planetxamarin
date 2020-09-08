@@ -4,13 +4,13 @@ using Firehose.Web.Infrastructure;
 
 namespace Firehose.Web.Authors
 {
-    public class GeraldVersluis : IAmAMicrosoftMVP
+    public class GeraldVersluis : IWorkAtXamarinOrMicrosoft
     {
         public string FirstName => "Gerald";
         public string LastName => "Versluis";
         public string StateOrRegion => "The Netherlands";
         public string EmailAddress => "gerald@verslu.is";
-        public string ShortBioOrTagLine => "builds awesome Xamarin apps, speaks, blogs, trains, writes and has this weird thing for unicorns";
+        public string ShortBioOrTagLine => "Software Engineer at Microsoft on the Xamarin.Forms team";
         public Uri WebSite => new Uri("https://blog.verslu.is/");
 
         public IEnumerable<Uri> FeedUris

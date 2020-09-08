@@ -10,7 +10,7 @@ namespace Firehose.Web.Authors
 		public string LastName => "de Cort";
 		public string StateOrRegion => "Tilburg, The Netherlands";
 		public string EmailAddress => "";
-		public string ShortBioOrTagLine => "Bas de Cort is a mobile developer with a passion for Xamarin.";
+		public string ShortBioOrTagLine => "is a mobile developer with a great passion for Xamarin 🙉";
 		public Uri WebSite => new Uri("https://www.basdecort.com");
 		public string TwitterHandle => "basdecort";
 		public string GitHubHandle => "basdecort";
@@ -18,7 +18,7 @@ namespace Firehose.Web.Authors
 		public GeoPosition Position => new GeoPosition(52.040222799999995, 5.534900299999999);
 		public IEnumerable<Uri> FeedUris
 		{
-			get { yield return new Uri("https://www.basdecort.com/feed"); }
+			get { yield return new Uri("https://www.basdecort.com/rss"); }
 		}
 
         public string FeedLanguageCode => "en";

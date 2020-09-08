@@ -1,6 +1,6 @@
-# Welcome [![Build status](https://ci.appveyor.com/api/projects/status/lpkmo9pftmku26ck?svg=true)](https://ci.appveyor.com/project/ghuntley/planetxamarin)
+# Welcome
 
-Hi! Welcome to PlanetXamarin.com!
+Hi! Welcome to [PlanetXamarin.com](https://www.planetxamarin.com)!
 
 If you write about Xamarin, you belong here. You're welcome to add your blog and have it aggregated as part of our feed as long as the content you are sharing does not violate the community [code of conduct](https://github.com/planetxamarin/planetxamarin/blob/master/CODE_OF_CONDUCT.md).
 
@@ -34,7 +34,7 @@ public class BruceWayne : IAmACommunityMember
     public GeoPosition Position => new GeoPosition(47.643417, -122.126083);
     public Uri WebSite => new Uri("https://planetxamarin.com/");
     public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://planetxamarin.com/rss"); } }
-    public FeedLanguageCode => "en";
+    public string FeedLanguageCode => "en";
 }
 ```
 
@@ -90,6 +90,9 @@ Don't forget to incorporate the Featured on Planet Xamarin badge on your blog an
 Enjoy all of our great content! 
 
 Of course you are more than welcome to submit other features and bugfixes as well.
+
+# Build Status
+* Azure DevOps: [![Build status](https://dev.azure.com/jamesmontemagno/Planet%20Xamarin/_apis/build/status/Planet%20Xamarin)](https://dev.azure.com/jamesmontemagno/Planet%20Xamarin/_build/latest?definitionId=33)
 
 # Acknowledgements
 * Thanks to Readify for open sourcing their employee blog aggregation platform which we forked to create PlanetXamarin. Looking for your next challenge? [Readify is hiring](https://join.readify.net/?source=StaffReferral&campaign=geoffrey.huntley) and offers relocation services for developers from abroad.

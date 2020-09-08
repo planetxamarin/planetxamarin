@@ -59,4 +59,8 @@ namespace Firehose.Web.Infrastructure
     public interface IAmAFrameworkForXamarin : IAmACommunityMember
     {
     }
+
+    public interface IAmAYoutuber : IAmACommunityMember
+    {
+    }
 }
