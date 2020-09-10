@@ -200,6 +200,7 @@
     <Compile Include="Authors\AnbuMani.cs" />
     <Compile Include="Authors\AndreasNesheim.cs" />
     <Compile Include="Authors\AndrewHoefling.cs" />
+		<Compile Include="Authors\BenceLenart.cs" />
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Authors\SheharyarShahid.cs" />
     <Compile Include="Authors\StefanRiedmann.cs" />
     <Compile Include="Authors\StephenMarcus.cs" />
+    <Compile Include="Authors\StevenCheco.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\TrailheadTechnology.cs" />
     <Compile Include="Authors\Xablu.cs" />
@@ -300,6 +302,7 @@
     <Compile Include="Authors\GregShackles.cs" />
     <Compile Include="Authors\ChrisWilliams.cs" />
     <Compile Include="Authors\GeertVanDerCruijsen.cs" />
+    <Compile Include="Authors\LuisMatos.cs" />
     <Compile Include="Authors\JamesMontemagno.cs" />
     <Compile Include="Authors\MergeConflict.cs" />
     <Compile Include="Authors\TheXamarinShow.cs" />
