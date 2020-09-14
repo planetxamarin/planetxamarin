@@ -335,7 +335,6 @@
     <Compile Include="Authors\HussainAbbasi.cs" />
     <Compile Include="Authors\JohnThiriet.cs" />
     <Compile Include="Authors\LuisPujols.cs" />
-    <Compile Include="Authors\LeomarisReyes.cs" />
     <Compile Include="Authors\DanielMonetelli.cs" />
     <Compile Include="Authors\JohnTaubensee.cs" />
     <Compile Include="Authors\DivikiranRavela.cs" />
