@@ -4,7 +4,6 @@ using Polly;
 using Polly.Caching;
 using Polly.Caching.Memory;
 using Polly.Retry;
-using Polly.Wrap;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -19,7 +18,7 @@ using System.Xml;
 
 namespace Firehose.Web.Infrastructure
 {
-    public class NewCombinedFeedSource
+	public class NewCombinedFeedSource
     {
         private static HttpClient httpClient;
         private static AsyncRetryPolicy retryPolicy;
@@ -147,6 +146,11 @@ namespace Firehose.Web.Infrastructure
                 throw new FeedReadFailedException("Reading feed timed out", ex)
                     .WithData("FeedUri", feedUri);
             }
+			catch (OperationCanceledException opcex)
+			{
+				throw new FeedReadFailedException("Reading feed timed out", opcex)
+					.WithData("FeedUri", feedUri);
+			}
 
             throw new FeedReadFailedException("Loading remote syndication feed failed.")
                 .WithData("FeedUri", feedUri)
