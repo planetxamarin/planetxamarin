@@ -31,7 +31,7 @@ namespace Firehose.Web.Authors
 		public string FeedLanguageCode => "en";
 
 		// my feed is prebuilt by wyam and has a dedicated rss feed for xamarin content - thus all items are "good"
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://allancritchie.net/xamarin.rss"); } }
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://allancritchie.net/feed.rss"); } }
 		public bool Filter(SyndicationItem item) => true;
 	}
 }
