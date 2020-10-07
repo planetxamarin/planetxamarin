@@ -10,12 +10,19 @@ namespace Firehose.Web.Authors
         public string LastName => "Versluis";
         public string StateOrRegion => "The Netherlands";
         public string EmailAddress => "gerald@verslu.is";
-        public string ShortBioOrTagLine => "Software Engineer at Microsoft on the Xamarin.Forms team";
+        public string ShortBioOrTagLine => "Software Engineer at Microsoft";
         public Uri WebSite => new Uri("https://blog.verslu.is/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://blog.verslu.is/feed/"); }
+			get
+			{
+				return new Uri[]
+				{
+					new Uri("https://blog.verslu.is/feed/"),
+					new Uri("https://www.youtube.com/feeds/videos.xml?channel_id=UCBBZ2kXWmd8eXlHg2wEaClw")
+				};
+			}
         }
 
         public string TwitterHandle => "jfversluis";
