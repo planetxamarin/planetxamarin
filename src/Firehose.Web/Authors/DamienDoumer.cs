@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Firehose.Web.Authors
 {
-    public class DamienDoumer : IAmACommunityMember, IFilterMyBlogPosts
+    public class DamienDoumer : IAmACommunityMember
     {
         public string FirstName => "Damien";
 
@@ -40,11 +40,5 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(4.07316844239285, 9.684240818616558);
 
         public string FeedLanguageCode => "en";
-
-		public bool Filter(SyndicationItem item)
-		{
-			return item.Title.Text.ToLowerInvariant().Contains("xamarin") && 
-				(item.Categories?.Any(c => c.Name.ToLowerInvariant().Equals("xamarin")) ?? false);
-		}
 	}
 }
