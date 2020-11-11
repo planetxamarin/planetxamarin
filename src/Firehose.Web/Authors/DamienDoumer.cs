@@ -17,13 +17,20 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "damientohin@gmail.com";
 
-        public string ShortBioOrTagLine => "Fresh .Net developer, who loves mobile app development.";
+        public string ShortBioOrTagLine => "Fresh Fullstack .Net developer, who loves mobile app development in particular.";
 
         public Uri WebSite => new Uri("https://doumer.me/");
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://doumer.me/feed/"); }
+            get 
+			{
+				return new[] 
+				{
+					new Uri("https://doumer.me/feed/"),
+					new Uri("https://www.youtube.com/feeds/videos.xml?channel_id=UCdIg2HyCYIa4u75NLnfpt7A")
+				};
+			}
         }
 
         public string TwitterHandle => "Damien_Doumer";
@@ -33,5 +40,5 @@ namespace Firehose.Web.Authors
         public GeoPosition Position => new GeoPosition(4.07316844239285, 9.684240818616558);
 
         public string FeedLanguageCode => "en";
-    }
+	}
 }
