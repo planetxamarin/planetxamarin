@@ -10,9 +10,9 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "James";
         public string LastName => "Montemagno";
-        public string StateOrRegion => "Seattle, WA";
+        public string StateOrRegion => "PNW";
         public string EmailAddress => "";
-        public string ShortBioOrTagLine => "is a Principal Program Manager for Mobile Developer Tools";
+        public string ShortBioOrTagLine => "is a Principal Lead Program Manager for .NET Community";
         public Uri WebSite => new Uri("https://montemagno.com");
 
         public IEnumerable<Uri> FeedUris

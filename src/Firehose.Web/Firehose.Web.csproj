@@ -204,6 +204,7 @@
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
+    <Compile Include="Authors\DavidOrtinau.cs" />
     <Compile Include="Authors\Delpin.cs" />
     <Compile Include="Authors\FelipeBaltazar.cs" />
     <Compile Include="Authors\DenysFiediaiev.cs" />
