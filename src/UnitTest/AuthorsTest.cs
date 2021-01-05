@@ -84,10 +84,6 @@ namespace UnitTest
 				var feed = await feedSource.LoadFeed(null).ConfigureAwait(false);
 
 				Assert.NotNull(feed);
-
-				var allItems = feed.Items.Where(i => i != null).ToList();
-
-				Assert.True(allItems?.Count > 0, $"Author {author?.FirstName} {author?.LastName} @{author?.GitHubHandle} doesn't meet post policy {author?.FeedUris?.FirstOrDefault()?.OriginalString}");
 			}
 			catch (Exception ex)
 			{
