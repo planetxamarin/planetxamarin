@@ -15,11 +15,12 @@ namespace Firehose.Web.ViewModels
 
 		public PreviewViewModel(SyndicationFeed feed, IAmACommunityMember[] authors)
 		{
-			bool MatchesAuthorUrls(IAmACommunityMember author, IEnumerable<Uri> urls)
+			bool MatchesAuthorUrls(IAmACommunityMember author, IEnumerable<Uri> urls, SyndicationItem item)
 			{
 				var authorHosts = author.FeedUris.Select(au => au.Host.ToLowerInvariant()).Concat(new[] { author.WebSite.Host.ToLowerInvariant() }).ToArray();
 				var feedBurnerAuthors = author.FeedUris.Where(au => au.Host.Contains("feeds.feedburner")).ToList();
 				var mediumAuthors = author.FeedUris.Where(au => au.Host.Contains("medium.com")).ToList();
+				var youtubeAuthors = author.FeedUris.Where(au => au.Host.Contains("youtube.com")).ToList();
 
 				foreach (var itemUrl in urls)
 				{
@@ -45,6 +46,17 @@ namespace Firehose.Web.ViewModels
 						}
 					}
 
+					if(host.Contains("youtube.com")) //need to match youtube channel
+					{
+						var channel = item?.Authors?.FirstOrDefault()?.Uri;
+						if (channel == null)
+							return false;
+
+						var id = channel.Replace("https://www.youtube.com/channel/", string.Empty);
+
+						return youtubeAuthors.Any(yt => yt.AbsoluteUri.Contains(id));
+					}
+
 					if (authorHosts.Contains(host))
 						return true;
 
@@ -61,7 +73,7 @@ namespace Firehose.Web.ViewModels
 			var items = new List<PreviewModelItem>();
 			foreach(var item in feed.Items)
 			{
-				var author = authors.FirstOrDefault(a => MatchesAuthorUrls(a, item.Links.Select(l => l.Uri)));
+				var author = authors.FirstOrDefault(a => MatchesAuthorUrls(a, item.Links.Select(l => l.Uri), item));
 
 				string authorName;
 

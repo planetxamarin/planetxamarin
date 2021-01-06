@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
 		public string EmailAddress => "bence960206@gmail.com";
 
-		public Uri WebSite => new Uri("ttps://officialdoniald.com");
+		public Uri WebSite => new Uri("https://officialdoniald.com");
 
 		public IEnumerable<Uri> FeedUris
 		{
