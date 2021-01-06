@@ -351,6 +351,7 @@
     <Compile Include="Authors\DamienAicheh.cs" />
     <Compile Include="Authors\LetsCreateSeries.cs" />
     <Compile Include="Authors\SylvainMoingeon.cs" />
+    <Compile Include="Authors\BradDean.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
