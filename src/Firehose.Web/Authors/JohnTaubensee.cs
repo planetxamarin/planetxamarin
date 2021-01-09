@@ -17,7 +17,7 @@ namespace Firehose.Web.Authors
 
         public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://taubensee.net/rss"); }
+            get { yield return new Uri("https://taubensee.net/tags/xamarin/index.xml"); }
         }
 
         public string TwitterHandle => "jtaubensee";
