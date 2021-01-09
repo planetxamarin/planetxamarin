@@ -10,6 +10,6 @@ public class JoacimWall : IAmACommunityMember
     public string GitHubHandle => "JoacimWall";
     public GeoPosition Position => new GeoPosition(59.378117005663405, 13.499225556120823);
     public Uri WebSite => new Uri("https://joacimwall.github.io/");
-    public IEnumerable<Uri> FeedUris { get { yield return new Uri(""); } }
+    public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://joacimwall.github.io/feed_rss_created.xml"); } }
     public string FeedLanguageCode => "en";
 }
