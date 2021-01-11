@@ -1,3 +1,6 @@
+using Firehose.Web.Infrastructure;
+using System;
+using System.Collections.Generic;
 public class JoacimWall : IAmACommunityMember
 {
     public string FirstName => "Joacim";
