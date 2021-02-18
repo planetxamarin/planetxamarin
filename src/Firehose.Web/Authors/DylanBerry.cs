@@ -15,7 +15,7 @@ namespace Firehose.Web.Authors
         public string GitHubHandle => "dylanberry";
         public GeoPosition Position => new GeoPosition(43.653493, -79.384095);
         public Uri WebSite => new Uri("https://www.dylanberry.com/");
-        public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://www.dylanberry.com/feed/"); } }
+        public IEnumerable<Uri> FeedUris => new [] { new Uri("https://www.dylanberry.com/category/dotnet-maui/feed/"), new Uri("https://www.dylanberry.com/category/xamarin/feed/") };
         public string FeedLanguageCode => "en";
     }
 }
