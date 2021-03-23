@@ -182,6 +182,27 @@ namespace Firehose.Web.Infrastructure
 				LastUpdatedTime = DateTimeOffset.UtcNow
             };
 
+            // This foreach section is responsible for adding the Twitter handles
+            foreach (var item in feed.Items)
+            {
+                string newTitleText = string.Empty;
+                if (item.Authors.Count > 0)
+                    newTitleText = Tamarins.Where(x => x.FirstName + " " + x.LastName == item.Authors[0].Name).FirstOrDefault()?.TwitterHandle ?? string.Empty;
+                newTitleText = String.IsNullOrEmpty(newTitleText) ? item.Title.Text : item.Title.Text + " @" + newTitleText;
+
+                if (!string.IsNullOrWhiteSpace(item.Title.Type))
+                {
+                    string type = item.Title.Type == "text" ? "Plaintext" : item.Title.Type;
+                    TextSyndicationContentKind textKind = (TextSyndicationContentKind)
+                        Enum.Parse(typeof(TextSyndicationContentKind), type, ignoreCase: true);
+                    item.Title = new TextSyndicationContent(newTitleText, textKind);
+                }
+                else
+                {
+                    item.Title = new TextSyndicationContent(newTitleText);
+                }
+            }
+
             foreach(var tamarin in tamarins)
             {
                 feed.Contributors.Add(new SyndicationPerson(
