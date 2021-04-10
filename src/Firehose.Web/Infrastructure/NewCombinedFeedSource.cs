@@ -199,9 +199,7 @@ namespace Firehose.Web.Infrastructure
             {
                 if (!string.IsNullOrWhiteSpace(item.Title.Type))
                 {
-                    string type = item.Title.Type == "text" ? "Plaintext" : item.Title.Type;
-                    TextSyndicationContentKind textKind = (TextSyndicationContentKind)Enum.Parse(typeof(TextSyndicationContentKind), type, ignoreCase: true);
-                    item.Title = new TextSyndicationContent(GetFeedItemTitle(item), textKind);
+                    item.Title = new TextSyndicationContent(GetFeedItemTitle(item), GetTextKind(item.Title.Type));
                 }
                 else
                 {
@@ -210,12 +208,21 @@ namespace Firehose.Web.Infrastructure
             }
         }
 
+        TextSyndicationContentKind GetTextKind(string type)
+        {
+            if (type == "text")
+                return (TextSyndicationContentKind)Enum.Parse(typeof(TextSyndicationContentKind), "Plaintext", true);
+            else
+                return (TextSyndicationContentKind)Enum.Parse(typeof(TextSyndicationContentKind), type, true);
+        }
+
         private string GetFeedItemTitle(SyndicationItem item)
         {
             var twitterHandle = string.Empty;
             if (item.Authors.Count > 0)
                 twitterHandle = Tamarins.Where(x => x.FirstName + " " + x.LastName == item.Authors[0].Name).FirstOrDefault()?.TwitterHandle;
-            if (String.IsNullOrEmpty(twitterHandle))
+
+            if (!String.IsNullOrEmpty(twitterHandle))
                 return item.Title.Text;
             else
                 return item.Title.Text + " @" + twitterHandle;
