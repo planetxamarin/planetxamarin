@@ -222,7 +222,7 @@ namespace Firehose.Web.Infrastructure
             if (item.Authors.Count > 0)
                 twitterHandle = Tamarins.Where(x => x.FirstName + " " + x.LastName == item.Authors[0].Name).FirstOrDefault()?.TwitterHandle;
 
-            if (!String.IsNullOrEmpty(twitterHandle))
+            if (String.IsNullOrEmpty(twitterHandle))
                 return item.Title.Text;
             else
                 return item.Title.Text + " @" + twitterHandle;
