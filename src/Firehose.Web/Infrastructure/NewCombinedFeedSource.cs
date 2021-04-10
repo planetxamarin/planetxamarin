@@ -182,26 +182,7 @@ namespace Firehose.Web.Infrastructure
 				LastUpdatedTime = DateTimeOffset.UtcNow
             };
 
-            // This foreach section is responsible for adding the Twitter handles
-            foreach (var item in feed.Items)
-            {
-                string newTitleText = string.Empty;
-                if (item.Authors.Count > 0)
-                    newTitleText = Tamarins.Where(x => x.FirstName + " " + x.LastName == item.Authors[0].Name).FirstOrDefault()?.TwitterHandle ?? string.Empty;
-                newTitleText = String.IsNullOrEmpty(newTitleText) ? item.Title.Text : item.Title.Text + " @" + newTitleText;
-
-                if (!string.IsNullOrWhiteSpace(item.Title.Type))
-                {
-                    string type = item.Title.Type == "text" ? "Plaintext" : item.Title.Type;
-                    TextSyndicationContentKind textKind = (TextSyndicationContentKind)
-                        Enum.Parse(typeof(TextSyndicationContentKind), type, ignoreCase: true);
-                    item.Title = new TextSyndicationContent(newTitleText, textKind);
-                }
-                else
-                {
-                    item.Title = new TextSyndicationContent(newTitleText);
-                }
-            }
+            AddTwitterHandlesToFeed(feed);        
 
             foreach(var tamarin in tamarins)
             {
@@ -210,6 +191,34 @@ namespace Firehose.Web.Infrastructure
             }
 
             return feed;
+        }
+
+        private void AddTwitterHandlesToFeed(SyndicationFeed feed)
+        {
+            foreach (var item in feed.Items)
+            {
+                if (!string.IsNullOrWhiteSpace(item.Title.Type))
+                {
+                    string type = item.Title.Type == "text" ? "Plaintext" : item.Title.Type;
+                    TextSyndicationContentKind textKind = (TextSyndicationContentKind)Enum.Parse(typeof(TextSyndicationContentKind), type, ignoreCase: true);
+                    item.Title = new TextSyndicationContent(GetFeedItemTitle(item), textKind);
+                }
+                else
+                {
+                    item.Title = new TextSyndicationContent(GetFeedItemTitle(item));
+                }
+            }
+        }
+
+        private string GetFeedItemTitle(SyndicationItem item)
+        {
+            var twitterHandle = string.Empty;
+            if (item.Authors.Count > 0)
+                twitterHandle = Tamarins.Where(x => x.FirstName + " " + x.LastName == item.Authors[0].Name).FirstOrDefault()?.TwitterHandle;
+            if (String.IsNullOrEmpty(twitterHandle))
+                return item.Title.Text;
+            else
+                return item.Title.Text + " @" + twitterHandle;
         }
 
         private static Func<SyndicationItem, bool> GetFilterFunction(IAmACommunityMember tamarin)
