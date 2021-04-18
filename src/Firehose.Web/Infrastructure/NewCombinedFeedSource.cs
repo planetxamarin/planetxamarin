@@ -271,6 +271,16 @@ namespace Firehose.Web.Infrastructure
             else
                 return (TextSyndicationContentKind)Enum.Parse(typeof(TextSyndicationContentKind), type, true);
         }
+        
+        private static Func<SyndicationItem, bool> GetFilterFunction(IAmACommunityMember tamarin)
+        {
+            if (tamarin is IFilterMyBlogPosts filterMyBlogPosts)
+            {
+                return filterMyBlogPosts.Filter;
+            }
+
+            return null;
+        }
 
         private static bool TryFilter(SyndicationItem item, Func<SyndicationItem, bool> filterFunc)
         {
