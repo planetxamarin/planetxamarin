@@ -238,6 +238,7 @@
     <Compile Include="Authors\StevenCheco.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\TrailheadTechnology.cs" />
+    <Compile Include="Authors\VijayAnandEG.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
     <Compile Include="Authors\SamirGC.cs" />
