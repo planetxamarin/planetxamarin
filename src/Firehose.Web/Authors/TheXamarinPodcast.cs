@@ -6,11 +6,11 @@ namespace Firehose.Web.Authors
 {
     public class TheXamarinPodcast : IAmACommunityMember, IAmAPodcast
     {
-        public string FirstName => "The .NET MAUI Podcast";
+        public string FirstName => "The .NET MAUI";
         public string LastName => "Podcast";
         public string StateOrRegion => "Internet";
         public string EmailAddress => "hello@xamarin.com";
-        public string ShortBioOrTagLine => "is the official .NET MAUI podcast discussing all things .NET MAUI!";
+        public string ShortBioOrTagLine => "is the official podcast of .NET MAUI!";
         public Uri WebSite => new Uri("http://www.xamarinpodcast.com");
 
         public IEnumerable<Uri> FeedUris
