@@ -1,10 +1,11 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.ServiceModel.Syndication;
 
 namespace Firehose.Web.Authors
 {
-	public class DaveMurray : IAmACommunityMember
+	public class DaveMurray : IAmACommunityMember, IFilterMyBlogPosts
 	{
 		public string FirstName => "Dave";
 
@@ -29,5 +30,7 @@ namespace Firehose.Web.Authors
 		public GeoPosition Position => new GeoPosition(55.860916, -4.251433);
 
 		public string FeedLanguageCode => "en";
+
+		public bool Filter(SyndicationItem item) => item.Title.Text.ToLowerInvariant().Contains("xamarin") || item.Title.Text.ToLowerInvariant().Contains("maui");
 	}
 }
