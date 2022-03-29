@@ -60,7 +60,7 @@ namespace Firehose.Web.Infrastructure
                     new ProductInfoHeaderValue("PlanetXamarin", $"{GetType().Assembly.GetName().Version}"));
                 httpClient.Timeout = TimeSpan.FromSeconds(15);
 
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             }
         }
 
