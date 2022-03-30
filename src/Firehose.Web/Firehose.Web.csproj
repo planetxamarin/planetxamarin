@@ -204,15 +204,18 @@
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
+    <Compile Include="Authors\DaveMurray.cs" />
     <Compile Include="Authors\DavidOrtinau.cs" />
     <Compile Include="Authors\Delpin.cs" />
     <Compile Include="Authors\FelipeBaltazar.cs" />
     <Compile Include="Authors\DenysFiediaiev.cs" />
+    <Compile Include="Authors\JuanSturla.cs" />
     <Compile Include="Authors\JohannWeiher.cs" />
     <Compile Include="Authors\LogeshPalani.cs" />
     <Compile Include="Authors\DylanBerry.cs" />
     <Compile Include="Authors\GiampaoloTucci.cs" />
     <Compile Include="Authors\JimBennett.cs" />
+    <Compile Include="Authors\OfficialMAUIBlog.cs" />
     <Compile Include="Authors\Telerik.cs" />
     <Compile Include="Authors\MikeGrant.cs" />
     <Compile Include="Authors\Syncfusion.cs" />
@@ -238,6 +241,7 @@
     <Compile Include="Authors\StevenCheco.cs" />
     <Compile Include="Authors\ThiagoBertuzzi.cs" />
     <Compile Include="Authors\TrailheadTechnology.cs" />
+    <Compile Include="Authors\VijayAnandEG.cs" />
     <Compile Include="Authors\Xablu.cs" />
     <Compile Include="Authors\MartynWiggins.cs" />
     <Compile Include="Authors\SamirGC.cs" />
@@ -353,6 +357,8 @@
     <Compile Include="Authors\LetsCreateSeries.cs" />
     <Compile Include="Authors\SylvainMoingeon.cs" />
     <Compile Include="Authors\BradDean.cs" />
+    <Compile Include="Authors\TobyField.cs" />
+    <Compile Include="Authors\GlennVersweyveld.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

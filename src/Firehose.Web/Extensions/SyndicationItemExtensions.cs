@@ -16,7 +16,7 @@ namespace Firehose.Web.Extensions
             if (item.Categories.Count > 0)
             {
                 hasXamarinCategory = item.Categories.Any(category =>
-                    category.Name.ToLowerInvariant().Contains("xamarin"));
+                    category.Name.ToLowerInvariant().Contains("xamarin") || category.Name.ToLowerInvariant().Contains(".net maui"));
             }
 
             if (item.ElementExtensions.Count > 0)
@@ -25,13 +25,13 @@ namespace Firehose.Web.Extensions
                 if (element != null)
                 {
                     var keywords = element.GetObject<string>();
-                    hasXamarinKeywords = keywords.ToLowerInvariant().Contains("xamarin");
+                    hasXamarinKeywords = keywords.ToLowerInvariant().Contains("xamarin") || keywords.ToLowerInvariant().Contains(".net maui");
                 }
             }
 
-            var hasXamarinTitle = item.Title?.Text.ToLowerInvariant().Contains("xamarin") ?? false;
+            var hasXamarinTitle = (item.Title?.Text.ToLowerInvariant().Contains("xamarin") ?? false) || (item.Title?.Text.ToLowerInvariant().Contains(".net maui") ?? false);
 
-            return hasXamarinTitle || hasXamarinCategory || hasXamarinKeywords;
+			return hasXamarinTitle || hasXamarinCategory || hasXamarinKeywords;
         }
 
 		public static string ToHtml(this SyndicationContent content)

@@ -16,7 +16,7 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "";
 
-        public string ShortBioOrTagLine => "is a Microsoft MVP who blogs, talks, coaches and develops all around mobile development.";
+        public string ShortBioOrTagLine => "blogs, talks, coaches and develops all around mobile development.";
 
         public Uri WebSite => new Uri("https://mallibone.com");
 
@@ -26,7 +26,7 @@ namespace Firehose.Web.Authors
 
         public string GravatarHash => "4fa14971da4fafb96830960bc7c6733d";
 
-        public IEnumerable<Uri> FeedUris => new List<Uri> {new Uri("https://mallibone.com/feed/") };
+        public IEnumerable<Uri> FeedUris => new List<Uri> {new Uri("https://mallibone.com/feed.xml") };
 
         public GeoPosition Position => new GeoPosition(47.5056381, 8.7241297);
 
