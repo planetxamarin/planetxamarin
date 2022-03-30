@@ -204,10 +204,13 @@
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
+    <Compile Include="Authors\DaveMurray.cs" />
     <Compile Include="Authors\DavidOrtinau.cs" />
     <Compile Include="Authors\Delpin.cs" />
     <Compile Include="Authors\FelipeBaltazar.cs" />
     <Compile Include="Authors\DenysFiediaiev.cs" />
+    <Compile Include="Authors\Respawnsive.cs" />
+    <Compile Include="Authors\JuanSturla.cs" />
     <Compile Include="Authors\JohannWeiher.cs" />
     <Compile Include="Authors\LogeshPalani.cs" />
     <Compile Include="Authors\DylanBerry.cs" />
@@ -280,6 +283,7 @@
     <Compile Include="Authors\WinstonGubantes.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="Authors\MarcoSiccardi.cs" />
+		<Compile Include="Authors\JoacimWall.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -354,6 +358,8 @@
     <Compile Include="Authors\LetsCreateSeries.cs" />
     <Compile Include="Authors\SylvainMoingeon.cs" />
     <Compile Include="Authors\BradDean.cs" />
+    <Compile Include="Authors\TobyField.cs" />
+    <Compile Include="Authors\GlennVersweyveld.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
