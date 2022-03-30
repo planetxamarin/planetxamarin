@@ -16,9 +16,16 @@ namespace Firehose.Web.Authors
         public Uri WebSite => new Uri("https://www.msdevbuild.com/");
         public GeoPosition Position => new GeoPosition(12.9715990, 77.5945630);
 
-        public IEnumerable<Uri> FeedUris
+       public IEnumerable<Uri> FeedUris
         {
-            get { yield return new Uri("https://www.msdevbuild.com/feeds/posts/default"); }
+			get
+			{
+				return new Uri[]
+				{
+					new Uri("https://www.msdevbuild.com/feeds/posts/default"),
+					new Uri("https://www.youtube.com/feeds/videos.xml?channel_id=UCwoWf6zryMFwEyOh2UYLSwA")
+				};
+			}
         }
 
         public string GitHubHandle => "jssuthahar";
