@@ -16,9 +16,9 @@ namespace Firehose.Web.Authors
 
         public string EmailAddress => "allan.ritchie@gmail.com";
 
-        public string ShortBioOrTagLine => "";
+        public string ShortBioOrTagLine => "OSS Maintainer of Shiny.NET - Microsoft/Xamarin MVP";
 
-        public Uri WebSite => new Uri("https://allancritchie.net");
+        public Uri WebSite => new Uri("https://aritchie.github.io");
 
         public string TwitterHandle => "allanritchie911";
 
@@ -31,7 +31,7 @@ namespace Firehose.Web.Authors
 		public string FeedLanguageCode => "en";
 
 		// my feed is prebuilt by wyam and has a dedicated rss feed for xamarin content - thus all items are "good"
-		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://allancritchie.net/feed.rss"); } }
+		public IEnumerable<Uri> FeedUris { get { yield return new Uri("https://aritchie.github.io/Xamarin.rss"); } }
 		public bool Filter(SyndicationItem item) => true;
 	}
 }

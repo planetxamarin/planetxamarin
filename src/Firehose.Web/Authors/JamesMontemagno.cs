@@ -38,9 +38,12 @@ namespace Firehose.Web.Authors
 			if (item.Title?.Text?.ToLowerInvariant().Contains("xamarin") ?? false)
 				return true;
 
+			if (item.Title?.Text?.ToLowerInvariant().Contains(".net maui") ?? false)
+				return true;
+
 			// This filters out only the posts that have the "xamarin" category
 			// Not all blog posts have categories, please guard against this
-			return item.Categories?.Any(c => c.Name.ToLowerInvariant().Contains("xamarin")) ?? false;
+			return item.Categories?.Any(c => c.Name.ToLowerInvariant().Contains("xamarin") || c.Name.ToLowerInvariant().Contains(".net maui")) ?? false;
 		}
 	}
 }
