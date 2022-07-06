@@ -12,9 +12,9 @@ namespace Firehose.Web.Authors
         public string EmailAddress => string.Empty;
         public string TwitterHandle => "jssuthahar";
         public string GravatarHash => "2a34ebf4e9c4dca84eb7feee7217568f";
-        public string StateOrRegion => "Bangalore, India";
+        public string StateOrRegion => "Petaling Jaya, Selangor, Malaysia";
         public Uri WebSite => new Uri("https://www.msdevbuild.com/");
-        public GeoPosition Position => new GeoPosition(12.9715990, 77.5945630);
+        public GeoPosition Position => new GeoPosition(3.10726, 101.60671);
 
        public IEnumerable<Uri> FeedUris
         {
