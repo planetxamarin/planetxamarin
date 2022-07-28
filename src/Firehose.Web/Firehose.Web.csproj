@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Firehose.Web</RootNamespace>
     <AssemblyName>Firehose.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44371</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <Use64BitIISExpress />
+	<TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,53 +40,209 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.DynamicData">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Entity">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.ApplicationServices">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.EnterpriseServices" />
-    <PackageReference Include="Autofac" Version="4.2.1" />
-    <PackageReference Include="Autofac.Mvc5" Version="4.0.0" />
-    <PackageReference Include="bootstrap" Version="3.4.1" />
-    <PackageReference Include="elmah.corelibrary" Version="1.2" />
-    <PackageReference Include="Elmah.Mvc" Version="2.1.2" />
-    <PackageReference Include="FontAwesome" Version="4.7.0" />
-    <PackageReference Include="Humanizer.Core" Version="2.1.0" />
-    <PackageReference Include="jQuery" Version="3.1.1" />
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.7" />
-    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
-    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
-    <PackageReference Include="MvcNavigationHelpers" Version="0.0.0.5" />
-    <PackageReference Include="Polly">
-      <Version>7.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Polly.Caching.Memory">
-      <Version>3.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="System.ServiceModel.Syndication" Version="4.5.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Collections">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Collections.Concurrent">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.ComponentModel">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.ComponentModel.EventBasedAsync">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Data.Common">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Diagnostics.Contracts">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Diagnostics.Debug">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Diagnostics.StackTrace">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Diagnostics.Tools">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Diagnostics.Tracing">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Dynamic.Runtime">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Globalization">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Globalization.Extensions">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.IO">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.IO.Compression">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Linq">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Linq.Expressions">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Linq.Parallel">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Linq.Queryable">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Net.Http">
+			<Version>4.3.4</Version>
+		</PackageReference>
+		<PackageReference Include="System.Net.NetworkInformation">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Net.Primitives">
+			<Version>4.3.1</Version>
+		</PackageReference>
+		<PackageReference Include="System.Net.Requests">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.ObjectModel">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Reflection">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Reflection.Extensions">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Reflection.Primitives">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Resources.ResourceManager">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime">
+			<Version>4.3.1</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime.Extensions">
+			<Version>4.3.1</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime.InteropServices">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime.InteropServices.RuntimeInformation">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime.Numerics">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime.Serialization.Json">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime.Serialization.Primitives">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Runtime.Serialization.Xml">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Security.Cryptography.Algorithms">
+			<Version>4.3.1</Version>
+		</PackageReference>
+		<PackageReference Include="System.Security.Principal">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Security.SecureString">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Text.Encoding">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Text.Encoding.Extensions">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Text.RegularExpressions">
+			<Version>4.3.1</Version>
+		</PackageReference>
+		<PackageReference Include="System.Threading">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Threading.Overlapped">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Threading.Tasks">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Threading.Tasks.Parallel">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Threading.Timer">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.ValueTuple">
+			<Version>4.5.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Xml.ReaderWriter">
+			<Version>4.3.1</Version>
+		</PackageReference>
+		<PackageReference Include="System.Xml.XDocument">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Xml.XmlSerializer">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<PackageReference Include="System.Xml.XPath.XDocument">
+			<Version>4.3.0</Version>
+		</PackageReference>
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Net.Http" />
+		<Reference Include="System.ServiceModel" />
+		<Reference Include="System.Web.DynamicData">
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Web.Entity">
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Web.ApplicationServices">
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.ComponentModel.DataAnnotations" />
+		<Reference Include="System" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Web">
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.Xml" />
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Web.Services">
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="System.EnterpriseServices" />
+		<PackageReference Include="Autofac" Version="6.3.0" />
+		<PackageReference Include="Autofac.Mvc5" Version="6.0.0" />
+		<PackageReference Include="bootstrap" Version="5.1.3" />
+		<PackageReference Include="elmah.corelibrary" Version="1.2.2" />
+		<PackageReference Include="Elmah.Mvc" Version="2.1.2" />
+		<PackageReference Include="FontAwesome" Version="4.7.0" />
+		<PackageReference Include="Humanizer.Core" Version="2.14.1" />
+		<PackageReference Include="jQuery" Version="3.6.0" />
+		<PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+		<PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.7" />
+		<PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.7" />
+		<PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
+		<PackageReference Include="MvcNavigationHelpers" Version="0.0.0.5" />
+		<PackageReference Include="Polly">
+			<Version>7.2.3</Version>
+		</PackageReference>
+		<PackageReference Include="Polly.Caching.Memory">
+			<Version>3.0.2</Version>
+		</PackageReference>
+		<PackageReference Include="System.ServiceModel.Syndication" Version="6.0.0" />
+	</ItemGroup>
   <ItemGroup>
     <Content Include="Content\Logo.png" />
     <Content Include="Content\css\site.min.css">
@@ -204,10 +361,13 @@
     <Compile Include="Authors\DamienDoumer.cs" />
     <Compile Include="Authors\DanielCauser.cs" />
     <Compile Include="Authors\DanielHindrikes.cs" />
+    <Compile Include="Authors\DaveMurray.cs" />
     <Compile Include="Authors\DavidOrtinau.cs" />
     <Compile Include="Authors\Delpin.cs" />
     <Compile Include="Authors\FelipeBaltazar.cs" />
     <Compile Include="Authors\DenysFiediaiev.cs" />
+    <Compile Include="Authors\Respawnsive.cs" />
+    <Compile Include="Authors\JuanSturla.cs" />
     <Compile Include="Authors\JohannWeiher.cs" />
     <Compile Include="Authors\LogeshPalani.cs" />
     <Compile Include="Authors\DylanBerry.cs" />
@@ -280,6 +440,7 @@
     <Compile Include="Authors\WinstonGubantes.cs" />
     <Compile Include="Authors\JohnWilson.cs" />
     <Compile Include="Authors\MarcoSiccardi.cs" />
+		<Compile Include="Authors\JoacimWall.cs" />
     <Compile Include="AutofacModules\FeedsModule.cs" />
     <Compile Include="AutofacModules\WebModule.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -354,6 +515,8 @@
     <Compile Include="Authors\LetsCreateSeries.cs" />
     <Compile Include="Authors\SylvainMoingeon.cs" />
     <Compile Include="Authors\BradDean.cs" />
+    <Compile Include="Authors\TobyField.cs" />
+    <Compile Include="Authors\GlennVersweyveld.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
