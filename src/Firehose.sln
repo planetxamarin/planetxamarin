@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.32804.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firehose.Web", "Firehose.Web\Firehose.Web.csproj", "{CA8179B8-3FE5-465B-B8A6-DD9200744124}"
 EndProject
@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firehose.WebCore", "Firehose.WebCore\Firehose.WebCore.csproj", "{02103C65-EA01-4FFD-95B7-22DAFB8BB7A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D4A05AA-C9D1-4D9D-B6AD-68F9063F3F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02103C65-EA01-4FFD-95B7-22DAFB8BB7A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02103C65-EA01-4FFD-95B7-22DAFB8BB7A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02103C65-EA01-4FFD-95B7-22DAFB8BB7A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02103C65-EA01-4FFD-95B7-22DAFB8BB7A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

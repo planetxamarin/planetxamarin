@@ -1,0 +1,14 @@
+﻿@model Firehose.Web.Infrastructure.IAmACommunityMember[]
+
+<div class="alert alert-info text-center" role="alert">
+    <i class="fa fa-info-circle"></i> Order is random. Refresh to shuffle.
+</div>
+
+<div class="text-center col-md-12">
+    <input type="text" class="live-search-box form-control text-center" placeholder="Search on author name..." />
+</div>
+
+@foreach (var member in Model)
+{
+    Html.RenderPartial("ProfileCard", member);
+}

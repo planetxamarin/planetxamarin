@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Humanizer.Core" Version="2.14.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.0.0-preview.3.22370.2" />
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters.SessionState" Version="1.0.0-preview.3.22370.2" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="System.ServiceModel.Syndication" Version="6.0.0" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Polly.Caching.Memory">
+      <HintPath>C:\Users\Jon\.nuget\packages\polly.caching.memory\3.0.2\lib\netstandard2.0\Polly.Caching.Memory.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\font-awesome.css" />
+    <None Include="wwwroot\Content\font-awesome.min.css" />
+    <None Include="wwwroot\Content\plugins\jquery\jquery-3.1.1.intellisense.js" />
+  </ItemGroup>
+
+</Project>
