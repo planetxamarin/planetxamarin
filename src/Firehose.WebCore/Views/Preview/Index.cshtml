@@ -1,0 +1,31 @@
+﻿@model Firehose.Web.ViewModels.PreviewViewModel
+
+@{
+    Layout = "~/Views/Shared/_ContainerLayout.cshtml";
+}
+
+@foreach (var item in Model.Items)
+{
+    <div class="syndicationItem">
+        @if (item.Gravatar != null)
+        {
+            <img src="@item.Gravatar" alt="@item.AuthorName avatar" style="float: left; max-width: 65px; margin-right: 10px;" class="img-circle" />
+        }
+        <h1 class="syndicationItemTitle"><a href="@item.Link" target="_blank">@Html.Raw(item.Title)</a></h1>
+        <h2 class="syndicationItemDate">
+            @item.PublishDate
+            @if (!string.IsNullOrWhiteSpace(item.AuthorName))
+                {
+                <text>|</text>
+                @item.AuthorName
+            }
+        </h2>
+        <div class="syndicationItemContent">
+            @Html.Raw(item.Body)
+        </div>
+        <div class="syndicationItemFooter">
+            <a href="@item.Link" class="btn btn-primary">View original post</a>
+        </div>
+    </div>
+    <hr />
+}
