@@ -62,6 +62,6 @@
 <p>
     @foreach (var member in Model.Where(m => m is IAmAPodcast || m is IAmANewsletter || m is IAmAFrameworkForXamarin).ToArray())
     {
-        Html.RenderPartial("PodcastCard", member);
+        <partial name="PodcastCard" for="member" />
     }
 </p>
