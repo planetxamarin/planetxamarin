@@ -31,9 +31,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthorization();
-app.UseSystemWebAdapters();
+//app.UseSystemWebAdapters();
 
 app.MapDefaultControllerRoute();
-app.MapReverseProxy();
+//app.MapReverseProxy();
 
 app.Run();
