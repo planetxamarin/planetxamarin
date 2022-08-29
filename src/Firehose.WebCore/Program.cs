@@ -14,7 +14,7 @@ var members = Assembly.GetCallingAssembly().GetTypes()
 	.Where(type => typeof(IAmACommunityMember).IsAssignableFrom(type) && !type.IsInterface);
 
 foreach (var member in members)
-	builder.Services.AddTransient(typeof(IAmACommunityMember), member);
+	builder.Services.AddSingleton(typeof(IAmACommunityMember), member);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
