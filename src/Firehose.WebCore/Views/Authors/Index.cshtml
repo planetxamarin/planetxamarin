@@ -1,11 +1,11 @@
 ﻿@using Firehose.Web.Infrastructure
 @model IAmACommunityMember[]
 
-@{ Html.RenderPartial("Map", Model.Where(m => m.Position != GeoPosition.Empty).ToArray()); }
+@{ await Html.RenderPartialAsync("Map", Model.Where(m => m.Position != GeoPosition.Empty).ToArray()); }
 
 <div class="container body-content">
     <div class="container">
-        @{ Html.RenderPartial("List", Model); }
+        @{ await Html.RenderPartialAsync("List", Model); }
     </div>
     <hr />
     <footer>
