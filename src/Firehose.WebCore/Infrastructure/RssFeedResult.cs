@@ -13,14 +13,15 @@ namespace Firehose.Web.Infrastructure
 			_feed = feed;
 		}
 
-		public override void ExecuteResult(ActionContext context)
+		public async override Task ExecuteResultAsync(ActionContext context)
 		{
 			context.HttpContext.Response.ContentType = "application/rss+xml";
 
 			var rssFormatter = new Rss20FeedFormatter(_feed);
 			using (var writer = XmlWriter.Create(context.HttpContext.Response.Body))
 			{
-				rssFormatter.WriteTo(writer); 
+				rssFormatter.WriteTo(writer);
+				await writer.FlushAsync();
 			}
 		}
 	}
