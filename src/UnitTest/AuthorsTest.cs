@@ -1,4 +1,5 @@
 ﻿using Firehose.Web.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -79,7 +80,8 @@ namespace UnitTest
 					Assert.Equal("https", feedUri.Scheme);
 
 				var authors = new[] { author };
-				var feedSource = new NewCombinedFeedSource(authors);
+				var config = new ConfigurationBuilder().Build(); 
+				var feedSource = new NewCombinedFeedSource(authors, config);
 				var feed = await feedSource.LoadFeed(null).ConfigureAwait(false);
 
 				Assert.NotNull(feed);
