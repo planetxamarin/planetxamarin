@@ -15,7 +15,6 @@ using System.Net.Http.Headers;
 using System.ServiceModel.Syndication;
 using System.Threading.Tasks;
 using System.Xml;
-using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 namespace Firehose.Web.Infrastructure
 {
@@ -24,11 +23,13 @@ namespace Firehose.Web.Infrastructure
         private static HttpClient httpClient;
         private static AsyncRetryPolicy retryPolicy;
 		private static AsyncCachePolicy cachePolicy;
+		private IConfiguration config;
 
         public IEnumerable<IAmACommunityMember> Tamarins { get; }
 
-        public NewCombinedFeedSource(IEnumerable<IAmACommunityMember> tamarins)
+        public NewCombinedFeedSource(IEnumerable<IAmACommunityMember> tamarins, IConfiguration _config)
         {
+			config = _config;
             EnsureHttpClient();
 
             Tamarins = tamarins;
@@ -172,12 +173,12 @@ namespace Firehose.Web.Infrastructure
 				.OrderByDescending(item => GetMaxTime(item));
 
 			var feed = new SyndicationFeed(
-                ConfigurationManager.AppSettings["RssFeedTitle"],
-                ConfigurationManager.AppSettings["RssFeedDescription"],
-                new Uri(ConfigurationManager.AppSettings["BaseUrl"] ?? "https://planetxamarin.com"),
+                config["RssFeedTitle"],
+                config["RssFeedDescription"],
+                new Uri(config["BaseUrl"] ?? "https://planetxamarin.com"),
                 numberOfItems.HasValue ? orderedItems.Take(numberOfItems.Value) : orderedItems)
             {
-                ImageUrl = new Uri(ConfigurationManager.AppSettings["RssFeedImageUrl"] ?? "https://planetxamarin.com/Content/Logo.png"),
+                ImageUrl = new Uri(config["RssFeedImageUrl"] ?? "https://planetxamarin.com/Content/Logo.png"),
                 Copyright = new TextSyndicationContent("The copyright for each post is retained by its author."),
                 Language = languageCode,
 				LastUpdatedTime = DateTimeOffset.UtcNow
