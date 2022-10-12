@@ -8,7 +8,7 @@ namespace Firehose.Web.Authors
     {
         public string FirstName => "Jesse";
         public string LastName => "Liberty";
-        public string ShortBioOrTagLine => "See http://jesseliberty.me";
+        public string ShortBioOrTagLine => "See http://jesseliberty.com";
         public string StateOrRegion => "Massachusetts";
         public string EmailAddress => "jesseliberty@gmail.com";
         public string TwitterHandle => "jesseliberty";
