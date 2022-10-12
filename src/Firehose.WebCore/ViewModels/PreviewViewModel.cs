@@ -13,7 +13,7 @@ namespace Firehose.Web.ViewModels
     {
         public List<PreviewModelItem> Items { get; }
 
-		public PreviewViewModel(SyndicationFeed feed, IAmACommunityMember[] authors)
+		public PreviewViewModel(SyndicationFeed feed, IAmACommunityMember[] authors, IConfiguration config)
 		{
 			bool MatchesAuthorUrls(IAmACommunityMember author, IEnumerable<Uri> urls, SyndicationItem item)
 			{
@@ -101,7 +101,7 @@ namespace Firehose.Web.ViewModels
 				var previewItem = new PreviewModelItem
 				{
 					AuthorName = authorName,
-					Gravatar = author?.GravatarImage(),
+					Gravatar = author?.GravatarImage(config["DefaultGravatarImage"]),
 					Title = item.Title.Text,
 					Link = link,
 					Body = html.Sanitize(),

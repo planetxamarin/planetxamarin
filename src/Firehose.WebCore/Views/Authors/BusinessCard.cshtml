@@ -1,10 +1,11 @@
 ﻿@using Firehose.Web.Infrastructure
 @using Firehose.Web.Extensions
+@inject IConfiguration config
 
 @model IAmACommunityMember
 
 <div class="businessCard">
-    <span class="mugShot" style="background-image: url('@Model.GravatarImage()');"></span>
+    <span class="mugShot" style="background-image: url('@Model.GravatarImage(config["DefaultGravatarImage"])');"></span>
     <p>
         <strong>@Model.FirstName @Model.LastName</strong><br />
         <span title="Planet Xamarin | @Model.ShortBioOrTagLine">@Model.ShortBioOrTagLine</span><br />

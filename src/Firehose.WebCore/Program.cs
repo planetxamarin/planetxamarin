@@ -1,11 +1,9 @@
 using Firehose.Web.Infrastructure;
 using Microsoft.AspNetCore.Rewrite;
-using Microsoft.AspNetCore.SystemWebAdapters;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSystemWebAdapters();
 builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
 builder.Services.AddSingleton<NewCombinedFeedSource>();

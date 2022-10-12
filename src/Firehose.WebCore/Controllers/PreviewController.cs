@@ -10,17 +10,19 @@ namespace Firehose.Web.Controllers
     public class PreviewController : BaseController
     {
         private readonly NewCombinedFeedSource _combinedFeedSource;
+		private IConfiguration _configuration;
 
-        public PreviewController(NewCombinedFeedSource combinedFeedSource)
+        public PreviewController(NewCombinedFeedSource combinedFeedSource, IConfiguration config)
         {
             _combinedFeedSource = combinedFeedSource;
+			_configuration = config;
         }
 
         [Route("preview")]
         public ViewResult Index()
         {
             var feed = GetFeed();
-            return View(new PreviewViewModel(feed, _combinedFeedSource.Tamarins.ToArray()));
+            return View(new PreviewViewModel(feed, _combinedFeedSource.Tamarins.ToArray(), _configuration));
         }
 
         private SyndicationFeed GetFeed()
