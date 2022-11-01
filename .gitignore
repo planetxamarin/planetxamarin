@@ -243,3 +243,5 @@ src/.idea
 
 # MFractor
 .mfractor/
+/src/Firehose.WebCore/Properties/ServiceDependencies/PlanetWebsiteService - Web Deploy
+/src/Firehose.WebCore/Properties/ServiceDependencies/PlanetWebsiteService - Web Deploy
