@@ -63,14 +63,14 @@ namespace UnitTest
 			}
 		}
 
-		[Fact]
+		/*[Fact]
 		public Task All_Authors_Have_Secure_And_Parsable_Feed()
 		{
 			var authors = GetAuthors();
 
 			// using MemberData for this test is slow. Intentionally using Task.WhenAll here!
 			return Task.WhenAll(authors.Select(Author_Has_Secure_And_Parseable_Feed));
-		}
+		}*/
 
 		private async Task Author_Has_Secure_And_Parseable_Feed(IAmACommunityMember author)
 		{
@@ -102,7 +102,7 @@ namespace UnitTest
 				else
 				{
 					Assert.True(false, $"Feed(s) for {author.FirstName} {author.LastName}  @{author?.GitHubHandle}  is null or empty @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
-					_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");
+					_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");*/
 				}
 
 				throw ex;
