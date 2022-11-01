@@ -102,7 +102,7 @@ namespace UnitTest
 				else
 				{
 					Assert.True(false, $"Feed(s) for {author.FirstName} {author.LastName}  @{author?.GitHubHandle}  is null or empty @{author?.FeedUris?.FirstOrDefault()?.OriginalString}");
-					_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");*/
+					_output.WriteLine($"Feed(s) for {author.FirstName} {author.LastName} is null or empty");
 				}
 
 				throw ex;
