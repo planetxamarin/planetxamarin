@@ -1,4 +1,4 @@
-name: Build and deploy .NET Core application to Web App PlanetWebsiteService
+name: Build and deploy Planet Xamarin
 on:
   push:
     branches:
