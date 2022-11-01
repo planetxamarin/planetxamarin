@@ -4,6 +4,12 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+	serverOptions.AllowSynchronousIO = true;
+});
+
 builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
 builder.Services.AddSingleton<NewCombinedFeedSource>();
