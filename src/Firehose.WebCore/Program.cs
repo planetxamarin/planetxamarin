@@ -1,16 +1,11 @@
 using Firehose.Web.Infrastructure;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Rewrite;
+using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.WebHost.ConfigureKestrel(serverOptions =>
-{
-	serverOptions.AllowSynchronousIO = true;
-});
-
-builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
 builder.Services.AddSingleton<NewCombinedFeedSource>();
 
@@ -22,6 +17,12 @@ foreach (var member in members)
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+	serverOptions.AllowSynchronousIO = true;
+});
+
 
 var app = builder.Build();
 
@@ -35,9 +36,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthorization();
-//app.UseSystemWebAdapters();
 
 app.MapDefaultControllerRoute();
-//app.MapReverseProxy();
 
 app.Run();
