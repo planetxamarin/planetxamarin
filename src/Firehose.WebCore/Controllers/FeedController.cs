@@ -16,13 +16,13 @@ namespace Firehose.Web.Controllers
         }
 
         [Route("feed")]
-        public RssFeedResult Index(int? numPosts = 150, string lang = "mixed")
+        public async Task<RssFeedResult> Index(int? numPosts = 150, string lang = "mixed")
         {
-            var feed = GetFeed(numPosts, lang);
+            var feed = await GetFeed(numPosts, lang);
             return new RssFeedResult(feed);
         }
 
-        private SyndicationFeed GetFeed(int? numPosts = 150, string lang = "mixed")
+        private async Task<SyndicationFeed> GetFeed(int? numPosts = 150, string lang = "mixed")
         {
             SyndicationFeed originalFeed = null;
 
@@ -32,7 +32,7 @@ namespace Firehose.Web.Controllers
                 if (!string.IsNullOrEmpty(lang) && lang != "mixed")
                     language = CultureInfo.CreateSpecificCulture(lang).Name;
 
-                originalFeed = _combinedFeedSource.LoadFeed(numPosts, language).GetAwaiter().GetResult();
+				originalFeed = await _combinedFeedSource.LoadFeed(numPosts, language);
                 return originalFeed;
             }
             catch (Exception ex)

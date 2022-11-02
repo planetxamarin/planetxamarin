@@ -23,6 +23,11 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 	serverOptions.AllowSynchronousIO = true;
 });
 
+builder.Services.Configure<IISServerOptions>(options => 
+{
+	options.AllowSynchronousIO = true;
+});
+
 
 var app = builder.Build();
 
