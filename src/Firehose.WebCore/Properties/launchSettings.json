@@ -10,7 +10,6 @@
   "profiles": {
     "Firehose.WebCore": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7227;http://localhost:5028",
       "environmentVariables": {
