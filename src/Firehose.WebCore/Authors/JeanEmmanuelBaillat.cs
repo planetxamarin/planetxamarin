@@ -1,7 +1,7 @@
 ﻿using Firehose.Web.Infrastructure;
 using System;
 
-namespace Firehose.WebCore.Authors
+namespace Firehose.Web.Authors
 {
 	public class JeanEmmanuelBaillat : IAmACommunityMember
 	{
